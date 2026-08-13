@@ -24,7 +24,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Baloo+Tamma+2:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Baloo+Tamma+2:wght@700&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -84,15 +84,16 @@
   }
   .brand{
     display:flex;
-    align-items:baseline;
-    gap: 6px;
-    font-weight: 700;
-    font-size: 1.35rem;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 2px;
     text-decoration:none;
     color: var(--ink);
-    letter-spacing: -0.01em;
+    line-height:1;
   }
-  .brand .kn{ color: var(--oxide); font-size: 1.5rem; }
+  .brand-word{ font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
+  .brand .v-accent{ color: var(--oxide); }
+  .brand-tagline{ font-family:'Inter', sans-serif; font-weight:600; font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
   .back-link{
     text-decoration:none;
     font-weight: 500;
@@ -137,7 +138,8 @@
     flex-wrap: wrap;
     gap: 16px;
   }
-  .footer-grid .brand{ font-size: 1.1rem; }
+  .footer-grid .brand{ flex-direction:row; align-items:baseline; }
+  .footer-grid .brand-word{ font-size: 1.1rem; }
   footer p{ margin:0; color: var(--ink-soft); font-size: 0.88rem; }
   .footer-tagline{ font-family:'Fraunces', serif; font-style: italic; color: var(--ink-soft); }
   .footer-links{ display:flex; flex-wrap:wrap; gap: 16px; align-items:center; }
@@ -148,7 +150,7 @@
 
 <header>
   <nav class="wrap" aria-label="Primary">
-    <a href="index.html" class="brand"><span class="kn" lang="kn">ವಿಹ</span>Vihakids</a>
+    <a href="index.html" class="brand"><span class="brand-word"><span class="v-accent">V</span>ihakids</span><span class="brand-tagline">Online Tuitions</span></a>
     <a href="index.html" class="back-link">&larr; Back to home</a>
   </nav>
 </header>
@@ -209,7 +211,7 @@
 
 <footer>
   <div class="wrap footer-grid">
-    <a href="index.html" class="brand"><span class="kn" lang="kn">ವಿಹ</span>Vihakids</a>
+    <a href="index.html" class="brand"><span class="brand-word"><span class="v-accent">V</span>ihakids</span></a>
     <p class="footer-tagline">Inspire young minds.</p>
     <div class="footer-links">
       <a href="index.html">Home</a>
