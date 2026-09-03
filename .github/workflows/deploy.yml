@@ -23,6 +23,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::483528439529:role/github-actions-vihakids-deploy
           aws-region: ap-south-1
+          role-skip-session-tagging: true
 
       - name: Sync site files to S3
         run: |
