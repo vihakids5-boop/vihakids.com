@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrations Admin | Vihakids</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#A6303B">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#34201A; --ink-soft:#5C463D; --paper:#FAF0DC; --paper-raised:#FFFCF4;
+    --oxide:#A6303B; --oxide-dark:#7E2029; --oxide-soft:#F6E1E0;
+    --leaf:#2F6B4F; --leaf-soft:#DFF0E6; --sky:#2B5F8A; --sky-soft:#DCEAF5; --banana:#8A6A12; --banana-soft:#FBF0C9;
+    --line:rgba(52,32,26,0.12); --radius:16px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  h1,h2{font-family:'Fraunces',serif;margin:0}
+  a{color:var(--oxide)}
+  button,input,select,textarea{font:inherit;color:inherit}
+  :focus-visible{outline:3px solid var(--oxide);outline-offset:2px;border-radius:6px}
+
+  header{position:sticky;top:0;z-index:5;background:rgba(250,240,220,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink)}
+  .brand-word{font-family:'Playfair Display',serif;font-weight:700;font-size:1.35rem}
+  .brand .v-accent{color:var(--oxide)}
+  .brand small{font-weight:600;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+  .who{font-size:.85rem;color:var(--ink-soft);display:flex;gap:12px;align-items:center}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;border:2px solid transparent;cursor:pointer;background:transparent}
+  .btn-primary{background:var(--oxide);color:#fff;box-shadow:0 4px 0 var(--oxide-dark)}
+  .btn-primary:active{transform:translateY(2px);box-shadow:0 2px 0 var(--oxide-dark)}
+  .btn-primary[disabled]{opacity:.6;cursor:wait}
+  .btn-ghost{border-color:var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn-sm{padding:6px 10px;font-size:.8rem;border-radius:8px}
+  .btn-danger{color:var(--oxide-dark)}
+  .btn-danger:hover{background:var(--oxide-soft)}
+
+  main{max-width:1240px;margin:0 auto;padding:28px 20px 60px}
+  .card{background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 30px rgba(52,32,26,.06)}
+
+  /* Login */
+  .login{max-width:400px;margin:60px auto;padding:28px}
+  .login h1{font-size:1.6rem;margin-bottom:6px}
+  .login p{color:var(--ink-soft);margin:0 0 20px;font-size:.92rem}
+  .field{margin-bottom:16px}
+  label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+  input[type=email],input[type=password],input[type=search],select,textarea{width:100%;background:#fff;border:1.5px solid rgba(52,32,26,.25);border-radius:10px;padding:11px 12px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--oxide);box-shadow:0 0 0 3px rgba(166,48,59,.15)}
+  .login .btn{width:100%}
+  .msg{display:none;margin-top:14px;padding:11px 13px;border-radius:10px;font-size:.9rem}
+  .msg.show{display:block}
+  .msg-error{background:var(--oxide-soft);color:var(--oxide-dark)}
+  .msg-info{background:var(--sky-soft);color:var(--sky)}
+
+  /* Dashboard */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px}
+  .stat{padding:14px 16px}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.7rem;line-height:1.1}
+  .stat span{font-size:.8rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+  .toolbar input[type=search]{flex:1;min-width:200px}
+  .toolbar select{width:auto}
+
+  .table-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  th,td{padding:12px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+  th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);white-space:nowrap;background:rgba(52,32,26,.03)}
+  tr:last-child td{border-bottom:0}
+  td.when{white-space:nowrap;color:var(--ink-soft);font-size:.82rem}
+  td.name{font-weight:600}
+  td .sub{display:block;font-weight:400;color:var(--ink-soft);font-size:.8rem}
+  .phone a{white-space:nowrap;text-decoration:none;font-weight:600}
+  .phone .wa{display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;background:var(--leaf-soft);color:var(--leaf);font-size:.75rem}
+  .tag{display:inline-block;margin:0 4px 4px 0;padding:2px 9px;border-radius:999px;font-size:.78rem;font-weight:600;background:var(--paper);border:1px solid var(--line)}
+  select.status{padding:6px 8px;border-radius:8px;font-weight:600;font-size:.82rem;width:auto}
+  select.status.s-new{background:var(--banana-soft);color:var(--banana);border-color:transparent}
+  select.status.s-contacted{background:var(--sky-soft);color:var(--sky);border-color:transparent}
+  select.status.s-demo{background:var(--oxide-soft);color:var(--oxide-dark);border-color:transparent}
+  select.status.s-enrolled{background:var(--leaf-soft);color:var(--leaf);border-color:transparent}
+  select.status.s-closed{background:#eee;color:#666;border-color:transparent}
+  textarea.notes{min-width:180px;min-height:38px;padding:7px 9px;border-radius:8px;font-size:.85rem;resize:vertical}
+  .saved{font-size:.72rem;color:var(--leaf);display:block;height:1em}
+  .empty{padding:40px;text-align:center;color:var(--ink-soft)}
+  .hidden{display:none!important}
+  @media (max-width:640px){ th,td{padding:10px 8px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a href="index.html" class="brand"><span class="brand-word"><span class="v-accent">V</span>ihakids</span><small>Registrations admin</small></a>
+    <div class="who hidden" id="who">
+      <span id="whoEmail"></span>
+      <button class="btn btn-ghost btn-sm" id="signOut" type="button">Sign out</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- LOGIN -->
+  <section class="card login" id="loginView">
+    <h1>Sign in</h1>
+    <p>Admin access for Vihakids staff only.</p>
+    <form id="loginForm">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary" id="loginBtn">Sign in</button>
+      <div class="msg msg-error" id="loginMsg" role="alert"></div>
+    </form>
+    <div class="msg msg-info" id="setupMsg"></div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashView" class="hidden">
+    <div class="stats">
+      <div class="card stat"><b id="stTotal">0</b><span>Total</span></div>
+      <div class="card stat"><b id="stNew">0</b><span>New</span></div>
+      <div class="card stat"><b id="stWeek">0</b><span>Last 7 days</span></div>
+      <div class="card stat"><b id="stEnrolled">0</b><span>Enrolled</span></div>
+    </div>
+
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="Search name, phone, subject…" aria-label="Search registrations">
+      <select id="filterStatus" aria-label="Filter by status">
+        <option value="">All statuses</option>
+        <option value="new">New</option>
+        <option value="contacted">Contacted</option>
+        <option value="demo">Demo scheduled</option>
+        <option value="enrolled">Enrolled</option>
+        <option value="closed">Closed</option>
+      </select>
+      <button class="btn btn-ghost btn-sm" id="exportCsv" type="button">Download CSV</button>
+    </div>
+
+    <div class="card table-wrap">
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th>When</th><th>Parent</th><th>Phone</th><th>Grade</th><th>Subjects</th><th>Source</th><th>Status</th><th>Notes</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty hidden" id="empty">No registrations yet.</div>
+    </div>
+    <div class="msg msg-error" id="dashMsg" role="alert"></div>
+  </section>
+</main>
+
+<script src="firebase-config.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+  import { getFirestore, collection, query, orderBy, onSnapshot, doc, updateDoc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+  const $ = id => document.getElementById(id);
+  const STATUSES = { new:'New', contacted:'Contacted', demo:'Demo scheduled', enrolled:'Enrolled', closed:'Closed' };
+
+  const cfg = window.VIHAKIDS_FIREBASE_CONFIG || {};
+  if (!cfg.projectId || String(cfg.projectId).startsWith('PASTE_')) {
+    $('setupMsg').textContent = 'Firebase is not configured yet. Fill in firebase-config.js first (see REGISTRATION-SETUP.md).';
+    $('setupMsg').classList.add('show');
+    $('loginBtn').disabled = true;
+  }
+
+  const app = initializeApp(cfg);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  try { await setPersistence(auth, browserSessionPersistence); } catch (e) {}
+
+  let all = [];        // latest snapshot
+  let unsubscribe = null;
+  const debounce = new Map();
+
+  // ---------- Auth ----------
+  $('loginForm').addEventListener('submit', async ev => {
+    ev.preventDefault();
+    $('loginMsg').classList.remove('show');
+    $('loginBtn').disabled = true;
+    try {
+      await signInWithEmailAndPassword(auth, $('email').value.trim(), $('password').value);
+    } catch (e) {
+      const friendly = {
+        'auth/invalid-credential': 'Wrong email or password.',
+        'auth/user-not-found': 'Wrong email or password.',
+        'auth/wrong-password': 'Wrong email or password.',
+        'auth/too-many-requests': 'Too many attempts. Try again in a few minutes.',
+        'auth/network-request-failed': 'Network error. Check your connection.'
+      };
+      $('loginMsg').textContent = friendly[e.code] || ('Sign-in failed: ' + e.message);
+      $('loginMsg').classList.add('show');
+    } finally {
+      $('loginBtn').disabled = false;
+    }
+  });
+
+  $('signOut').addEventListener('click', () => signOut(auth));
+
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      $('loginView').classList.add('hidden');
+      $('dashView').classList.remove('hidden');
+      $('who').classList.remove('hidden');
+      $('whoEmail').textContent = user.email;
+      $('password').value = '';
+      listen();
+    } else {
+      if (unsubscribe) { unsubscribe(); unsubscribe = null; }
+      all = [];
+      $('dashView').classList.add('hidden');
+      $('who').classList.add('hidden');
+      $('loginView').classList.remove('hidden');
+    }
+  });
+
+  // ---------- Data ----------
+  function listen(){
+    if (unsubscribe) unsubscribe();
+    const q = query(collection(db, 'registrations'), orderBy('createdAt', 'desc'));
+    unsubscribe = onSnapshot(q, snap => {
+      all = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      render();
+    }, err => {
+      $('dashMsg').textContent = err.code === 'permission-denied'
+        ? 'This account is not allowed to view registrations. Add its email to isAdmin() in firestore.rules.'
+        : 'Could not load registrations: ' + err.message;
+      $('dashMsg').classList.add('show');
+    });
+  }
+
+  function toDate(ts){ return ts && typeof ts.toDate === 'function' ? ts.toDate() : (ts ? new Date(ts) : null); }
+  function fmt(d){ return d ? d.toLocaleString('en-IN', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' }) : '—'; }
+  function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  const ordinal = n => n + (n === 1 ? 'st' : n === 2 ? 'nd' : n === 3 ? 'rd' : 'th');
+
+  function visible(){
+    const q = $('q').value.trim().toLowerCase();
+    const st = $('filterStatus').value;
+    return all.filter(r => {
+      if (st && (r.status || 'new') !== st) return false;
+      if (!q) return true;
+      const hay = [r.parentName, r.phone, (r.subjects||[]).join(' '), r.grade, r.source, r.notes].join(' ').toLowerCase();
+      return hay.includes(q);
+    });
+  }
+
+  function render(){
+    const weekAgo = Date.now() - 7*24*3600*1000;
+    $('stTotal').textContent = all.length;
+    $('stNew').textContent = all.filter(r => (r.status||'new') === 'new').length;
+    $('stWeek').textContent = all.filter(r => { const d = toDate(r.createdAt); return d && d.getTime() > weekAgo; }).length;
+    $('stEnrolled').textContent = all.filter(r => r.status === 'enrolled').length;
+
+    const rows = visible();
+    $('empty').classList.toggle('hidden', rows.length > 0);
+    $('empty').textContent = all.length ? 'No registrations match your search.' : 'No registrations yet.';
+
+    $('rows').innerHTML = rows.map(r => {
+      const status = r.status || 'new';
+      const digits = String(r.phone||'').replace(/\D/g,'');
+      const wa = 'https://wa.me/' + digits + '?text=' + encodeURIComponent(`Hi ${r.parentName||''}, this is Vihakids. Thank you for registering for ${(r.subjects||[]).join(', ')} tuition. When is a good time for a free demo class?`);
+      return `<tr data-id="${esc(r.id)}">
+        <td class="when">${esc(fmt(toDate(r.createdAt)))}</td>
+        <td class="name">${esc(r.parentName)}</td>
+        <td class="phone"><a href="tel:${esc(r.phone)}">${esc(r.phone)}</a><a class="wa" href="${wa}" target="_blank" rel="noopener">WhatsApp</a></td>
+        <td>${r.grade ? esc(ordinal(r.grade)) + ' Std' : '—'}</td>
+        <td>${(r.subjects||[]).map(s => `<span class="tag">${esc(s)}</span>`).join('')}</td>
+        <td>${esc(r.source || '—')}</td>
+        <td><select class="status s-${esc(status)}" data-field="status" aria-label="Status">
+          ${Object.entries(STATUSES).map(([k,v]) => `<option value="${k}" ${k===status?'selected':''}>${v}</option>`).join('')}
+        </select></td>
+        <td><textarea class="notes" data-field="notes" placeholder="Add a note…" aria-label="Notes">${esc(r.notes||'')}</textarea><span class="saved"></span></td>
+        <td><button type="button" class="btn btn-sm btn-danger" data-action="delete" aria-label="Delete registration">Delete</button></td>
+      </tr>`;
+    }).join('');
+  }
+
+  $('q').addEventListener('input', render);
+  $('filterStatus').addEventListener('change', render);
+
+  // Inline edits: status (immediate) and notes (debounced)
+  $('rows').addEventListener('change', ev => {
+    const sel = ev.target.closest('select[data-field="status"]');
+    if (!sel) return;
+    sel.className = 'status s-' + sel.value;
+    save(sel.closest('tr'), { status: sel.value });
+  });
+  $('rows').addEventListener('input', ev => {
+    const ta = ev.target.closest('textarea[data-field="notes"]');
+    if (!ta) return;
+    const tr = ta.closest('tr');
+    clearTimeout(debounce.get(tr.dataset.id));
+    debounce.set(tr.dataset.id, setTimeout(() => save(tr, { notes: ta.value.trim() }), 700));
+  });
+  $('rows').addEventListener('click', async ev => {
+    const btn = ev.target.closest('button[data-action="delete"]');
+    if (!btn) return;
+    const tr = btn.closest('tr');
+    const name = tr.querySelector('.name').textContent;
+    if (!confirm(`Delete the registration from ${name}? This cannot be undone.`)) return;
+    try { await deleteDoc(doc(db, 'registrations', tr.dataset.id)); }
+    catch (e) { alert('Could not delete: ' + e.message); }
+  });
+
+  async function save(tr, patch){
+    const flag = tr.querySelector('.saved');
+    try {
+      await updateDoc(doc(db, 'registrations', tr.dataset.id), { ...patch, updatedAt: serverTimestamp() });
+      // keep local copy in sync so re-render (from search) doesn't lose the edit before the snapshot arrives
+      const r = all.find(x => x.id === tr.dataset.id); if (r) Object.assign(r, patch);
+      flag.textContent = 'Saved'; setTimeout(() => { flag.textContent = ''; }, 1500);
+    } catch (e) {
+      flag.textContent = 'Not saved'; flag.style.color = 'var(--oxide-dark)';
+    }
+  }
+
+  // CSV export of the currently visible rows
+  $('exportCsv').addEventListener('click', () => {
+    const rows = visible();
+    const head = ['Date','Parent name','Phone','Grade','Subjects','Source','Status','Notes'];
+    const cell = v => '"' + String(v ?? '').replace(/"/g,'""') + '"';
+    const lines = [head.map(cell).join(',')].concat(rows.map(r => [
+      fmt(toDate(r.createdAt)), r.parentName, r.phone, r.grade, (r.subjects||[]).join('; '), r.source||'', STATUSES[r.status||'new'], r.notes||''
+    ].map(cell).join(',')));
+    const blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'vihakids-registrations-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+</script>
+
+</body>
+</html>
