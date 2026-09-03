@@ -1,0 +1,44 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::483528439529:role/github-actions-vihakids-deploy
+          aws-region: ap-south-1
+
+      - name: Sync site files to S3
+        run: |
+          aws s3 sync . s3://www.vihakids.com/ \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".gitignore" \
+            --exclude "REGISTRATION-SETUP.md" \
+            --exclude "firestore.rules" \
+            --exclude "social-media/*" \
+            --exclude ".DS_Store"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E2PJCWK969DJ60 \
+            --paths "/*"
