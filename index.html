@@ -275,6 +275,22 @@
     transition: transform 0.15s ease, background 0.15s ease;
   }
   .nav-cta:hover{ background:#3d6442; transform: translateY(-1px); }
+  .nav-ctas{ display:flex; align-items:center; gap:10px; }
+  .nav-cta-register{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background: var(--marigold);
+    color: var(--ink);
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-weight:700;
+    font-size: 0.9rem;
+    text-decoration:none;
+    white-space:nowrap;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .nav-cta-register:hover{ background:#D99A2E; transform: translateY(-1px); }
   .navlinks-mobile-hide{ display:flex; }
   .nav-toggle{
     display:none;
@@ -311,6 +327,16 @@
       border-bottom: 1px solid var(--line);
     }
     .mobile-menu a:hover{ color: var(--oxide); }
+    .mobile-menu a.mobile-register{
+      color: var(--ink);
+      background: var(--marigold);
+      font-weight: 700;
+      text-align: center;
+      border-radius: 10px;
+      border-bottom: none;
+      margin-top: 6px;
+    }
+    .mobile-menu a.mobile-register:hover{ background:#D99A2E; color: var(--ink); }
   }
   @media (min-width: 781px){
     .mobile-menu{ display:none; }
@@ -430,6 +456,28 @@
     color: var(--ink);
   }
   .btn-ghost:hover{ background: var(--ink); color: var(--paper); }
+  .btn-register{
+    background: var(--marigold);
+    color: var(--ink);
+    box-shadow: 0 6px 0 #C4881F;
+    animation: btnRegisterPulse 2.6s ease-in-out infinite;
+  }
+  .btn-register:hover{ transform: translateY(-2px); background:#EDB955; }
+  .btn-register:active{ transform: translateY(2px); box-shadow: 0 2px 0 #C4881F; }
+  @keyframes btnRegisterPulse{
+    0%, 100% { box-shadow: 0 6px 0 #C4881F, 0 0 0 0 rgba(232,169,59,0.45); }
+    50% { box-shadow: 0 6px 0 #C4881F, 0 0 0 9px rgba(232,169,59,0); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .btn-register{ animation: none; }
+  }
+  .trust-line{
+    margin-top: 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+  .trust-line strong{ color: #B97817; }
 
   .hero-note{
     margin-top: 18px;
@@ -723,9 +771,11 @@
       <li><a href="#how">How it works</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="register.html">Register</a></li>
     </ul>
-    <a class="nav-cta" href="https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Kannada%2C%20Hindi%2C%20Math%20and%20Science%20tuitions" target="_blank" rel="noopener" aria-label="Message Vihakids on WhatsApp (opens in a new tab)">WhatsApp Us</a>
+    <div class="nav-ctas">
+      <a class="nav-cta" href="https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Kannada%2C%20Hindi%2C%20Math%20and%20Science%20tuitions" target="_blank" rel="noopener" aria-label="Message Vihakids on WhatsApp (opens in a new tab)">WhatsApp Us</a>
+      <a class="nav-cta-register" href="register.html">Register free</a>
+    </div>
     <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -737,7 +787,7 @@
       <a href="#how">How it works</a>
       <a href="blog.html">Blog</a>
       <a href="#contact">Contact</a>
-      <a href="register.html">Register</a>
+      <a href="register.html" class="mobile-register">Register for a free demo</a>
     </div>
   </nav>
 </header>
@@ -754,8 +804,9 @@
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Kannada%2C%20Hindi%2C%20Math%20and%20Science%20tuitions" target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp (opens in a new tab)">Message on WhatsApp</a>
           <a class="btn btn-ghost" href="tel:+919972577828">Call 99725 77828</a>
-          <a class="btn btn-ghost" href="register.html">Register for free demo</a>
+          <a class="btn btn-register" href="register.html">Register for a free demo →</a>
         </div>
+        <p class="trust-line"><strong>⭐ 5.0</strong> rated by parents in Bengaluru · Register takes 30 seconds — no payment required</p>
         <p class="hero-note">One-on-one and small-batch online classes · 1st to 10th Standard</p>
         <div class="board-badges">
           <span class="board-badge b-cbse">CBSE</span>
@@ -960,8 +1011,9 @@
         <div class="hero-ctas">
           <a class="btn btn-primary" href="https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Kannada%2C%20Hindi%2C%20Math%20and%20Science%20tuitions" target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp (opens in a new tab)">Message on WhatsApp</a>
           <a class="btn btn-ghost" href="tel:+919972577828">Call 99725 77828</a>
-          <a class="btn btn-ghost" href="register.html">Register for free demo</a>
+          <a class="btn btn-register" href="register.html">Register for a free demo →</a>
         </div>
+        <p class="trust-line"><strong>⭐ 5.0</strong> rated by parents in Bengaluru · No payment, no commitment for the free demo</p>
         <p class="phone-line">📞 <a href="tel:+919972577828">+91 99725 77828</a></p>
         <address class="phone-line" style="font-style:normal; font-size:0.95rem; font-weight:500; margin-top:8px;">349, Begur - Koppa Rd, near Eagle Ridge, Chikkakammana Halli, Bengaluru, Karnataka 560068</address>
       </div>
