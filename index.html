@@ -545,7 +545,7 @@
   .board-badge.b-icse{ background: var(--lotus-soft); color: var(--lotus); }
   .board-badge.b-state{ background: var(--banana-soft); color: var(--banana); }
 
-  /* ---------- AKSHARA WHEEL (signature element) ---------- */
+  /* ---------- SUBJECT ORBIT WHEEL (signature element) ---------- */
   .wheel-col{ display:flex; justify-content:center; }
   .wheel-holder{
     position: relative;
@@ -585,33 +585,47 @@
   .akshara{
     position:absolute;
     top:50%; left:50%;
-    width: 54px; height: 54px;
-    margin: -27px 0 0 -27px;
+    width: 62px; height: 62px;
+    margin: -31px 0 0 -31px;
     border-radius: 50%;
     background: var(--paper-raised);
     border: 1.5px solid var(--line);
     display:flex; align-items:center; justify-content:center;
-    font-family:'Baloo Tamma 2', sans-serif;
-    font-weight: 700;
-    font-size: 1.35rem;
-    color: var(--ink);
-    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    flex-direction: column;
+    gap: 1px;
+    cursor: default;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
-  .akshara span{ display:inline-block; animation: counter-spin 48s linear infinite; }
+  .akshara .ico{
+    display:inline-flex;
+    animation: counter-spin 48s linear infinite;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .akshara .lbl{
+    display:inline-block;
+    animation: counter-spin 48s linear infinite;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+  }
   @media (prefers-reduced-motion: reduce){
-    .akshara span{ animation:none; }
+    .akshara .ico, .akshara .lbl{ animation:none; }
   }
   @keyframes counter-spin{ to{ transform: rotate(-360deg); } }
-  .akshara:nth-child(5n+1){ border-color: var(--oxide); }
-  .akshara:nth-child(5n+2){ border-color: var(--peacock); }
-  .akshara:nth-child(5n+3){ border-color: var(--marigold); }
-  .akshara:nth-child(5n+4){ border-color: var(--lotus); }
-  .akshara:nth-child(5n+5){ border-color: var(--banana); }
-  .akshara:nth-child(5n+1):hover{ background: var(--oxide); color: #fff; transform: scale(1.12); z-index:5; }
-  .akshara:nth-child(5n+2):hover{ background: var(--peacock); color: #fff; transform: scale(1.12); z-index:5; }
-  .akshara:nth-child(5n+3):hover{ background: var(--marigold); color: var(--ink); transform: scale(1.12); z-index:5; }
-  .akshara:nth-child(5n+4):hover{ background: var(--lotus); color: #fff; transform: scale(1.12); z-index:5; }
-  .akshara:nth-child(5n+5):hover{ background: var(--banana); color: #fff; transform: scale(1.12); z-index:5; }
+  .akshara:nth-child(6n+1){ border-color: var(--oxide); }
+  .akshara:nth-child(6n+2){ border-color: var(--peacock); }
+  .akshara:nth-child(6n+3){ border-color: var(--marigold); }
+  .akshara:nth-child(6n+4){ border-color: var(--lotus); }
+  .akshara:nth-child(6n+5){ border-color: var(--banana); }
+  .akshara:nth-child(6n+6){ border-color: var(--sky); }
+  .akshara:nth-child(6n+1):hover{ background: var(--oxide-soft); transform: scale(1.15); z-index:5; box-shadow: 0 8px 18px rgba(52,32,26,0.18); }
+  .akshara:nth-child(6n+2):hover{ background: var(--peacock-soft); transform: scale(1.15); z-index:5; box-shadow: 0 8px 18px rgba(52,32,26,0.18); }
+  .akshara:nth-child(6n+3):hover{ background: var(--marigold-soft); transform: scale(1.15); z-index:5; box-shadow: 0 8px 18px rgba(52,32,26,0.18); }
+  .akshara:nth-child(6n+4):hover{ background: var(--lotus-soft); transform: scale(1.15); z-index:5; box-shadow: 0 8px 18px rgba(52,32,26,0.18); }
+  .akshara:nth-child(6n+5):hover{ background: var(--banana-soft); transform: scale(1.15); z-index:5; box-shadow: 0 8px 18px rgba(52,32,26,0.18); }
+  .akshara:nth-child(6n+6):hover{ background: var(--sky-soft); transform: scale(1.15); z-index:5; box-shadow: 0 8px 18px rgba(52,32,26,0.18); }
 
   /* ---------- SECTIONS ---------- */
   section{ padding: 72px 0; }
@@ -1090,13 +1104,22 @@
 </footer>
 
 <script>
-  // Build the akshara wheel — a ring of Kannada varnamale letters, evenly spaced.
+  // Build the subject orbit wheel — a ring of icons for what Vihakids actually offers, evenly spaced.
   (function(){
-    const letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T"];
+    const items = [
+      { icon: "📖", label: "Kannada" },
+      { icon: "💬", label: "Hindi" },
+      { icon: "➗", label: "Math" },
+      { icon: "🔬", label: "Science" },
+      { icon: "🎓", label: "1st–10th" },
+      { icon: "💻", label: "Live class" },
+      { icon: "✏️", label: "Homework" },
+      { icon: "⭐", label: "5.0 rated" }
+    ];
     const ring = document.getElementById('wheelRing');
     const radius = 42; // percent of container
-    letters.forEach((letter, i) => {
-      const angle = (360 / letters.length) * i;
+    items.forEach((item, i) => {
+      const angle = (360 / items.length) * i;
       const rad = (angle * Math.PI) / 180;
       const x = 50 + radius * Math.sin(rad);
       const y = 50 - radius * Math.cos(rad);
@@ -1104,10 +1127,16 @@
       el.className = 'akshara';
       el.style.left = x + '%';
       el.style.top = y + '%';
-      const span = document.createElement('span');
-      span.lang = 'kn';
-      span.textContent = letter;
-      el.appendChild(span);
+      el.title = item.label;
+      const icon = document.createElement('span');
+      icon.className = 'ico';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = item.icon;
+      const lbl = document.createElement('span');
+      lbl.className = 'lbl';
+      lbl.textContent = item.label;
+      el.appendChild(icon);
+      el.appendChild(lbl);
       ring.appendChild(el);
     });
   })();
