@@ -491,6 +491,42 @@
   }
   .hero-note a:hover{ color: var(--oxide-dark); }
 
+  .teach-chip{
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    padding: 10px 18px 10px 14px;
+    border-radius: 999px;
+    background: var(--sky-soft);
+    color: var(--sky);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .teach-chip-icon{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+  }
+  .teach-chip strong{ font-weight: 800; }
+  .teach-chip .arrow{ transition: transform 0.15s ease; }
+  .teach-chip:hover{
+    background: var(--sky);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(47,111,166,0.3);
+  }
+  .teach-chip:hover .teach-chip-icon{ background: rgba(255,255,255,0.25); }
+  .teach-chip:hover .arrow{ transform: translateX(3px); }
+
   .board-badges{
     display:flex;
     flex-wrap: wrap;
@@ -814,7 +850,11 @@
         </div>
         <p class="trust-line"><strong>⭐ 5.0</strong> rated by parents in Bengaluru · Register takes 30 seconds — no payment required</p>
         <p class="hero-note">One-on-one and small-batch online classes · 1st to 10th Standard</p>
-        <p class="hero-note">Are you a tutor? <a href="teach.html">Teach with us →</a></p>
+        <a class="teach-chip" href="teach.html">
+          <span class="teach-chip-icon" aria-hidden="true">🎓</span>
+          Are you a tutor? <strong>Teach with us</strong>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
         <div class="board-badges">
           <span class="board-badge b-cbse">CBSE</span>
           <span class="board-badge b-icse">ICSE</span>
