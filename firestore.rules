@@ -33,6 +33,34 @@ service cloud.firestore {
         && d.createdAt == request.time;
     }
 
+    // Teacher applications submitted from teach.html.
+    // Anyone can CREATE a well-formed application; only admins can read,
+    // update (status / notes) or delete them.
+    match /teacherApplications/{id} {
+      allow create: if isValidTeacherApplication(request.resource.data);
+      allow read, delete: if isAdmin();
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'notes', 'updatedAt']);
+    }
+
+    function isValidTeacherApplication(d) {
+      return d.keys().hasOnly(['fullName', 'phone', 'email', 'subjects', 'grades', 'experience', 'qualification', 'message', 'source', 'page', 'createdAt'])
+        && d.keys().hasAll(['fullName', 'phone', 'subjects', 'grades', 'experience', 'createdAt'])
+        && d.fullName is string && d.fullName.size() >= 2 && d.fullName.size() <= 80
+        && d.phone is string && d.phone.matches('^\\+91[6-9][0-9]{9}$')
+        && d.subjects is list && d.subjects.size() >= 1 && d.subjects.size() <= 4
+        && d.subjects.hasOnly(['Kannada', 'Hindi', 'Math', 'Science'])
+        && d.grades is list && d.grades.size() >= 1 && d.grades.size() <= 3
+        && d.grades.hasOnly(['1-5', '6-8', '9-10'])
+        && d.experience is string && d.experience in ['0-1', '1-3', '3-5', '5+']
+        && (!('email' in d) || (d.email is string && d.email.size() <= 100))
+        && (!('qualification' in d) || (d.qualification is string && d.qualification.size() <= 120))
+        && (!('message' in d) || (d.message is string && d.message.size() <= 500))
+        && (!('source' in d) || (d.source is string && d.source.size() <= 40))
+        && (!('page' in d) || (d.page is string && d.page.size() <= 200))
+        && d.createdAt == request.time;
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }

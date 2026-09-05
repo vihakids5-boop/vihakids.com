@@ -69,6 +69,11 @@
   .toolbar input[type=search]{flex:1;min-width:200px}
   .toolbar select{width:auto}
 
+  .tabs{display:flex;gap:8px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+  .tab{padding:10px 4px;margin-bottom:-1px;border:0;border-bottom:3px solid transparent;background:transparent;font-weight:700;font-size:.95rem;color:var(--ink-soft);cursor:pointer}
+  .tab.active{color:var(--oxide);border-bottom-color:var(--oxide)}
+  .panel.hidden{display:none}
+
   .table-wrap{overflow-x:auto}
   table{width:100%;border-collapse:collapse;font-size:.9rem}
   th,td{padding:12px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
@@ -86,6 +91,9 @@
   select.status.s-demo{background:var(--oxide-soft);color:var(--oxide-dark);border-color:transparent}
   select.status.s-enrolled{background:var(--leaf-soft);color:var(--leaf);border-color:transparent}
   select.status.s-closed{background:#eee;color:#666;border-color:transparent}
+  select.status.s-interviewed{background:var(--oxide-soft);color:var(--oxide-dark);border-color:transparent}
+  select.status.s-hired{background:var(--leaf-soft);color:var(--leaf);border-color:transparent}
+  select.status.s-rejected{background:#eee;color:#666;border-color:transparent}
   textarea.notes{min-width:180px;min-height:38px;padding:7px 9px;border-radius:8px;font-size:.85rem;resize:vertical}
   .saved{font-size:.72rem;color:var(--leaf);display:block;height:1em}
   .empty{padding:40px;text-align:center;color:var(--ink-soft)}
@@ -127,38 +135,82 @@
 
   <!-- DASHBOARD -->
   <section id="dashView" class="hidden">
-    <div class="stats">
-      <div class="card stat"><b id="stTotal">0</b><span>Total</span></div>
-      <div class="card stat"><b id="stNew">0</b><span>New</span></div>
-      <div class="card stat"><b id="stWeek">0</b><span>Last 7 days</span></div>
-      <div class="card stat"><b id="stEnrolled">0</b><span>Enrolled</span></div>
+    <div class="tabs" role="tablist">
+      <button class="tab active" id="tabReg" type="button" role="tab" aria-selected="true">Parent registrations</button>
+      <button class="tab" id="tabTeach" type="button" role="tab" aria-selected="false">Teacher applications</button>
     </div>
 
-    <div class="toolbar">
-      <input type="search" id="q" placeholder="Search name, phone, subject…" aria-label="Search registrations">
-      <select id="filterStatus" aria-label="Filter by status">
-        <option value="">All statuses</option>
-        <option value="new">New</option>
-        <option value="contacted">Contacted</option>
-        <option value="demo">Demo scheduled</option>
-        <option value="enrolled">Enrolled</option>
-        <option value="closed">Closed</option>
-      </select>
-      <button class="btn btn-ghost btn-sm" id="exportCsv" type="button">Download CSV</button>
+    <!-- Parent registrations -->
+    <div class="panel" id="panelReg">
+      <div class="stats">
+        <div class="card stat"><b id="stTotal">0</b><span>Total</span></div>
+        <div class="card stat"><b id="stNew">0</b><span>New</span></div>
+        <div class="card stat"><b id="stWeek">0</b><span>Last 7 days</span></div>
+        <div class="card stat"><b id="stEnrolled">0</b><span>Enrolled</span></div>
+      </div>
+
+      <div class="toolbar">
+        <input type="search" id="q" placeholder="Search name, phone, subject…" aria-label="Search registrations">
+        <select id="filterStatus" aria-label="Filter by status">
+          <option value="">All statuses</option>
+          <option value="new">New</option>
+          <option value="contacted">Contacted</option>
+          <option value="demo">Demo scheduled</option>
+          <option value="enrolled">Enrolled</option>
+          <option value="closed">Closed</option>
+        </select>
+        <button class="btn btn-ghost btn-sm" id="exportCsv" type="button">Download CSV</button>
+      </div>
+
+      <div class="card table-wrap">
+        <table id="tbl">
+          <thead>
+            <tr>
+              <th>When</th><th>Parent</th><th>Phone</th><th>Grade</th><th>Subjects</th><th>Source</th><th>Status</th><th>Notes</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="empty hidden" id="empty">No registrations yet.</div>
+      </div>
+      <div class="msg msg-error" id="dashMsg" role="alert"></div>
     </div>
 
-    <div class="card table-wrap">
-      <table id="tbl">
-        <thead>
-          <tr>
-            <th>When</th><th>Parent</th><th>Phone</th><th>Grade</th><th>Subjects</th><th>Source</th><th>Status</th><th>Notes</th><th></th>
-          </tr>
-        </thead>
-        <tbody id="rows"></tbody>
-      </table>
-      <div class="empty hidden" id="empty">No registrations yet.</div>
+    <!-- Teacher applications -->
+    <div class="panel hidden" id="panelTeach">
+      <div class="stats">
+        <div class="card stat"><b id="tStTotal">0</b><span>Total</span></div>
+        <div class="card stat"><b id="tStNew">0</b><span>New</span></div>
+        <div class="card stat"><b id="tStWeek">0</b><span>Last 7 days</span></div>
+        <div class="card stat"><b id="tStHired">0</b><span>Hired</span></div>
+      </div>
+
+      <div class="toolbar">
+        <input type="search" id="tq" placeholder="Search name, phone, subject…" aria-label="Search teacher applications">
+        <select id="tFilterStatus" aria-label="Filter by status">
+          <option value="">All statuses</option>
+          <option value="new">New</option>
+          <option value="contacted">Contacted</option>
+          <option value="interviewed">Interviewed</option>
+          <option value="hired">Hired</option>
+          <option value="rejected">Rejected</option>
+        </select>
+        <button class="btn btn-ghost btn-sm" id="tExportCsv" type="button">Download CSV</button>
+      </div>
+
+      <div class="card table-wrap">
+        <table id="tTbl">
+          <thead>
+            <tr>
+              <th>When</th><th>Name</th><th>Phone</th><th>Email</th><th>Subjects</th><th>Grades</th><th>Experience</th><th>Qualification</th><th>Status</th><th>Notes</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="tRows"></tbody>
+        </table>
+        <div class="empty hidden" id="tEmpty">No applications yet.</div>
+      </div>
+      <div class="msg msg-error" id="tDashMsg" role="alert"></div>
     </div>
-    <div class="msg msg-error" id="dashMsg" role="alert"></div>
   </section>
 </main>
 
@@ -170,6 +222,9 @@
 
   const $ = id => document.getElementById(id);
   const STATUSES = { new:'New', contacted:'Contacted', demo:'Demo scheduled', enrolled:'Enrolled', closed:'Closed' };
+  const TEACH_STATUSES = { new:'New', contacted:'Contacted', interviewed:'Interviewed', hired:'Hired', rejected:'Rejected' };
+  const GRADE_LABELS = { '1-5': '1st–5th', '6-8': '6th–8th', '9-10': '9th–10th' };
+  const EXPERIENCE_LABELS = { '0-1': 'Fresher (0–1 yr)', '1-3': '1–3 yrs', '3-5': '3–5 yrs', '5+': '5+ yrs' };
 
   const cfg = window.VIHAKIDS_FIREBASE_CONFIG || {};
   if (!cfg.projectId || String(cfg.projectId).startsWith('PASTE_')) {
@@ -183,9 +238,25 @@
   const db = getFirestore(app);
   try { await setPersistence(auth, browserSessionPersistence); } catch (e) {}
 
-  let all = [];        // latest snapshot
+  let all = [];        // latest registrations snapshot
+  let allTeach = [];   // latest teacher applications snapshot
   let unsubscribe = null;
+  let unsubscribeTeach = null;
   const debounce = new Map();
+
+  // ---------- Tabs ----------
+  $('tabReg').addEventListener('click', () => {
+    $('tabReg').classList.add('active'); $('tabReg').setAttribute('aria-selected', 'true');
+    $('tabTeach').classList.remove('active'); $('tabTeach').setAttribute('aria-selected', 'false');
+    $('panelReg').classList.remove('hidden');
+    $('panelTeach').classList.add('hidden');
+  });
+  $('tabTeach').addEventListener('click', () => {
+    $('tabTeach').classList.add('active'); $('tabTeach').setAttribute('aria-selected', 'true');
+    $('tabReg').classList.remove('active'); $('tabReg').setAttribute('aria-selected', 'false');
+    $('panelTeach').classList.remove('hidden');
+    $('panelReg').classList.add('hidden');
+  });
 
   // ---------- Auth ----------
   $('loginForm').addEventListener('submit', async ev => {
@@ -219,9 +290,12 @@
       $('whoEmail').textContent = user.email;
       $('password').value = '';
       listen();
+      listenTeach();
     } else {
       if (unsubscribe) { unsubscribe(); unsubscribe = null; }
+      if (unsubscribeTeach) { unsubscribeTeach(); unsubscribeTeach = null; }
       all = [];
+      allTeach = [];
       $('dashView').classList.add('hidden');
       $('who').classList.add('hidden');
       $('loginView').classList.remove('hidden');
@@ -240,6 +314,20 @@
         ? 'This account is not allowed to view registrations. Add its email to isAdmin() in firestore.rules.'
         : 'Could not load registrations: ' + err.message;
       $('dashMsg').classList.add('show');
+    });
+  }
+
+  function listenTeach(){
+    if (unsubscribeTeach) unsubscribeTeach();
+    const q = query(collection(db, 'teacherApplications'), orderBy('createdAt', 'desc'));
+    unsubscribeTeach = onSnapshot(q, snap => {
+      allTeach = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      renderTeach();
+    }, err => {
+      $('tDashMsg').textContent = err.code === 'permission-denied'
+        ? 'This account is not allowed to view applications. Add its email to isAdmin() in firestore.rules.'
+        : 'Could not load applications: ' + err.message;
+      $('tDashMsg').classList.add('show');
     });
   }
 
@@ -290,8 +378,54 @@
     }).join('');
   }
 
+  function visibleTeach(){
+    const q = $('tq').value.trim().toLowerCase();
+    const st = $('tFilterStatus').value;
+    return allTeach.filter(r => {
+      if (st && (r.status || 'new') !== st) return false;
+      if (!q) return true;
+      const hay = [r.fullName, r.phone, r.email, (r.subjects||[]).join(' '), (r.grades||[]).join(' '), r.qualification, r.notes].join(' ').toLowerCase();
+      return hay.includes(q);
+    });
+  }
+
+  function renderTeach(){
+    const weekAgo = Date.now() - 7*24*3600*1000;
+    $('tStTotal').textContent = allTeach.length;
+    $('tStNew').textContent = allTeach.filter(r => (r.status||'new') === 'new').length;
+    $('tStWeek').textContent = allTeach.filter(r => { const d = toDate(r.createdAt); return d && d.getTime() > weekAgo; }).length;
+    $('tStHired').textContent = allTeach.filter(r => r.status === 'hired').length;
+
+    const rows = visibleTeach();
+    $('tEmpty').classList.toggle('hidden', rows.length > 0);
+    $('tEmpty').textContent = allTeach.length ? 'No applications match your search.' : 'No applications yet.';
+
+    $('tRows').innerHTML = rows.map(r => {
+      const status = r.status || 'new';
+      const digits = String(r.phone||'').replace(/\D/g,'');
+      const wa = 'https://wa.me/' + digits + '?text=' + encodeURIComponent(`Hi ${r.fullName||''}, this is Vihakids. Thank you for applying to teach ${(r.subjects||[]).join(', ')}. When is a good time for a quick call?`);
+      return `<tr data-id="${esc(r.id)}">
+        <td class="when">${esc(fmt(toDate(r.createdAt)))}</td>
+        <td class="name">${esc(r.fullName)}</td>
+        <td class="phone"><a href="tel:${esc(r.phone)}">${esc(r.phone)}</a><a class="wa" href="${wa}" target="_blank" rel="noopener">WhatsApp</a></td>
+        <td>${r.email ? `<a href="mailto:${esc(r.email)}">${esc(r.email)}</a>` : '—'}</td>
+        <td>${(r.subjects||[]).map(s => `<span class="tag">${esc(s)}</span>`).join('')}</td>
+        <td>${(r.grades||[]).map(g => `<span class="tag">${esc(GRADE_LABELS[g] || g)}</span>`).join('')}</td>
+        <td>${esc(EXPERIENCE_LABELS[r.experience] || r.experience || '—')}</td>
+        <td>${esc(r.qualification || '—')}</td>
+        <td><select class="status s-${esc(status)}" data-field="status" aria-label="Status">
+          ${Object.entries(TEACH_STATUSES).map(([k,v]) => `<option value="${k}" ${k===status?'selected':''}>${v}</option>`).join('')}
+        </select></td>
+        <td><textarea class="notes" data-field="notes" placeholder="Add a note…" aria-label="Notes">${esc(r.notes||'')}</textarea><span class="saved"></span></td>
+        <td><button type="button" class="btn btn-sm btn-danger" data-action="delete" aria-label="Delete application">Delete</button></td>
+      </tr>`;
+    }).join('');
+  }
+
   $('q').addEventListener('input', render);
   $('filterStatus').addEventListener('change', render);
+  $('tq').addEventListener('input', renderTeach);
+  $('tFilterStatus').addEventListener('change', renderTeach);
 
   // Inline edits: status (immediate) and notes (debounced)
   $('rows').addEventListener('change', ev => {
@@ -317,12 +451,36 @@
     catch (e) { alert('Could not delete: ' + e.message); }
   });
 
-  async function save(tr, patch){
+  // Teacher applications: same inline-edit pattern as registrations
+  $('tRows').addEventListener('change', ev => {
+    const sel = ev.target.closest('select[data-field="status"]');
+    if (!sel) return;
+    sel.className = 'status s-' + sel.value;
+    save(sel.closest('tr'), { status: sel.value }, 'teacherApplications', allTeach);
+  });
+  $('tRows').addEventListener('input', ev => {
+    const ta = ev.target.closest('textarea[data-field="notes"]');
+    if (!ta) return;
+    const tr = ta.closest('tr');
+    clearTimeout(debounce.get(tr.dataset.id));
+    debounce.set(tr.dataset.id, setTimeout(() => save(tr, { notes: ta.value.trim() }, 'teacherApplications', allTeach), 700));
+  });
+  $('tRows').addEventListener('click', async ev => {
+    const btn = ev.target.closest('button[data-action="delete"]');
+    if (!btn) return;
+    const tr = btn.closest('tr');
+    const name = tr.querySelector('.name').textContent;
+    if (!confirm(`Delete the application from ${name}? This cannot be undone.`)) return;
+    try { await deleteDoc(doc(db, 'teacherApplications', tr.dataset.id)); }
+    catch (e) { alert('Could not delete: ' + e.message); }
+  });
+
+  async function save(tr, patch, coll = 'registrations', list = all){
     const flag = tr.querySelector('.saved');
     try {
-      await updateDoc(doc(db, 'registrations', tr.dataset.id), { ...patch, updatedAt: serverTimestamp() });
+      await updateDoc(doc(db, coll, tr.dataset.id), { ...patch, updatedAt: serverTimestamp() });
       // keep local copy in sync so re-render (from search) doesn't lose the edit before the snapshot arrives
-      const r = all.find(x => x.id === tr.dataset.id); if (r) Object.assign(r, patch);
+      const r = list.find(x => x.id === tr.dataset.id); if (r) Object.assign(r, patch);
       flag.textContent = 'Saved'; setTimeout(() => { flag.textContent = ''; }, 1500);
     } catch (e) {
       flag.textContent = 'Not saved'; flag.style.color = 'var(--oxide-dark)';
@@ -341,6 +499,23 @@
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = 'vihakids-registrations-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $('tExportCsv').addEventListener('click', () => {
+    const rows = visibleTeach();
+    const head = ['Date','Name','Phone','Email','Subjects','Grades','Experience','Qualification','Status','Notes'];
+    const cell = v => '"' + String(v ?? '').replace(/"/g,'""') + '"';
+    const lines = [head.map(cell).join(',')].concat(rows.map(r => [
+      fmt(toDate(r.createdAt)), r.fullName, r.phone, r.email||'', (r.subjects||[]).join('; '),
+      (r.grades||[]).map(g => GRADE_LABELS[g] || g).join('; '), EXPERIENCE_LABELS[r.experience] || r.experience || '',
+      r.qualification||'', TEACH_STATUSES[r.status||'new'], r.notes||''
+    ].map(cell).join(',')));
+    const blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'vihakids-teacher-applications-' + new Date().toISOString().slice(0,10) + '.csv';
     a.click();
     URL.revokeObjectURL(a.href);
   });

@@ -37,26 +37,31 @@ console open **Firestore Database → Data → registrations**. Your entry shoul
 parentName, phone (+91…), grade, subjects, source, page and createdAt.
 
 ## Viewing / exporting registrations
-- Day to day: open **https://www.vihakids.com/admin.html** and sign in. You get counts
-  (total / new / last 7 days / enrolled), a searchable table, a one-click WhatsApp reply
-  button per parent, a status dropdown (New → Contacted → Demo scheduled → Enrolled → Closed),
-  a notes box that auto-saves, delete, and **Download CSV** (opens in Excel/Google Sheets).
-- The Firebase console (Firestore → `registrations`) shows the same raw data.
+- Day to day: open **https://www.vihakids.com/admin.html** and sign in. Two tabs:
+  - **Parent registrations** — counts (total / new / last 7 days / enrolled), a searchable table,
+    a one-click WhatsApp reply button per parent, a status dropdown
+    (New → Contacted → Demo scheduled → Enrolled → Closed), a notes box that auto-saves, delete,
+    and **Download CSV**.
+  - **Teacher applications** — same pattern (New → Contacted → Interviewed → Hired → Rejected)
+    for people who apply at `teach.html`.
+- The Firebase console (Firestore → `registrations` / `teacherApplications`) shows the same raw data.
 - The page is hidden from Google (`noindex` + robots.txt) and the database itself refuses
   reads from anyone not signed in as an admin, so the URL being public is fine.
-- To get notified on every registration: Firebase console → **Build → Extensions** →
-  install **Trigger Email from Firestore** (free tier) and point it at the `registrations`
-  collection, or ask Claude to add a small Cloud Function that sends you a WhatsApp/email.
+- To get notified on every registration or application: Firebase console → **Build → Extensions** →
+  install **Trigger Email from Firestore** (free tier) and point it at the `registrations` and/or
+  `teacherApplications` collection, or ask Claude to add a small Cloud Function that sends you a
+  WhatsApp/email.
 
 ## What each file does
 | File | Purpose |
 |------|---------|
-| `register.html` | The registration page (parent name, WhatsApp number, grade, subjects). Validates input, blocks bots with a hidden honeypot field, then writes to Firestore and shows a WhatsApp button pre-filled with the parent's details. Fires a GA `generate_lead` event. |
-| `admin.html` | Password-protected dashboard to view and manage registrations (Firebase Authentication email/password; only emails listed in `firestore.rules` can read data). |
+| `register.html` | The parent registration page (parent name, WhatsApp number, grade, subjects). Validates input, blocks bots with a hidden honeypot field, then writes to Firestore (`registrations`) and shows a WhatsApp button pre-filled with the parent's details. Fires a GA `generate_lead` event. |
+| `teach.html` | The teacher application page (name, WhatsApp number, email, subjects, grade ranges, experience, qualification). Same validation/honeypot/WhatsApp pattern, writes to Firestore (`teacherApplications`). |
+| `admin.html` | Password-protected dashboard, tabbed between parent registrations and teacher applications (Firebase Authentication email/password; only emails listed in `firestore.rules` can read data). |
 | `firebase-config.js` | Your Firebase project keys (safe to publish; access is controlled by the rules). |
-| `firestore.rules` | Database security rules — paste into Firebase console. |
-| `index.html` | Now links to Register (nav, mobile menu, hero and contact buttons). Kannada/Hindi script replaced with English text to keep the Quora ad compliant. |
-| `sitemap.xml` | Includes register.html. |
+| `firestore.rules` | Database security rules for both `registrations` and `teacherApplications` — paste into Firebase console. |
+| `index.html` | Links to Register (nav, mobile menu, hero and contact buttons) and to Teach with us (footer). Kannada/Hindi script replaced with English text to keep the Quora ad compliant. |
+| `sitemap.xml` | Includes register.html and teach.html. |
 
 Tip for ads: link Quora/Google ads to `https://www.vihakids.com/register.html?utm_source=quora`
 — the `utm_source` is stored in each registration's `source` field so you can see which ad
