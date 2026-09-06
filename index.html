@@ -801,6 +801,52 @@
   .why-item p{ margin:0; color: rgba(250,240,220,0.85); }
   .why-item strong{ color: var(--paper); }
 
+  /* testimonials */
+  #reviews .eyebrow{ background: var(--marigold-soft); color: #8A6416; }
+  #reviews .eyebrow::before{ background: var(--marigold); }
+  .rating-strip{
+    display:flex; align-items:center; gap:10px;
+    margin-top: 16px;
+    font-family:'Inter', sans-serif;
+  }
+  .rating-strip .stars{ color: var(--marigold); font-size: 1.15rem; letter-spacing: 2px; }
+  .rating-strip .rating-text{ font-weight:700; color: var(--ink); }
+  .rating-strip a{ color: var(--ink-soft); text-decoration: underline; font-size: 0.92rem; }
+  .review-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  @media (max-width: 900px){ .review-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px){ .review-grid{ grid-template-columns: 1fr; } }
+  .review-card{
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--card-accent, var(--oxide));
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+  }
+  .review-card .stars{ color: var(--marigold); font-size: 0.95rem; letter-spacing: 2px; }
+  .review-card p{ margin:0; font-size: 0.98rem; line-height:1.55; color: var(--ink); flex-grow:1; }
+  .review-card .reviewer{
+    display:flex; align-items:center; gap:10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+  }
+  .review-card .avatar{
+    width: 34px; height:34px; border-radius:50%;
+    background: var(--card-accent, var(--oxide));
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:0.9rem; flex-shrink:0;
+  }
+  .review-card .who{ font-size: 0.88rem; }
+  .review-card .who strong{ display:block; font-size:0.92rem; }
+  .review-card .who span{ color: var(--ink-soft); }
+
   /* contact / cta */
   .cta-band{
     background: linear-gradient(135deg, var(--marigold-soft), var(--lotus-soft) 55%, var(--peacock-soft));
@@ -852,6 +898,7 @@
       <li><a href="#subjects">Subjects</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#how">How it works</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -871,6 +918,7 @@
       <a href="#subjects">Subjects</a>
       <a href="#programs">Programs</a>
       <a href="#how">How it works</a>
+      <a href="#reviews">Reviews</a>
       <a href="blog.html">Blog</a>
       <a href="#contact">Contact</a>
       <a href="teach.html" class="mobile-teach">🎓 Are you a tutor? Teach with us</a>
@@ -1143,6 +1191,72 @@
         <div class="why-item">
           <span class="mark">✓</span>
           <p><strong>Clear communication</strong> with parents on progress, difficulties, and what to practise at home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What parents say</span>
+        <h2>Real feedback from real Vihakids families</h2>
+        <div class="rating-strip">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="rating-text">5.0</span>
+          <span>on Google</span>
+          <a href="https://www.google.com/maps/place/Vihakids/@12.8488091,77.6089813,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae6b50f8449457:0xcf4ac6428752843!8m2!3d12.8488091!4d77.6089813!16s%2Fg%2F11zwp42lc8" target="_blank" rel="noopener noreferrer">See all reviews on Google →</a>
+        </div>
+      </div>
+      <div class="review-grid">
+        <div class="review-card" style="--card-accent: var(--oxide);">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>"Best Kannada tuition for kids in Bangalore. Padma ma'am from Vihakids is a wonderful teacher — my 7 year old daughter used to cry for Kannada homework, now she reads and writes on her own."</p>
+          <div class="reviewer">
+            <span class="avatar">S</span>
+            <span class="who"><strong>Sridevi Ramesh</strong><span>Google review</span></span>
+          </div>
+        </div>
+        <div class="review-card" style="--card-accent: var(--peacock);">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>"She was pretty bad in Kannada and mam did an excellent work with her."</p>
+          <div class="reviewer">
+            <span class="avatar">P</span>
+            <span class="who"><strong>Parent</strong><span>Google review</span></span>
+          </div>
+        </div>
+        <div class="review-card" style="--card-accent: var(--lotus);">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>"Wonderful coaching, reasonable price. I'm happy — my child speaks Kannada so well now."</p>
+          <div class="reviewer">
+            <span class="avatar">P</span>
+            <span class="who"><strong>Parent</strong><span>Google review</span></span>
+          </div>
+        </div>
+        <div class="review-card" style="--card-accent: var(--banana);">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>"It's the best tuition centre, with dedicated teachers and excellent coaching."</p>
+          <div class="reviewer">
+            <span class="avatar">P</span>
+            <span class="who"><strong>Parent</strong><span>Google review</span></span>
+          </div>
+        </div>
+        <div class="review-card" style="--card-accent: var(--sky);">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>"Exceptional place for Kannada learning — I strongly recommend everyone who's interested."</p>
+          <div class="reviewer">
+            <span class="avatar">A</span>
+            <span class="who"><strong>Anjana Rajesh</strong><span>Google review</span></span>
+          </div>
+        </div>
+        <div class="review-card" style="--card-accent: var(--marigold);">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>"Super coaching centre for Kannada."</p>
+          <div class="reviewer">
+            <span class="avatar">S</span>
+            <span class="who"><strong>Saravana</strong><span>Google review</span></span>
+          </div>
         </div>
       </div>
     </div>
