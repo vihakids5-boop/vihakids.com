@@ -301,7 +301,7 @@
     flex-shrink:0;
   }
   .nav-toggle svg{ width: 20px; height: 20px; }
-  @media (max-width: 780px){
+  @media (max-width: 1180px){
     .navlinks-mobile-hide{ display:none; }
     .nav-toggle{ display:inline-flex; }
     nav.wrap{ flex-wrap: wrap; gap: 10px 14px; }
@@ -334,7 +334,7 @@
     }
     .mobile-menu a.mobile-teach:hover{ background: var(--sky); color: #fff; }
   }
-  @media (min-width: 781px){
+  @media (min-width: 1181px){
     .mobile-menu{ display:none; }
   }
 
@@ -655,7 +655,7 @@
   .hf-success .btn{ width: 100%; }
 
   /* ---------- SECTIONS ---------- */
-  section{ padding: 72px 0; }
+  section{ padding: 72px 0; scroll-margin-top: 96px; }
   .section-head{ max-width: 60ch; margin-bottom: 40px; }
   .section-head .eyebrow{ margin-bottom: 14px; }
   .section-head h2{
@@ -1326,7 +1326,7 @@
 
     // Close if the viewport is resized back to desktop width
     window.addEventListener('resize', function(){
-      if (window.innerWidth > 780) closeMenu();
+      if (window.innerWidth > 1180) closeMenu();
     });
   })();
 </script>
