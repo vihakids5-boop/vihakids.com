@@ -51,10 +51,10 @@ header{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250,240,220,0.9);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+  background: linear-gradient(135deg, var(--oxide) 0%, var(--oxide-dark) 100%);
+  box-shadow: 0 2px 18px rgba(52,32,26,0.28);
 }
+header :focus-visible{ outline-color: var(--marigold); }
 nav.wrap{
   display:flex;
   align-items:center;
@@ -72,7 +72,10 @@ nav.wrap{
 }
 .brand-word{ font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
 .brand .v-accent{ color: var(--oxide); }
+header .brand-word{ color: var(--paper); }
+header .brand .v-accent{ color: var(--marigold); }
 .brand-tagline{ font-family:'Inter', sans-serif; font-weight:600; font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+header .brand-tagline{ color: rgba(250,240,220,0.75); }
 .navlinks{
   display:flex;
   gap: 28px;
@@ -83,12 +86,12 @@ nav.wrap{
   text-decoration:none;
   font-weight: 500;
   font-size: 0.95rem;
-  color: var(--ink-soft);
+  color: rgba(250,240,220,0.9);
   padding: 4px 2px;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
-.navlinks a:hover{ color: var(--oxide); border-color: var(--oxide); }
+.navlinks a:hover{ color: var(--marigold); border-color: var(--marigold); }
 .nav-cta{
   display:inline-flex;
   align-items:center;
@@ -101,17 +104,24 @@ nav.wrap{
   font-size: 0.9rem;
   text-decoration:none;
   white-space:nowrap;
-  transition: transform 0.15s ease, background 0.15s ease;
+  box-shadow: 0 3px 0 #3d6442;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 .nav-cta:hover{ background:#3d6442; transform: translateY(-1px); }
+.nav-cta:active{ transform: translateY(2px); box-shadow: 0 1px 0 #3d6442; }
 .nav-ctas{ display:flex; align-items:center; gap:10px; }
 .teach-chip-nav{
   margin-top: 0;
   padding: 8px 16px 8px 10px;
   font-size: 0.85rem;
   white-space: nowrap;
+  background: var(--marigold);
+  color: var(--oxide-dark);
+  box-shadow: 0 3px 0 #b5822c;
 }
-.teach-chip-nav .teach-chip-icon{ width: 22px; height: 22px; font-size: 0.85rem; }
+.teach-chip-nav .teach-chip-icon{ width: 22px; height: 22px; font-size: 0.85rem; background: rgba(255,255,255,0.4); }
+.teach-chip-nav:hover{ background: #efbb5c; color: var(--oxide-dark); transform: translateY(-1px); box-shadow: 0 4px 0 #b5822c; }
+.teach-chip-nav:hover .teach-chip-icon{ background: rgba(255,255,255,0.55); }
 @media (max-width: 420px){
   .teach-chip-nav{ padding: 7px 12px 7px 8px; font-size: 0.78rem; }
   .teach-chip-nav .teach-chip-icon{ width: 18px; height: 18px; font-size: 0.75rem; }
@@ -123,12 +133,14 @@ nav.wrap{
   justify-content:center;
   width: 40px; height: 40px;
   border-radius: 10px;
-  border: 1.5px solid var(--line);
-  background: var(--paper-raised);
-  color: var(--ink);
+  border: 1.5px solid rgba(250,240,220,0.35);
+  background: rgba(255,255,255,0.14);
+  color: var(--paper);
   cursor:pointer;
   flex-shrink:0;
+  transition: background 0.15s ease;
 }
+.nav-toggle:hover{ background: rgba(255,255,255,0.24); }
 .nav-toggle svg{ width: 20px; height: 20px; }
 @media (max-width: 1180px){
   .navlinks-mobile-hide{ display:none; }
@@ -146,22 +158,22 @@ nav.wrap{
   .mobile-menu.open{ display:flex; }
   .mobile-menu a{
     text-decoration:none;
-    color: var(--ink-soft);
+    color: rgba(250,240,220,0.9);
     font-weight: 500;
     padding: 10px 4px;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(250,240,220,0.2);
   }
-  .mobile-menu a:hover{ color: var(--oxide); }
+  .mobile-menu a:hover{ color: var(--marigold); }
   .mobile-menu a.mobile-teach{
-    color: var(--sky);
-    background: var(--sky-soft);
+    color: var(--oxide-dark);
+    background: var(--marigold);
     font-weight: 700;
     text-align: center;
     border-radius: 10px;
     border-bottom: none;
     margin-top: 6px;
   }
-  .mobile-menu a.mobile-teach:hover{ background: var(--sky); color: #fff; }
+  .mobile-menu a.mobile-teach:hover{ background: #efbb5c; color: var(--oxide-dark); }
 }
 @media (min-width: 1181px){
   .mobile-menu{ display:none; }
