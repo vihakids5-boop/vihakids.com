@@ -69,6 +69,8 @@ nav.wrap{
   gap: 2px;
   text-decoration:none;
   line-height:1;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 .brand-word{ font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
 .brand .v-accent{ color: var(--oxide); }
@@ -82,6 +84,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   list-style:none;
   margin:0; padding:0;
 }
+.navlinks li{ flex-shrink: 0; }
 .navlinks a{
   text-decoration:none;
   font-weight: 500;
@@ -89,6 +92,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   color: rgba(250,240,220,0.9);
   padding: 4px 2px;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 .navlinks a:hover{ color: var(--marigold); border-color: var(--marigold); }
@@ -109,7 +113,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
 }
 .nav-cta:hover{ background:#3d6442; transform: translateY(-1px); }
 .nav-cta:active{ transform: translateY(2px); box-shadow: 0 1px 0 #3d6442; }
-.nav-ctas{ display:flex; align-items:center; gap:10px; }
+.nav-ctas{ display:flex; align-items:center; gap:10px; flex-shrink: 0; }
 .teach-chip-nav{
   margin-top: 0;
   padding: 8px 16px 8px 10px;
@@ -142,7 +146,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
 }
 .nav-toggle:hover{ background: rgba(255,255,255,0.24); }
 .nav-toggle svg{ width: 20px; height: 20px; }
-@media (max-width: 1180px){
+@media (max-width: 1220px){
   .navlinks-mobile-hide{ display:none; }
   .nav-toggle{ display:inline-flex; }
   nav.wrap{ flex-wrap: wrap; gap: 10px 14px; }
@@ -175,7 +179,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   }
   .mobile-menu a.mobile-teach:hover{ background: #efbb5c; color: var(--oxide-dark); }
 }
-@media (min-width: 1181px){
+@media (min-width: 1221px){
   .mobile-menu{ display:none; }
 }
 
@@ -326,6 +330,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   font-weight: 600;
   font-size: 0.92rem;
   text-decoration: none;
+  white-space: nowrap;
   border: 1.5px solid transparent;
   transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }

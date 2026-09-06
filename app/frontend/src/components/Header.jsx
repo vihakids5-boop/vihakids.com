@@ -27,7 +27,7 @@ export default function Header() {
 
   useEffect(() => {
     function onResize() {
-      if (window.innerWidth > 1180) setOpen(false);
+      if (window.innerWidth > 1220) setOpen(false);
     }
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
