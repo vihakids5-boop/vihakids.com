@@ -1,1 +1,7 @@
 social-media/
+
+# Decoupled React + Node app (app/)
+app/**/node_modules
+app/**/dist
+app/**/.env
+app/backend/service-account.json
