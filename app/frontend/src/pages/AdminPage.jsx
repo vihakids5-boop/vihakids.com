@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth, firebaseConfigured } from '../lib/firebaseClient';
 import { api } from '../lib/api';
@@ -101,7 +102,12 @@ export default function AdminPage() {
   if (!user) {
     return (
       <main className="admin-shell">
-        <div className="wrap"><AdminLoginForm /></div>
+        <div className="wrap">
+          <div className="admin-topbar">
+            <Link to="/" className="admin-back-link">&larr; Back to home</Link>
+          </div>
+          <AdminLoginForm />
+        </div>
       </main>
     );
   }
@@ -110,6 +116,7 @@ export default function AdminPage() {
     <main className="admin-shell">
       <div className="wrap">
         <div className="admin-topbar">
+          <Link to="/" className="admin-back-link">&larr; Back to home</Link>
           <strong>Vihakids Admin</strong>
           <button type="button" className="btn btn-ghost" onClick={() => signOut(auth)}>Sign out</button>
         </div>
