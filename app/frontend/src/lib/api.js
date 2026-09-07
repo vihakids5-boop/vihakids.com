@@ -46,4 +46,6 @@ export const api = {
     request(`/api/teacher-applications/${id}`, { method: 'PATCH', body: patch, admin: true }),
   deleteTeacherApplication: (id) =>
     request(`/api/teacher-applications/${id}`, { method: 'DELETE', admin: true }),
+
+  sendChatMessage: (messages) => request('/api/chat', { method: 'POST', body: { messages } }),
 };
