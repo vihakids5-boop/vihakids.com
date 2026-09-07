@@ -5,7 +5,7 @@ import { useDocumentHead } from '../lib/useDocumentHead';
 export default function PrivacyPage() {
   useDocumentHead({
     title: 'Privacy Policy | Vihakids',
-    description: 'Privacy Policy for Vihakids online Kannada, Hindi, Math and Science tuitions.',
+    description: 'Privacy Policy for Vihakids online English, Hindi, Math, Science and Kannada tuitions, serving students across India.',
   });
 
   return (
@@ -14,13 +14,13 @@ export default function PrivacyPage() {
         <h1>Privacy Policy</h1>
         <p className="updated">Last updated: 11 August 2026</p>
 
-        <p>This Privacy Policy explains how Vihakids ("Vihakids", "we", "us", "our") collects, uses and protects information when you interact with our website or enroll in our online Kannada, Hindi or Math tuition classes.</p>
+        <p>This Privacy Policy explains how Vihakids ("Vihakids", "we", "us", "our") collects, uses and protects information when you interact with our website or enroll in our online English, Hindi, Math, Science or Kannada tuition classes.</p>
 
         <h2>1. Information We Collect</h2>
         <p>Our website does not have sign-up forms or accounts. Information is collected directly when you contact us, typically over WhatsApp or phone, and may include:</p>
         <ul>
           <li>Parent/guardian name and contact number</li>
-          <li>Student's name, grade/standard, and school board (CBSE, ICSE, or State Board)</li>
+          <li>Student's name, grade/standard, and school board (<strong>CBSE</strong>, <strong>ICSE</strong>, or State Board)</li>
           <li>Any other details you choose to share to help us plan classes</li>
         </ul>
 

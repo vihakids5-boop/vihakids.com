@@ -369,8 +369,8 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   border-radius: 999px;
   border: 1.5px solid transparent;
 }
-.board-badge.b-cbse{ background: var(--sky-soft); color: var(--sky); }
-.board-badge.b-icse{ background: var(--lotus-soft); color: var(--lotus); }
+.board-badge.b-cbse{ background: var(--sky-soft); color: var(--sky); border-color: var(--sky); }
+.board-badge.b-icse{ background: var(--lotus-soft); color: var(--lotus); border-color: var(--lotus); }
 .board-badge.b-state{ background: var(--banana-soft); color: var(--banana); }
 
 /* ---------- REGISTRATION FORM (shared by hero + standalone page) ---------- */

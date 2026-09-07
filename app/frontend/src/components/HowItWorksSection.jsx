@@ -1,7 +1,7 @@
 const FEATURES = [
   { bg: 'oxide-soft', fg: 'oxide-dark', icon: '1:1', title: 'Live, one-on-one or small batch', text: 'Real-time classes over video, not recorded lessons — so your child can ask questions as they come up.' },
   { bg: 'sky-soft', fg: 'sky', icon: '⏰', title: 'Flexible scheduling', text: 'Classes are timed around school hours and homework, not the other way around.' },
-  { bg: 'peacock-soft', fg: 'peacock', icon: 'K', title: 'CBSE, ICSE & State Board', text: "Lessons follow your child's own textbook — CBSE, ICSE, or Karnataka State Board — so class work and tuition stay in sync." },
+  { bg: 'peacock-soft', fg: 'peacock', icon: 'K', title: 'CBSE, ICSE & State Board', text: "Lessons follow your child's own textbook — CBSE, ICSE, or State Board, anywhere in India — so class work and tuition stay in sync." },
   { bg: 'banana-soft', fg: 'banana', icon: '✓', title: 'Parent updates', text: "Simple, regular updates on what was covered and how your child is progressing." },
 ];
 

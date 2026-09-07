@@ -1,4 +1,4 @@
-export const SUBJECTS = ['Kannada', 'Hindi', 'Math', 'Science'];
+export const SUBJECTS = ['English', 'Hindi', 'Math', 'Science', 'Kannada'];
 
 export const GRADE_OPTIONS = Array.from({ length: 10 }, (_, i) => i + 1);
 

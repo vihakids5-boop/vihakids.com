@@ -1,12 +1,12 @@
 import { useDocumentHead } from '../lib/useDocumentHead';
 
 const WHATSAPP_URL =
-  'https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Kannada%2C%20Hindi%2C%20Math%20and%20Science%20tuitions';
+  'https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20English%2C%20Hindi%2C%20Math%2C%20Science%20and%20Kannada%20tuitions';
 
 export default function AboutPage() {
   useDocumentHead({
-    title: 'About Us | Vihakids — Online Kannada, Hindi, Math & Science Tuitions',
-    description: 'Vihakids offers live online tuitions in Kannada, Hindi, Mathematics and Science for 1st to 10th Std, CBSE, ICSE and State Board. Learn about our mission and teaching approach.',
+    title: 'About Us | Vihakids — Online English, Hindi, Math, Science & Kannada Tuitions',
+    description: 'Vihakids offers live online tuitions in English, Hindi, Mathematics, Science and Kannada for 1st to 10th Std, CBSE, ICSE and State Board — for students anywhere in India. Learn about our mission and teaching approach.',
   });
 
   return (
@@ -14,31 +14,31 @@ export default function AboutPage() {
       <div className="wrap">
         <div className="page-head">
           <span className="eyebrow">About Vihakids</span>
-          <h1>Helping kids feel confident in Kannada, Hindi, Math and Science</h1>
+          <h1>Helping kids across India feel confident in English, Hindi, Math, Science and Kannada</h1>
           <p className="lead">Vihakids started with a simple observation: some school subjects need more one-on-one attention than a crowded classroom can give.</p>
         </div>
 
         <div className="page-body prose">
           <h2>Why We Exist</h2>
-          <p>Many families in Bengaluru speak Hindi, Tamil, Telugu, Malayalam or English at home, while their children are expected to read, write and score well in Kannada and Hindi at school — and Math concepts can move faster in class than a child is ready for. That gap is where Vihakids comes in — patient, one-on-one support in subjects that can otherwise feel intimidating.</p>
-          <p>We offer structured, grade-wise online classes in Kannada, Hindi, Mathematics and Science for students from 1st to 10th Standard, across CBSE, ICSE and Karnataka State Board syllabus.</p>
+          <p>Many families across India speak a regional language at home, while their children are expected to read, write and score well in English or a second language at school — and Math concepts can move faster in class than a child is ready for. That gap is where Vihakids comes in — patient, one-on-one online support in subjects that can otherwise feel intimidating, wherever in India a family is based.</p>
+          <p>We offer structured, grade-wise online classes in English, Hindi, Mathematics, Science and Kannada for students from 1st to 10th Standard, across <strong>CBSE</strong>, <strong>ICSE</strong> and State Board syllabus.</p>
 
           <h2>Our Mission</h2>
-          <p><em>Inspire young minds</em> — our approach is to build genuine comfort and confidence in every subject we teach, not just exam scores. We want children to feel like Kannada, Hindi, Math and Science are things they can handle with ease, not subjects to be afraid of.</p>
+          <p><em>Inspire young minds</em> — our approach is to build genuine comfort and confidence in every subject we teach, not just exam scores. We want children to feel like English, Hindi, Math, Science and Kannada are things they can handle with ease, not subjects to be afraid of.</p>
 
           <h2>How We Teach</h2>
           <p>Every child starts at a different point, so our programs are grouped by grade band rather than one-size-fits-all:</p>
           <ul>
-            <li><strong>Classes 1–4 (Foundation):</strong> Kannada and Hindi alphabets, simple words, confident reading aloud, basic arithmetic, and simple Science through everyday surroundings.</li>
+            <li><strong>Classes 1–4 (Foundation):</strong> English, Hindi and Kannada alphabets, simple words, confident reading aloud, basic arithmetic, and simple Science through everyday surroundings.</li>
             <li><strong>Classes 5–7 (Building blocks):</strong> grammar, comprehension, regular writing practice, fractions, geometry and problem-solving in Math, and Science concepts explained with everyday examples.</li>
-            <li><strong>Classes 8–10 (Board ready):</strong> textbook-aligned lessons, previous-year papers, Physics, Chemistry and Biology fundamentals, and focused exam revision across all four subjects.</li>
+            <li><strong>Classes 8–10 (Board ready):</strong> textbook-aligned lessons, previous-year papers, Physics, Chemistry and Biology fundamentals, and focused exam revision across all five subjects.</li>
           </ul>
 
           <h2>Why Parents Choose Us</h2>
           <div className="content-why-list">
             <div className="content-why-item">
               <span className="mark">✓</span>
-              <p><strong>Experienced tutors</strong> — native-speaking Kannada and Hindi teachers, and skilled Math and Science educators.</p>
+              <p><strong>Experienced tutors</strong> — skilled English and Hindi teachers, native-speaking Kannada teachers, and skilled Math and Science educators.</p>
             </div>
             <div className="content-why-item">
               <span className="mark">✓</span>

@@ -1,5 +1,5 @@
 const ITEMS = [
-  { strong: 'Experienced tutors', text: '— native-speaking Kannada and Hindi teachers, and skilled Math and Science educators.' },
+  { strong: 'Experienced tutors', text: '— skilled English and Hindi teachers, native-speaking Kannada teachers, and skilled Math and Science educators.' },
   { strong: 'Personal attention', text: "— small batches, not a crowded classroom your child gets lost in." },
   { strong: 'Confidence first', text: '— reading and speaking practice, not just memorising for the exam.' },
   { strong: 'Clear communication', text: 'with parents on progress, difficulties, and what to practise at home.' },

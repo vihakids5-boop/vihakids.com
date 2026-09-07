@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const SUBJECTS = ['Kannada', 'Hindi', 'Math', 'Science'];
+export const SUBJECTS = ['English', 'Hindi', 'Math', 'Science', 'Kannada'];
 export const GRADE_BANDS = ['1-5', '6-8', '9-10'];
 export const EXPERIENCE_BANDS = ['0-1', '1-3', '3-5', '5+'];
 
@@ -31,4 +31,4 @@ export const optionalTruncated = (max) =>
 export const subjectsField = z
   .array(z.enum(SUBJECTS))
   .min(1, 'Select at least one subject')
-  .max(4);
+  .max(SUBJECTS.length);

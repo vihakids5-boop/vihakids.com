@@ -4,7 +4,7 @@ import { useDocumentHead } from '../lib/useDocumentHead';
 export default function TermsPage() {
   useDocumentHead({
     title: 'Terms and Conditions | Vihakids',
-    description: 'Terms and Conditions for Vihakids online Kannada, Hindi, Math and Science tuitions.',
+    description: 'Terms and Conditions for Vihakids online English, Hindi, Math, Science and Kannada tuitions, serving students across India.',
   });
 
   return (
@@ -13,10 +13,10 @@ export default function TermsPage() {
         <h1>Terms and Conditions</h1>
         <p className="updated">Last updated: 10 August 2026</p>
 
-        <p>These Terms and Conditions ("Terms") govern the use of online tuition services in Kannada, Hindi, Mathematics and Science offered by Vihakids ("Vihakids", "we", "us", "our") to students and their parents or guardians ("you", "your"). By enrolling in or using our classes, you agree to these Terms.</p>
+        <p>These Terms and Conditions ("Terms") govern the use of online tuition services in English, Hindi, Mathematics, Science and Kannada offered by Vihakids ("Vihakids", "we", "us", "our"), a Bengaluru-headquartered company serving students across India, to students and their parents or guardians ("you", "your"). By enrolling in or using our classes, you agree to these Terms.</p>
 
         <h2>1. About Vihakids</h2>
-        <p>Vihakids provides live, online tuitions in Kannada, Hindi, Mathematics and Science for students from 1st to 10th Standard, covering CBSE, ICSE and Karnataka State Board syllabus. Classes are conducted one-on-one or in small batches over video call.</p>
+        <p>Vihakids provides live, online tuitions in English, Hindi, Mathematics, Science and Kannada for students from 1st to 10th Standard, anywhere in India, covering <strong>CBSE</strong>, <strong>ICSE</strong> and State Board syllabus. Classes are conducted one-on-one or in small batches over video call.</p>
 
         <h2>2. Enrollment</h2>
         <p>Enrollment is confirmed once a parent or guardian shares the student's grade, board and school details with us and a class schedule is agreed upon, typically over WhatsApp or phone call.</p>

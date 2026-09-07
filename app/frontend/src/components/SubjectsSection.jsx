@@ -1,14 +1,14 @@
 const CARDS = [
   {
-    color: 'oxide', grade: 'Aa', title: 'Kannada',
+    color: 'peacock', grade: 'Aa', title: 'English',
     items: [
-      'Varnamale — the alphabet, read and written properly',
-      'Grammar (vyakarana), comprehension and composition',
-      'Poetry, prose and exam-focused writing practice',
+      'Phonics, alphabet and confident reading aloud',
+      'Grammar, comprehension and vocabulary building',
+      'Essay, letter-writing and spoken-English practice',
     ],
   },
   {
-    color: 'peacock', grade: 'Aa', title: 'Hindi',
+    color: 'lotus', grade: 'Aa', title: 'Hindi',
     items: [
       'Hindi alphabet, reading and writing basics',
       'Grammar, comprehension and vocabulary building',
@@ -31,6 +31,14 @@ const CARDS = [
       'Diagrams, definitions and exam-focused practice for board years',
     ],
   },
+  {
+    color: 'oxide', grade: 'Aa', title: 'Kannada',
+    items: [
+      'Varnamale — the alphabet, read and written properly',
+      'Grammar (vyakarana), comprehension and composition',
+      'Poetry, prose and exam-focused writing practice',
+    ],
+  },
 ];
 
 export default function SubjectsSection() {
@@ -39,8 +47,8 @@ export default function SubjectsSection() {
       <div className="wrap">
         <div className="section-head">
           <span className="eyebrow">What we teach</span>
-          <h2>Four subjects, one patient approach</h2>
-          <p>Every subject gets the same personal attention — real-time classes, textbook-aligned lessons, and steady progress your child can feel.</p>
+          <h2>Five subjects, one patient approach</h2>
+          <p>Every subject gets the same personal attention — real-time classes, textbook-aligned lessons, and steady progress your child can feel, wherever in India you're learning from.</p>
         </div>
         <div className="programs">
           {CARDS.map((c) => (

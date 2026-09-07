@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const WHATSAPP_URL =
-  'https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Kannada%2C%20Hindi%2C%20Math%20and%20Science%20tuitions';
+  'https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20English%2C%20Hindi%2C%20Math%2C%20Science%20and%20Kannada%20tuitions';
 
 const LINKS = [
   { href: '/about.html', label: 'About Us' },

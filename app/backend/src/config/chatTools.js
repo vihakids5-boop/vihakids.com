@@ -23,7 +23,7 @@ export const CHAT_TOOLS = [
         },
         subjects: {
           type: 'array',
-          items: { type: 'string', enum: ['Kannada', 'Hindi', 'Math', 'Science'] },
+          items: { type: 'string', enum: ['English', 'Hindi', 'Math', 'Science', 'Kannada'] },
           description: 'One or more subjects the child needs help with',
         },
       },

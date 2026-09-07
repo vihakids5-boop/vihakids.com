@@ -3,7 +3,7 @@ import { api } from '../lib/api';
 import { trackEvent } from '../lib/gtag';
 
 const WELCOME_MESSAGE =
-  "Hi! I'm Viha, the Vihakids assistant. Ask me about our Kannada, Hindi, Math or Science classes, grades, boards, or the free demo class.";
+  "Hi! I'm Viha, the Vihakids assistant. Ask me about our English, Hindi, Math, Science or Kannada classes, grades, boards, or the free demo class.";
 
 function ChatIcon() {
   return (

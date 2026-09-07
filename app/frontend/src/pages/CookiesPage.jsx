@@ -4,7 +4,7 @@ import { useDocumentHead } from '../lib/useDocumentHead';
 export default function CookiesPage() {
   useDocumentHead({
     title: 'Cookies Policy | Vihakids',
-    description: 'Cookies Policy for Vihakids online Kannada, Hindi, Math and Science tuitions.',
+    description: 'Cookies Policy for Vihakids online English, Hindi, Math, Science and Kannada tuitions, serving students across India.',
   });
 
   return (
