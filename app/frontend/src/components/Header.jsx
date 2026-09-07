@@ -5,20 +5,17 @@ const WHATSAPP_URL =
   'https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Kannada%2C%20Hindi%2C%20Math%20and%20Science%20tuitions';
 
 const LINKS = [
-  { href: 'https://www.vihakids.com/about.html', label: 'About Us', external: true },
+  { href: '/about.html', label: 'About Us' },
   { href: '/#reality', label: 'Why Us' },
   { href: '/#subjects', label: 'Subjects' },
   { href: '/#programs', label: 'Programs' },
   { href: '/#how', label: 'How it works' },
   { href: '/#reviews', label: 'Reviews' },
-  { href: 'https://www.vihakids.com/blog.html', label: 'Blog', external: true },
+  { href: '/blog.html', label: 'Blog' },
   { href: '/#contact', label: 'Contact' },
 ];
 
-function NavLink({ href, label, external, onClick }) {
-  if (external) {
-    return <a href={href} onClick={onClick}>{label}</a>;
-  }
+function NavLink({ href, label, onClick }) {
   return <Link to={href} onClick={onClick}>{label}</Link>;
 }
 

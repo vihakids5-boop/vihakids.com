@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { api } from '../lib/api';
 import { trackEvent } from '../lib/gtag';
 import { GRADE_OPTIONS, SUBJECTS, ordinal } from '../constants/options';
@@ -179,7 +180,7 @@ export default function RegisterForm({ variant = 'page' }) {
         <button type="submit" className="btn btn-primary hf-submit" disabled={submitting}>
           {submitting ? 'Registering…' : 'Register for free demo'}
         </button>
-        <p className="hf-fineprint">By registering you agree to our <a href="https://www.vihakids.com/privacy.html">Privacy Policy</a>.</p>
+        <p className="hf-fineprint">By registering you agree to our <Link to="/privacy.html">Privacy Policy</Link>.</p>
         {statusMsg && <div className="hf-status show" role="alert">{statusMsg}</div>}
       </form>
     </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { api } from '../lib/api';
 import { trackEvent } from '../lib/gtag';
 import { SUBJECTS, GRADE_BAND_OPTIONS, GRADE_LABELS, EXPERIENCE_OPTIONS, EXPERIENCE_LABELS } from '../constants/options';
@@ -208,7 +209,7 @@ export default function TeachForm() {
         <button type="submit" className="btn btn-primary hf-submit" disabled={submitting}>
           {submitting ? 'Submitting…' : 'Submit application'}
         </button>
-        <p className="hf-fineprint">By applying you agree to our <a href="https://www.vihakids.com/privacy.html">Privacy Policy</a>.</p>
+        <p className="hf-fineprint">By applying you agree to our <Link to="/privacy.html">Privacy Policy</Link>.</p>
         {statusMsg && <div className="hf-status show" role="alert">{statusMsg}</div>}
       </form>
     </div>

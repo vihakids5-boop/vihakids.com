@@ -5,6 +5,15 @@ import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import TeachPage from './pages/TeachPage';
 import AdminPage from './pages/AdminPage';
+import AboutPage from './pages/AboutPage';
+import BlogIndexPage from './pages/BlogIndexPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
+import CookiesPage from './pages/CookiesPage';
+import BlogKannadaReadingTipsPage from './pages/blog/BlogKannadaReadingTipsPage';
+import BlogCbseIcseStateBoardPage from './pages/blog/BlogCbseIcseStateBoardPage';
+import BlogChoosingMathTutorPage from './pages/blog/BlogChoosingMathTutorPage';
+import BlogScienceLearningTipsPage from './pages/blog/BlogScienceLearningTipsPage';
 import { useScrollToHash } from './lib/useScrollToHash';
 
 function SiteLayout() {
@@ -36,7 +45,16 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/teach" element={<TeachPage />} />
+        <Route path="/about.html" element={<AboutPage />} />
+        <Route path="/blog.html" element={<BlogIndexPage />} />
       </Route>
+      <Route path="/terms.html" element={<TermsPage />} />
+      <Route path="/privacy.html" element={<PrivacyPage />} />
+      <Route path="/cookies.html" element={<CookiesPage />} />
+      <Route path="/blog-kannada-reading-tips.html" element={<BlogKannadaReadingTipsPage />} />
+      <Route path="/blog-cbse-icse-state-board-kannada-hindi.html" element={<BlogCbseIcseStateBoardPage />} />
+      <Route path="/blog-choosing-online-math-tutor.html" element={<BlogChoosingMathTutorPage />} />
+      <Route path="/blog-science-learning-tips.html" element={<BlogScienceLearningTipsPage />} />
       <Route path="/admin" element={<AdminPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
