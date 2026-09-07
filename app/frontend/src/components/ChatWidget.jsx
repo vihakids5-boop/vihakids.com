@@ -5,6 +5,18 @@ import { trackEvent } from '../lib/gtag';
 const WELCOME_MESSAGE =
   "Hi! I'm Viha, the Vihakids assistant. Ask me about our Kannada, Hindi, Math or Science classes, grades, boards, or the free demo class.";
 
+// The model replies in plain markdown (mainly **bold**); render just that
+// one construct rather than pulling in a full markdown parser for a widget
+// this small.
+function renderFormatted(text) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) =>
+    part.startsWith('**') && part.endsWith('**')
+      ? <strong key={i}>{part.slice(2, -2)}</strong>
+      : part
+  );
+}
+
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([{ role: 'assistant', content: WELCOME_MESSAGE }]);
@@ -62,7 +74,7 @@ export default function ChatWidget() {
 
           <div className="chat-messages" ref={listRef}>
             {messages.map((m, i) => (
-              <div key={i} className={`chat-bubble chat-bubble-${m.role}`}>{m.content}</div>
+              <div key={i} className={`chat-bubble chat-bubble-${m.role}`}>{renderFormatted(m.content)}</div>
             ))}
             {sending && <div className="chat-bubble chat-bubble-assistant chat-bubble-typing">Typing&hellip;</div>}
           </div>
