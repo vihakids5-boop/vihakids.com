@@ -49,8 +49,9 @@ export default function ChatWidget() {
     try {
       // Only send real conversation turns (skip the client-only welcome message).
       const apiMessages = nextMessages.slice(1).slice(-19);
-      const { reply } = await api.sendChatMessage(apiMessages);
+      const { reply, registrationCreated } = await api.sendChatMessage(apiMessages);
       setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
+      if (registrationCreated) trackEvent('generate_lead', { method: 'chatbot' });
     } catch (err) {
       setError(err.message || "Couldn't send that. Please try again.");
     } finally {
