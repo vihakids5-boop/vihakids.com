@@ -5,6 +5,29 @@ import { trackEvent } from '../lib/gtag';
 const WELCOME_MESSAGE =
   "Hi! I'm Viha, the Vihakids assistant. Ask me about our Kannada, Hindi, Math or Science classes, grades, boards, or the free demo class.";
 
+function ChatIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12 3.5c-5.25 0-9.5 3.58-9.5 8s4.25 8 9.5 8c.72 0 1.42-.07 2.09-.2.98.82 2.4 1.4 4.16 1.6-.62-.82-1-1.75-1.13-2.68C18.66 16.63 19.5 15.9 20.5 15c.65-1.1 1-2.3 1-3.5 0-4.42-4.25-8-9.5-8Z"
+        fill="currentColor"
+      />
+      <circle cx="8.25" cy="11.5" r="1.15" fill="var(--oxide)" />
+      <circle cx="12" cy="11.5" r="1.15" fill="var(--oxide)" />
+      <circle cx="15.75" cy="11.5" r="1.15" fill="var(--oxide)" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round">
+      <line x1="6" y1="6" x2="18" y2="18" />
+      <line x1="18" y1="6" x2="6" y2="18" />
+    </svg>
+  );
+}
+
 // The model replies in plain markdown (mainly **bold**); render just that
 // one construct rather than pulling in a full markdown parser for a widget
 // this small.
@@ -101,11 +124,12 @@ export default function ChatWidget() {
 
       <button
         type="button"
-        className="chat-fab"
+        className={`chat-fab${open ? ' chat-fab-open' : ''}`}
         onClick={() => (open ? setOpen(false) : handleOpen())}
         aria-label={open ? 'Close chat' : 'Chat with Vihakids'}
       >
-        {open ? '✕' : '💬'}
+        {open ? <CloseIcon /> : <ChatIcon />}
+        {!open && <span className="chat-fab-badge" aria-hidden="true">🎓</span>}
       </button>
     </div>
   );

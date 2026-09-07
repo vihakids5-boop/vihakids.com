@@ -873,18 +873,50 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
   gap: 14px;
 }
 .chat-fab{
-  width: 58px; height: 58px;
+  position: relative;
+  width: 60px; height: 60px;
   border-radius: 50%;
   border: none;
-  background: var(--oxide);
+  background: linear-gradient(135deg, var(--sky) 0%, var(--oxide) 55%, var(--oxide-dark) 100%);
   color: #fff;
-  font-size: 1.5rem;
   display: flex; align-items:center; justify-content:center;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(22,79,115,0.35);
-  transition: transform 0.15s ease, background 0.15s ease;
+  box-shadow: 0 10px 24px rgba(22,79,115,0.4), 0 0 0 4px rgba(255,255,255,0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.chat-fab:hover{ transform: translateY(-2px); background: var(--oxide-dark); }
+.chat-fab::before{
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--oxide);
+  opacity: 0;
+  animation: chat-fab-ping 2.8s ease-out 1s infinite;
+}
+.chat-fab-open::before{ display: none; }
+.chat-fab:hover{ transform: translateY(-3px) scale(1.04); box-shadow: 0 14px 30px rgba(22,79,115,0.45), 0 0 0 4px rgba(255,255,255,0.6); }
+.chat-fab:active{ transform: translateY(0) scale(0.98); }
+.chat-fab-badge{
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--marigold);
+  border: 2px solid var(--paper);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 0.75rem;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(52,32,26,0.25);
+}
+@keyframes chat-fab-ping{
+  0%{ opacity: 0.55; transform: scale(1); }
+  70%{ opacity: 0; transform: scale(1.35); }
+  100%{ opacity: 0; transform: scale(1.35); }
+}
+@media (prefers-reduced-motion: reduce){
+  .chat-fab::before{ animation: none; display: none; }
+}
 .chat-panel{
   width: min(360px, calc(100vw - 40px));
   max-height: min(520px, calc(100vh - 120px));
@@ -977,5 +1009,7 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 .chat-send:disabled{ opacity: 0.5; cursor: default; }
 @media (max-width: 480px){
   .chat-widget{ right: 14px; bottom: 14px; }
-  .chat-fab{ width: 52px; height: 52px; font-size: 1.3rem; }
+  .chat-fab{ width: 54px; height: 54px; }
+  .chat-fab svg{ width: 23px; height: 23px; }
+  .chat-fab-badge{ width: 20px; height: 20px; font-size: 0.65rem; }
 }
