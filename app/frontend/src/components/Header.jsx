@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const WHATSAPP_URL =
@@ -15,12 +15,14 @@ const LINKS = [
   { href: '/#contact', label: 'Contact' },
 ];
 
-function NavLink({ href, label, onClick }) {
-  return <Link to={href} onClick={onClick}>{label}</Link>;
+function NavLink({ href, label, onClick, className }) {
+  return <Link to={href} className={className} onClick={onClick}>{label}</Link>;
 }
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     function onResize() {
@@ -32,10 +34,18 @@ export default function Header() {
 
   useEffect(() => {
     function onKey(e) {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key === 'Escape') { setOpen(false); setMenuOpen(false); }
     }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
+  }, []);
+
+  useEffect(() => {
+    function onClickOutside(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) setMenuOpen(false);
+    }
+    document.addEventListener('mousedown', onClickOutside);
+    return () => document.removeEventListener('mousedown', onClickOutside);
   }, []);
 
   return (
@@ -46,11 +56,26 @@ export default function Header() {
           <span className="brand-tagline">Online Tuitions</span>
         </Link>
 
-        <ul className="navlinks navlinks-mobile-hide">
-          {LINKS.map((l) => (
-            <li key={l.label}><NavLink {...l} /></li>
-          ))}
-        </ul>
+        <div className="nav-dropdown navlinks-mobile-hide" ref={menuRef}>
+          <button
+            type="button"
+            className="nav-dropdown-trigger"
+            aria-expanded={menuOpen}
+            aria-haspopup="true"
+            aria-controls="navMenuPanel"
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            Explore
+            <svg className="nav-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div className={`nav-dropdown-panel${menuOpen ? ' open' : ''}`} id="navMenuPanel">
+            {LINKS.map((l) => (
+              <NavLink key={l.label} {...l} className="nav-dropdown-link" onClick={() => setMenuOpen(false)} />
+            ))}
+          </div>
+        </div>
 
         <div className="nav-ctas">
           <a
