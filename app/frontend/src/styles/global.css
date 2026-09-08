@@ -10,14 +10,14 @@ body{
   margin:0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
-.kn { font-family: 'Baloo Tamma 2', sans-serif; }
-h1,h2,h3 { font-family: 'Fraunces', serif; margin: 0; color: var(--ink); }
+.kn { font-family: 'Montserrat', sans-serif; }
+h1,h2,h3 { font-family: 'Montserrat', sans-serif; margin: 0; color: var(--ink); }
 
 a { color: inherit; }
 img, svg { max-width: 100%; display:block; }
@@ -78,11 +78,11 @@ nav.wrap{
   flex-shrink: 0;
   white-space: nowrap;
 }
-.brand-word{ font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
+.brand-word{ font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
 .brand .v-accent{ color: var(--oxide); }
 header .brand-word{ color: var(--paper); }
 header .brand .v-accent{ color: var(--marigold); }
-.brand-tagline{ font-family:'Inter', sans-serif; font-weight:600; font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+.brand-tagline{ font-family:'Montserrat', sans-serif; font-weight:600; font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
 header .brand-tagline{ color: rgba(250,240,220,0.75); }
 .nav-dropdown{ position: relative; flex-shrink: 0; }
 .nav-dropdown-trigger{
@@ -450,7 +450,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   margin-bottom: 8px;
 }
 .hf-title{
-  font-family: 'Fraunces', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 0 18px;
@@ -539,7 +539,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   display:flex; align-items:center; justify-content:center;
   font-size: 1.7rem;
 }
-.hf-success h3{ font-family:'Fraunces', serif; font-size: 1.3rem; font-weight: 600; margin: 0; color: var(--ink); }
+.hf-success h3{ font-family:'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 600; margin: 0; color: var(--ink); }
 .hf-success p{ color: var(--ink-soft); margin: 8px 0 18px; font-size: 0.92rem; }
 .hf-success .btn{ width: 100%; }
 
@@ -584,7 +584,7 @@ section{ padding: 72px 0; scroll-margin-top: 96px; }
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-family:'Inter', sans-serif;
+  font-family:'Montserrat', sans-serif;
   font-weight: 700;
   color: var(--ink-soft);
   margin-bottom: 12px;
@@ -592,7 +592,7 @@ section{ padding: 72px 0; scroll-margin-top: 96px; }
 .contrast-card p{ margin:0; font-size: 1.05rem; }
 .contrast .vs{
   align-self:center;
-  font-family:'Fraunces', serif;
+  font-family:'Montserrat', sans-serif;
   font-style: italic;
   color: var(--marigold);
   font-size: 1.4rem;
@@ -646,7 +646,7 @@ section{ padding: 72px 0; scroll-margin-top: 96px; }
   background: var(--icon-bg, var(--marigold-soft));
   color: var(--icon-fg, var(--oxide-dark));
   display:flex; align-items:center; justify-content:center;
-  font-family:'Baloo Tamma 2', sans-serif;
+  font-family:'Montserrat', sans-serif;
   font-weight:700;
   margin-bottom: 14px;
   font-size: 1.1rem;
@@ -703,7 +703,7 @@ section{ padding: 72px 0; scroll-margin-top: 96px; }
 .rating-strip{
   display:flex; align-items:center; gap:10px;
   margin-top: 16px;
-  font-family:'Inter', sans-serif;
+  font-family:'Montserrat', sans-serif;
 }
 .rating-strip .stars{ color: var(--marigold); font-size: 1.15rem; letter-spacing: 2px; }
 .rating-strip .rating-text{ font-weight:700; color: var(--ink); }
@@ -778,7 +778,7 @@ footer{
 .footer-grid .brand{ flex-direction:row; align-items:baseline; }
 .footer-grid .brand-word{ font-size: 1.1rem; }
 footer p{ margin:0; color: var(--ink-soft); font-size: 0.88rem; }
-.footer-tagline{ font-family:'Fraunces', serif; font-style: italic; color: var(--ink-soft); }
+.footer-tagline{ font-family:'Montserrat', sans-serif; font-style: italic; color: var(--ink-soft); }
 
 /* ---------- ADMIN ---------- */
 .admin-shell{ min-height:100vh; background: var(--paper); }
@@ -803,7 +803,7 @@ footer p{ margin:0; color: var(--ink-soft); font-size: 0.88rem; }
 .stats{ display:grid; grid-template-columns: repeat(4,1fr); gap:14px; margin-bottom:20px; }
 @media (max-width: 700px){ .stats{ grid-template-columns: repeat(2,1fr); } }
 .stat-card{ background: var(--paper-raised); border:1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
-.stat-card .n{ font-family:'Fraunces', serif; font-size:1.6rem; font-weight:700; }
+.stat-card .n{ font-family:'Montserrat', sans-serif; font-size:1.6rem; font-weight:700; }
 .stat-card .l{ font-size:0.8rem; color: var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; }
 .admin-toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
 .admin-toolbar input, .admin-toolbar select{
@@ -927,7 +927,7 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 /* blog post extras */
 .board-table{ width:100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.94rem; }
 .board-table th, .board-table td{ text-align:left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink-soft); }
-.board-table th{ font-family:'Fraunces', serif; color: var(--ink); font-weight:600; background: var(--paper-raised); }
+.board-table th{ font-family:'Montserrat', sans-serif; color: var(--ink); font-weight:600; background: var(--paper-raised); }
 .board-table td:first-child, .board-table th:first-child{ font-weight:600; color: var(--ink); width: 30%; }
 
 .checklist{ list-style:none; padding-left:0; margin: 20px 0 28px; }
@@ -1015,7 +1015,7 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
   justify-content: space-between;
   flex-shrink: 0;
 }
-.chat-panel-header strong{ display:block; font-family:'Fraunces', serif; font-size: 1.05rem; }
+.chat-panel-header strong{ display:block; font-family:'Montserrat', sans-serif; font-size: 1.05rem; }
 .chat-panel-header span{ display:block; font-size: 0.78rem; color: rgba(250,240,220,0.8); margin-top: 2px; }
 .chat-close{
   background: none; border: none; color: var(--paper);
