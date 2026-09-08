@@ -875,6 +875,28 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 .content-why-item p{ margin:0; color: var(--ink-soft); }
 .content-why-item strong{ color: var(--ink); }
 
+/* cross-links between board/class/subject SEO landing pages */
+.related-links-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: var(--max-w);
+  margin: 8px auto 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 760px){ .related-links-grid{ grid-template-columns: 1fr; gap: 28px; } }
+.related-links h2{ font-size: 1.05rem; font-weight: 600; margin-bottom: 12px; }
+.related-links ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap: 9px; }
+.related-links a{
+  text-decoration:none;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.related-links a:hover{ color: var(--oxide); border-color: var(--oxide); }
+
 /* blog index grid */
 .blog-grid{
   display:grid;

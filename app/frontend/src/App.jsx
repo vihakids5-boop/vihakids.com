@@ -16,6 +16,8 @@ import BlogChoosingMathTutorPage from './pages/blog/BlogChoosingMathTutorPage';
 import BlogScienceLearningTipsPage from './pages/blog/BlogScienceLearningTipsPage';
 import ChatWidget from './components/ChatWidget';
 import { useScrollToHash } from './lib/useScrollToHash';
+import TuitionLandingPage from './pages/TuitionLandingPage';
+import { ALL_TUITION_PAGES } from './data/tuitionLandingPages';
 
 function SiteLayout() {
   useScrollToHash();
@@ -51,6 +53,9 @@ export default function App() {
           <Route path="/teach" element={<TeachPage />} />
           <Route path="/about.html" element={<AboutPage />} />
           <Route path="/blog.html" element={<BlogIndexPage />} />
+          {ALL_TUITION_PAGES.map((page) => (
+            <Route key={page.slug} path={`/${page.slug}`} element={<TuitionLandingPage data={page} />} />
+          ))}
         </Route>
         <Route path="/terms.html" element={<TermsPage />} />
         <Route path="/privacy.html" element={<PrivacyPage />} />
