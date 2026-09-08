@@ -51,29 +51,31 @@ export default function Header() {
   return (
     <header>
       <nav className="wrap" aria-label="Primary">
-        <Link to="/" className="brand">
-          <span className="brand-word"><span className="v-accent">V</span>ihakids</span>
-          <span className="brand-tagline">Online Tuitions</span>
-        </Link>
+        <div className="nav-left">
+          <Link to="/" className="brand">
+            <span className="brand-word"><span className="v-accent">V</span>ihakids</span>
+            <span className="brand-tagline">Online Tuitions</span>
+          </Link>
 
-        <div className="nav-dropdown navlinks-mobile-hide" ref={menuRef}>
-          <button
-            type="button"
-            className="nav-dropdown-trigger"
-            aria-expanded={menuOpen}
-            aria-haspopup="true"
-            aria-controls="navMenuPanel"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            Explore
-            <svg className="nav-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div className={`nav-dropdown-panel${menuOpen ? ' open' : ''}`} id="navMenuPanel">
-            {LINKS.map((l) => (
-              <NavLink key={l.label} {...l} className="nav-dropdown-link" onClick={() => setMenuOpen(false)} />
-            ))}
+          <div className="nav-dropdown navlinks-mobile-hide" ref={menuRef}>
+            <button
+              type="button"
+              className="nav-dropdown-trigger"
+              aria-expanded={menuOpen}
+              aria-haspopup="true"
+              aria-controls="navMenuPanel"
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              Explore
+              <svg className="nav-dropdown-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div className={`nav-dropdown-panel${menuOpen ? ' open' : ''}`} id="navMenuPanel">
+              {LINKS.map((l) => (
+                <NavLink key={l.label} {...l} className="nav-dropdown-link" onClick={() => setMenuOpen(false)} />
+              ))}
+            </div>
           </div>
         </div>
 

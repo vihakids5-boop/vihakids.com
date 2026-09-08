@@ -62,6 +62,12 @@ nav.wrap{
   padding-top: 14px;
   padding-bottom: 14px;
 }
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap: 28px;
+  min-width: 0;
+}
 .brand{
   display:flex;
   flex-direction: column;

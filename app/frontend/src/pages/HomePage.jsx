@@ -21,7 +21,6 @@ export default function HomePage() {
             <p className="lead">Live online tuitions in English, Hindi, Mathematics, Science and Kannada for school students across India — personal attention, patient tutors, and real progress.</p>
             <div className="hero-ctas">
               <a className="btn btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp (opens in a new tab)">Message on WhatsApp</a>
-              <a className="btn btn-ghost" href="tel:+919972577828">Call 99725 77828</a>
             </div>
             <p className="trust-line"><strong>⭐ 5.0</strong> rated on Google · Register takes 30 seconds — no payment required</p>
             <p className="hero-note">One-on-one and small-batch online classes · 1st to 10th Standard · Students across India</p>
