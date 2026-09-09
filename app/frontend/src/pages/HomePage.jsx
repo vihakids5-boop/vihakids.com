@@ -1,4 +1,5 @@
 import RegisterForm from '../components/RegisterForm';
+import PhilosophySection from '../components/PhilosophySection';
 import RealitySection from '../components/RealitySection';
 import SubjectsSection from '../components/SubjectsSection';
 import ProgramsSection from '../components/ProgramsSection';
@@ -37,6 +38,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <PhilosophySection />
       <RealitySection />
       <SubjectsSection />
       <ProgramsSection />
