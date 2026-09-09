@@ -15,10 +15,8 @@ export default function ContactSection() {
             >
               Message on WhatsApp
             </a>
-            <a className="btn btn-ghost" href="tel:+919972577828">Call 99725 77828</a>
           </div>
           <p className="trust-line"><strong>⭐ 5.0</strong> rated on Google · Online classes for students across India · No payment, no commitment for the free demo</p>
-          <p className="phone-line">📞 <a href="tel:+919972577828">+91 99725 77828</a></p>
           <address className="phone-line" style={{ fontStyle: 'normal', fontSize: '0.95rem', fontWeight: 500, marginTop: 8 }}>
             Headquartered in Bengaluru: 349, Begur - Koppa Rd, near Eagle Ridge, Chikkakammana Halli, Bengaluru, Karnataka 560068
           </address>

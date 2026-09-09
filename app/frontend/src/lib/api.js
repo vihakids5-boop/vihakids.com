@@ -1,11 +1,13 @@
-import { auth } from './firebaseClient';
-
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000';
 
 async function request(path, { method = 'GET', body, admin = false } = {}) {
   const headers = { 'Content-Type': 'application/json' };
 
   if (admin) {
+    // Loaded on demand so the ~100KB+ Firebase Auth SDK only ships to
+    // visitors who actually hit an admin-authenticated endpoint, instead
+    // of bundling it into every public page's chunk.
+    const { auth } = await import('./firebaseClient');
     const user = auth?.currentUser;
     if (!user) throw new Error('Not signed in');
     // Fetched fresh on every call (never cached) so long admin sessions
