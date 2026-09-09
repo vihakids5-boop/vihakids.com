@@ -312,7 +312,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   display:block;
   color: var(--oxide);
   font-weight: 700;
-  font-size: 1.12em;
+  font-size: 1em;
   margin-bottom: 4px;
 }
 .hero p.lead{
