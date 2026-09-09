@@ -898,11 +898,11 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 /* ---------- PAGE CONTENT: About / Blog / Legal ---------- */
 .back-link{
   text-decoration:none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
-  color: rgba(250,240,220,0.9);
+  color: var(--oxide);
 }
-.back-link:hover{ color: var(--marigold); }
+.back-link:hover{ color: var(--oxide-dark); text-decoration: underline; }
 
 .page-head{ max-width: var(--content-w); }
 .page-head h1{
