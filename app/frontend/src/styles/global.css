@@ -51,8 +51,8 @@ header{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: linear-gradient(135deg, var(--oxide) 0%, var(--oxide-dark) 100%);
-  box-shadow: 0 2px 18px rgba(52,32,26,0.28);
+  background: #fff;
+  box-shadow: 0 2px 18px rgba(52,32,26,0.12);
 }
 header :focus-visible{ outline-color: var(--marigold); }
 nav.wrap{
@@ -74,10 +74,10 @@ nav.wrap{
 }
 .brand-word{ font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
 .brand .v-accent{ color: var(--oxide); }
-header .brand-word{ color: var(--paper); }
+header .brand-word{ color: var(--ink); }
 header .brand .v-accent{ color: var(--marigold); }
 .brand-tagline{ font-family:'Inter', sans-serif; font-weight:600; font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
-header .brand-tagline{ color: rgba(250,240,220,0.75); }
+header .brand-tagline{ color: var(--ink-soft); }
 .navlinks{
   display:flex;
   gap: 28px;
@@ -89,7 +89,7 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   text-decoration:none;
   font-weight: 500;
   font-size: 0.95rem;
-  color: rgba(250,240,220,0.9);
+  color: var(--ink-soft);
   padding: 4px 2px;
   border-bottom: 2px solid transparent;
   white-space: nowrap;
@@ -137,14 +137,14 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   justify-content:center;
   width: 40px; height: 40px;
   border-radius: 10px;
-  border: 1.5px solid rgba(250,240,220,0.35);
-  background: rgba(255,255,255,0.14);
-  color: var(--paper);
+  border: 1.5px solid var(--line);
+  background: var(--oxide-soft);
+  color: var(--oxide-dark);
   cursor:pointer;
   flex-shrink:0;
   transition: background 0.15s ease;
 }
-.nav-toggle:hover{ background: rgba(255,255,255,0.24); }
+.nav-toggle:hover{ background: #c7dced; }
 .nav-toggle svg{ width: 20px; height: 20px; }
 @media (max-width: 1220px){
   .navlinks-mobile-hide{ display:none; }
@@ -162,10 +162,10 @@ header .brand-tagline{ color: rgba(250,240,220,0.75); }
   .mobile-menu.open{ display:flex; }
   .mobile-menu a{
     text-decoration:none;
-    color: rgba(250,240,220,0.9);
+    color: var(--ink-soft);
     font-weight: 500;
     padding: 10px 4px;
-    border-bottom: 1px solid rgba(250,240,220,0.2);
+    border-bottom: 1px solid var(--line);
   }
   .mobile-menu a:hover{ color: var(--marigold); }
   .mobile-menu a.mobile-teach{
