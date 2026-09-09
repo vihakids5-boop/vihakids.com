@@ -7,6 +7,7 @@ export const BOARD_PAGES = [
   {
     slug: 'cbse-online-tuition',
     category: 'board',
+    board: 'CBSE',
     metaTitle: 'CBSE Online Tuition for Classes 1–10 | Vihakids',
     metaDescription: 'Live online CBSE tuition for Classes 1–10 in English, Hindi, Math, Science and Kannada — NCERT-aligned lessons, patient tutors, free demo class. For students anywhere in India.',
     eyebrow: 'CBSE · Classes 1–10',
@@ -27,6 +28,7 @@ export const BOARD_PAGES = [
   {
     slug: 'icse-online-tuition',
     category: 'board',
+    board: 'ICSE',
     metaTitle: 'ICSE Online Tuition for Classes 1–10 | Vihakids',
     metaDescription: 'Live online ICSE tuition for Classes 1–10 in English, Hindi, Math, Science and Kannada — detailed, textbook-aligned support for ICSE\'s broader syllabus. Free demo class.',
     eyebrow: 'ICSE · Classes 1–10',
@@ -47,6 +49,7 @@ export const BOARD_PAGES = [
   {
     slug: 'state-board-online-tuition',
     category: 'board',
+    board: 'State Board',
     metaTitle: 'State Board Online Tuition for Classes 1–10 | Vihakids',
     metaDescription: 'Live online State Board tuition for Classes 1–10 in English, Hindi, Math, Science and Kannada, including Karnataka State Board (SSLC). Free demo class.',
     eyebrow: 'State Board · Classes 1–10',
@@ -326,4 +329,91 @@ export const SUBJECT_PAGES = [
   },
 ];
 
-export const ALL_TUITION_PAGES = [...BOARD_PAGES, ...CLASS_PAGES, ...SUBJECT_PAGES];
+export const COUNTRY_PAGES = [
+  {
+    slug: 'online-tuition-usa',
+    category: 'country',
+    country: 'USA',
+    metaTitle: 'CBSE & ICSE Online Tuition for Indian Students in the USA | Vihakids',
+    metaDescription: 'Live online CBSE, ICSE and Karnataka State Board tuition for Indian and NRI students in the USA — English, Hindi, Math, Science and Kannada. Class times that land in the morning or midday, US time. Free demo class.',
+    eyebrow: 'USA · NRI Families',
+    h1: 'CBSE & ICSE Online Tuition for Indian Students in the USA',
+    lead: 'Keep your child connected to the Indian curriculum, and to Hindi or Kannada — with classes timed to fit an American school day.',
+    paragraphs: [
+      'Many Indian families in the USA want their children to stay fluent in the CBSE or ICSE syllabus — whether because the family plans to move back to India, a sibling is still studying there, or the child is enrolled in an India-based school remotely. Doing that from another time zone, with a tutor who actually knows both curricula, isn\'t always easy to find locally.',
+      'Because our tutors teach from India, an early-evening class back home (around 6–8pm IST) lands in the morning or midday across US time zones — well before or around the start of a US school day, with no need to keep a child up late. Alongside CBSE/ICSE subjects, we also teach Hindi and Kannada as a genuine second language for children growing up mostly speaking English, so that connection to home doesn\'t fade.',
+    ],
+    highlights: [
+      'CBSE, ICSE and Karnataka State Board syllabus, taught by tutors who know the exact textbook',
+      'Class times chosen to land in the morning or midday across US time zones',
+      'Hindi and Kannada taught as a genuine second language, not just conversation practice',
+      'One-on-one, live and online — no travel needed on either side',
+    ],
+    showBoardBadges: true,
+  },
+  {
+    slug: 'online-tuition-uae',
+    category: 'country',
+    country: 'UAE',
+    metaTitle: 'CBSE & ICSE Online Tuition for Indian Students in the UAE | Vihakids',
+    metaDescription: 'Live online CBSE, ICSE and State Board tuition for Indian students in Dubai, Abu Dhabi and across the UAE — English, Hindi, Math, Science and Kannada. Same-evening class times as India. Free demo class.',
+    eyebrow: 'UAE · NRI Families',
+    h1: 'CBSE & ICSE Online Tuition for Indian Students in the UAE',
+    lead: 'Dubai and Abu Dhabi are only ninety minutes behind India — so a tutor here fits your evening exactly like it would back home.',
+    paragraphs: [
+      'The UAE is home to one of the largest Indian communities outside India, and many children there are already enrolled in CBSE- or ICSE-affiliated Indian schools in Dubai, Abu Dhabi and Sharjah. A tutor who teaches the same syllabus, in the same kind of evening slot a family would use back in India, makes staying on top of schoolwork straightforward rather than one more thing to schedule around.',
+      'Because the UAE is just an hour and a half behind India, a class at 6pm in Dubai is only 7:30pm in India — well within a normal after-school tutoring slot, no early mornings or late nights required. We teach the full range of subjects, including Kannada and Hindi for families keeping those languages alive at home.',
+    ],
+    highlights: [
+      'Matches the CBSE, ICSE and State Board syllabus taught in UAE Indian schools',
+      'Only a 90-minute time difference — normal after-school evening slots work',
+      'English, Hindi, Mathematics, Science and Kannada, one tutor for the whole family',
+      'One-on-one, live and online — no travel needed on either side',
+    ],
+    showBoardBadges: true,
+  },
+  {
+    slug: 'online-tuition-uk',
+    category: 'country',
+    country: 'UK',
+    metaTitle: 'CBSE & ICSE Online Tuition for Indian Students in the UK | Vihakids',
+    metaDescription: 'Live online CBSE, ICSE and Karnataka State Board tuition for Indian and British-Indian students in the UK — English, Hindi, Math, Science and Kannada. Evening India-time classes that fit after a UK school day. Free demo class.',
+    eyebrow: 'UK · NRI Families',
+    h1: 'CBSE & ICSE Online Tuition for Indian Students in the UK',
+    lead: 'For British-Indian families keeping the Indian curriculum, Hindi or Kannada going alongside a UK school day.',
+    paragraphs: [
+      'Some of the Indian families we work with in the UK have children who split time between British schooling and staying current with the CBSE or ICSE syllabus — often because of a planned move back to India, or because grandparents and cousins are still studying there. Others simply want their children to keep reading and writing Hindi or Kannada fluently, rather than losing it to daily life in English.',
+      'India is four-and-a-half to five-and-a-half hours ahead of the UK depending on the season, which puts a late-afternoon or early-evening India-time class right around the end of the UK school day — an easy slot to fit in without disrupting homework or dinner. Our tutors teach the exact CBSE/ICSE/State Board syllabus, not a generic equivalent.',
+    ],
+    highlights: [
+      'CBSE, ICSE and Karnataka State Board syllabus, matched to the exact textbook',
+      'Class times land around the end of the UK school day, not late at night',
+      'Hindi and Kannada taught for real fluency, not just conversation',
+      'One-on-one, live and online — no travel needed on either side',
+    ],
+    showBoardBadges: true,
+  },
+  {
+    slug: 'online-tuition-singapore',
+    category: 'country',
+    country: 'Singapore',
+    metaTitle: 'CBSE & ICSE Online Tuition for Indian Students in Singapore | Vihakids',
+    metaDescription: 'Live online CBSE, ICSE and State Board tuition for Indian students in Singapore — English, Hindi, Math, Science and Kannada. Classes timed for a Singapore evening. Free demo class.',
+    eyebrow: 'Singapore · NRI Families',
+    h1: 'CBSE & ICSE Online Tuition for Indian Students in Singapore',
+    lead: 'Supplementary CBSE, ICSE and State Board support for Indian families in Singapore — timed for a Singapore evening, not an Indian one.',
+    paragraphs: [
+      'Singapore has a large, well-established Indian community, and many children there already attend CBSE-affiliated Indian international schools. Even so, a large class size and an unfamiliar accent or teaching style can leave gaps — especially in Mathematics and Science, where one missed step early on tends to compound.',
+      'Singapore runs two-and-a-half hours ahead of India, so a comfortable after-dinner slot in Singapore — say 7 or 7:30pm — is only late afternoon in India, a normal tutoring hour on our end too. We also teach Hindi and Kannada for families who want their children reading and writing confidently in their mother tongue, not just speaking it at home.',
+    ],
+    highlights: [
+      'Built around the CBSE, ICSE or State Board textbook your child\'s Singapore school actually uses',
+      'Evening Singapore slots land in the late afternoon in India — a normal tutoring hour for us',
+      'Extra depth in Mathematics and Science, where large class sizes leave the most gaps',
+      'Hindi and Kannada taught for real reading and writing fluency',
+    ],
+    showBoardBadges: true,
+  },
+];
+
+export const ALL_TUITION_PAGES = [...BOARD_PAGES, ...CLASS_PAGES, ...SUBJECT_PAGES, ...COUNTRY_PAGES];
