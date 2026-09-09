@@ -466,7 +466,7 @@ header .brand-tagline{ color: var(--ink-soft); }
   color: var(--ink);
 }
 .hf-hint{ font-weight: 400; color: var(--ink-soft); font-size: 0.82rem; }
-.hf-field input[type="text"], .hf-field input[type="tel"], .hf-field input[type="email"], .hf-field select, .hf-field textarea{
+.hf-field input[type="text"], .hf-field input[type="tel"], .hf-field input[type="email"], .hf-field input[type="password"], .hf-field select, .hf-field textarea{
   width: 100%;
   font: inherit;
   font-size: 0.95rem;
