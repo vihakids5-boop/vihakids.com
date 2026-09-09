@@ -172,20 +172,17 @@ header .brand-tagline{ color: var(--ink-soft); }
 .nav-ctas{ display:flex; align-items:center; gap:10px; flex-shrink: 0; }
 .teach-chip-nav{
   margin-top: 0;
-  padding: 8px 16px 8px 10px;
-  font-size: 0.85rem;
+  gap: 8px;
+  padding: 9px 18px;
+  font-size: 0.9rem;
   white-space: nowrap;
   background: var(--marigold);
   color: var(--oxide-dark);
   box-shadow: 0 3px 0 var(--sky);
 }
-.teach-chip-nav .teach-chip-icon{ width: 22px; height: 22px; font-size: 0.85rem; background: rgba(255,255,255,0.4); }
+.teach-chip-nav .teach-chip-icon{ width: 20px; height: 20px; font-size: 0.85rem; background: rgba(255,255,255,0.4); }
 .teach-chip-nav:hover{ background: #efbb5c; color: var(--oxide-dark); transform: translateY(-1px); box-shadow: 0 4px 0 var(--sky); }
 .teach-chip-nav:hover .teach-chip-icon{ background: rgba(255,255,255,0.55); }
-@media (max-width: 420px){
-  .teach-chip-nav{ padding: 7px 12px 7px 8px; font-size: 0.78rem; }
-  .teach-chip-nav .teach-chip-icon{ width: 18px; height: 18px; font-size: 0.75rem; }
-}
 .navlinks-mobile-hide{ display:flex; }
 .nav-toggle{
   display:none;
@@ -434,7 +431,7 @@ header .brand-tagline{ color: var(--ink-soft); }
 .hf-card{
   width: 100%;
   max-width: 440px;
-  background: var(--paper-raised);
+  background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 28px;
