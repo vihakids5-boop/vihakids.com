@@ -170,7 +170,7 @@ header .brand-tagline{ color: var(--ink-soft); }
 .nav-cta:hover{ background:#3d6442; transform: translateY(-1px); }
 .nav-cta:active{ transform: translateY(2px); box-shadow: 0 1px 0 #3d6442; }
 .nav-ctas{ display:flex; align-items:center; gap:10px; flex-shrink: 0; }
-.teach-chip-nav{
+.teach-chip.teach-chip-nav{
   margin-top: 0;
   gap: 8px;
   padding: 9px 18px;
@@ -178,6 +178,7 @@ header .brand-tagline{ color: var(--ink-soft); }
   white-space: nowrap;
   background: var(--marigold);
   color: var(--oxide-dark);
+  border: none;
   box-shadow: 0 3px 0 var(--sky);
 }
 .teach-chip-nav .teach-chip-icon{ width: 20px; height: 20px; font-size: 0.85rem; background: rgba(255,255,255,0.4); }
