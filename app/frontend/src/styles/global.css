@@ -342,11 +342,13 @@ header .brand-tagline{ color: var(--ink-soft); }
 .hero .eyebrow{
   font-weight: 800;
   font-size: 0.85rem;
+  line-height: 1.4;
+  align-items: flex-start;
   background: var(--marigold);
   color: var(--oxide-dark);
   box-shadow: 0 2px 0 rgba(22,79,115,0.15);
 }
-.hero .eyebrow::before{ background: var(--oxide-dark); }
+.hero .eyebrow::before{ background: var(--oxide-dark); margin-top: 7px; flex-shrink: 0; }
 .eyebrow::before{
   content:"";
   width:7px; height:7px; border-radius:50%;
