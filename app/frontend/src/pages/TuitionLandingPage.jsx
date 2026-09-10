@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useDocumentHead } from '../lib/useDocumentHead';
 import RegisterForm from '../components/RegisterForm';
-import { BOARD_PAGES, CLASS_PAGES, SUBJECT_PAGES, COUNTRY_PAGES } from '../data/tuitionLandingPages';
+import { BOARD_PAGES, CLASS_PAGES, SUBJECT_PAGES, COUNTRY_PAGES, CITY_PAGES } from '../data/tuitionLandingPages';
 
 const CATEGORY_LABEL = {
   board: 'Explore by board',
   class: 'Explore by class',
   subject: 'Explore by subject',
   country: 'Explore by country',
+  city: 'Explore by city',
 };
 
 function RelatedLinks({ label, items, currentSlug }) {
@@ -68,6 +69,7 @@ export default function TuitionLandingPage({ data }) {
           <RelatedLinks label={CATEGORY_LABEL.class} items={CLASS_PAGES} currentSlug={slug} />
           <RelatedLinks label={CATEGORY_LABEL.subject} items={SUBJECT_PAGES} currentSlug={slug} />
           <RelatedLinks label={CATEGORY_LABEL.country} items={COUNTRY_PAGES} currentSlug={slug} />
+          <RelatedLinks label={CATEGORY_LABEL.city} items={CITY_PAGES} currentSlug={slug} />
         </div>
       </div>
     </main>
