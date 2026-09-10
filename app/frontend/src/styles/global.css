@@ -1001,7 +1001,13 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
   body.print-worksheet .trace-card{ break-inside: avoid; border-color: #999; }
   body.print-worksheet .trace-letter,
   body.print-worksheet .practice-box{ color: #999; }
-  body.print-worksheet .worksheet-section{ break-inside: avoid; margin-top: 24px; }
+  /* Break-avoidance lives on each card (above) and each heading (below),
+     not on the whole section — a section is 1-2 rows taller than half a
+     printed page, so avoiding a break across the whole thing forced each
+     5-letter group onto its own mostly-blank page. Keeping only the
+     heading glued to its first row lets rows flow to fill each page. */
+  body.print-worksheet .worksheet-section{ margin-top: 20px; }
+  body.print-worksheet .worksheet-section h2{ break-after: avoid; margin-bottom: 10px; }
 }
 
 /* About page "Why Parents Choose Us" — light-background variant of .why-list */
