@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BOARD_PAGES, SUBJECT_PAGES, CLASS_PAGES, COUNTRY_PAGES } from '../data/tuitionLandingPages';
+import { BOARD_PAGES, SUBJECT_PAGES, CLASS_PAGES, COUNTRY_PAGES, CITY_PAGES } from '../data/tuitionLandingPages';
 
 const WHATSAPP_URL =
   'https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20English%2C%20Hindi%2C%20Math%2C%20Science%20and%20Kannada%20tuitions';
@@ -120,6 +120,13 @@ export default function Header() {
                   <NavLink key={p.slug} href={`/${p.slug}`} label={p.country} className="nav-dropdown-link" onClick={closeMega} />
                 ))}
               </div>
+
+              <div className="mega-col">
+                <h3 className="mega-heading">By city</h3>
+                {CITY_PAGES.map((p) => (
+                  <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} className="nav-dropdown-link" onClick={closeMega} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -188,6 +195,11 @@ export default function Header() {
           <span className="mobile-menu-heading">Tuition abroad</span>
           {COUNTRY_PAGES.map((p) => (
             <NavLink key={p.slug} href={`/${p.slug}`} label={p.country} onClick={closeMobile} />
+          ))}
+
+          <span className="mobile-menu-heading">By city</span>
+          {CITY_PAGES.map((p) => (
+            <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} onClick={closeMobile} />
           ))}
 
           <Link to="/teach" className="mobile-teach" onClick={closeMobile}>
