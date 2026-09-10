@@ -23,12 +23,12 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '976035192180269');
 fbq('track', 'PageView');
 </script>
-<!-- No <noscript> fallback pixel: this is a React SPA, so nothing renders without JS anyway. -->
+<!-- No <noscript> fallback pixel: nothing in the Meta Pixel matters without JS anyway. -->
 <!-- End Meta Pixel Code -->
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vihakids — Online English, Hindi, Math, Science &amp; Kannada Tuitions Across India</title>
+<title>Vihakids — Online English, Hindi, Math &amp; Science Tuitions</title>
 <meta name="description" content="Online CBSE and ICSE tuitions (State Board too) in English, Hindi, Mathematics, Science and Kannada for 1st to 10th Std. Live 1-on-1 classes with patient, experienced tutors — for students anywhere in India. Headquartered in Bengaluru.">
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="online tuition India, online tuition for kids India, English tuition online, Hindi tuition online, Math tuition online, Science tuition online, Kannada tuition online, online tuition classes India, home tuition alternative online, CBSE online tuition, ICSE online tuition, State Board online tuition, online tutor India, best online tuition for school students, learn English online, learn Hindi online, learn Kannada online, Vihakids Bengaluru">
@@ -66,61 +66,73 @@ fbq('track', 'PageView');
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Vihakids",
-  "description": "Online tuitions in English, Hindi, Mathematics, Science and Kannada for 1st to 10th Std, covering CBSE, ICSE and State Board syllabus — for students across India.",
-  "url": "https://www.vihakids.com/",
-  "image": "https://www.vihakids.com/og-image.jpg",
-  "telephone": "+91-9972577828",
-  "priceRange": "$$",
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61592292419267",
-    "https://www.instagram.com/vihakids5/",
-    "https://www.youtube.com/@vihakids5",
-    "https://x.com/vihakids"
-  ],
-  "areaServed": {
-    "@type": "Country",
-    "name": "India"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "349, Begur - Koppa Rd, near Eagle Ridge, Eagle Ridge, Chikkakammana Halli",
-    "addressLocality": "Bengaluru",
-    "addressRegion": "Karnataka",
-    "postalCode": "560068",
-    "addressCountry": "IN"
-  },
-  "hasCourse": [
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.vihakids.com/#organization",
+      "name": "Vihakids",
+      "description": "Online tuitions in English, Hindi, Mathematics, Science and Kannada for 1st to 10th Std, covering CBSE, ICSE and State Board syllabus — for students across India.",
+      "url": "https://www.vihakids.com/",
+      "image": "https://www.vihakids.com/og-image.jpg",
+      "telephone": "+91-9972577828",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61592292419267",
+        "https://www.instagram.com/vihakids5/",
+        "https://www.youtube.com/@vihakids5",
+        "https://x.com/vihakids"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "349, Begur - Koppa Rd, near Eagle Ridge, Eagle Ridge, Chikkakammana Halli",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "postalCode": "560068",
+        "addressCountry": "IN"
+      }
+    },
     {
       "@type": "Course",
       "name": "English Tuition — Classes 1–10",
       "description": "Phonics, grammar, comprehension and spoken-English practice aligned to CBSE, ICSE and State Board textbooks.",
-      "provider": { "@type": "EducationalOrganization", "name": "Vihakids", "url": "https://www.vihakids.com/" }
+      "provider": { "@id": "https://www.vihakids.com/#organization" },
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "Online" },
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock", "url": "https://www.vihakids.com/register" }
     },
     {
       "@type": "Course",
       "name": "Hindi Tuition — Classes 1–10",
       "description": "Hindi alphabet, grammar, comprehension and writing practice aligned to CBSE, ICSE and State Board textbooks.",
-      "provider": { "@type": "EducationalOrganization", "name": "Vihakids", "url": "https://www.vihakids.com/" }
+      "provider": { "@id": "https://www.vihakids.com/#organization" },
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "Online" },
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock", "url": "https://www.vihakids.com/register" }
     },
     {
       "@type": "Course",
       "name": "Mathematics Tuition — Classes 1–10",
       "description": "Number sense, arithmetic, geometry and problem-solving practice aligned to CBSE, ICSE and State Board textbooks.",
-      "provider": { "@type": "EducationalOrganization", "name": "Vihakids", "url": "https://www.vihakids.com/" }
+      "provider": { "@id": "https://www.vihakids.com/#organization" },
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "Online" },
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock", "url": "https://www.vihakids.com/register" }
     },
     {
       "@type": "Course",
       "name": "Science Tuition — Classes 1–10",
       "description": "EVS and Science fundamentals building up to Physics, Chemistry and Biology, explained with everyday examples and aligned to CBSE, ICSE and State Board textbooks.",
-      "provider": { "@type": "EducationalOrganization", "name": "Vihakids", "url": "https://www.vihakids.com/" }
+      "provider": { "@id": "https://www.vihakids.com/#organization" },
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "Online" },
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock", "url": "https://www.vihakids.com/register" }
     },
     {
       "@type": "Course",
       "name": "Kannada Tuition — Classes 1–10",
       "description": "Varnamale, grammar, reading, writing and exam-focused Kannada lessons aligned to CBSE, ICSE and State Board textbooks.",
-      "provider": { "@type": "EducationalOrganization", "name": "Vihakids", "url": "https://www.vihakids.com/" }
+      "provider": { "@id": "https://www.vihakids.com/#organization" },
+      "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "Online" },
+      "offers": { "@type": "Offer", "category": "Paid", "availability": "https://schema.org/InStock", "url": "https://www.vihakids.com/register" }
     }
   ]
 }
@@ -175,7 +187,29 @@ fbq('track', 'PageView');
 </script>
 </head>
 <body>
-<div id="root"></div>
+<div id="root">
+  <noscript>
+    <header>
+      <h1>Learn with joy. No more exam stress.</h1>
+      <p>Live online tuitions in English, Hindi, Mathematics, Science and Kannada for school students across India — personal attention, patient tutors, and real progress. One-on-one and small-batch online classes for 1st to 10th Standard, covering CBSE, ICSE and State Board.</p>
+    </header>
+    <nav aria-label="Explore Vihakids">
+      <a href="/register">Register for a free demo class</a>
+      <a href="/teach">Teach with Vihakids</a>
+      <a href="/cbse-online-tuition">CBSE online tuition</a>
+      <a href="/icse-online-tuition">ICSE online tuition</a>
+      <a href="/state-board-online-tuition">State Board online tuition</a>
+      <a href="/english-online-tuition">English tuition</a>
+      <a href="/hindi-online-tuition">Hindi tuition</a>
+      <a href="/math-online-tuition">Math tuition</a>
+      <a href="/science-online-tuition">Science tuition</a>
+      <a href="/kannada-online-tuition">Kannada tuition</a>
+      <a href="/online-tuition-bengaluru">Online tuition in Bengaluru</a>
+      <a href="/about.html">About Us</a>
+      <a href="/blog.html">Blog</a>
+    </nav>
+  </noscript>
+</div>
 <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
