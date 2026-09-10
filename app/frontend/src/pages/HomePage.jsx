@@ -14,7 +14,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <span className="eyebrow">Online · 1st to 10th Std · Anywhere in India</span>
+            <span className="eyebrow">Online · 1st to 10th Std · Bangalore, Anywhere in India</span>
             <h1><span className="kn">Learn with joy</span>No more exam stress</h1>
             <p className="lead">Live online tuitions in English, Hindi, Mathematics, Science and Kannada for school students across India — personal attention, patient tutors, and real progress.</p>
             <p className="trust-line"><strong>⭐ 5.0</strong> rated on Google · Register takes 30 seconds — no payment required</p>
