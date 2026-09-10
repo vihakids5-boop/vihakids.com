@@ -26,6 +26,7 @@ const BlogKannadaReadingTipsPage = lazy(() => import('./pages/blog/BlogKannadaRe
 const BlogCbseIcseStateBoardPage = lazy(() => import('./pages/blog/BlogCbseIcseStateBoardPage'));
 const BlogChoosingMathTutorPage = lazy(() => import('./pages/blog/BlogChoosingMathTutorPage'));
 const BlogScienceLearningTipsPage = lazy(() => import('./pages/blog/BlogScienceLearningTipsPage'));
+const KannadaAlphabetWorksheetPage = lazy(() => import('./pages/resources/KannadaAlphabetWorksheetPage'));
 const TuitionLandingPage = lazy(() => import('./pages/TuitionLandingPage'));
 
 function SiteLayout() {
@@ -74,6 +75,7 @@ export default function App() {
           <Route path="/blog-cbse-icse-state-board-kannada-hindi.html" element={<BlogCbseIcseStateBoardPage />} />
           <Route path="/blog-choosing-online-math-tutor.html" element={<BlogChoosingMathTutorPage />} />
           <Route path="/blog-science-learning-tips.html" element={<BlogScienceLearningTipsPage />} />
+          <Route path="/kannada-alphabet-tracing-worksheet" element={<KannadaAlphabetWorksheetPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
