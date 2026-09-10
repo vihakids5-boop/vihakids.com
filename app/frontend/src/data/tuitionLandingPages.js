@@ -348,6 +348,7 @@ export const SUBJECT_PAGES = [
       'Fractions, geometry and problem-solving explained step by step',
       'Algebra and applied word problems for the board years',
       'Practice on showing clear working — where exam marks are often lost',
+      'Patient, specific support for children showing early signs of Math phobia',
     ],
   },
   {
@@ -375,12 +376,12 @@ export const SUBJECT_PAGES = [
     category: 'subject',
     subject: 'Kannada',
     metaTitle: 'Kannada Online Tuition for Classes 1–10 | Vihakids',
-    metaDescription: 'Live online Kannada tuition for Classes 1–10 — Varnamale, grammar, reading, writing and exam-focused practice. CBSE, ICSE and Karnataka State Board. Free demo class.',
+    metaDescription: 'Live online Kannada tuition for Classes 1–10 — Varnamale, grammar, reading, writing and exam-focused practice, including dedicated support for non-native speakers. CBSE, ICSE and Karnataka State Board. Free demo class.',
     eyebrow: 'Kannada · Classes 1–10',
     h1: 'Kannada Online Tuition for Classes 1–10',
-    lead: 'From the Varnamale to confident reading, writing and exam answers — taught by native speakers.',
+    lead: 'From the Varnamale to confident reading, writing and exam answers — taught by native speakers, with dedicated support for non-native learners.',
     paragraphs: [
-      'Whether Kannada is your child\'s first language at school or a second language they\'re still building comfort with, we start with the Varnamale — the alphabet — and steady reading and writing practice, taught by tutors who speak the language natively.',
+      'Whether Kannada is your child\'s first language at school or a second language they\'re still building comfort with — including families where Kannada isn\'t spoken much at home — we start with the Varnamale — the alphabet — and steady reading and writing practice, taught by tutors who speak the language natively.',
       'As the syllabus advances, we move into grammar (vyakarana), comprehension and composition, and — in the board years — poetry, prose and the specific essay and letter-writing formats CBSE, ICSE and Karnataka State Board exams expect.',
     ],
     highlights: [
