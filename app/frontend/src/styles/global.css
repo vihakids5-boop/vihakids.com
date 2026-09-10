@@ -90,18 +90,19 @@ header .brand-tagline{ color: var(--ink-soft); }
   align-items:center;
   gap: 8px;
   background: var(--oxide-soft);
-  border: 1.5px solid transparent;
+  border: none;
   color: var(--oxide-dark);
   font-family: inherit;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
   padding: 9px 18px;
   border-radius: 999px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease;
 }
-.nav-dropdown-trigger:hover{ background: #c7dced; border-color: var(--marigold); }
+.nav-dropdown-trigger:hover{ background: #c7dced; }
 .nav-dropdown-caret{ width:13px; height:13px; transition: transform 0.2s ease; }
 .nav-dropdown-trigger[aria-expanded="true"] .nav-dropdown-caret{ transform: rotate(180deg); }
 .nav-dropdown-panel{
@@ -177,19 +178,17 @@ header .brand-tagline{ color: var(--ink-soft); }
   display:inline-flex;
   align-items:center;
   gap:8px;
-  background: var(--banana);
-  color: #fff;
+  background: var(--oxide-soft);
+  color: var(--oxide-dark);
   padding: 9px 18px;
   border-radius: 999px;
   font-weight:600;
   font-size: 0.9rem;
   text-decoration:none;
   white-space:nowrap;
-  box-shadow: 0 3px 0 #3d6442;
   transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
-.nav-cta:hover{ background:#3d6442; transform: translateY(-1px); }
-.nav-cta:active{ transform: translateY(2px); box-shadow: 0 1px 0 #3d6442; }
+.nav-cta:hover{ background:#c7dced; }
 .nav-ctas{ display:flex; align-items:center; gap:10px; flex-shrink: 0; }
 .teach-chip.teach-chip-nav{
   margin-top: 0;
@@ -197,13 +196,14 @@ header .brand-tagline{ color: var(--ink-soft); }
   padding: 9px 18px;
   font-size: 0.9rem;
   white-space: nowrap;
-  background: var(--marigold);
+  background: var(--oxide-soft);
   color: var(--oxide-dark);
   border: none;
-  box-shadow: 0 3px 0 var(--sky);
+  box-shadow: none;
 }
-.teach-chip-nav .teach-chip-icon{ width: 20px; height: 20px; font-size: 0.85rem; background: rgba(255,255,255,0.4); }
-.teach-chip-nav:hover{ background: #efbb5c; color: var(--oxide-dark); transform: translateY(-1px); box-shadow: 0 4px 0 var(--sky); }
+.teach-chip-nav .teach-chip-icon{ width: 20px; height: 20px; font-size: 0.85rem; background: rgba(31,111,160,0.14); }
+.teach-chip-nav:hover{ background: #c7dced; color: var(--oxide-dark); }
+.teach-chip-nav:hover .teach-chip-icon{ background: rgba(31,111,160,0.22); }
 .teach-chip-nav:hover .teach-chip-icon{ background: rgba(255,255,255,0.55); }
 .navlinks-mobile-hide{ display:flex; }
 .nav-toggle{
