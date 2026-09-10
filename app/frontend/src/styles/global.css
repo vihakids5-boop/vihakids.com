@@ -940,6 +940,70 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 .prose th, .prose td{ text-align:left; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--ink-soft); vertical-align: top; }
 .prose th{ color: var(--ink); font-weight: 600; }
 
+/* ---------- printable worksheets (e.g. Kannada alphabet tracing) ---------- */
+.worksheet-intro{ max-width: var(--content-w); margin-top: 24px; }
+.worksheet-print-btn{ margin-top: 8px; }
+.worksheet-section{ max-width: none; margin-top: 40px; }
+.worksheet-section h2{
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--oxide-dark);
+  margin-bottom: 18px;
+}
+.worksheet-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+.trace-card{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  background: #fff;
+}
+.trace-letter{
+  display: block;
+  font-family: 'Noto Sans Kannada', 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.1;
+  color: #C7BEB8;
+}
+.trace-translit{ display: block; margin-top: 2px; font-size: 0.82rem; color: var(--ink-soft); }
+.practice-boxes{ display: flex; gap: 6px; margin-top: 10px; }
+.practice-box{
+  flex: 1;
+  height: 44px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Sans Kannada', 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  color: #C7BEB8;
+}
+@media (max-width: 480px){
+  .worksheet-grid{ grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  .trace-letter{ font-size: 2.4rem; }
+}
+@media print{
+  body.print-worksheet header,
+  body.print-worksheet footer,
+  body.print-worksheet .no-print{ display: none !important; }
+  body.print-worksheet .worksheet-grid{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  body.print-worksheet .trace-card{ break-inside: avoid; border-color: #999; }
+  body.print-worksheet .trace-letter,
+  body.print-worksheet .practice-box{ color: #999; }
+  body.print-worksheet .worksheet-section{ break-inside: avoid; margin-top: 24px; }
+}
+
 /* About page "Why Parents Choose Us" — light-background variant of .why-list */
 .content-why-list{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px 32px; margin-top: 24px; }
 @media (max-width: 640px){ .content-why-list{ grid-template-columns: 1fr; } }

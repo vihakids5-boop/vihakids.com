@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import BlogPostLayout from '../../components/BlogPostLayout';
 
 export default function BlogKannadaReadingTipsPage() {
@@ -22,7 +23,7 @@ export default function BlogKannadaReadingTipsPage() {
       <p>Silent reading hides mistakes; reading aloud surfaces them immediately, which is exactly when they're easiest to correct. Sit beside your child for 10 minutes, take turns reading a line each, and gently repeat any word they stumble on rather than correcting mid-sentence. This keeps the flow going without turning it into a test.</p>
 
       <h2>3. Keep a small "tricky words" list</h2>
-      <p>Every child has a handful of Kannada words that trip them up repeatedly — often ones with similar-looking conjunct letters (<span className="kn" lang="kn">ಒತ್ತಕ್ಷರ</span>). Instead of re-explaining the whole alphabet, keep a short running list of just these words on a sticky note and revisit it for two minutes before starting homework. A small, specific list is far more useful than a general worksheet.</p>
+      <p>Every child has a handful of Kannada words that trip them up repeatedly — often ones with similar-looking conjunct letters (<span className="kn" lang="kn">ಒತ್ತಕ್ಷರ</span>). Instead of re-explaining the whole alphabet, keep a short running list of just these words on a sticky note and revisit it for two minutes before starting homework. A small, specific list is far more useful than a general worksheet — though if your child hasn't fully settled the alphabet itself yet, our free <Link to="/kannada-alphabet-tracing-worksheet">printable Kannada Varnamale tracing worksheet</Link> is a good place to start before moving on to full words.</p>
 
       <h2>4. Connect reading to something your child already enjoys</h2>
       <p>A child who resists reading a textbook paragraph will often happily read the same script if it's a comic, a WhatsApp message, or the subtitle of a cartoon. The skill transfers. Don't worry if the material isn't "syllabus" — building the habit of reading Kannada script comfortably matters more at this stage than the specific text.</p>
