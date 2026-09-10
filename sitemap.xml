@@ -76,6 +76,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.vihakids.com/cambridge-online-tuition</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vihakids.com/ib-online-tuition</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.vihakids.com/gcse-online-tuition</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.vihakids.com/online-tuition-class-1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
