@@ -1,0 +1,43 @@
+# Vihakids
+
+> Vihakids offers live, online, one-on-one and small-batch tuitions in English, Hindi, Mathematics, Science and Kannada for school students in 1st to 10th Standard, covering CBSE, ICSE and State Board syllabus. Headquartered in Bengaluru, India, and serving students across India and abroad.
+
+## Core pages
+
+- [Home](https://www.vihakids.com/): Overview, subjects, programs and free demo registration.
+- [Register](https://www.vihakids.com/register): Sign up for a free demo class.
+- [Teach with us](https://www.vihakids.com/teach): Apply to become a Vihakids tutor.
+- [About Us](https://www.vihakids.com/about.html): Who Vihakids is and how classes work.
+- [Blog](https://www.vihakids.com/blog.html): Articles on tuitions, boards and learning tips.
+
+## By board
+
+- [CBSE online tuition](https://www.vihakids.com/cbse-online-tuition)
+- [ICSE online tuition](https://www.vihakids.com/icse-online-tuition)
+- [State Board online tuition](https://www.vihakids.com/state-board-online-tuition)
+- [Cambridge online tuition](https://www.vihakids.com/cambridge-online-tuition)
+- [IB online tuition](https://www.vihakids.com/ib-online-tuition)
+- [GCSE online tuition](https://www.vihakids.com/gcse-online-tuition)
+
+## By subject
+
+- [English online tuition](https://www.vihakids.com/english-online-tuition)
+- [Hindi online tuition](https://www.vihakids.com/hindi-online-tuition)
+- [Math online tuition](https://www.vihakids.com/math-online-tuition)
+- [Science online tuition](https://www.vihakids.com/science-online-tuition)
+- [Kannada online tuition](https://www.vihakids.com/kannada-online-tuition)
+
+## By class
+
+Online tuition pages exist for each of Class 1 through Class 10, at `https://www.vihakids.com/online-tuition-class-{1..10}`.
+
+## By city (India)
+
+Online tuition pages exist for Bengaluru, Mumbai, Delhi NCR, Hyderabad, Chennai, Pune, Kolkata and Ahmedabad, at `https://www.vihakids.com/online-tuition-{city}`.
+
+## Tuition abroad
+
+- [Online tuition for USA](https://www.vihakids.com/online-tuition-usa)
+- [Online tuition for UAE](https://www.vihakids.com/online-tuition-uae)
+- [Online tuition for UK](https://www.vihakids.com/online-tuition-uk)
+- [Online tuition for Singapore](https://www.vihakids.com/online-tuition-singapore)
