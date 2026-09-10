@@ -84,6 +84,13 @@ export default function Header() {
               </div>
 
               <div className="mega-col">
+                <h3 className="mega-heading">By city</h3>
+                {CITY_PAGES.map((p) => (
+                  <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} className="nav-dropdown-link" onClick={closeMega} />
+                ))}
+              </div>
+
+              <div className="mega-col">
                 <h3 className="mega-heading">By board</h3>
                 {BOARD_PAGES.map((p) => (
                   <NavLink key={p.slug} href={`/${p.slug}`} label={p.board} className="nav-dropdown-link" onClick={closeMega} />
@@ -118,13 +125,6 @@ export default function Header() {
                 <h3 className="mega-heading">Tuition abroad</h3>
                 {COUNTRY_PAGES.map((p) => (
                   <NavLink key={p.slug} href={`/${p.slug}`} label={p.country} className="nav-dropdown-link" onClick={closeMega} />
-                ))}
-              </div>
-
-              <div className="mega-col">
-                <h3 className="mega-heading">By city</h3>
-                {CITY_PAGES.map((p) => (
-                  <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} className="nav-dropdown-link" onClick={closeMega} />
                 ))}
               </div>
             </div>
@@ -167,6 +167,11 @@ export default function Header() {
             <NavLink key={l.label} {...l} onClick={closeMobile} />
           ))}
 
+          <span className="mobile-menu-heading">By city</span>
+          {CITY_PAGES.map((p) => (
+            <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} onClick={closeMobile} />
+          ))}
+
           <span className="mobile-menu-heading">By board</span>
           {BOARD_PAGES.map((p) => (
             <NavLink key={p.slug} href={`/${p.slug}`} label={p.board} onClick={closeMobile} />
@@ -195,11 +200,6 @@ export default function Header() {
           <span className="mobile-menu-heading">Tuition abroad</span>
           {COUNTRY_PAGES.map((p) => (
             <NavLink key={p.slug} href={`/${p.slug}`} label={p.country} onClick={closeMobile} />
-          ))}
-
-          <span className="mobile-menu-heading">By city</span>
-          {CITY_PAGES.map((p) => (
-            <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} onClick={closeMobile} />
           ))}
 
           <Link to="/teach" className="mobile-teach" onClick={closeMobile}>
