@@ -377,6 +377,10 @@ header .brand-tagline{ color: var(--ink-soft); }
   color: var(--ink-soft);
   max-width: 46ch;
 }
+.hero p.lead .lead-highlight{
+  color: var(--oxide);
+  font-weight: 700;
+}
 .hero-ctas{
   display:flex;
   gap: 14px;
