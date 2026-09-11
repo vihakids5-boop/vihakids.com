@@ -5,6 +5,14 @@ const WHATSAPP_BASE = 'https://wa.me/919972577828?text=';
 
 const POSTS = [
   {
+    slug: '/blog-exam-stress-confidence.html',
+    cat: 'Confidence & Wellbeing',
+    title: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks',
+    excerpt: 'Why chasing marks alone tends to backfire, and the everyday habits that build genuine confidence — so grades follow naturally instead.',
+    date: '12 Sep 2026',
+    read: '6 min read',
+  },
+  {
     slug: '/blog-science-learning-tips.html',
     cat: 'Science',
     title: 'How to Help Your Child Understand Science — Not Just Memorise It',

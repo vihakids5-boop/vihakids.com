@@ -9,6 +9,7 @@ const ALL_POSTS = [
   { slug: '/blog-cbse-icse-state-board-kannada-hindi.html', title: 'CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning' },
   { slug: '/blog-choosing-online-math-tutor.html', title: 'How to Choose the Right Online Math Tutor for Your Child' },
   { slug: '/blog-science-learning-tips.html', title: 'How to Help Your Child Understand Science — Not Just Memorise It' },
+  { slug: '/blog-exam-stress-confidence.html', title: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks' },
 ];
 
 export default function BlogPostLayout({ slug, category, title, description, meta, ctaHeading, ctaBody, ctaWhatsAppText, children }) {
