@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="wrap hero-grid">
           <div>
             <span className="eyebrow">Online · 1st to 10th Std · Bangalore, Anywhere in India</span>
-            <h1><span className="kn">Learn with joy</span>No more exam stress</h1>
+            <h1><span className="kn">Confidence first.</span>Grades will follow.</h1>
             <p className="lead"><span className="lead-highlight">Because you want your child to enjoy learning, not fear it.</span> Live <strong>1-on-1</strong> online tuitions in English, Hindi, Mathematics, Science and Kannada for school students across India — with patient tutors who turn exam stress into everyday confidence.</p>
             <p className="trust-line"><strong>⭐ 5.0</strong> rated on Google · Register takes 30 seconds — no payment required</p>
             <p className="hero-note">One-on-one and small-batch online classes · 1st to 10th Standard · Students across India</p>
