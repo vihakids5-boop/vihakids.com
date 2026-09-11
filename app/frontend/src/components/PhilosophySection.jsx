@@ -3,7 +3,7 @@ export default function PhilosophySection() {
     <section id="philosophy" className="philosophy">
       <div className="wrap philosophy-wrap">
         <p className="philosophy-lead">
-          Education can't be fast-tracked — and at Vihakids, we don't try.
+          You know your child's learning can't be fast-tracked — and neither do we.
         </p>
         <p className="philosophy-body">
           We build one-on-one classes around patience, not pace, using technology to recreate the same warmth of real teacher-student learning. Because teaching has always been a relationship first, a syllabus second.
