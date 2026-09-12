@@ -1,5 +1,5 @@
 import BookingHeroLayout from '../components/BookingHeroLayout';
-import RegisterForm from '../components/RegisterForm';
+import RegisterFormWizard from '../components/RegisterFormWizard';
 
 const TRUST_ITEMS = [
   { icon: '★', text: '5.0 rated on Google, from real parents' },
@@ -21,7 +21,7 @@ export default function RegisterPage() {
       trustItems={TRUST_ITEMS}
       quote={QUOTE}
     >
-      <RegisterForm variant="page" />
+      <RegisterFormWizard />
     </BookingHeroLayout>
   );
 }
