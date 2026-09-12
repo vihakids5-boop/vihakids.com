@@ -325,7 +325,7 @@ header .brand-tagline{ color: var(--ink-soft); }
   padding: 56px 32px;
   background: var(--paper-raised);
 }
-.hero-panel-inner{ width: 100%; max-width: 380px; }
+.hero-panel-inner{ width: 100%; max-width: 440px; }
 @media (max-width: 900px){
   .hero{ grid-template-columns: 1fr; }
   .hero-visual{ padding: 48px 24px 52px; }
@@ -512,6 +512,7 @@ header .brand-tagline{ color: var(--ink-soft); }
   box-shadow: 0 14px 36px rgba(52,32,26,0.1);
 }
 .hero .hf-card{
+  max-width: none;
   border-color: rgba(28,110,122,0.14);
   box-shadow: 0 26px 60px rgba(10,38,54,0.35);
 }
@@ -1387,7 +1388,7 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
   justify-content: center;
   padding: 56px 32px;
 }
-.booking-panel-inner{ width: 100%; max-width: 420px; }
+.booking-panel-inner{ width: 100%; max-width: 480px; }
 
 /* Elevate the shared .hf-card form only inside the booking page. */
 .booking-page .hf-card{
