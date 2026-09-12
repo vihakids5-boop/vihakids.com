@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDocumentHead } from '../lib/useDocumentHead';
-import RegisterForm from '../components/RegisterForm';
+import RegisterFormWizard from '../components/RegisterFormWizard';
 import { BOARD_PAGES, CLASS_PAGES, SUBJECT_PAGES, COUNTRY_PAGES, CITY_PAGES } from '../data/tuitionLandingPages';
 
 const CATEGORY_LABEL = {
@@ -86,7 +86,7 @@ export default function TuitionLandingPage({ data }) {
       </div>
 
       <div className="page-form-wrap">
-        <RegisterForm variant="page" />
+        <RegisterFormWizard />
       </div>
 
       <div className="wrap">
