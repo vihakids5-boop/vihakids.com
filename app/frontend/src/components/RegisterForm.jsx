@@ -82,7 +82,7 @@ export default function RegisterForm({ variant = 'page' }) {
   }
 
   const eyebrow = variant === 'hero' ? 'Free demo class' : null;
-  const title = variant === 'hero' ? 'Register in 30 seconds' : 'Register for a free demo class';
+  const title = variant === 'hero' ? 'Register in 30 seconds' : 'Book your demo class';
 
   if (success) {
     return (
