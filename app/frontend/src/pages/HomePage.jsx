@@ -12,8 +12,8 @@ export default function HomePage() {
   return (
     <main id="top">
       <section className="hero">
-        <div className="wrap hero-grid">
-          <div>
+        <div className="hero-visual">
+          <div className="hero-visual-inner">
             <span className="eyebrow">Online · 1st to 10th Std · Bangalore, Anywhere in India</span>
             <h1><span className="kn">Confidence first.</span>Grades will follow.</h1>
             <p className="lead"><span className="lead-highlight">Because you want your child to enjoy learning, not fear it.</span> Live <strong>1-on-1</strong> online tuitions in English, Hindi, Mathematics, Science and Kannada for school students across India — with patient tutors who turn exam stress into everyday confidence.</p>
@@ -25,8 +25,10 @@ export default function HomePage() {
               <span className="board-badge b-state">State Board</span>
             </div>
           </div>
+        </div>
 
-          <div className="form-col">
+        <div className="hero-panel">
+          <div className="hero-panel-inner">
             <RegisterForm variant="hero" />
           </div>
         </div>

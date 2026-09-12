@@ -292,13 +292,20 @@ header .brand-tagline{ color: var(--ink-soft); }
 
 /* ---------- HERO ---------- */
 .hero{
-  padding: 68px 0 56px;
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  align-items: stretch;
+}
+.hero-visual{
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 68px 5vw;
   background: linear-gradient(155deg, var(--peacock) 0%, var(--oxide-dark) 62%, #12384E 100%);
   color: #fff;
 }
-.hero::before{
+.hero-visual::before{
   content: "";
   position: absolute;
   inset: 0;
@@ -310,16 +317,20 @@ header .brand-tagline{ color: var(--ink-soft); }
     radial-gradient(circle at 6% 82%, rgba(191,227,228,0.3) 0 9px, transparent 10px),
     radial-gradient(circle at 18% 6%, rgba(255,255,255,0.07) 0 70px, transparent 71px);
 }
-.hero-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items:start;
-  position: relative;
-  z-index: 1;
+.hero-visual-inner{ position: relative; z-index: 1; max-width: 560px; }
+.hero-panel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 32px;
+  background: var(--paper-raised);
 }
+.hero-panel-inner{ width: 100%; max-width: 380px; }
 @media (max-width: 900px){
-  .hero-grid{ grid-template-columns: 1fr; }
+  .hero{ grid-template-columns: 1fr; }
+  .hero-visual{ padding: 48px 24px 52px; }
+  .hero-visual-inner{ max-width: none; }
+  .hero-panel{ padding: 40px 20px 52px; }
 }
 .eyebrow{
   display:inline-flex;
@@ -491,7 +502,6 @@ header .brand-tagline{ color: var(--ink-soft); }
 .board-badge.b-state{ background: var(--banana-soft); color: var(--banana); }
 
 /* ---------- REGISTRATION FORM (shared by hero + standalone page) ---------- */
-.form-col{ display:flex; justify-content:center; }
 .hf-card{
   width: 100%;
   max-width: 380px;
