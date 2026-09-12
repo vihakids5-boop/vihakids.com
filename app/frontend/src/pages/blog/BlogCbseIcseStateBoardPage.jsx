@@ -11,6 +11,13 @@ export default function BlogCbseIcseStateBoardPage() {
       ctaHeading="Not sure what your child specifically needs?"
       ctaBody="Tell us the board, school and grade, and we'll tell you honestly whether — and where — extra support would help."
       ctaWhatsAppText="Hi, I'd like advice on Kannada/Hindi support for my child"
+      relatedLinks={[
+        { to: '/cbse-online-tuition', label: 'CBSE Online Tuition for Classes 1–10' },
+        { to: '/icse-online-tuition', label: 'ICSE Online Tuition for Classes 1–10' },
+        { to: '/state-board-online-tuition', label: 'State Board Online Tuition for Classes 1–10' },
+        { to: '/kannada-online-tuition', label: 'Kannada Online Tuition for Classes 1–10' },
+        { to: '/hindi-online-tuition', label: 'Hindi Online Tuition for Classes 1–10' },
+      ]}
     >
       <p>Parents moving between cities, or choosing a school for the first time, often ask us the same question: "Does the board really change how much Kannada or Hindi support my child will need?" The honest answer is yes — not because one board is harder than another, but because each one treats second-language learning quite differently.</p>
 
