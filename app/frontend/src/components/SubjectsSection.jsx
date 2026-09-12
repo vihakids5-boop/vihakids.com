@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 const CARDS = [
   {
-    color: 'peacock', grade: 'Aa', title: 'English',
+    color: 'peacock', grade: 'Aa', title: 'English', slug: 'english-online-tuition',
     items: [
       'Phonics, alphabet and confident reading aloud',
       'Grammar, comprehension and vocabulary building',
@@ -8,7 +10,7 @@ const CARDS = [
     ],
   },
   {
-    color: 'lotus', grade: 'Aa', title: 'Hindi',
+    color: 'lotus', grade: 'Aa', title: 'Hindi', slug: 'hindi-online-tuition',
     items: [
       'Hindi alphabet, reading and writing basics',
       'Grammar, comprehension and vocabulary building',
@@ -16,7 +18,7 @@ const CARDS = [
     ],
   },
   {
-    color: 'banana', grade: 'Math', title: 'Mathematics',
+    color: 'banana', grade: 'Math', title: 'Mathematics', slug: 'math-online-tuition',
     items: [
       'Number sense, counting and basic arithmetic',
       'Fractions, geometry and problem-solving',
@@ -24,7 +26,7 @@ const CARDS = [
     ],
   },
   {
-    color: 'sky', grade: 'Science', title: 'Science',
+    color: 'sky', grade: 'Science', title: 'Science', slug: 'science-online-tuition',
     items: [
       'EVS basics — plants, animals, our body and surroundings',
       'Everyday-example explanations of Physics, Chemistry and Biology',
@@ -32,7 +34,7 @@ const CARDS = [
     ],
   },
   {
-    color: 'oxide', grade: 'Aa', title: 'Kannada',
+    color: 'oxide', grade: 'Aa', title: 'Kannada', slug: 'kannada-online-tuition',
     items: [
       'Varnamale — the alphabet, read and written properly',
       'Grammar (vyakarana), comprehension and composition',
@@ -60,6 +62,7 @@ export default function SubjectsSection() {
               <span className="grade">{c.grade}</span>
               <h3>{c.title}</h3>
               <ul>{c.items.map((i) => <li key={i}>{i}</li>)}</ul>
+              <Link to={`/${c.slug}`} className="program-card-link">{c.title} tuition details →</Link>
             </div>
           ))}
         </div>

@@ -12,6 +12,11 @@ export default function BlogKannadaReadingTipsPage() {
       ctaHeading="Want a second opinion on your child's reading level?"
       ctaBody="Tell us your child's grade and school, and we'll suggest where to start — no pressure, no obligation."
       ctaWhatsAppText="Hi, I'd like some advice on my child's Kannada reading"
+      relatedLinks={[
+        { to: '/kannada-online-tuition', label: 'Kannada Online Tuition for Classes 1–10' },
+        { to: '/state-board-online-tuition', label: 'State Board Online Tuition for Classes 1–10' },
+        { to: '/online-tuition-bengaluru', label: 'Online Tuition in Bengaluru' },
+      ]}
     >
       <p>For many families in Bengaluru, Kannada is the language your child is graded on at school but not necessarily the language spoken at home. That gap alone can make reading feel harder than it needs to be — not because your child isn't capable, but because reading practice often only happens inside the classroom, in short bursts, under exam pressure.</p>
       <p>The good news: reading confidence builds fastest through small, low-pressure repetition at home, not through longer classes. Here are five things that actually move the needle.</p>

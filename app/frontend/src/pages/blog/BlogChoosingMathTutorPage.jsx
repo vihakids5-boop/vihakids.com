@@ -11,6 +11,11 @@ export default function BlogChoosingMathTutorPage() {
       ctaHeading="Tell us the topic your child is stuck on"
       ctaBody="Share your child's grade, board and the specific Math topic that's causing trouble, and we'll tell you honestly how we'd approach it."
       ctaWhatsAppText="Hi, I'd like help finding the right Math support for my child"
+      relatedLinks={[
+        { to: '/math-online-tuition', label: 'Online Math Tutor & Tuition for Classes 1–10' },
+        { to: '/cbse-online-tuition', label: 'CBSE Online Tuition for Classes 1–10' },
+        { to: '/icse-online-tuition', label: 'ICSE Online Tuition for Classes 1–10' },
+      ]}
     >
       <p>"My child needs a Math tutor" is one of the most common messages we get — and one of the least specific, because Math tuition covers a huge range of actual needs: a Class 3 student still shaky on multiplication tables, a Class 7 student lost on fractions, and a Class 10 student cramming for boards all technically "need a Math tutor," but they need very different things from one.</p>
       <p>Before picking a tutor — online or otherwise — it helps to know what actually predicts a good outcome versus what's just marketing.</p>

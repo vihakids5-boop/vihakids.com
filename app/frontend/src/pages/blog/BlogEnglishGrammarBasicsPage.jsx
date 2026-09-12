@@ -11,6 +11,10 @@ export default function BlogEnglishGrammarBasicsPage() {
       ctaHeading="Want a tutor who explains grammar this simply, every week?"
       ctaBody="Tell us your child's grade and board, and we'll show you exactly how we'd build up their English grammar from where they are today."
       ctaWhatsAppText="Hi, I'd like help with my child's English grammar basics"
+      relatedLinks={[
+        { to: '/english-online-tuition', label: 'English & Spoken English Online Tuition for Classes 1–10' },
+        { to: '/online-tuition-class-5', label: 'Online Tuition for Class 5' },
+      ]}
     >
       <p>Most grammar struggles in the early years come down to two things: not knowing what job a word is doing in a sentence, and mixing up tenses that look similar on the page but mean different things. Once both of those click, everything else — comprehension, essay writing, even spoken English — gets noticeably easier.</p>
       <p>Here are both topics laid out the way we actually teach them, as a reference you can keep coming back to rather than something to memorise in one sitting.</p>
