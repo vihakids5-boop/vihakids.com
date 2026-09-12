@@ -1,4 +1,4 @@
-import RegisterForm from '../components/RegisterForm';
+import RegisterFormWizard from '../components/RegisterFormWizard';
 import PhilosophySection from '../components/PhilosophySection';
 import RealitySection from '../components/RealitySection';
 import SubjectsSection from '../components/SubjectsSection';
@@ -29,7 +29,7 @@ export default function HomePage() {
 
         <div className="hero-panel">
           <div className="hero-panel-inner">
-            <RegisterForm variant="hero" />
+            <RegisterFormWizard />
           </div>
         </div>
       </section>
