@@ -11,6 +11,10 @@ export default function BlogExamStressConfidencePage() {
       ctaHeading="Want a tutor who builds confidence, not just covers the syllabus?"
       ctaBody="Tell us your child's grade, board and the biggest source of exam stress right now, and we'll explain honestly how we'd approach it."
       ctaWhatsAppText="Hi, I'd like help building my child's confidence and reducing exam stress"
+      relatedLinks={[
+        { to: '/online-tuition-class-10', label: 'Online Tuition for Class 10' },
+        { to: '/online-tuition-class-9', label: 'Online Tuition for Class 9' },
+      ]}
     >
       <p>Most parents don't actually want their child to be a marks-chasing machine — they want a child who's curious, capable, and doesn't fall apart before every test. But it's easy to end up rewarding marks by accident: a 95% gets a celebration, a 65% gets a serious talk, and within a few cycles, a child quietly learns that their worth is the number on the page, not what they understood.</p>
       <p>That's usually when exam stress stops being occasional nerves and starts being a constant, low-grade anxiety — which, ironically, tends to lower performance rather than improve it.</p>

@@ -13,7 +13,7 @@ const ALL_POSTS = [
   { slug: '/blog-english-grammar-basics.html', title: 'English Grammar Basics for Kids: Parts of Speech & Present Tense' },
 ];
 
-export default function BlogPostLayout({ slug, category, title, description, meta, ctaHeading, ctaBody, ctaWhatsAppText, children }) {
+export default function BlogPostLayout({ slug, category, title, description, meta, ctaHeading, ctaBody, ctaWhatsAppText, relatedLinks, children }) {
   useDocumentHead({ title: `${title} | Vihakids`, description });
   const morePosts = ALL_POSTS.filter((p) => p.slug !== slug);
 
@@ -42,6 +42,17 @@ export default function BlogPostLayout({ slug, category, title, description, met
           </a>
         </div>
       </article>
+
+      {relatedLinks?.length > 0 && (
+        <div className="related-links" style={{ maxWidth: 'var(--content-w)' }}>
+          <h2>Related pages</h2>
+          <ul>
+            {relatedLinks.map((l) => (
+              <li key={l.to}><Link to={l.to}>{l.label}</Link></li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="more-posts">
         <h2>More from the blog</h2>

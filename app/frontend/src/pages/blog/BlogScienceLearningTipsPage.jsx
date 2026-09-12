@@ -11,6 +11,10 @@ export default function BlogScienceLearningTipsPage() {
       ctaHeading="Tell us the Science topic your child is stuck on"
       ctaBody="Share your child's grade, board and the concept that isn't clicking, and we'll tell you honestly how we'd approach it."
       ctaWhatsAppText="Hi, I'd like help with my child's Science learning"
+      relatedLinks={[
+        { to: '/science-online-tuition', label: 'Science Online Tuition for Classes 1–10' },
+        { to: '/math-online-tuition', label: 'Online Math Tutor & Tuition for Classes 1–10' },
+      ]}
     >
       <p>Science homework has a specific failure mode that's different from Kannada or Math: a child can score well on a unit test by memorising definitions and diagrams word-for-word, and still not actually understand what's happening — until the exam asks the same concept in a slightly different way, and the answer falls apart.</p>
       <p>This isn't a motivation problem. It's usually a sign that Science is being learned as a list of facts to recall rather than a set of ideas to reason through. Here's how to shift that at home, without turning every evening into an extra class.</p>

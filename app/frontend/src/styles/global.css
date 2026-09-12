@@ -711,6 +711,15 @@ section{ padding: 72px 0; scroll-margin-top: 96px; }
 .program-card h3{ font-size: 1.25rem; font-weight: 600; }
 .program-card ul{ margin:0; padding-left: 18px; color: var(--ink-soft); font-size: 0.95rem; }
 .program-card li{ margin-bottom: 6px; }
+.program-card-link{
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--band-color, var(--oxide));
+  text-decoration: none;
+}
+.program-card-link:hover{ text-decoration: underline; }
 
 /* how it works */
 .features{
