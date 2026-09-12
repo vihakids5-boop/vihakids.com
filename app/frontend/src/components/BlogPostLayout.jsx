@@ -10,6 +10,7 @@ const ALL_POSTS = [
   { slug: '/blog-choosing-online-math-tutor.html', title: 'How to Choose the Right Online Math Tutor for Your Child' },
   { slug: '/blog-science-learning-tips.html', title: 'How to Help Your Child Understand Science — Not Just Memorise It' },
   { slug: '/blog-exam-stress-confidence.html', title: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks' },
+  { slug: '/blog-english-grammar-basics.html', title: 'English Grammar Basics for Kids: Parts of Speech & Present Tense' },
 ];
 
 export default function BlogPostLayout({ slug, category, title, description, meta, ctaHeading, ctaBody, ctaWhatsAppText, children }) {

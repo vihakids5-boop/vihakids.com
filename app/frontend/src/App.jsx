@@ -27,6 +27,7 @@ const BlogCbseIcseStateBoardPage = lazy(() => import('./pages/blog/BlogCbseIcseS
 const BlogChoosingMathTutorPage = lazy(() => import('./pages/blog/BlogChoosingMathTutorPage'));
 const BlogScienceLearningTipsPage = lazy(() => import('./pages/blog/BlogScienceLearningTipsPage'));
 const BlogExamStressConfidencePage = lazy(() => import('./pages/blog/BlogExamStressConfidencePage'));
+const BlogEnglishGrammarBasicsPage = lazy(() => import('./pages/blog/BlogEnglishGrammarBasicsPage'));
 const KannadaAlphabetWorksheetPage = lazy(() => import('./pages/resources/KannadaAlphabetWorksheetPage'));
 const TuitionLandingPage = lazy(() => import('./pages/TuitionLandingPage'));
 
@@ -77,6 +78,7 @@ export default function App() {
           <Route path="/blog-choosing-online-math-tutor.html" element={<BlogChoosingMathTutorPage />} />
           <Route path="/blog-science-learning-tips.html" element={<BlogScienceLearningTipsPage />} />
           <Route path="/blog-exam-stress-confidence.html" element={<BlogExamStressConfidencePage />} />
+          <Route path="/blog-english-grammar-basics.html" element={<BlogEnglishGrammarBasicsPage />} />
           <Route path="/kannada-alphabet-tracing-worksheet" element={<KannadaAlphabetWorksheetPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

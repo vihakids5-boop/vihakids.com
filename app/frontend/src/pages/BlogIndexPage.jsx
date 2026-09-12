@@ -5,6 +5,14 @@ const WHATSAPP_BASE = 'https://wa.me/919972577828?text=';
 
 const POSTS = [
   {
+    slug: '/blog-english-grammar-basics.html',
+    cat: 'English',
+    title: 'English Grammar Basics for Kids: Parts of Speech & Present Tense',
+    excerpt: 'A free, easy reference for two grammar topics every child struggles with early on — with simple examples and the mistakes to watch for.',
+    date: '12 Sep 2026',
+    read: '7 min read',
+  },
+  {
     slug: '/blog-exam-stress-confidence.html',
     cat: 'Confidence & Wellbeing',
     title: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks',
