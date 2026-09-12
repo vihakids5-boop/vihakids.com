@@ -1,5 +1,5 @@
 import BookingHeroLayout from '../components/BookingHeroLayout';
-import TeachForm from '../components/TeachForm';
+import TeachFormWizard from '../components/TeachFormWizard';
 
 const TRUST_ITEMS = [
   { icon: '🏠', text: 'Flexible, work-from-home hours' },
@@ -15,7 +15,7 @@ export default function TeachPage() {
       sub="We're always looking for patient, skilled English, Hindi, Math, Science and Kannada tutors for online classes — teach students from anywhere in India."
       trustItems={TRUST_ITEMS}
     >
-      <TeachForm />
+      <TeachFormWizard />
     </BookingHeroLayout>
   );
 }
