@@ -45,7 +45,6 @@ export default function AdminPage() {
   const [regStatus, setRegStatus] = useState('');
   const [teachQuery, setTeachQuery] = useState('');
   const [teachStatus, setTeachStatus] = useState('');
-  const [authError, setAuthError] = useState('');
 
   useEffect(() => {
     if (!firebaseConfigured) { setUser(null); return; }
@@ -61,11 +60,10 @@ export default function AdminPage() {
     Boolean(user)
   );
 
-  useEffect(() => {
-    if (reg.error?.includes('Not authorized') || teach.error?.includes('Not authorized')) {
-      setAuthError('This account is not an admin for Vihakids.');
-    }
-  }, [reg.error, teach.error]);
+  const activeError = tab === 'registrations' ? reg.error : teach.error;
+  const authError = activeError?.includes('Not authorized')
+    ? 'This account is not an admin for Vihakids.'
+    : activeError;
 
   const visibleReg = useMemo(
     () => filterRows(reg.rows, regQuery, regStatus, ['parentName', 'phone', 'subjects', 'grade', 'source', 'notes']),
