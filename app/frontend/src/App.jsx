@@ -30,6 +30,7 @@ const BlogExamStressConfidencePage = lazy(() => import('./pages/blog/BlogExamStr
 const BlogEnglishGrammarBasicsPage = lazy(() => import('./pages/blog/BlogEnglishGrammarBasicsPage'));
 const KannadaAlphabetWorksheetPage = lazy(() => import('./pages/resources/KannadaAlphabetWorksheetPage'));
 const TuitionLandingPage = lazy(() => import('./pages/TuitionLandingPage'));
+const FeesPage = lazy(() => import('./pages/FeesPage'));
 
 function SiteLayout() {
   useScrollToHash();
@@ -65,6 +66,7 @@ export default function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/teach" element={<TeachPage />} />
             <Route path="/about.html" element={<AboutPage />} />
+            <Route path="/fees" element={<FeesPage />} />
             <Route path="/blog.html" element={<BlogIndexPage />} />
             {ALL_TUITION_PAGES.map((page) => (
               <Route key={page.slug} path={`/${page.slug}`} element={<TuitionLandingPage data={page} />} />

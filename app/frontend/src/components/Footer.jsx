@@ -49,6 +49,7 @@ export default function Footer() {
           <a href="tel:+919972577828" style={{ color: 'var(--ink-soft)' }}>📞 +91 99725 77828</a>
         </p>
         <Link to="/about.html" style={linkStyle}>About Us</Link>
+        <Link to="/fees" style={linkStyle}>Fees</Link>
         <Link to="/blog.html" style={linkStyle}>Blog</Link>
         <Link to="/kannada-alphabet-tracing-worksheet" style={linkStyle}>Free Kannada Worksheet</Link>
         <div className="footer-socials" style={{ display: 'flex', gap: 14, alignItems: 'center' }}>

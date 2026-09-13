@@ -10,6 +10,7 @@ const GENERAL_LINKS = [
   { href: '/#reality', label: 'Why Us' },
   { href: '/#subjects', label: 'Subjects' },
   { href: '/#programs', label: 'Programs' },
+  { href: '/fees', label: 'Fees' },
   { href: '/#how', label: 'How it works' },
   { href: '/#reviews', label: 'Reviews' },
   { href: '/blog.html', label: 'Blog' },

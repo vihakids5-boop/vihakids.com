@@ -1112,6 +1112,37 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 .checklist li{ display:flex; gap:12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .checklist .mark{ flex-shrink:0; width: 24px; height:24px; border-radius: 50%; background: var(--banana); color:#fff; display:flex; align-items:center; justify-content:center; font-size: 0.78rem; font-weight:700; margin-top:2px; }
 
+/* ---------- FEES PAGE ---------- */
+.pace-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0 28px; }
+@media (max-width: 620px){ .pace-grid{ grid-template-columns: 1fr; } }
+.pace-card{ background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+.pace-tag{ display:inline-block; font-size:0.7rem; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+.pace-steady .pace-tag{ background: var(--sky-soft); color: var(--oxide-dark); }
+.pace-focus .pace-tag{ background: var(--marigold-soft); color: #2B6B49; }
+.pace-card h3{ font-family:'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 700; margin: 0 0 6px; }
+.pace-card p{ margin:0; font-size: 0.9rem; color: var(--ink-soft); }
+
+.fee-table td{ vertical-align: middle; }
+.fee-band-grades{ display:block; font-weight:500; font-size: 0.8rem; color: var(--ink-soft); margin-top: 2px; }
+.fee-price{ display:block; font-family:'Montserrat',sans-serif; font-weight:700; font-size: 1.1rem; color: var(--oxide-dark); }
+.fee-price-focus{ color: #2B6B49; }
+.fee-per-class{ display:block; font-size: 0.78rem; color: var(--ink-soft); margin-top: 2px; }
+.fee-table-note{ margin: -14px 0 28px; font-size: 0.85rem; color: var(--ink-soft); }
+
+.discount-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0 28px; }
+@media (max-width: 700px){ .discount-grid{ grid-template-columns: 1fr; } }
+.discount-card{ background: var(--paper-raised); border: 1px solid var(--line); border-radius: 14px; padding: 18px 18px 20px; text-align:center; }
+.discount-n{ display:block; font-family:'Montserrat',sans-serif; font-size: 1.9rem; font-weight: 800; color: var(--lotus); margin-bottom: 4px; }
+.discount-l{ font-weight: 700; font-size: 0.92rem; margin-bottom: 4px; }
+.discount-d{ font-size: 0.82rem; color: var(--ink-soft); }
+
+.fee-example-list{ display:flex; flex-direction:column; gap: 10px; margin: 20px 0 28px; }
+.fee-example{ display:flex; justify-content:space-between; align-items:baseline; gap: 16px; background: var(--paper-raised); border: 1px solid var(--line); border-left: 3px solid var(--oxide); border-radius: 0 12px 12px 0; padding: 14px 18px; }
+.fee-example-desc{ font-size: 0.92rem; color: var(--ink-soft); }
+.fee-example-desc strong{ color: var(--ink); }
+.fee-example-amt{ font-family:'Montserrat',sans-serif; font-weight:700; font-size: 1.05rem; color: var(--oxide-dark); white-space:nowrap; }
+.fee-example-amt span{ font-weight:500; font-size: 0.8rem; color: var(--ink-soft); }
+
 .more-posts{ max-width: var(--content-w); margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
 .more-posts h2{ font-size: 1.1rem; font-weight:600; margin-bottom: 14px; }
 .more-posts a{ display:block; text-decoration:none; color: var(--ink); font-weight:600; padding: 10px 0; border-bottom: 1px dashed var(--line); }
