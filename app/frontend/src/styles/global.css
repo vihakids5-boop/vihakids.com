@@ -154,6 +154,8 @@ header .brand-tagline{ color: var(--ink-soft); }
   transition: background 0.15s ease, color 0.15s ease;
 }
 .nav-dropdown-link:hover{ background: var(--marigold-soft); color: var(--banana); }
+.nav-dropdown-link-fees{ color: var(--oxide); font-weight: 800; margin-bottom: 4px; }
+.nav-dropdown-link-fees:hover{ background: var(--oxide-soft); color: var(--oxide-dark); }
 .mega-class-grid{
   display:grid;
   grid-template-columns: repeat(5, 1fr);
@@ -285,6 +287,7 @@ header .brand-tagline{ color: var(--ink-soft); }
     margin-top: 10px;
   }
   .mobile-menu a.mobile-teach:hover{ background: #efbb5c; color: var(--oxide-dark); }
+  .mobile-menu a.mobile-fees-shortcut{ color: var(--oxide); font-weight: 800; }
 }
 @media (min-width: 1221px){
   .mobile-menu{ display:none; }
@@ -1129,12 +1132,6 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 .fee-per-class{ display:block; font-size: 0.78rem; color: var(--ink-soft); margin-top: 2px; }
 .fee-table-note{ margin: -14px 0 28px; font-size: 0.85rem; color: var(--ink-soft); }
 
-.discount-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0 28px; }
-@media (max-width: 700px){ .discount-grid{ grid-template-columns: 1fr; } }
-.discount-card{ background: var(--paper-raised); border: 1px solid var(--line); border-radius: 14px; padding: 18px 18px 20px; text-align:center; }
-.discount-n{ display:block; font-family:'Montserrat',sans-serif; font-size: 1.9rem; font-weight: 800; color: var(--lotus); margin-bottom: 4px; }
-.discount-l{ font-weight: 700; font-size: 0.92rem; margin-bottom: 4px; }
-.discount-d{ font-size: 0.82rem; color: var(--ink-soft); }
 
 .fee-example-list{ display:flex; flex-direction:column; gap: 10px; margin: 20px 0 28px; }
 .fee-example{ display:flex; justify-content:space-between; align-items:baseline; gap: 16px; background: var(--paper-raised); border: 1px solid var(--line); border-left: 3px solid var(--oxide); border-radius: 0 12px 12px 0; padding: 14px 18px; }

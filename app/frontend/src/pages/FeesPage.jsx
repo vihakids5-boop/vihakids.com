@@ -7,17 +7,11 @@ const BANDS = [
   { name: 'Board Ready', grades: 'Classes 8–10', steady: 2199, steadyPerClass: 275, focus: 2999, focusPerClass: 250 },
 ];
 
-const DISCOUNTS = [
-  { n: '10%', l: '2 subjects together', d: 'Off the combined monthly total' },
-  { n: '15%', l: '3+ subjects together', d: 'Off the combined monthly total' },
-  { n: '10%', l: 'Every child after the first', d: "Off that child's plan, siblings only" },
-];
-
 const EXAMPLES = [
-  { desc: <><strong>1 child</strong>, Class 6, English + Math, Steady Pace</>, amt: '₹3,238' },
+  { desc: <><strong>1 child</strong>, Class 6, English + Math, Steady Pace</>, amt: '₹3,598' },
   { desc: <><strong>1 child</strong>, Class 9, Math only, Extra Support before boards</>, amt: '₹2,999' },
-  { desc: <><strong>2 children</strong>, both in Foundation grades, one subject each, Steady Pace</>, amt: '₹2,848' },
-  { desc: <><strong>1 child</strong>, Class 4, Kannada + Hindi + English, Steady Pace</>, amt: '₹3,822' },
+  { desc: <><strong>2 children</strong>, both in Foundation grades, one subject each, Steady Pace</>, amt: '₹2,998' },
+  { desc: <><strong>1 child</strong>, Class 4, Kannada + Hindi + English, Steady Pace</>, amt: '₹4,497' },
 ];
 
 export default function FeesPage() {
@@ -70,19 +64,6 @@ export default function FeesPage() {
             </tbody>
           </table>
           <p className="fee-table-note">Per-class cost is lower on Extra Support in every band — committing to more consistent support is rewarded, not penalised.</p>
-
-          <h2>Built-in discounts</h2>
-          <p>Most families need more than one subject, or have more than one child. The price should reflect that.</p>
-
-          <div className="discount-grid">
-            {DISCOUNTS.map((d) => (
-              <div className="discount-card" key={d.l}>
-                <span className="discount-n">{d.n}</span>
-                <div className="discount-l">{d.l}</div>
-                <div className="discount-d">{d.d}</div>
-              </div>
-            ))}
-          </div>
 
           <h2>What this looks like for a real family</h2>
           <div className="fee-example-list">

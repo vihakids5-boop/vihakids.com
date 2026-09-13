@@ -86,6 +86,7 @@ export default function Header() {
 
               <div className="mega-col">
                 <h3 className="mega-heading">By city</h3>
+                <NavLink href="/fees" label="Fees →" className="nav-dropdown-link nav-dropdown-link-fees" onClick={closeMega} />
                 {CITY_PAGES.map((p) => (
                   <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} className="nav-dropdown-link" onClick={closeMega} />
                 ))}
@@ -169,6 +170,7 @@ export default function Header() {
           ))}
 
           <span className="mobile-menu-heading">By city</span>
+          <NavLink href="/fees" label="Fees →" className="mobile-fees-shortcut" onClick={closeMobile} />
           {CITY_PAGES.map((p) => (
             <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} onClick={closeMobile} />
           ))}
