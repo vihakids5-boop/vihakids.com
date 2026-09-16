@@ -1,0 +1,25 @@
+// Title/description for the non-data-driven React routes. Shared by the page
+// components and scripts/prerender.mjs, which bakes them into per-route HTML
+// so crawlers get the right head without executing JS.
+export const STATIC_ROUTE_HEADS = {
+  '/': {
+    title: 'Vihakids — Confidence First. Online Tuitions in India',
+    description: 'Because you want your child to enjoy learning, not fear it. Live 1-on-1 online tuitions in English, Hindi, Mathematics, Science and Kannada for CBSE, ICSE and State Board, Classes 1 to 10, anywhere in India. Headquartered in Bengaluru.',
+  },
+  '/register': {
+    title: 'Book a Free Demo Class | Vihakids Online Tuitions',
+    description: 'Book a free online demo class for your child in English, Hindi, Math, Science or Kannada — Classes 1 to 10, CBSE, ICSE and State Board. Takes 30 seconds, no payment, no commitment.',
+  },
+  '/teach': {
+    title: 'Teach with Vihakids | Online Tutor Jobs in English, Hindi, Math, Science & Kannada',
+    description: 'Join Vihakids as an online tutor. Flexible work-from-home hours teaching live 1-on-1 and small-batch classes in English, Hindi, Math, Science and Kannada for Classes 1 to 10.',
+  },
+  '/fees': {
+    title: 'Fees | Vihakids — Online English, Hindi, Math, Science & Kannada Tuitions',
+    description: 'Simple, affordable monthly fees for Vihakids online tuitions — one clear price per subject, per month, with no registration fee and no annual contract. Built for every Indian family.',
+  },
+  '/kannada-alphabet-tracing-worksheet': {
+    title: 'Free Kannada Alphabet (Varnamale) Tracing Worksheet — Printable | Vihakids',
+    description: 'A free, printable Kannada Varnamale tracing worksheet — all 15 vowels (swaragalu) and 34 consonants (vyanjanagalu), for children just starting to read and write Kannada. Print at home, no sign-up required.',
+  },
+};

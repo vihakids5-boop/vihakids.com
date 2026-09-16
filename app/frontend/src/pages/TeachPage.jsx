@@ -1,5 +1,7 @@
 import BookingHeroLayout from '../components/BookingHeroLayout';
 import TeachFormWizard from '../components/TeachFormWizard';
+import { useDocumentHead } from '../lib/useDocumentHead';
+import { STATIC_ROUTE_HEADS } from '../data/staticRouteHeads';
 
 const TRUST_ITEMS = [
   { icon: '🏠', text: 'Flexible, work-from-home hours' },
@@ -8,6 +10,7 @@ const TRUST_ITEMS = [
 ];
 
 export default function TeachPage() {
+  useDocumentHead(STATIC_ROUTE_HEADS['/teach']);
   return (
     <BookingHeroLayout
       eyebrow="Are you a tutor?"

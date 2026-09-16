@@ -7,8 +7,11 @@ import HowItWorksSection from '../components/HowItWorksSection';
 import WhyBandSection from '../components/WhyBandSection';
 import ReviewsSection from '../components/ReviewsSection';
 import ContactSection from '../components/ContactSection';
+import { useDocumentHead } from '../lib/useDocumentHead';
+import { STATIC_ROUTE_HEADS } from '../data/staticRouteHeads';
 
 export default function HomePage() {
+  useDocumentHead(STATIC_ROUTE_HEADS['/']);
   return (
     <main id="top">
       <section className="hero">

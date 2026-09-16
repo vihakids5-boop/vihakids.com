@@ -1,5 +1,7 @@
 import BookingHeroLayout from '../components/BookingHeroLayout';
 import RegisterFormWizard from '../components/RegisterFormWizard';
+import { useDocumentHead } from '../lib/useDocumentHead';
+import { STATIC_ROUTE_HEADS } from '../data/staticRouteHeads';
 
 const TRUST_ITEMS = [
   { icon: '★', text: '5.0 rated on Google, from real parents' },
@@ -13,6 +15,7 @@ const QUOTE = {
 };
 
 export default function RegisterPage() {
+  useDocumentHead(STATIC_ROUTE_HEADS['/register']);
   return (
     <BookingHeroLayout
       eyebrow="Free demo class"

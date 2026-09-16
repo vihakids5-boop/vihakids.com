@@ -1,4 +1,5 @@
 import { useDocumentHead } from '../lib/useDocumentHead';
+import { STATIC_ROUTE_HEADS } from '../data/staticRouteHeads';
 import RegisterFormWizard from '../components/RegisterFormWizard';
 
 const BANDS = [
@@ -15,10 +16,7 @@ const EXAMPLES = [
 ];
 
 export default function FeesPage() {
-  useDocumentHead({
-    title: 'Fees | Vihakids — Online English, Hindi, Math, Science & Kannada Tuitions',
-    description: 'Simple, affordable monthly fees for Vihakids online tuitions — one clear price per subject, per month, with no registration fee and no annual contract. Built for every Indian family.',
-  });
+  useDocumentHead(STATIC_ROUTE_HEADS['/fees']);
 
   return (
     <main id="top">

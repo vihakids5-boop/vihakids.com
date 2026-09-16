@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MinimalPageLayout from '../../components/MinimalPageLayout';
 import { useDocumentHead } from '../../lib/useDocumentHead';
+import { STATIC_ROUTE_HEADS } from '../../data/staticRouteHeads';
 
 const FONT_LINK_ID = 'noto-sans-kannada-font';
 
@@ -78,10 +79,7 @@ function TraceCard({ kn, translit }) {
 }
 
 export default function KannadaAlphabetWorksheetPage() {
-  useDocumentHead({
-    title: 'Free Kannada Alphabet (Varnamale) Tracing Worksheet — Printable | Vihakids',
-    description: 'A free, printable Kannada Varnamale tracing worksheet — all 15 vowels (swaragalu) and 34 consonants (vyanjanagalu), for children just starting to read and write Kannada. Print at home, no sign-up required.',
-  });
+  useDocumentHead(STATIC_ROUTE_HEADS['/kannada-alphabet-tracing-worksheet']);
 
   useEffect(() => {
     if (document.getElementById(FONT_LINK_ID)) return;
