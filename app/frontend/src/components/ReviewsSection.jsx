@@ -13,7 +13,7 @@ export default function ReviewsSection() {
       <div className="wrap">
         <div className="section-head">
           <span className="eyebrow">What parents say</span>
-          <h2>Real feedback from real Vihakids families</h2>
+          <h2>21 families rated us 5.0 on Google. Here is what they said.</h2>
           <div className="rating-strip">
             <span className="stars" aria-hidden="true">★★★★★</span>
             <span className="rating-text">5.0</span>

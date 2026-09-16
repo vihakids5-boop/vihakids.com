@@ -8,7 +8,7 @@ export default function FeesTeaserSection() {
           <div className="fees-teaser-copy">
             <span className="eyebrow">Clear monthly fees</span>
             <h2>One price per subject, per month. No surprises.</h2>
-            <p>You will know exactly what you pay before you commit to anything — and you only decide after the free demo.</p>
+            <p>You will know exactly what you pay before you commit to anything, and you only decide after the free demo. No registration fee, no annual contract, cancel any month.</p>
             <Link to="/fees" className="btn btn-ghost">See the full fee structure &rarr;</Link>
           </div>
           <ul className="fees-teaser-points">

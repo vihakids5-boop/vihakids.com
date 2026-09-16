@@ -6,6 +6,14 @@ const FAQS = [
     a: 'Yes — completely. There is no payment, no card details and no commitment. It is a proper 30-minute class with a real tutor, so you and your child can see whether it clicks before deciding anything.',
   },
   {
+    q: 'What if my child does not like the demo?',
+    a: 'Then you simply do not continue. There is nothing to cancel and nothing to pay. We would rather you find the right fit for your child than sign up unsure — and we will tell you honestly if we think a different subject or pace would help more.',
+  },
+  {
+    q: 'How soon can the demo happen?',
+    a: 'We reply on WhatsApp the same day you register and fix the earliest slot that suits your family — evenings and weekends included. You choose the time; we bring the tutor.',
+  },
+  {
     q: 'What do we need at home?',
     a: 'A phone, tablet or laptop with an internet connection is enough. Classes run on a simple video link we send on WhatsApp — nothing to install. A notebook and pencil help for Math and language writing practice.',
   },
@@ -34,7 +42,7 @@ export default function FaqSection() {
       <div className="wrap">
         <div className="section-head">
           <span className="eyebrow">Questions parents ask</span>
-          <h2>Everything you might want to know before booking</h2>
+          <h2>Everything parents ask before booking the free demo</h2>
         </div>
         <div className="faq-list">
           {FAQS.map((f) => (

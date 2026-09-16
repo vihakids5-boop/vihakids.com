@@ -35,8 +35,8 @@ export default function ProgramsSection() {
       <div className="wrap">
         <div className="section-head">
           <span className="eyebrow">Grade-wise programs</span>
-          <h2>Built around where your child actually is</h2>
-          <p>Classes are grouped by grade band, not one-size-fits-all — across English, Hindi, Mathematics, Science and Kannada, so younger kids build strong basics, and older kids sharpen exam technique.</p>
+          <h2>Built around where your child actually is, not where the syllabus says they should be</h2>
+          <p>A Class 3 child who is scared of reading needs something very different from a Class 9 student staring at board exams. We teach by grade band — across English, Hindi, Mathematics, Science and Kannada — so younger kids build solid basics and older kids sharpen exam technique.</p>
         </div>
         <div className="programs">
           {CARDS.map((c) => (

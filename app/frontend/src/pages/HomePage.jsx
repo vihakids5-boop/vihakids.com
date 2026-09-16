@@ -16,8 +16,8 @@ import { STATIC_ROUTE_HEADS } from '../data/staticRouteHeads';
 
 const TRUST_ITEMS = [
   { icon: '★', text: '5.0 on Google, from 21 parent reviews' },
-  { icon: '🎁', text: 'Free 30-minute demo class — no payment, no commitment' },
-  { icon: '👩‍🏫', text: '1-on-1 classes that follow your child’s own textbook' },
+  { icon: '🎁', text: 'Free 30-minute demo — no payment, no card, no commitment' },
+  { icon: '👩‍🏫', text: '1-on-1 with a tutor matched to your child’s board, class and textbook' },
 ];
 
 const QUOTE = {
@@ -32,9 +32,9 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-visual">
           <div className="hero-visual-inner">
-            <span className="eyebrow">Online · 1st to 10th Std · CBSE, ICSE & State Board</span>
+            <span className="eyebrow">Online 1-on-1 tuitions · Classes 1 to 10 · CBSE, ICSE & State Board</span>
             <h1><span className="kn">Confidence first.</span>Grades will follow.</h1>
-            <p className="lead"><span className="lead-highlight">Because you want your child to enjoy learning, not fear it.</span> Live 1-on-1 online tuitions in English, Hindi, Math, Science and Kannada, with patient tutors — for students anywhere in India.</p>
+            <p className="lead"><span className="lead-highlight">Does your child cry over homework, hide their marks, or say “I’m just bad at Math”?</span> A live 1-on-1 tutor who follows their own school textbook — and actually waits for them — changes that. English, Hindi, Math, Science and Kannada, for students anywhere in India. Try one class free and see the difference in 30 minutes.</p>
 
             <ul className="booking-trust">
               {TRUST_ITEMS.map((item) => (
@@ -53,7 +53,7 @@ export default function HomePage() {
           <div className="hero-panel-inner">
             <RegisterFormWizard />
             <p className="hero-panel-note">
-              <strong>What happens next:</strong> we message you on WhatsApp today, fix a time, and your child takes a free 30-minute class. You decide afterwards.
+              <strong>What happens next:</strong> we WhatsApp you today to fix a time. Your child takes a free 30-minute class with a real tutor. If they enjoyed it, we continue. If not, there is nothing to pay and nothing to cancel.
             </p>
           </div>
         </div>

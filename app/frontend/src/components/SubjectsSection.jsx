@@ -49,8 +49,8 @@ export default function SubjectsSection() {
       <div className="wrap">
         <div className="section-head">
           <span className="eyebrow">What we teach</span>
-          <h2>Five subjects, one patient approach</h2>
-          <p>Every subject gets the same personal attention — real-time classes, textbook-aligned lessons, and steady progress your child can feel, wherever in India you're learning from.</p>
+          <h2>Five subjects, one patient, textbook-first approach</h2>
+          <p>Start the free demo with the subject your child struggles with most. Every class is live, follows their own school textbook, and moves at their pace — so what they learn on Tuesday helps in Wednesday's lesson at school.</p>
         </div>
         <div className="programs">
           {CARDS.map((c) => (

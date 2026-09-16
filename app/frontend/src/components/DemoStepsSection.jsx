@@ -2,20 +2,20 @@ const STEPS = [
   {
     n: '1',
     color: 'oxide',
-    title: 'Register in 30 seconds',
-    text: "Your name, your child's class and the subject. No payment details, ever.",
+    title: 'Tell us about your child — 30 seconds',
+    text: "Your name, your child's class and the subject they find hardest. No card, no payment details, ever.",
   },
   {
     n: '2',
     color: 'marigold',
-    title: 'We message you on WhatsApp the same day',
-    text: "We fix a time that suits you and match a tutor to your child's board and class.",
+    title: 'We WhatsApp you the same day',
+    text: "We fix a time that suits your family and hand-pick a tutor for your child's board, class and textbook.",
   },
   {
     n: '3',
     color: 'lotus',
     title: 'Your child takes a free 30-minute class',
-    text: 'You can sit in. Decide afterwards — continue only if your child enjoyed it.',
+    text: 'Sit in if you like. Watch how the tutor explains, waits and encourages. Then you decide — continue only if your child enjoyed it.',
   },
 ];
 
@@ -25,7 +25,7 @@ export default function DemoStepsSection() {
       <div className="wrap">
         <div className="section-head">
           <span className="eyebrow">How the free demo works</span>
-          <h2>Three small steps. Nothing to pay, nothing to sign.</h2>
+          <h2>Three small steps. Nothing to pay, nothing to sign, nothing to lose.</h2>
         </div>
         <ol className="demo-steps">
           {STEPS.map((s) => (

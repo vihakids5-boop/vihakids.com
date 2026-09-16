@@ -3,8 +3,8 @@ export default function ContactSection() {
     <section id="contact">
       <div className="wrap">
         <div className="cta-band">
-          <h2>See if it clicks for your child — free</h2>
-          <p>Book a free 30-minute demo in English, Hindi, Math, Science or Kannada. We'll match a patient tutor to your child's class and board, and you decide only afterwards.</p>
+          <h2>One free class can change how your child feels about a subject</h2>
+          <p>Book a free 30-minute demo in English, Hindi, Math, Science or Kannada. We match a patient tutor to your child's class, board and textbook. No payment, no commitment — you decide only after you have seen your child in the class.</p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#book">Book a free demo</a>
             <a

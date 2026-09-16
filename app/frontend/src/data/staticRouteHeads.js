@@ -4,7 +4,7 @@
 export const STATIC_ROUTE_HEADS = {
   '/': {
     title: 'Vihakids — Confidence First. Online Tuitions in India',
-    description: 'Because you want your child to enjoy learning, not fear it. Live 1-on-1 online tuitions in English, Hindi, Mathematics, Science and Kannada for CBSE, ICSE and State Board, Classes 1 to 10, anywhere in India. Headquartered in Bengaluru.',
+    description: 'Live 1-on-1 online tuitions in English, Hindi, Math, Science and Kannada for Classes 1 to 10 (CBSE, ICSE and State Board), anywhere in India. Patient tutors who teach from your child’s own textbook. Book a free 30-minute demo — no payment, no commitment.',
   },
   '/register': {
     title: 'Book a Free Demo Class | Vihakids Online Tuitions',
