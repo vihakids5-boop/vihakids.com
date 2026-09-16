@@ -223,6 +223,11 @@ header .brand-tagline{ color: var(--ink-soft); }
 }
 .nav-toggle:hover{ background: #c7dced; }
 .nav-toggle svg{ width: 20px; height: 20px; }
+@media (max-width: 560px){
+  .teach-chip.teach-chip-nav{ display: none; }
+  .nav-cta{ padding: 8px 14px; font-size: 0.85rem; }
+  nav.wrap{ gap: 8px 10px; }
+}
 @media (max-width: 1220px){
   .navlinks-mobile-hide{ display:none; }
   .nav-toggle{ display:inline-flex; }
@@ -333,7 +338,9 @@ header .brand-tagline{ color: var(--ink-soft); }
   .hero{ grid-template-columns: 1fr; }
   .hero-visual{ padding: 48px 24px 52px; }
   .hero-visual-inner{ max-width: none; }
-  .hero-panel{ padding: 40px 20px 52px; }
+  .hero-panel{ padding: 40px 20px 44px; }
+  .hero{ padding: 0; }
+  .demo-steps-section{ padding-top: 44px; }
 }
 .eyebrow{
   display:inline-flex;
