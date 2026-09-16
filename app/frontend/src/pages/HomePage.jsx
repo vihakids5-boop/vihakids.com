@@ -32,7 +32,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-visual">
           <div className="hero-visual-inner">
-            <span className="eyebrow">Online 1-on-1 tuitions · Classes 1 to 10 · CBSE, ICSE & State Board</span>
+            <span className="eyebrow">1-on-1 online · Classes 1–10 · CBSE, ICSE & State Board</span>
             <h1><span className="kn">Confidence first.</span>Grades will follow.</h1>
             <p className="lead"><span className="lead-highlight">Does your child cry over homework, hide their marks, or say “I’m just bad at Math”?</span> A live 1-on-1 tutor who follows their own school textbook — and actually waits for them — changes that. English, Hindi, Math, Science and Kannada, for students anywhere in India. Try one class free and see the difference in 30 minutes.</p>
 

@@ -340,6 +340,7 @@ header .brand-tagline{ color: var(--ink-soft); }
   .hero-visual-inner{ max-width: none; }
   .hero-panel{ padding: 40px 20px 44px; }
   .hero{ padding: 0; }
+  .hero > *{ min-width: 0; }
   .demo-steps-section{ padding-top: 44px; }
 }
 .eyebrow{
@@ -366,6 +367,9 @@ header .brand-tagline{ color: var(--ink-soft); }
   box-shadow: none;
 }
 .hero .eyebrow::before{ background: var(--marigold); flex-shrink: 0; }
+@media (max-width: 900px){
+  .hero .eyebrow{ white-space: normal; font-size: 0.7rem; line-height: 1.35; letter-spacing: 0.04em; }
+}
 .eyebrow::before{
   content:"";
   width:7px; height:7px; border-radius:50%;
@@ -817,7 +821,7 @@ section{ padding: 72px 0; scroll-margin-top: 96px; }
 #reviews .eyebrow{ background: var(--marigold-soft); color: #2B6B49; }
 #reviews .eyebrow::before{ background: var(--marigold); }
 .rating-strip{
-  display:flex; align-items:center; gap:10px;
+  display:flex; align-items:center; gap:10px; flex-wrap: wrap;
   margin-top: 16px;
   font-family:'Montserrat', sans-serif;
 }
