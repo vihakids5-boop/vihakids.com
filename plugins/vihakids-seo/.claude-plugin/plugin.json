@@ -1,0 +1,12 @@
+{
+  "name": "vihakids-seo",
+  "displayName": "Vihakids SEO Landing Pages",
+  "version": "0.1.0",
+  "description": "Scaffolds and audits the board/class/subject/country/city tuition landing pages, keeping tuitionLandingPages.js, sitemap.xml and llms.txt in sync.",
+  "author": {
+    "name": "Vihakids",
+    "url": "https://www.vihakids.com"
+  },
+  "keywords": ["seo", "landing-pages", "sitemap", "vihakids"],
+  "hooks": "./hooks/hooks.json"
+}

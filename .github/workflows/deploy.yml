@@ -31,6 +31,9 @@ jobs:
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*" \
+            --exclude ".claude/*" \
+            --exclude ".claude-plugin/*" \
+            --exclude "plugins/*" \
             --exclude ".gitignore" \
             --exclude "REGISTRATION-SETUP.md" \
             --exclude "firestore.rules" \
