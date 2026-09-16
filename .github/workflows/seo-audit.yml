@@ -1,0 +1,30 @@
+name: SEO audit
+
+# Catches landing-page and discoverability drift before it reaches main.
+# Pushes to main are gated by the same check inside deploy.yml, so this
+# workflow only needs to cover pull requests.
+on:
+  pull_request:
+    paths:
+      - 'app/frontend/src/data/tuitionLandingPages.js'
+      - 'app/frontend/src/App.jsx'
+      - 'app/frontend/src/pages/BlogIndexPage.jsx'
+      - 'sitemap.xml'
+      - 'llms.txt'
+      - 'plugins/vihakids-seo/**'
+      - '.github/workflows/seo-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # No install step: the audit has no dependencies.
+      - name: Audit SEO landing pages
+        run: node plugins/vihakids-seo/scripts/seo-audit.mjs

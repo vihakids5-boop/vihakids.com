@@ -31,6 +31,15 @@ pushed one:
 | `landing-page-copy` skill | House voice and field rules; loads on its own when landing-page copy is being written or edited. |
 | PostToolUse hook | After an edit to the page data, `App.jsx`, the blog index, `sitemap.xml` or `llms.txt`, reports anything that would stop a page being discovered. Never blocks. |
 
+## In CI
+
+`.github/workflows/seo-audit.yml` runs the audit on pull requests that
+touch the page data, the routes, the blog index, `sitemap.xml`, `llms.txt`
+or this plugin. `deploy.yml` runs the same check before the S3 sync, so a
+push to main that would publish a broken sitemap fails before anything
+reaches the bucket. Both fail on errors only — copy-length warnings never
+block a deploy.
+
 ## The audit script standalone
 
 ```bash
