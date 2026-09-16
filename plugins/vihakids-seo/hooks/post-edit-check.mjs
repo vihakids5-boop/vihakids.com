@@ -1,17 +1,19 @@
 #!/usr/bin/env node
-// PostToolUse hook: after an edit to the landing-page data, the sitemap
-// or llms.txt, re-run the structural half of the SEO audit and hand back
-// anything that is now broken. Stays silent for every other edit, and
+// PostToolUse hook: after an edit to the landing-page data, the routes,
+// the blog index, the sitemap or llms.txt, re-run the structural half of
+// the SEO audit and hand back anything that is now broken. Stays silent for every other edit, and
 // never blocks — copy-quality warnings are left to /vihakids-seo:audit
 // so routine edits do not drown in them.
 
 import { readFileSync } from 'node:fs';
 import { findRoot, runAudit } from '../scripts/seo-audit.mjs';
 
-const WATCHED = ['tuitionLandingPages.js', 'sitemap.xml', 'llms.txt'];
+const WATCHED = ['tuitionLandingPages.js', 'sitemap.xml', 'llms.txt', 'App.jsx', 'BlogIndexPage.jsx'];
 // Warning codes worth interrupting for: they mean a page exists but will
 // not be discovered, rather than that its copy could be better.
-const WATCHED_WARNINGS = new Set(['llms-missing', 'sitemap-orphan', 'sitemap-bad-url']);
+const WATCHED_WARNINGS = new Set([
+  'llms-missing', 'sitemap-orphan', 'sitemap-bad-url', 'sitemap-noindex', 'blog-post-unlisted',
+]);
 const MAX_LINES = 12;
 
 function readStdin() {
