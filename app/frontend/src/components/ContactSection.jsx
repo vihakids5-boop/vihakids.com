@@ -3,17 +3,18 @@ export default function ContactSection() {
     <section id="contact">
       <div className="wrap">
         <div className="cta-band">
-          <h2>Let's find the right subject support for your child</h2>
-          <p>Message us with your child's grade, school, and the subject you'd like help with — English, Hindi, Math, Science or Kannada — and we'll suggest the right starting point.</p>
+          <h2>See if it clicks for your child — free</h2>
+          <p>Book a free 30-minute demo in English, Hindi, Math, Science or Kannada. We'll match a patient tutor to your child's class and board, and you decide only afterwards.</p>
           <div className="hero-ctas">
+            <a className="btn btn-primary" href="#book">Book a free demo</a>
             <a
-              className="btn btn-primary"
+              className="btn btn-ghost"
               href="https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20English%2C%20Hindi%2C%20Math%2C%20Science%20and%20Kannada%20tuitions"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Message on WhatsApp (opens in a new tab)"
             >
-              Message on WhatsApp
+              Ask on WhatsApp
             </a>
           </div>
           <p className="trust-line"><strong>⭐ 5.0</strong> rated on Google · Online classes for students across India · No payment, no commitment for the free demo</p>

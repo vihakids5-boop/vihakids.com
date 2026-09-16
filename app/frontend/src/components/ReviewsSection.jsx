@@ -17,7 +17,7 @@ export default function ReviewsSection() {
           <div className="rating-strip">
             <span className="stars" aria-hidden="true">★★★★★</span>
             <span className="rating-text">5.0</span>
-            <span>on Google</span>
+            <span>from 21 Google reviews</span>
             <a
               href="https://www.google.com/maps/place/Vihakids/@12.8488091,77.6089813,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae6b50f8449457:0xcf4ac6428752843!8m2!3d12.8488091!4d77.6089813!16s%2Fg%2F11zwp42lc8"
               target="_blank"
