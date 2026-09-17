@@ -1,0 +1,16 @@
+{
+  "name": "vihakids",
+  "owner": {
+    "name": "Vihakids",
+    "url": "https://www.vihakids.com"
+  },
+  "description": "Plugins for working on the vihakids.com site.",
+  "plugins": [
+    {
+      "name": "vihakids-seo",
+      "source": "./plugins/vihakids-seo",
+      "description": "Scaffolds and audits the Vihakids SEO tuition landing pages.",
+      "category": "seo"
+    }
+  ]
+}

@@ -7,6 +7,7 @@
 - [Home](https://www.vihakids.com/): Overview, subjects, programs and free demo registration.
 - [Register](https://www.vihakids.com/register): Sign up for a free demo class.
 - [Teach with us](https://www.vihakids.com/teach): Apply to become a Vihakids tutor.
+- [Fees](https://www.vihakids.com/fees): Monthly per-subject pricing, with no registration fee and no annual contract.
 - [About Us](https://www.vihakids.com/about.html): Who Vihakids is and how classes work.
 - [Blog](https://www.vihakids.com/blog.html): Articles on tuitions, boards and learning tips.
 
@@ -33,7 +34,26 @@ Online tuition pages exist for each of Class 1 through Class 10, at `https://www
 
 ## By city (India)
 
-Online tuition pages exist for Bengaluru, Mumbai, Delhi NCR, Hyderabad, Chennai, Pune, Kolkata and Ahmedabad, at `https://www.vihakids.com/online-tuition-{city}`.
+- [Online tuition in Bengaluru](https://www.vihakids.com/online-tuition-bengaluru)
+- [Online tuition in Mumbai](https://www.vihakids.com/online-tuition-mumbai)
+- [Online tuition in Delhi NCR](https://www.vihakids.com/online-tuition-delhi)
+- [Online tuition in Hyderabad](https://www.vihakids.com/online-tuition-hyderabad)
+- [Online tuition in Chennai](https://www.vihakids.com/online-tuition-chennai)
+- [Online tuition in Pune](https://www.vihakids.com/online-tuition-pune)
+- [Online tuition in Kolkata](https://www.vihakids.com/online-tuition-kolkata)
+- [Online tuition in Ahmedabad](https://www.vihakids.com/online-tuition-ahmedabad)
+- [Online tuition in Jaipur](https://www.vihakids.com/online-tuition-jaipur)
+- [Online tuition in Lucknow](https://www.vihakids.com/online-tuition-lucknow)
+- [Online tuition in Surat](https://www.vihakids.com/online-tuition-surat)
+- [Online tuition in Nagpur](https://www.vihakids.com/online-tuition-nagpur)
+- [Online tuition in Indore](https://www.vihakids.com/online-tuition-indore)
+- [Online tuition in Visakhapatnam](https://www.vihakids.com/online-tuition-visakhapatnam)
+- [Online tuition in Patna](https://www.vihakids.com/online-tuition-patna)
+- [Online tuition in Coimbatore](https://www.vihakids.com/online-tuition-coimbatore)
+- [Online tuition in Mysuru](https://www.vihakids.com/online-tuition-mysuru)
+- [Online tuition in Kochi](https://www.vihakids.com/online-tuition-kochi)
+- [Online tuition in Bhubaneswar](https://www.vihakids.com/online-tuition-bhubaneswar)
+- [Online tuition in Chandigarh](https://www.vihakids.com/online-tuition-chandigarh)
 
 ## Tuition abroad
 
@@ -41,3 +61,16 @@ Online tuition pages exist for Bengaluru, Mumbai, Delhi NCR, Hyderabad, Chennai,
 - [Online tuition for UAE](https://www.vihakids.com/online-tuition-uae)
 - [Online tuition for UK](https://www.vihakids.com/online-tuition-uk)
 - [Online tuition for Singapore](https://www.vihakids.com/online-tuition-singapore)
+
+## Blog posts
+
+- [English Grammar Basics for Kids: Parts of Speech & Present Tense](https://www.vihakids.com/blog-english-grammar-basics.html): A free, easy reference for two grammar topics every child struggles with early on — with simple examples and the mistakes to watch for.
+- [How to Help Your Child Build Real Confidence, Not Just Chase Marks](https://www.vihakids.com/blog-exam-stress-confidence.html): Why chasing marks alone tends to backfire, and the everyday habits that build genuine confidence — so grades follow naturally instead.
+- [How to Help Your Child Understand Science — Not Just Memorise It](https://www.vihakids.com/blog-science-learning-tips.html): Why Science homework often turns into rote memorising, and five practical ways to build real understanding at home instead.
+- [5 Simple Ways to Help Your Child Read Kannada Confidently at Home](https://www.vihakids.com/blog-kannada-reading-tips.html): Small, everyday habits that build real reading confidence — no extra classes required, just 10 minutes a day done right.
+- [CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning](https://www.vihakids.com/blog-cbse-icse-state-board-kannada-hindi.html): Each board treats second-language learning differently. Here's what parents should know before choosing extra support.
+- [How to Choose the Right Online Math Tutor for Your Child](https://www.vihakids.com/blog-choosing-online-math-tutor.html): Not all tutoring is the same. A short checklist to help you spot a tutor who will actually move the needle.
+
+## Free resources
+
+- [Kannada alphabet (Varnamale) tracing worksheet](https://www.vihakids.com/kannada-alphabet-tracing-worksheet): Free printable worksheet covering all 15 vowels and 34 consonants, no sign-up required.
