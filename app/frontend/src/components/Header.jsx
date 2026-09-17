@@ -11,6 +11,7 @@ const GENERAL_LINKS = [
   { href: '/#subjects', label: 'Subjects' },
   { href: '/#programs', label: 'Programs' },
   { href: '/fees', label: 'Fees' },
+  { href: '/faq', label: 'FAQ' },
   { href: '/#how', label: 'How it works' },
   { href: '/#reviews', label: 'Reviews' },
   { href: '/blog.html', label: 'Blog' },

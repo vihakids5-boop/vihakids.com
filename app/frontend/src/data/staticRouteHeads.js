@@ -18,6 +18,10 @@ export const STATIC_ROUTE_HEADS = {
     title: 'Fees | Vihakids — Online English, Hindi, Math, Science & Kannada Tuitions',
     description: 'Simple, affordable monthly fees for Vihakids online tuitions — one clear price per subject, per month, with no registration fee and no annual contract. Built for every Indian family.',
   },
+  '/faq': {
+    title: 'Parent FAQ | Online Tuition for Classes 1–10 — Vihakids',
+    description: 'Straight answers to the questions parents ask before choosing online tuition for Classes 1 to 10: 1-on-1 vs batch, who the tutor is, timings, missed classes, screen time, fees, refunds, no EMI, no sales calls, progress updates and safety.',
+  },
   '/kannada-alphabet-tracing-worksheet': {
     title: 'Free Kannada Alphabet (Varnamale) Tracing Worksheet — Printable | Vihakids',
     description: 'A free, printable Kannada Varnamale tracing worksheet — all 15 vowels (swaragalu) and 34 consonants (vyanjanagalu), for children just starting to read and write Kannada. Print at home, no sign-up required.',

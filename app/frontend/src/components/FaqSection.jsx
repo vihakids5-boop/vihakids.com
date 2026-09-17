@@ -55,6 +55,9 @@ export default function FaqSection() {
             </details>
           ))}
         </div>
+        <p className="faq-more">
+          Have a different question? <Link to="/faq">Read the full parent FAQ &rarr;</Link>
+        </p>
       </div>
     </section>
   );

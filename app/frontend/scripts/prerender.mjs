@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { ALL_TUITION_PAGES } from '../src/data/tuitionLandingPages.js';
 import { STATIC_ROUTE_HEADS } from '../src/data/staticRouteHeads.js';
+import { buildFaqJsonLd } from '../src/data/faqs.js';
 
 const SITE_ORIGIN = 'https://www.vihakids.com';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -47,6 +48,20 @@ for (const { route, title, description } of routes) {
   html = replaceOnce(html, /(<meta property="og:description" content=")[^"]*(")/, `$1${d}$2`, 'og:description', route);
   html = replaceOnce(html, /(<meta name="twitter:title" content=")[^"]*(")/, `$1${t}$2`, 'twitter:title', route);
   html = replaceOnce(html, /(<meta name="twitter:description" content=")[^"]*(")/, `$1${d}$2`, 'twitter:description', route);
+
+  // /faq carries the full parent FAQ as structured data. The template's own
+  // FAQPage block describes the homepage FAQ, so swap it rather than emit two
+  // FAQPage entities on one URL (Google only honours one per page).
+  if (route === '/faq') {
+    const jsonLd = JSON.stringify(buildFaqJsonLd()).replace(/</g, '\\u003c');
+    html = replaceOnce(
+      html,
+      /<script type="application\/ld\+json">\s*\{\s*"@context": "https:\/\/schema.org",\s*"@type": "FAQPage",[\s\S]*?<\/script>/,
+      `<script type="application/ld+json" id="faq-page-jsonld">${jsonLd}</script>`,
+      'homepage FAQPage JSON-LD',
+      route,
+    );
+  }
 
   writeFileSync(path.join(outDir, `${route.slice(1)}.html`), html);
 }

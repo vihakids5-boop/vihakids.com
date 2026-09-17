@@ -50,6 +50,7 @@ export default function Footer() {
         </p>
         <Link to="/about.html" style={linkStyle}>About Us</Link>
         <Link to="/fees" style={linkStyle}>Fees</Link>
+        <Link to="/faq" style={linkStyle}>Parent FAQ</Link>
         <Link to="/blog.html" style={linkStyle}>Blog</Link>
         <Link to="/kannada-alphabet-tracing-worksheet" style={linkStyle}>Free Kannada Worksheet</Link>
         <div className="footer-socials" style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
