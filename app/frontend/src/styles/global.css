@@ -303,6 +303,9 @@ header .brand-tagline{ color: var(--ink-soft); }
   display: grid;
   grid-template-columns: 1.08fr 1fr;
   align-items: stretch;
+  /* The generic section padding left an empty band between the header and
+     the blue hero block. The hero is full-bleed, so it takes none. */
+  padding: 0;
 }
 .hero-visual{
   position: relative;
@@ -328,12 +331,18 @@ header .brand-tagline{ color: var(--ink-soft); }
 .hero-visual-inner{ position: relative; z-index: 1; max-width: 560px; }
 .hero-panel{
   display: flex;
-  align-items: center;
+  /* Top-aligned, not centred: on a laptop the centred form started ~300px
+     down and its button barely fit on screen. */
+  align-items: flex-start;
   justify-content: center;
-  padding: 56px 32px;
+  padding: 44px 32px 56px;
   background: var(--paper-raised);
 }
 .hero-panel-inner{ width: 100%; max-width: 440px; }
+/* Keep the booking form in view while the parent reads the left column. */
+@media (min-width: 901px){
+  .hero-panel-inner{ position: sticky; top: 92px; }
+}
 @media (max-width: 900px){
   .hero{ grid-template-columns: 1fr; }
   .hero-visual{ padding: 48px 24px 52px; }
