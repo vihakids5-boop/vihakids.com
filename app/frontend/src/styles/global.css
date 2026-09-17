@@ -884,9 +884,15 @@ section{ padding: 72px 0; scroll-margin-top: 96px; }
 .phone-line a{ text-decoration: none; border-bottom: 2px solid var(--oxide); }
 
 /* footer */
+/* Bottom padding clears the fixed chat button (60px at bottom:20px) so it
+   never sits on top of the last footer links. */
 footer{
-  padding: 40px 0 36px;
+  padding: 40px 0 100px;
   border-top: 1px solid var(--line);
+}
+/* On phones the homepage sticky demo bar lifts the chat button to 92px. */
+@media (max-width: 900px){
+  body.has-sticky-demo footer{ padding-bottom: 172px; }
 }
 .footer-grid{
   display:flex;

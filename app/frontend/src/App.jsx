@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 import { Routes, Route, Outlet, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -8,6 +8,7 @@ import TeachPage from './pages/TeachPage';
 import AboutPage from './pages/AboutPage';
 import ChatWidget from './components/ChatWidget';
 import { useScrollToHash } from './lib/useScrollToHash';
+import { lazyWithReload } from './lib/lazyWithReload';
 import { ALL_TUITION_PAGES } from './data/tuitionLandingPages';
 
 // Lazy-loaded: none of these are needed for the first paint of the
@@ -17,20 +18,20 @@ import { ALL_TUITION_PAGES } from './data/tuitionLandingPages';
 //   to the site owner, never to a parent/teacher visitor.
 // - The blog/legal pages are long-form, rarely-visited static content.
 // - TuitionLandingPage carries ~18 pages worth of copy in its data file.
-const AdminPage = lazy(() => import('./pages/AdminPage'));
-const BlogIndexPage = lazy(() => import('./pages/BlogIndexPage'));
-const TermsPage = lazy(() => import('./pages/TermsPage'));
-const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
-const CookiesPage = lazy(() => import('./pages/CookiesPage'));
-const BlogKannadaReadingTipsPage = lazy(() => import('./pages/blog/BlogKannadaReadingTipsPage'));
-const BlogCbseIcseStateBoardPage = lazy(() => import('./pages/blog/BlogCbseIcseStateBoardPage'));
-const BlogChoosingMathTutorPage = lazy(() => import('./pages/blog/BlogChoosingMathTutorPage'));
-const BlogScienceLearningTipsPage = lazy(() => import('./pages/blog/BlogScienceLearningTipsPage'));
-const BlogExamStressConfidencePage = lazy(() => import('./pages/blog/BlogExamStressConfidencePage'));
-const BlogEnglishGrammarBasicsPage = lazy(() => import('./pages/blog/BlogEnglishGrammarBasicsPage'));
-const KannadaAlphabetWorksheetPage = lazy(() => import('./pages/resources/KannadaAlphabetWorksheetPage'));
-const TuitionLandingPage = lazy(() => import('./pages/TuitionLandingPage'));
-const FeesPage = lazy(() => import('./pages/FeesPage'));
+const AdminPage = lazyWithReload(() => import('./pages/AdminPage'));
+const BlogIndexPage = lazyWithReload(() => import('./pages/BlogIndexPage'));
+const TermsPage = lazyWithReload(() => import('./pages/TermsPage'));
+const PrivacyPage = lazyWithReload(() => import('./pages/PrivacyPage'));
+const CookiesPage = lazyWithReload(() => import('./pages/CookiesPage'));
+const BlogKannadaReadingTipsPage = lazyWithReload(() => import('./pages/blog/BlogKannadaReadingTipsPage'));
+const BlogCbseIcseStateBoardPage = lazyWithReload(() => import('./pages/blog/BlogCbseIcseStateBoardPage'));
+const BlogChoosingMathTutorPage = lazyWithReload(() => import('./pages/blog/BlogChoosingMathTutorPage'));
+const BlogScienceLearningTipsPage = lazyWithReload(() => import('./pages/blog/BlogScienceLearningTipsPage'));
+const BlogExamStressConfidencePage = lazyWithReload(() => import('./pages/blog/BlogExamStressConfidencePage'));
+const BlogEnglishGrammarBasicsPage = lazyWithReload(() => import('./pages/blog/BlogEnglishGrammarBasicsPage'));
+const KannadaAlphabetWorksheetPage = lazyWithReload(() => import('./pages/resources/KannadaAlphabetWorksheetPage'));
+const TuitionLandingPage = lazyWithReload(() => import('./pages/TuitionLandingPage'));
+const FeesPage = lazyWithReload(() => import('./pages/FeesPage'));
 
 function SiteLayout() {
   useScrollToHash();

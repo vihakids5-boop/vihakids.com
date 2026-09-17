@@ -2,7 +2,7 @@
 // story panel (headline, trust points, optional quote) beside the form.
 export default function BookingHeroLayout({ eyebrow, headline, sub, trustItems, quote, children }) {
   return (
-    <main className="booking-page">
+    <main id="top" className="booking-page">
       <div className="booking-shell">
         <section className="booking-visual">
           <div className="booking-visual-inner">
