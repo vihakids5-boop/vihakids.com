@@ -1,10 +1,14 @@
 // Generates one HTML file per React route in dist/prerendered/, each a copy
 // of the built index.html with that route's title, description, canonical
-// and social tags baked in. Without this, every route is served the
+// and social tags baked in AND the route's fully rendered body markup in
+// <div id="root">. Without the head swap, every route is served the
 // homepage's <head> (including canonical="/"), so search engines treat the
-// landing pages as duplicates of the homepage and never index them.
+// landing pages as duplicates of the homepage and never index them. Without
+// the body, non-JS crawlers see an empty page (no h1, no text, no links).
+// The homepage itself is rendered into dist/index.html in place.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { ALL_TUITION_PAGES } from '../src/data/tuitionLandingPages.js';
 import { STATIC_ROUTE_HEADS } from '../src/data/staticRouteHeads.js';
@@ -17,10 +21,11 @@ const outDir = path.join(distDir, 'prerendered');
 
 const template = readFileSync(path.join(distDir, 'index.html'), 'utf8');
 
+// Built by `vite build --ssr` (see package.json "build").
+const { render } = await import(pathToFileURL(path.join(root, 'dist-ssr', 'entry-server.js')).href);
+
 const routes = [
-  ...Object.entries(STATIC_ROUTE_HEADS)
-    .filter(([route]) => route !== '/')
-    .map(([route, head]) => ({ route, ...head })),
+  ...Object.entries(STATIC_ROUTE_HEADS).map(([route, head]) => ({ route, ...head })),
   ...ALL_TUITION_PAGES.map((p) => ({ route: `/${p.slug}`, title: p.metaTitle, description: p.metaDescription })),
 ];
 
@@ -63,7 +68,16 @@ for (const { route, title, description } of routes) {
     );
   }
 
-  writeFileSync(path.join(outDir, `${route.slice(1)}.html`), html);
+  // data-prerendered names the route this markup belongs to. CloudFront serves
+  // index.html for any URL without its own file (/admin, /about.html, blog and
+  // legal pages), so main.jsx must not hydrate homepage markup on those.
+  // Replace the empty app shell (and its <noscript> fallback) with the
+  // real rendered page. main.jsx hydrates this markup on the client.
+  const body = await render(route);
+  html = replaceOnce(html, /<div id="root">[\s\S]*?<\/div>(?=\s*<\/body>)/, `<div id="root" data-prerendered="${route}">${body}</div>`, '<div id="root">', route);
+
+  const outFile = route === '/' ? path.join(distDir, 'index.html') : path.join(outDir, `${route.slice(1)}.html`);
+  writeFileSync(outFile, html);
 }
 
-console.log(`prerendered ${routes.length} routes into dist/prerendered/`);
+console.log(`prerendered ${routes.length} routes (homepage into dist/index.html, the rest into dist/prerendered/)`);
