@@ -24,10 +24,30 @@ const template = readFileSync(path.join(distDir, 'index.html'), 'utf8');
 // Built by `vite build --ssr` (see package.json "build").
 const { render } = await import(pathToFileURL(path.join(root, 'dist-ssr', 'entry-server.js')).href);
 
+// The old static site's URLs, now React routes. Their title/description live
+// inside each page component and are captured while rendering (see
+// takeSsrHead in src/lib/useDocumentHead.js), so only the path is listed.
+const HTML_ROUTES = [
+  '/about.html',
+  '/blog.html',
+  '/blog-kannada-reading-tips.html',
+  '/blog-cbse-icse-state-board-kannada-hindi.html',
+  '/blog-choosing-online-math-tutor.html',
+  '/blog-science-learning-tips.html',
+  '/blog-exam-stress-confidence.html',
+  '/blog-english-grammar-basics.html',
+  '/terms.html',
+  '/privacy.html',
+  '/cookies.html',
+];
+
 const routes = [
   ...Object.entries(STATIC_ROUTE_HEADS).map(([route, head]) => ({ route, ...head })),
   ...ALL_TUITION_PAGES.map((p) => ({ route: `/${p.slug}`, title: p.metaTitle, description: p.metaDescription })),
+  ...HTML_ROUTES.map((route) => ({ route })),
 ];
+
+const FAQ_JSONLD = /<script type="application\/ld\+json">\s*\{\s*"@context": "https:\/\/schema.org",\s*"@type": "FAQPage",[\s\S]*?<\/script>/;
 
 const escapeHtml = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -39,7 +59,15 @@ function replaceOnce(html, pattern, replacement, label, route) {
 
 mkdirSync(outDir, { recursive: true });
 
-for (const { route, title, description } of routes) {
+for (const entry of routes) {
+  const { route } = entry;
+  // Render first: the page reports its own title/description while rendering.
+  const { html: body, head } = await render(route);
+  const title = entry.title ?? head?.title;
+  const description = entry.description ?? head?.description;
+  if (!title || !description) throw new Error(`prerender: no title/description for ${route}`);
+  // An unknown path renders the "*" redirect, i.e. nothing. Fail loudly.
+  if (!/<h1[\s>]/.test(body)) throw new Error(`prerender: ${route} rendered without an <h1>`);
   const t = escapeHtml(title);
   const d = escapeHtml(description);
   const url = SITE_ORIGIN + route;
@@ -57,15 +85,13 @@ for (const { route, title, description } of routes) {
   // /faq carries the full parent FAQ as structured data. The template's own
   // FAQPage block describes the homepage FAQ, so swap it rather than emit two
   // FAQPage entities on one URL (Google only honours one per page).
+  // Every other route drops the block: FAQ markup must match FAQs visible on
+  // the page, and only the homepage shows the homepage FAQ.
   if (route === '/faq') {
     const jsonLd = JSON.stringify(buildFaqJsonLd()).replace(/</g, '\\u003c');
-    html = replaceOnce(
-      html,
-      /<script type="application\/ld\+json">\s*\{\s*"@context": "https:\/\/schema.org",\s*"@type": "FAQPage",[\s\S]*?<\/script>/,
-      `<script type="application/ld+json" id="faq-page-jsonld">${jsonLd}</script>`,
-      'homepage FAQPage JSON-LD',
-      route,
-    );
+    html = replaceOnce(html, FAQ_JSONLD, `<script type="application/ld+json" id="faq-page-jsonld">${jsonLd}</script>`, 'homepage FAQPage JSON-LD', route);
+  } else if (route !== '/') {
+    html = replaceOnce(html, FAQ_JSONLD, '', 'homepage FAQPage JSON-LD', route);
   }
 
   // data-prerendered names the route this markup belongs to. CloudFront serves
@@ -73,7 +99,6 @@ for (const { route, title, description } of routes) {
   // legal pages), so main.jsx must not hydrate homepage markup on those.
   // Replace the empty app shell (and its <noscript> fallback) with the
   // real rendered page. main.jsx hydrates this markup on the client.
-  const body = await render(route);
   html = replaceOnce(html, /<div id="root">[\s\S]*?<\/div>(?=\s*<\/body>)/, `<div id="root" data-prerendered="${route}">${body}</div>`, '<div id="root">', route);
 
   const outFile = route === '/' ? path.join(distDir, 'index.html') : path.join(outDir, `${route.slice(1)}.html`);

@@ -8,6 +8,7 @@ import { renderToPipeableStream } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import { Writable } from 'node:stream';
 import App from './App.jsx';
+import { takeSsrHead } from './lib/useDocumentHead.js';
 
 export function render(url) {
   return new Promise((resolve, reject) => {
@@ -18,7 +19,7 @@ export function render(url) {
         callback();
       },
     });
-    sink.on('finish', () => resolve(html));
+    sink.on('finish', () => resolve({ html, head: takeSsrHead() }));
 
     const { pipe } = renderToPipeableStream(
       <React.StrictMode>
