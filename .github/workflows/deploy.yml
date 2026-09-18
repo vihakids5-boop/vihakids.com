@@ -25,10 +25,14 @@ jobs:
           aws-region: ap-south-1
           role-skip-session-tagging: true
 
+      # No --delete: the React app's prerendered route files (faq, fees,
+      # kannada-online-tuition, about.html, ...) are uploaded to the bucket root by
+      # the frontend deploy and do not exist in this repo's root. With --delete,
+      # every push to main wiped them, and CloudFront then served the homepage
+      # HTML (canonical "/") for every route.
       - name: Sync site files to S3
         run: |
           aws s3 sync . s3://www.vihakids.com/ \
-            --delete \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude ".gitignore" \
