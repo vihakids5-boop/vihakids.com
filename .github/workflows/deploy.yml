@@ -18,6 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Fails on errors only — a page missing from sitemap.xml, a broken
+      # blog link, duplicate metadata. Copy-length warnings do not block a
+      # deploy. Runs before the AWS steps so a bad sitemap never ships.
+      - name: Audit SEO landing pages
+        run: node plugins/vihakids-seo/scripts/seo-audit.mjs
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -35,6 +45,9 @@ jobs:
           aws s3 sync . s3://www.vihakids.com/ \
             --exclude ".git/*" \
             --exclude ".github/*" \
+            --exclude ".claude/*" \
+            --exclude ".claude-plugin/*" \
+            --exclude "plugins/*" \
             --exclude ".gitignore" \
             --exclude "REGISTRATION-SETUP.md" \
             --exclude "firestore.rules" \

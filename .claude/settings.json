@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "vihakids": {
+      "source": {
+        "source": "github",
+        "repo": "vihakids5-boop/vihakids.com"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "vihakids-seo@vihakids": true
+  }
+}

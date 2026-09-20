@@ -7,6 +7,7 @@
 - [Home](https://www.vihakids.com/): Overview, subjects, programs and free demo registration.
 - [Register](https://www.vihakids.com/register): Sign up for a free demo class.
 - [Teach with us](https://www.vihakids.com/teach): Apply to become a Vihakids tutor.
+- [Fees](https://www.vihakids.com/fees): Monthly per-subject pricing, with no registration fee and no annual contract.
 - [About Us](https://www.vihakids.com/about.html): Who Vihakids is and how classes work.
 - [Blog](https://www.vihakids.com/blog.html): Articles on tuitions, boards and learning tips.
 - [Parent FAQ](https://www.vihakids.com/faq): Answers to the questions parents ask before choosing online tuition — class format, tutors, timings, fees, refunds, progress updates and safety.
@@ -71,3 +72,16 @@
 - [Online tuition for UAE](https://www.vihakids.com/online-tuition-uae)
 - [Online tuition for UK](https://www.vihakids.com/online-tuition-uk)
 - [Online tuition for Singapore](https://www.vihakids.com/online-tuition-singapore)
+
+## Blog posts
+
+- [English Grammar Basics for Kids: Parts of Speech & Present Tense](https://www.vihakids.com/blog-english-grammar-basics.html): A free, easy reference for two grammar topics every child struggles with early on — with simple examples and the mistakes to watch for.
+- [How to Help Your Child Build Real Confidence, Not Just Chase Marks](https://www.vihakids.com/blog-exam-stress-confidence.html): Why chasing marks alone tends to backfire, and the everyday habits that build genuine confidence — so grades follow naturally instead.
+- [How to Help Your Child Understand Science — Not Just Memorise It](https://www.vihakids.com/blog-science-learning-tips.html): Why Science homework often turns into rote memorising, and five practical ways to build real understanding at home instead.
+- [5 Simple Ways to Help Your Child Read Kannada Confidently at Home](https://www.vihakids.com/blog-kannada-reading-tips.html): Small, everyday habits that build real reading confidence — no extra classes required, just 10 minutes a day done right.
+- [CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning](https://www.vihakids.com/blog-cbse-icse-state-board-kannada-hindi.html): Each board treats second-language learning differently. Here's what parents should know before choosing extra support.
+- [How to Choose the Right Online Math Tutor for Your Child](https://www.vihakids.com/blog-choosing-online-math-tutor.html): Not all tutoring is the same. A short checklist to help you spot a tutor who will actually move the needle.
+
+## Free resources
+
+- [Kannada alphabet (Varnamale) tracing worksheet](https://www.vihakids.com/kannada-alphabet-tracing-worksheet): Free printable worksheet covering all 15 vowels and 34 consonants, no sign-up required.
