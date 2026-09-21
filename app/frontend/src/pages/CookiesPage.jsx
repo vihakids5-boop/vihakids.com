@@ -23,6 +23,7 @@ export default function CookiesPage() {
 
         <h2>3. Third-Party Requests</h2>
         <p>Our website uses Google Analytics to measure site usage, and loads fonts from Google Fonts so that the page displays correctly. Both involve your browser making a request to Google's servers. This is governed by Google's own privacy policy and is not something Vihakids controls beyond the settings described below.</p>
+        <div className="table-scroll">
         <table>
           <tbody>
             <tr><th>Service</th><th>Purpose</th><th>Data involved</th></tr>
@@ -30,6 +31,7 @@ export default function CookiesPage() {
             <tr><td>Google Fonts</td><td>Loading website typefaces</td><td>IP address (handled by Google, not stored by us)</td></tr>
           </tbody>
         </table>
+        </div>
 
         <h2>4. Links to Other Sites</h2>
         <p>Our website links out to third-party platforms such as WhatsApp, Facebook, Instagram, YouTube and X. If you follow those links, their own cookies and privacy policies apply, not this one.</p>

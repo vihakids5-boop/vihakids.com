@@ -12,14 +12,14 @@ const CATEGORY_LABEL = {
 };
 
 const RELATED_BLOG_POSTS = {
-  'cbse-online-tuition': [{ to: '/blog-cbse-icse-state-board-kannada-hindi.html', label: 'CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning' }],
-  'icse-online-tuition': [{ to: '/blog-cbse-icse-state-board-kannada-hindi.html', label: 'CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning' }],
-  'state-board-online-tuition': [{ to: '/blog-cbse-icse-state-board-kannada-hindi.html', label: 'CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning' }, { to: '/blog-kannada-reading-tips.html', label: '5 Simple Ways to Help Your Child Read Kannada Confidently at Home' }],
+  'cbse-online-tuition': [{ to: '/blog-cbse-icse-state-board-kannada-hindi.html', label: 'CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child' }],
+  'icse-online-tuition': [{ to: '/blog-cbse-icse-state-board-kannada-hindi.html', label: 'CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child' }],
+  'state-board-online-tuition': [{ to: '/blog-cbse-icse-state-board-kannada-hindi.html', label: 'CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child' }, { to: '/blog-kannada-reading-tips.html', label: '5 Simple Ways to Help Your Child Read Kannada Confidently at Home' }],
   'math-online-tuition': [{ to: '/blog-choosing-online-math-tutor.html', label: 'How to Choose the Right Online Math Tutor for Your Child' }],
   'science-online-tuition': [{ to: '/blog-science-learning-tips.html', label: 'How to Help Your Child Understand Science — Not Just Memorise It' }],
   'english-online-tuition': [{ to: '/blog-english-grammar-basics.html', label: 'English Grammar Basics for Kids: Parts of Speech & Present Tense' }],
   'kannada-online-tuition': [{ to: '/blog-kannada-reading-tips.html', label: '5 Simple Ways to Help Your Child Read Kannada Confidently at Home' }, { to: '/kannada-alphabet-tracing-worksheet', label: 'Free Kannada Varnamale tracing worksheet' }],
-  'hindi-online-tuition': [{ to: '/blog-cbse-icse-state-board-kannada-hindi.html', label: 'CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning' }],
+  'hindi-online-tuition': [{ to: '/blog-cbse-icse-state-board-kannada-hindi.html', label: 'CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child' }],
   'online-tuition-class-9': [{ to: '/blog-exam-stress-confidence.html', label: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks' }],
   'online-tuition-class-10': [{ to: '/blog-exam-stress-confidence.html', label: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks' }],
   'online-tuition-bengaluru': [{ to: '/blog-kannada-reading-tips.html', label: '5 Simple Ways to Help Your Child Read Kannada Confidently at Home' }],

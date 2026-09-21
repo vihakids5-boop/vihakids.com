@@ -36,6 +36,18 @@ export default function BlogKannadaReadingTipsPage() {
       <h2>5. Separate reading practice from writing practice</h2>
       <p>One common mistake is combining reading and writing into a single, long homework session, which tires a child out before either skill improves. Reading fluency and handwriting/spelling are different skills that improve on different timelines. Give reading its own short, dedicated 10-minute slot, ideally at a time of day when your child isn't already worn out from school.</p>
 
+      <h2>Keeping Kannada alive at home: everyday habits for families</h2>
+      <p>Reading practice works best when Kannada is also part of ordinary family life, not only homework. These small habits help children keep the language — and are just as useful for families living outside Karnataka or abroad:</p>
+      <ul>
+        <li><strong>Pick one Kannada-only time each day.</strong> Dinner, the drive to school or bedtime — one fixed slot where the family speaks only Kannada is easier to keep than a vague "speak more Kannada" rule.</li>
+        <li><strong>Let grandparents lead.</strong> A daily video call where grandparents tell a story or ask about school in Kannada gives children a real reason to use the language.</li>
+        <li><strong>Label things around the house.</strong> Sticky notes in Kannada on the fridge, door and cupboard turn everyday objects into quiet reading practice.</li>
+        <li><strong>Read Kannada signs, menus and packets out loud.</strong> Shop boards, bus signs and snack wrappers are free, short reading passages your child already cares about.</li>
+        <li><strong>Sing and listen together.</strong> Kannada rhymes, film songs and devotional songs build vocabulary and rhythm without feeling like study.</li>
+        <li><strong>Celebrate the festivals in Kannada.</strong> Rajyotsava, Ugadi and Dasara are natural moments to tell stories, make greeting cards and learn a few new words together.</li>
+      </ul>
+      <p>None of these take extra time from your day — they turn time you already spend together into Kannada time.</p>
+
       <h2>When to consider extra support</h2>
       <p>If your child is in Class 3 or above and still reads Kannada noticeably slower than their grade level, or avoids reading aloud altogether, that's usually a sign they need focused, one-on-one practice rather than more worksheets. A patient tutor who can listen, correct gently, and build up passage length gradually often closes this gap faster than a parent juggling reading practice alongside everything else — which is exactly the kind of support we focus on at Vihakids.</p>
     </BlogPostLayout>

@@ -39,10 +39,10 @@ const POSTS = [
   {
     slug: '/blog-cbse-icse-state-board-kannada-hindi.html',
     cat: 'Boards & Syllabus',
-    title: 'CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning',
-    excerpt: "Each board treats second-language learning differently. Here's what parents should know before choosing extra support.",
+    title: 'CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child',
+    excerpt: "What CBSE, ICSE and State Board stand for, their meaning in Kannada, and how each board handles Kannada and Hindi.",
     date: '19 Aug 2026',
-    read: '6 min read',
+    read: '7 min read',
   },
   {
     slug: '/blog-choosing-online-math-tutor.html',

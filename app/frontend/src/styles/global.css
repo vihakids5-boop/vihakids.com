@@ -1797,3 +1797,7 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 /* Pages that open straight on .page-head (Fees, FAQ) sat flush under the
    sticky header; give the heading some air. */
 main > .wrap > .page-head:first-child{ padding-top: 40px; }
+
+/* Wide content tables scroll inside their own box on phones. */
+.table-scroll{ overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll .board-table{ min-width: 560px; }

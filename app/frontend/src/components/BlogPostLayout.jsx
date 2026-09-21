@@ -6,7 +6,7 @@ const WHATSAPP_BASE = 'https://wa.me/919972577828?text=';
 
 const ALL_POSTS = [
   { slug: '/blog-kannada-reading-tips.html', title: '5 Simple Ways to Help Your Child Read Kannada Confidently at Home' },
-  { slug: '/blog-cbse-icse-state-board-kannada-hindi.html', title: 'CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning' },
+  { slug: '/blog-cbse-icse-state-board-kannada-hindi.html', title: 'CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child' },
   { slug: '/blog-choosing-online-math-tutor.html', title: 'How to Choose the Right Online Math Tutor for Your Child' },
   { slug: '/blog-science-learning-tips.html', title: 'How to Help Your Child Understand Science — Not Just Memorise It' },
   { slug: '/blog-exam-stress-confidence.html', title: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks' },

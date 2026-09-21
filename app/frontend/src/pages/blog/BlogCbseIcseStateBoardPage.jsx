@@ -5,9 +5,9 @@ export default function BlogCbseIcseStateBoardPage() {
     <BlogPostLayout
       slug="/blog-cbse-icse-state-board-kannada-hindi.html"
       category="Boards & Syllabus"
-      title="CBSE vs ICSE vs State Board: What It Means for Kannada and Hindi Learning"
-      description="How CBSE, ICSE and Karnataka State Board differ in teaching Kannada and Hindi, and what it means for how much extra support your child may need."
-      meta="19 Aug 2026 · 6 min read"
+      title="CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child"
+      description="What CBSE, ICSE and Karnataka State Board stand for, their meaning in Kannada, who runs each one, and how each board handles Kannada and Hindi — explained simply for parents."
+      meta="19 Aug 2026 · Updated 21 Sep 2026 · 7 min read"
       ctaHeading="Not sure what your child specifically needs?"
       ctaBody="Tell us the board, school and grade, and we'll tell you honestly whether — and where — extra support would help."
       ctaWhatsAppText="Hi, I'd like advice on Kannada/Hindi support for my child"
@@ -21,8 +21,41 @@ export default function BlogCbseIcseStateBoardPage() {
     >
       <p>Parents moving between cities, or choosing a school for the first time, often ask us the same question: "Does the board really change how much Kannada or Hindi support my child will need?" The honest answer is yes — not because one board is harder than another, but because each one treats second-language learning quite differently.</p>
 
+      <h2>What do CBSE, ICSE and State Board mean? (with Kannada meaning)</h2>
+      <p>A "board" is the organisation that sets a school's syllabus, prescribes its textbooks and runs the Class 10 exam. Here is what each name stands for, and what it means in Kannada:</p>
+
+      <div className="table-scroll">
+      <table className="board-table">
+        <tbody>
+          <tr><th>Board</th><th>Full form</th><th>Meaning in Kannada</th><th>Who runs it</th></tr>
+          <tr>
+            <td>CBSE</td>
+            <td>Central Board of Secondary Education</td>
+            <td>ಕೇಂದ್ರೀಯ ಮಾಧ್ಯಮಿಕ ಶಿಕ್ಷಣ ಮಂಡಳಿ (Kendriya Madhyamika Shikshana Mandali)</td>
+            <td>The Government of India. Uses NCERT textbooks, and the same syllabus across the country.</td>
+          </tr>
+          <tr>
+            <td>ICSE</td>
+            <td>Indian Certificate of Secondary Education</td>
+            <td>ಭಾರತೀಯ ಮಾಧ್ಯಮಿಕ ಶಿಕ್ಷಣ ಪ್ರಮಾಣಪತ್ರ (Bharatiya Madhyamika Shikshana Pramanapatra)</td>
+            <td>CISCE (Council for the Indian School Certificate Examinations), a national board that is not run by the government. Known for detailed English and a wide syllabus.</td>
+          </tr>
+          <tr>
+            <td>Karnataka State Board</td>
+            <td>Karnataka School Examination and Assessment Board (KSEAB)</td>
+            <td>ಕರ್ನಾಟಕ ಶಾಲಾ ಪರೀಕ್ಷೆ ಮತ್ತು ಮೌಲ್ಯನಿರ್ಣಯ ಮಂಡಳಿ (Karnataka Shaala Pareekshe mattu Maulyanirnaya Mandali)</td>
+            <td>The Government of Karnataka. Its Class 10 exam is the SSLC (Secondary School Leaving Certificate, ಎಸ್.ಎಸ್.ಎಲ್.ಸಿ).</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p>In short: CBSE and ICSE are national boards, and the State Board is Karnataka's own. None is "better" for every child — what changes is how much time each gives to languages like Kannada and Hindi, which is where the differences below come from.</p>
+
+      <h2>How each board handles Kannada and Hindi</h2>
       <p>Here's a quick side-by-side of what tends to matter most for Kannada and Hindi specifically:</p>
 
+      <div className="table-scroll">
       <table className="board-table">
         <tbody>
           <tr><th>Board</th><th>Kannada</th><th>Hindi</th></tr>
@@ -43,6 +76,7 @@ export default function BlogCbseIcseStateBoardPage() {
           </tr>
         </tbody>
       </table>
+      </div>
 
       <p>In practice, this means two very different families can be dealing with two very different problems even though both call it "needing Kannada help":</p>
       <ul>
