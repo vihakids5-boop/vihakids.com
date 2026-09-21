@@ -53,6 +53,8 @@ export default function Footer() {
         <Link to="/faq" style={linkStyle}>Parent FAQ</Link>
         <Link to="/blog.html" style={linkStyle}>Blog</Link>
         <Link to="/kannada-alphabet-tracing-worksheet" style={linkStyle}>Free Kannada Worksheet</Link>
+        <Link to="/hindi-varnamala-tracing-worksheet" style={linkStyle}>Free Hindi Worksheet</Link>
+        <Link to="/english-alphabet-tracing-worksheet" style={linkStyle}>Free English Worksheet</Link>
         <div className="footer-socials" style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
           <a href="https://www.facebook.com/profile.php?id=61592292419267" target="_blank" rel="noopener noreferrer" aria-label="Vihakids on Facebook (opens in a new tab)" style={iconLinkStyle}><FacebookIcon /></a>
           <a href="https://www.instagram.com/vihakids5/" target="_blank" rel="noopener noreferrer" aria-label="Vihakids on Instagram (opens in a new tab)" style={iconLinkStyle}><InstagramIcon /></a>

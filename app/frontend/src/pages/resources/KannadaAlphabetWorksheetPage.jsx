@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MinimalPageLayout from '../../components/MinimalPageLayout';
+import { MoreWorksheets } from '../../components/WorksheetTraceCard';
 import { useDocumentHead } from '../../lib/useDocumentHead';
 import { STATIC_ROUTE_HEADS } from '../../data/staticRouteHeads';
 
@@ -129,6 +130,8 @@ export default function KannadaAlphabetWorksheetPage() {
           </div>
         </section>
       ))}
+
+      <MoreWorksheets current="/kannada-alphabet-tracing-worksheet" />
 
       <div className="cta-band no-print">
         <h2>Need more than a worksheet?</h2>

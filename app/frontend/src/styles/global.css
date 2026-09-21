@@ -1044,6 +1044,13 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
   font-size: 1.4rem;
   color: #C7BEB8;
 }
+/* Script-specific faces for the Hindi and English worksheets. */
+.trace-letter[lang="hi"], .practice-box[lang="hi"],
+.worksheet-intro [lang="hi"], .worksheet-section h2 [lang="hi"]{ font-family: 'Noto Sans Devanagari', 'Montserrat', sans-serif; }
+.trace-letter[lang="en"], .practice-box[lang="en"]{ font-family: 'Andika', 'Montserrat', sans-serif; letter-spacing: 0.04em; }
+.worksheet-english .trace-translit{ font-size: 0.9rem; }
+.worksheet-more{ margin-top: 40px; color: var(--ink-soft); }
+.worksheet-more a{ color: var(--oxide); font-weight: 700; }
 @media (max-width: 480px){
   .worksheet-grid{ grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
   .trace-letter{ font-size: 2.4rem; }

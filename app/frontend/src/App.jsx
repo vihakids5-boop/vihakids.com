@@ -30,6 +30,8 @@ const BlogScienceLearningTipsPage = lazyWithReload(() => import('./pages/blog/Bl
 const BlogExamStressConfidencePage = lazyWithReload(() => import('./pages/blog/BlogExamStressConfidencePage'));
 const BlogEnglishGrammarBasicsPage = lazyWithReload(() => import('./pages/blog/BlogEnglishGrammarBasicsPage'));
 const KannadaAlphabetWorksheetPage = lazyWithReload(() => import('./pages/resources/KannadaAlphabetWorksheetPage'));
+const HindiVarnamalaWorksheetPage = lazyWithReload(() => import('./pages/resources/HindiVarnamalaWorksheetPage'));
+const EnglishAlphabetWorksheetPage = lazyWithReload(() => import('./pages/resources/EnglishAlphabetWorksheetPage'));
 const TuitionLandingPage = lazyWithReload(() => import('./pages/TuitionLandingPage'));
 const FeesPage = lazyWithReload(() => import('./pages/FeesPage'));
 const FaqPage = lazyWithReload(() => import('./pages/FaqPage'));
@@ -85,6 +87,8 @@ export default function App() {
           <Route path="/blog-exam-stress-confidence.html" element={<BlogExamStressConfidencePage />} />
           <Route path="/blog-english-grammar-basics.html" element={<BlogEnglishGrammarBasicsPage />} />
           <Route path="/kannada-alphabet-tracing-worksheet" element={<KannadaAlphabetWorksheetPage />} />
+          <Route path="/hindi-varnamala-tracing-worksheet" element={<HindiVarnamalaWorksheetPage />} />
+          <Route path="/english-alphabet-tracing-worksheet" element={<EnglishAlphabetWorksheetPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
