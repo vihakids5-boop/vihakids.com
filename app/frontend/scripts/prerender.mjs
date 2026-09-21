@@ -112,4 +112,25 @@ for (const entry of routes) {
   writeFileSync(outFile, html);
 }
 
-console.log(`prerendered ${routes.length} routes (homepage into dist/index.html, the rest into dist/prerendered/)`);
+// /admin gets a tiny shell of its own. Without a file, CloudFront served the
+// homepage for it, so the whole homepage painted first and only turned into
+// the admin page once the JavaScript loaded. The shell carries no data-
+// prerendered route, so main.jsx replaces it with a normal client render.
+{
+  const route = '/admin';
+  let html = template;
+  html = replaceOnce(html, /<title>[^<]*<\/title>/, '<title>Admin | Vihakids</title>', '<title>', route);
+  html = replaceOnce(html, /(<meta name="robots" content=")[^"]*(")/, '$1noindex, nofollow$2', 'robots', route);
+  html = replaceOnce(html, /(<link rel="canonical" href=")[^"]*(")/, `$1${SITE_ORIGIN}${route}$2`, 'canonical', route);
+  html = replaceOnce(html, FAQ_JSONLD, '', 'homepage FAQPage JSON-LD', route);
+  html = replaceOnce(
+    html,
+    /<div id="root">[\s\S]*?<\/div>(?=\s*<\/body>)/,
+    '<div id="root"><main class="admin-shell"><div class="wrap"><p class="admin-shell-loading">Loading admin…</p></div></main></div>',
+    '<div id="root">',
+    route,
+  );
+  writeFileSync(path.join(outDir, 'admin.html'), html);
+}
+
+console.log(`prerendered ${routes.length} routes + admin shell (homepage into dist/index.html, the rest into dist/prerendered/)`);

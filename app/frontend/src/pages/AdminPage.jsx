@@ -95,7 +95,17 @@ export default function AdminPage() {
     downloadCsv(`vihakids-teacher-applications-${new Date().toISOString().slice(0, 10)}.csv`, headers, rows);
   }
 
-  if (user === undefined) return null; // waiting on auth state
+  // Firebase is restoring the saved sign-in. Show something instead of a
+  // blank page; this usually takes well under a second.
+  if (user === undefined) {
+    return (
+      <main className="admin-shell">
+        <div className="wrap">
+          <p className="admin-shell-loading">Checking sign-in…</p>
+        </div>
+      </main>
+    );
+  }
 
   if (!user) {
     return (

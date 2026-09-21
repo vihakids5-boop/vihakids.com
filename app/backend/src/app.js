@@ -14,7 +14,10 @@ export function createApp() {
     .split(',')
     .map((o) => o.trim());
 
-  app.use(cors({ origin: allowedOrigins }));
+  // maxAge lets the browser reuse a preflight result for 2 hours (Chrome's
+  // cap) instead of sending an extra OPTIONS round trip before every admin
+  // request and every 25-second admin refresh.
+  app.use(cors({ origin: allowedOrigins, maxAge: 7200 }));
   app.use(express.json());
   if (process.env.NODE_ENV !== 'test') app.use(morgan('dev'));
 
