@@ -17,12 +17,23 @@ export default function PrivacyPage() {
         <p>This Privacy Policy explains how Vihakids ("Vihakids", "we", "us", "our") collects, uses and protects information when you interact with our website or enroll in our online English, Hindi, Math, Science or Kannada tuition classes.</p>
 
         <h2>1. Information We Collect</h2>
-        <p>Our website does not have sign-up forms or accounts. Information is collected directly when you contact us, typically over WhatsApp or phone, and may include:</p>
+        <p>Our website has no user accounts. We collect information when you fill in one of our website forms, use our chat assistant, or contact us over WhatsApp or phone.</p>
+        <p><strong>Free demo registration.</strong> This covers the booking form on our pages, the registration page, and bookings made through the chat assistant. We collect:</p>
         <ul>
-          <li>Parent/guardian name and contact number</li>
-          <li>Student's name, grade/standard, and school board (<strong>CBSE</strong>, <strong>ICSE</strong>, or State Board)</li>
-          <li>Any other details you choose to share to help us plan classes</li>
+          <li>Parent/guardian name</li>
+          <li>WhatsApp number</li>
+          <li>Child's grade/standard (1 to 10)</li>
+          <li>The subjects your child needs help with</li>
         </ul>
+        <p><strong>Teacher applications</strong> (the "Teach with us" form). We collect:</p>
+        <ul>
+          <li>Full name and WhatsApp number</li>
+          <li>The subjects and grades you can teach, and your teaching experience</li>
+          <li>If you choose to add them: your email address, qualification and a message</li>
+        </ul>
+        <p>With each form, we also record which form or page it was sent from, and the date and time.</p>
+        <p><strong>Chat assistant.</strong> "Viha", the chat assistant on our website, is an automated AI assistant, not a person. To write each reply, your chat messages are sent to Anthropic, the company that provides the AI model. Anthropic handles them under its own <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>. We don't save chat conversations ourselves. If you ask the assistant to book a demo, it saves only the four registration details listed above, just as the form does. Please don't share sensitive personal information in the chat.</p>
+        <p><strong>WhatsApp and phone.</strong> When you talk to us directly, you may also share details such as your child's name and school board (<strong>CBSE</strong>, <strong>ICSE</strong> or State Board), and anything else that helps us plan classes.</p>
 
         <h2>2. How We Use Information</h2>
         <p>Information you share is used only to:</p>
@@ -30,8 +41,10 @@ export default function PrivacyPage() {
           <li>Respond to enquiries and schedule classes</li>
           <li>Plan lessons appropriate to the student's grade and board</li>
           <li>Communicate updates about classes, schedules, and progress</li>
+          <li>Review teacher applications and contact applicants</li>
         </ul>
         <p>We do not sell or rent your information to third parties, and we do not use it for unrelated marketing.</p>
+        <p>Form submissions are stored in Google Firebase (Cloud Firestore), a database service run by Google. Only the Vihakids team can see them, through a sign-in-protected admin page. The companies that help us run the website handle data only on our behalf: Google for data storage, Anthropic for the chat assistant, and Amazon Web Services for website hosting. Some of them may process data outside India.</p>
 
         <h2>3. Communication Channels</h2>
         <p>We communicate primarily via WhatsApp and phone calls. These platforms are operated by third parties (such as Meta, for WhatsApp) and are governed by their own privacy policies. Messages sent through them are subject to those platforms' terms.</p>
