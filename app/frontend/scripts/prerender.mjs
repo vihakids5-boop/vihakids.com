@@ -13,6 +13,12 @@ import path from 'node:path';
 import { ALL_TUITION_PAGES } from '../src/data/tuitionLandingPages.js';
 import { STATIC_ROUTE_HEADS } from '../src/data/staticRouteHeads.js';
 import { buildFaqJsonLd } from '../src/data/faqs.js';
+import { PRACTICE_WORKSHEET_ROUTES } from '../src/data/practiceWorksheetRoutes.js';
+import { PRACTICE_WORKSHEETS } from '../src/data/practiceWorksheets.js';
+
+for (const { slug } of PRACTICE_WORKSHEET_ROUTES) {
+  if (!PRACTICE_WORKSHEETS[slug]) throw new Error(`prerender: no worksheet data for ${slug}`);
+}
 
 const SITE_ORIGIN = 'https://www.vihakids.com';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -44,6 +50,7 @@ const HTML_ROUTES = [
 const routes = [
   ...Object.entries(STATIC_ROUTE_HEADS).map(([route, head]) => ({ route, ...head })),
   ...ALL_TUITION_PAGES.map((p) => ({ route: `/${p.slug}`, title: p.metaTitle, description: p.metaDescription })),
+  ...PRACTICE_WORKSHEET_ROUTES.map((w) => ({ route: `/${w.slug}`, title: w.metaTitle, description: w.metaDescription })),
   ...HTML_ROUTES.map((route) => ({ route })),
 ];
 

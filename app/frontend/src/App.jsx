@@ -10,6 +10,7 @@ import ChatWidget from './components/ChatWidget';
 import { useScrollToHash } from './lib/useScrollToHash';
 import { lazyWithReload } from './lib/lazyWithReload';
 import { ALL_TUITION_PAGES } from './data/tuitionLandingPages';
+import { PRACTICE_WORKSHEET_ROUTES } from './data/practiceWorksheetRoutes';
 
 // Lazy-loaded: none of these are needed for the first paint of the
 // pages people actually land on, so keeping them out of the main
@@ -32,6 +33,8 @@ const BlogEnglishGrammarBasicsPage = lazyWithReload(() => import('./pages/blog/B
 const KannadaAlphabetWorksheetPage = lazyWithReload(() => import('./pages/resources/KannadaAlphabetWorksheetPage'));
 const HindiVarnamalaWorksheetPage = lazyWithReload(() => import('./pages/resources/HindiVarnamalaWorksheetPage'));
 const EnglishAlphabetWorksheetPage = lazyWithReload(() => import('./pages/resources/EnglishAlphabetWorksheetPage'));
+const PracticeWorksheetPage = lazyWithReload(() => import('./pages/resources/PracticeWorksheetPage'));
+const WorksheetsHubPage = lazyWithReload(() => import('./pages/resources/WorksheetsHubPage'));
 const TuitionLandingPage = lazyWithReload(() => import('./pages/TuitionLandingPage'));
 const FeesPage = lazyWithReload(() => import('./pages/FeesPage'));
 const FaqPage = lazyWithReload(() => import('./pages/FaqPage'));
@@ -72,6 +75,7 @@ export default function App() {
             <Route path="/about.html" element={<AboutPage />} />
             <Route path="/fees" element={<FeesPage />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/worksheets" element={<WorksheetsHubPage />} />
             <Route path="/blog.html" element={<BlogIndexPage />} />
             {ALL_TUITION_PAGES.map((page) => (
               <Route key={page.slug} path={`/${page.slug}`} element={<TuitionLandingPage data={page} />} />
@@ -89,6 +93,9 @@ export default function App() {
           <Route path="/kannada-alphabet-tracing-worksheet" element={<KannadaAlphabetWorksheetPage />} />
           <Route path="/hindi-varnamala-tracing-worksheet" element={<HindiVarnamalaWorksheetPage />} />
           <Route path="/english-alphabet-tracing-worksheet" element={<EnglishAlphabetWorksheetPage />} />
+          {PRACTICE_WORKSHEET_ROUTES.map(({ slug }) => (
+            <Route key={slug} path={`/${slug}`} element={<PracticeWorksheetPage slug={slug} />} />
+          ))}
           <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

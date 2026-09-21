@@ -53,6 +53,7 @@ export function MoreWorksheets({ current }) {
           <Link to={w.to}>{w.label}</Link>
         </span>
       ))}
+      {' · '}<Link to="/worksheets">All free worksheets →</Link>
     </p>
   );
 }

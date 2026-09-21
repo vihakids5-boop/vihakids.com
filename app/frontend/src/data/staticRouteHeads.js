@@ -22,6 +22,10 @@ export const STATIC_ROUTE_HEADS = {
     title: 'Parent FAQ | Online Tuition for Classes 1–10 — Vihakids',
     description: 'Straight answers to the questions parents ask before choosing online tuition for Classes 1 to 10: 1-on-1 vs batch, who the tutor is, timings, missed classes, screen time, fees, refunds, no EMI, no sales calls, progress updates and safety.',
   },
+  '/worksheets': {
+    title: 'Free Printable Worksheets for Class 1 to 10 with Answers — Math, Science, English | Vihakids',
+    description: 'Free colourful printable worksheets for Classes 1 to 10: alphabet tracing, plurals, nouns, adjectives, tenses, fractions, integers, linear and quadratic equations, trigonometry, motion and chemical equations. Answer keys included.',
+  },
   '/hindi-varnamala-tracing-worksheet': {
     title: 'Free Hindi Varnamala Tracing Worksheet — Printable Swar & Vyanjan | Vihakids',
     description: 'A free, printable Hindi alphabet (Varnamala) tracing worksheet — all 13 vowels (swar), 33 consonants (vyanjan) and the joined letters क्ष, त्र, ज्ञ, श्र. For children starting Hindi. Print at home, no sign-up required.',
