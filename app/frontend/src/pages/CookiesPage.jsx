@@ -1,5 +1,6 @@
 import MinimalPageLayout from '../components/MinimalPageLayout';
 import { useDocumentHead } from '../lib/useDocumentHead';
+import { openCookieSettings } from '../lib/consent';
 
 export default function CookiesPage() {
   useDocumentHead({
@@ -20,6 +21,7 @@ export default function CookiesPage() {
 
         <h2>2. Cookies We Use</h2>
         <p>Vihakids.com has no cookies of its own. The cookies on our site come from two third-party tools we use, Google Analytics and the Meta Pixel. Their scripts set these cookies on the vihakids.com domain.</p>
+        <p>Neither tool loads until you choose "Accept" on the cookie banner shown on your first visit. If you choose "Decline", they don't load at all, and none of the cookies or requests described below happen. We remember your choice in your browser's local storage (under the name <code>vk-cookie-consent</code>), not in a cookie, so we don't have to ask again on every page.</p>
         <p><strong>Google Analytics</strong> sets cookies to help us understand how visitors use the site. For example, it shows which pages are viewed and how long visitors stay.</p>
         <p><strong>Meta Pixel</strong> is a small piece of code from Meta Platforms, the company behind Facebook and Instagram. We use it to measure and improve our Facebook and Instagram ads. It tells us whether people who see or click our ads go on to visit the site or register for a free demo, and it helps Meta show our ads to people who are likely to find them useful. That can include people who have already visited our site. It sets a cookie called <code>_fbp</code>, which lasts about 90 days. If you arrive by clicking a Facebook or Instagram ad, it also sets <code>_fbc</code>. These are advertising cookies.</p>
 
@@ -42,7 +44,8 @@ export default function CookiesPage() {
         <p>Our website links out to third-party platforms such as WhatsApp, Facebook, Instagram, YouTube and X. If you follow those links, their own cookies and privacy policies apply, not this one.</p>
 
         <h2>5. Managing Cookies</h2>
-        <p>You can opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>, or block cookies generally through your browser settings.</p>
+        <p>You can change your choice at any time. Use the "Cookie settings" link at the bottom of every page, or this button: <button type="button" className="btn btn-ghost" onClick={openCookieSettings} style={{ padding: '6px 14px', fontSize: '0.9rem' }}>Cookie settings</button>. If you switch to "Decline", we delete the Google Analytics and Meta Pixel cookies from your browser and reload the page without them.</p>
+        <p>You can also opt out of Google Analytics tracking using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>, or block cookies generally through your browser settings.</p>
         <p>To limit the Meta Pixel, you can block or clear cookies for vihakids.com in your browser settings, or use a browser or extension that blocks trackers. If you use Facebook or Instagram, you can also stop Meta from using our site activity to choose the ads you see. Go to <a href="https://www.facebook.com/adpreferences/ad_settings" target="_blank" rel="noopener noreferrer">Meta's ad preferences</a> and turn off "Activity information from ad partners" (in the apps: Settings → Accounts Center → Ad preferences).</p>
         <p>If you'd like to control cookies set by other third-party services (like the ones listed above), you can manage these through your browser settings or the respective platform's own privacy controls.</p>
 

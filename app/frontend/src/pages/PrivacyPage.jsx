@@ -44,7 +44,8 @@ export default function PrivacyPage() {
           <li>Your IP address and your browser and device details</li>
           <li>Whether you submitted one of our registration forms</li>
         </ul>
-        <p>We do not send Meta your name, phone number, email address or your child's details. If you use Facebook or Instagram, Meta may link this activity to your account and use it to decide which ads to show you, including ours. You can turn this off in <a href="https://www.facebook.com/adpreferences/ad_settings" target="_blank" rel="noopener noreferrer">Meta's ad preferences</a> or by blocking cookies in your browser. See our <Link to="/cookies.html">Cookies Policy</Link> for more detail.</p>
+        <p>We do not send Meta your name, phone number, email address or your child's details. If you use Facebook or Instagram, Meta may link this activity to your account and use it to decide which ads to show you, including ours. You can turn this off in <a href="https://www.facebook.com/adpreferences/ad_settings" target="_blank" rel="noopener noreferrer">Meta's ad preferences</a> or by blocking cookies in your browser.</p>
+        <p>Google Analytics and the Meta Pixel only load if you choose "Accept" on our cookie banner. If you choose "Decline", neither runs. You can change your choice at any time using the "Cookie settings" link at the bottom of every page. See our <Link to="/cookies.html">Cookies Policy</Link> for more detail.</p>
         <p>Our website also loads fonts from Google Fonts, which may involve your browser making a request to Google's servers; Google's handling of this is governed by Google's own privacy policy.</p>
 
         <h2>5. Children's Privacy</h2>

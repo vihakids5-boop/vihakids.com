@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { openCookieSettings } from '../lib/consent';
 
 const linkStyle = { color: 'var(--ink-soft)', fontSize: '0.88rem', textDecoration: 'underline' };
 const iconLinkStyle = { color: 'var(--ink-soft)', display: 'inline-flex' };
@@ -62,6 +63,7 @@ export default function Footer() {
         <Link to="/terms.html" style={linkStyle}>Terms &amp; Conditions</Link>
         <Link to="/privacy.html" style={linkStyle}>Privacy Policy</Link>
         <Link to="/cookies.html" style={linkStyle}>Cookies Policy</Link>
+        <button type="button" onClick={openCookieSettings} style={{ ...linkStyle, background: 'none', border: 0, padding: 0, font: 'inherit', fontSize: linkStyle.fontSize, cursor: 'pointer' }}>Cookie settings</button>
         <Link to="/teach" style={linkStyle}>Teach with us</Link>
         <Link to="/admin" rel="nofollow" style={linkStyle}>Admin login</Link>
         <p>© 2026 Vihakids, Bengaluru · Online English, Hindi, Math, Science &amp; Kannada tuitions across India</p>

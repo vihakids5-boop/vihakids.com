@@ -2062,3 +2062,35 @@ main > .wrap > .page-head:first-child{ padding-top: 40px; }
   body.print-worksheet .pw-answers{ break-before: page; }
   body.print-worksheet .worksheet-more{ display: none !important; }
 }
+
+/* cookie consent banner (ConsentBanner.jsx) — sits above the chat button and
+   the sticky demo bar until the visitor chooses. Desktop: a card bottom-left,
+   clear of the chat button on the right. Phones: full width; the chat button
+   hides until a choice is made so the two never overlap. */
+.consent-banner{
+  position: fixed;
+  left: 20px; bottom: 20px;
+  z-index: 300;
+  max-width: 460px;
+  padding: 18px 20px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(52,32,26,0.18);
+}
+.consent-banner p{ margin: 0 0 14px; font-size: 0.9rem; line-height: 1.5; color: var(--ink); }
+.consent-banner a{ color: var(--oxide); font-weight: 600; }
+.consent-actions{ display: flex; gap: 10px; }
+.consent-actions .btn{ flex: 1; justify-content: center; padding: 10px 16px; font-size: 0.92rem; }
+@media (max-width: 600px){
+  .consent-banner{
+    left: 0; right: 0; bottom: 0;
+    max-width: none;
+    border-radius: 14px 14px 0 0;
+    padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+  }
+  body.has-consent-banner .chat-widget{ display: none; }
+}
+@media print{
+  .consent-banner{ display: none; }
+}

@@ -7,6 +7,7 @@ import RegisterPage from './pages/RegisterPage';
 import TeachPage from './pages/TeachPage';
 import AboutPage from './pages/AboutPage';
 import ChatWidget from './components/ChatWidget';
+import ConsentBanner from './components/ConsentBanner';
 import { useScrollToHash } from './lib/useScrollToHash';
 import { lazyWithReload } from './lib/lazyWithReload';
 import { ALL_TUITION_PAGES } from './data/tuitionLandingPages';
@@ -101,6 +102,7 @@ export default function App() {
         </Routes>
       </Suspense>
       {pathname !== '/admin' && <ChatWidget />}
+      {pathname !== '/admin' && <ConsentBanner />}
     </>
   );
 }

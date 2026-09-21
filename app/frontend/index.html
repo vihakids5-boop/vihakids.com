@@ -1,17 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCK2T0WB33"></script>
+<!-- Google Analytics + Meta Pixel load only after the visitor accepts the
+     cookie banner (src/components/ConsentBanner.jsx, src/lib/consent.js).
+     Until then window.gtag / window.fbq don't exist, so trackEvent() is a no-op. -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZCK2T0WB33');
-</script>
+window.vkLoadTracking = function () {
+if (window.vkTrackingLoaded) return;
+window.vkTrackingLoaded = true;
 
-<!-- Meta Pixel Code -->
-<script>
+// Google tag (gtag.js)
+var g = document.createElement('script');
+g.async = true;
+g.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZCK2T0WB33';
+document.head.appendChild(g);
+window.dataLayer = window.dataLayer || [];
+window.gtag = function(){dataLayer.push(arguments);};
+gtag('js', new Date());
+gtag('config', 'G-ZCK2T0WB33');
+
+// Meta Pixel Code
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -22,9 +30,12 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '976035192180269');
 fbq('track', 'PageView');
+// End Meta Pixel Code
+};
+// Same key as CONSENT_KEY in src/lib/consent.js.
+try { if (localStorage.getItem('vk-cookie-consent') === 'accepted') window.vkLoadTracking(); } catch (e) {}
 </script>
-<!-- No <noscript> fallback pixel: nothing in the Meta Pixel matters without JS anyway. -->
-<!-- End Meta Pixel Code -->
+<!-- No <noscript> fallback pixel: it would fire without consent, and nothing in the Pixel matters without JS anyway. -->
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
