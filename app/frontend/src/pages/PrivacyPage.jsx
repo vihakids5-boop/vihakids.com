@@ -12,7 +12,7 @@ export default function PrivacyPage() {
     <MinimalPageLayout backTo="/" backLabel="Back to home">
       <div className="content prose">
         <h1>Privacy Policy</h1>
-        <p className="updated">Last updated: 11 August 2026</p>
+        <p className="updated">Last updated: 21 September 2026</p>
 
         <p>This Privacy Policy explains how Vihakids ("Vihakids", "we", "us", "our") collects, uses and protects information when you interact with our website or enroll in our online English, Hindi, Math, Science or Kannada tuition classes.</p>
 
@@ -37,7 +37,14 @@ export default function PrivacyPage() {
         <p>We communicate primarily via WhatsApp and phone calls. These platforms are operated by third parties (such as Meta, for WhatsApp) and are governed by their own privacy policies. Messages sent through them are subject to those platforms' terms.</p>
 
         <h2>4. Cookies and Website Data</h2>
-        <p>Our website uses Google Analytics to understand how visitors use the site (such as which pages are viewed and how long visitors stay), so we can improve it. Google Analytics uses cookies and collects information like your approximate location, device and browser type, and pages visited. This data is aggregated and does not identify you personally. See our <Link to="/cookies.html">Cookies Policy</Link> for more detail.</p>
+        <p>Our website uses Google Analytics to understand how visitors use the site (such as which pages are viewed and how long visitors stay), so we can improve it. Google Analytics uses cookies and collects information like your approximate location, device and browser type, and pages visited. We see this data only in aggregated reports that do not identify you personally.</p>
+        <p>We also use the Meta Pixel, a tool from Meta Platforms (the company behind Facebook and Instagram), to measure and improve our Facebook and Instagram ads. It sets cookies such as <code>_fbp</code> and sends Meta the following:</p>
+        <ul>
+          <li>The pages you visit on our site</li>
+          <li>Your IP address and your browser and device details</li>
+          <li>Whether you submitted one of our registration forms</li>
+        </ul>
+        <p>We do not send Meta your name, phone number, email address or your child's details. If you use Facebook or Instagram, Meta may link this activity to your account and use it to decide which ads to show you, including ours. You can turn this off in <a href="https://www.facebook.com/adpreferences/ad_settings" target="_blank" rel="noopener noreferrer">Meta's ad preferences</a> or by blocking cookies in your browser. See our <Link to="/cookies.html">Cookies Policy</Link> for more detail.</p>
         <p>Our website also loads fonts from Google Fonts, which may involve your browser making a request to Google's servers; Google's handling of this is governed by Google's own privacy policy.</p>
 
         <h2>5. Children's Privacy</h2>
