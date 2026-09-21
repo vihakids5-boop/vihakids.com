@@ -12,14 +12,23 @@ import { takeSsrHead } from './lib/useDocumentHead.js';
 
 export function render(url) {
   return new Promise((resolve, reject) => {
-    let html = '';
+    // Keep the raw bytes and decode once at the end, so a multi-byte
+    // character (’ · 🎓, Kannada, Hindi) split across two chunks still
+    // decodes correctly.
+    const chunks = [];
     const sink = new Writable({
-      write(chunk, _encoding, callback) {
-        html += chunk.toString();
+      write(chunk, encoding, callback) {
+        chunks.push(Buffer.isBuffer(chunk) ? Buffer.from(chunk) : Buffer.from(chunk, encoding));
         callback();
       },
     });
-    sink.on('finish', () => resolve({ html, head: takeSsrHead() }));
+    // React's stream also pads a few chunk boundaries with NUL bytes just
+    // before a multi-byte character (the character itself is intact). NUL is
+    // never valid in HTML, so drop those bytes.
+    sink.on('finish', () => {
+      const bytes = Buffer.concat(chunks).filter((b) => b !== 0);
+      resolve({ html: Buffer.from(bytes).toString('utf8'), head: takeSsrHead() });
+    });
 
     const { pipe } = renderToPipeableStream(
       <React.StrictMode>
