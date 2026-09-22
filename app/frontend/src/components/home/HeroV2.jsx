@@ -25,11 +25,9 @@ export default function HeroV2() {
             Live 1-on-1 · Classes 1–10 · CBSE, ICSE &amp; State Board
           </span>
 
-          {/* Statement scored 97/100 with vidIQ — the highest of every
-              candidate tested across this redesign. */}
           <h1 className="v2-h1">
-            Where &ldquo;I don&rsquo;t get it&rdquo;
-            <span className="v2-gradient-text">finally gets answered.</span>
+            Fix the gap now,
+            <span className="v2-gradient-text">not the night before exams.</span>
           </h1>
 
           <p className="v2-lead">
