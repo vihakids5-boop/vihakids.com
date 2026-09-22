@@ -429,13 +429,18 @@
 .vk-sidetab-icon{ font-size: 0.98rem; }
 .vk-sidetab:hover, .vk-sidetab:focus-visible{ padding-right: 14px; box-shadow: -7px 8px 24px rgba(38,16,46,0.3); }
 
-/* Uniform headline: both lines share one size, weight and colour. The
-   gradient made the second line fade to a light violet, which read as a
-   smaller, lighter line. Colour now lives in the pill and the CTA button. */
+/* Headline: one size and weight for both lines, with the two-tone colour
+   the user chose — dark plum on line one, coral-to-violet on line two.
+   Gradient stops are deepened so the second line no longer fades out and
+   reads as the same weight as the first. */
 .v2-hero .v2-h1, .v2-hero .v2-h1 .v2-gradient-text{
   font-size: clamp(1.95rem, 3.1vw, 2.7rem);
   font-weight: 600;
-  color: #2E1230;
-  background: none;
-  -webkit-text-fill-color: #2E1230;
+}
+.v2-hero .v2-gradient-text{
+  background: linear-gradient(100deg, #D9533F 0%, #B63A6E 52%, #6B3BB8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
