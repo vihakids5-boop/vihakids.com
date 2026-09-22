@@ -25,15 +25,16 @@ export default function HeroV2() {
             Live 1-on-1 · Classes 1–10 · CBSE, ICSE &amp; State Board
           </span>
 
-          {/* Statement scored with vidIQ: highest of the four we tested (90/100). */}
+          {/* Statement scored 97/100 with vidIQ — the highest of every
+              candidate tested across this redesign. */}
           <h1 className="v2-h1">
-            One tutor. One child.
-            <span className="v2-gradient-text">Zero fear of the next class.</span>
+            Where &ldquo;I don&rsquo;t get it&rdquo;
+            <span className="v2-gradient-text">finally gets answered.</span>
           </h1>
 
           <p className="v2-lead">
-            Live one-on-one classes that follow your child’s own school textbook, with a tutor who waits
-            until they actually understand. Try a <strong>free 30-minute class</strong> and decide afterwards.
+            One-on-one classes on your child’s own school textbook, with a tutor who waits until they
+            understand. Start with a <strong>free 30-minute class</strong>.
           </p>
 
           <ul className="v2-chips">
