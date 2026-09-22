@@ -8,6 +8,7 @@ import TeachPage from './pages/TeachPage';
 import AboutPage from './pages/AboutPage';
 import ChatWidget from './components/ChatWidget';
 import ConsentBanner from './components/ConsentBanner';
+import SideBookTab from './components/SideBookTab';
 import { useScrollToHash } from './lib/useScrollToHash';
 import { lazyWithReload } from './lib/lazyWithReload';
 import { ALL_TUITION_PAGES } from './data/tuitionLandingPages';
@@ -102,6 +103,9 @@ export default function App() {
         </Routes>
       </Suspense>
       {pathname !== '/admin' && <ChatWidget />}
+      {/* Right-edge booking tab: every page except the admin and the booking
+          page itself, which already is the form. */}
+      {pathname !== '/admin' && pathname !== '/register' && <SideBookTab />}
       {pathname !== '/admin' && <ConsentBanner />}
     </>
   );
