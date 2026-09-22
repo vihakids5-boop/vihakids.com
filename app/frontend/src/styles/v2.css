@@ -428,3 +428,14 @@
 }
 .vk-sidetab-icon{ font-size: 0.98rem; }
 .vk-sidetab:hover, .vk-sidetab:focus-visible{ padding-right: 14px; box-shadow: -7px 8px 24px rgba(38,16,46,0.3); }
+
+/* Uniform headline: both lines share one size, weight and colour. The
+   gradient made the second line fade to a light violet, which read as a
+   smaller, lighter line. Colour now lives in the pill and the CTA button. */
+.v2-hero .v2-h1, .v2-hero .v2-h1 .v2-gradient-text{
+  font-size: clamp(1.95rem, 3.1vw, 2.7rem);
+  font-weight: 600;
+  color: #2E1230;
+  background: none;
+  -webkit-text-fill-color: #2E1230;
+}
