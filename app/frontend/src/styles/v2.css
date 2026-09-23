@@ -444,3 +444,15 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+/* Phone tidy-up: the drawer can only be opened from the side tab, which is
+   hidden on phones, so drop its markup there too. */
+@media (max-width: 900px){
+  .vk-drawer, .vk-drawer-backdrop{ display: none; }
+}
+
+/* Comfortable tap targets in the header on phones (were 35-37px tall). */
+@media (max-width: 900px){
+  header .nav-cta{ min-height: 42px; display: inline-flex; align-items: center; }
+  header .brand{ min-height: 42px; justify-content: center; }
+}
