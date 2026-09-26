@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import TeachPage from './pages/TeachPage';
 import AboutPage from './pages/AboutPage';
+import NotFoundPage from './pages/NotFoundPage';
 import ChatWidget from './components/ChatWidget';
 import ConsentBanner from './components/ConsentBanner';
 import SideBookTab from './components/SideBookTab';
@@ -82,6 +83,9 @@ export default function App() {
             {ALL_TUITION_PAGES.map((page) => (
               <Route key={page.slug} path={`/${page.slug}`} element={<TuitionLandingPage data={page} />} />
             ))}
+            {/* Unknown URLs get a real "not found" page instead of a silent
+                redirect to the homepage (Google reports those as soft 404s). */}
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
           <Route path="/terms.html" element={<TermsPage />} />
           <Route path="/privacy.html" element={<PrivacyPage />} />
@@ -99,7 +103,6 @@ export default function App() {
             <Route key={slug} path={`/${slug}`} element={<PracticeWorksheetPage slug={slug} />} />
           ))}
           <Route path="/admin" element={<AdminPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
       {pathname !== '/admin' && <ChatWidget />}

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDocumentHead } from '../lib/useDocumentHead';
 import RegisterFormWizard from '../components/RegisterFormWizard';
 import { BOARD_PAGES, CLASS_PAGES, SUBJECT_PAGES, COUNTRY_PAGES, CITY_PAGES } from '../data/tuitionLandingPages';
+import { TUITION_PAGE_FAQS, buildTuitionFaqJsonLd } from '../data/tuitionPageFaqs';
 
 const CATEGORY_LABEL = {
   board: 'Explore by board',
@@ -55,6 +56,7 @@ export default function TuitionLandingPage({ data }) {
 
   useDocumentHead({ title: metaTitle, description: metaDescription });
   const relatedBlogPosts = RELATED_BLOG_POSTS[slug];
+  const faqs = TUITION_PAGE_FAQS[slug];
 
   return (
     <main id="top">
@@ -79,6 +81,23 @@ export default function TuitionLandingPage({ data }) {
           <ul>
             {highlights.map((h) => <li key={h.slice(0, 24)}>{h}</li>)}
           </ul>
+
+          {faqs?.length > 0 && (
+            <>
+              <h2>Questions parents ask</h2>
+              {faqs.map(({ q, a }) => (
+                <div key={q.slice(0, 32)}>
+                  <h3>{q}</h3>
+                  <p>{a}</p>
+                </div>
+              ))}
+              <script
+                type="application/ld+json"
+                // Built from our own static data; escape "<" so text can never close the tag.
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(buildTuitionFaqJsonLd(faqs)).replace(/</g, '\\u003c') }}
+              />
+            </>
+          )}
 
           {relatedBlogPosts?.length > 0 && (
             <>

@@ -75,6 +75,9 @@ for (const entry of routes) {
   if (!title || !description) throw new Error(`prerender: no title/description for ${route}`);
   // An unknown path renders the "*" redirect, i.e. nothing. Fail loudly.
   if (!/<h1[\s>]/.test(body)) throw new Error(`prerender: ${route} rendered without an <h1>`);
+  // Unknown paths now render the "not found" page (which has an <h1>), so
+  // check for it explicitly: a route listed here must be a real page.
+  if (body.includes('data-not-found')) throw new Error(`prerender: ${route} is not a known route (rendered the 404 page)`);
   const t = escapeHtml(title);
   const d = escapeHtml(description);
   const url = SITE_ORIGIN + route;
@@ -112,6 +115,25 @@ for (const entry of routes) {
   writeFileSync(outFile, html);
 }
 
+// dist/404.html: the "page not found" page, rendered from an unknown URL so
+// the "*" route produces it. Upload it to the bucket root as 404.html and set
+// CloudFront's error pages (403 and 404) to /404.html with response code 404,
+// so made-up URLs return a real 404 instead of the homepage with 200 (which
+// Google reports as soft 404s). No data-prerendered route: main.jsx then does
+// a normal client render, which shows the same page for whatever URL it is.
+{
+  const route = '/404';
+  const { html: body } = await render('/__vihakids-not-found__');
+  if (!/<h1[\s>]/.test(body)) throw new Error('prerender: 404 page rendered without an <h1>');
+  let html = template;
+  html = replaceOnce(html, /<title>[^<]*<\/title>/, '<title>Page not found | Vihakids</title>', '<title>', route);
+  html = replaceOnce(html, /(<meta name="robots" content=")[^"]*(")/, '$1noindex, follow$2', 'robots', route);
+  html = replaceOnce(html, /\s*<link rel="canonical" href="[^"]*"\s*\/?>/, '', 'canonical', route);
+  html = replaceOnce(html, FAQ_JSONLD, '', 'homepage FAQPage JSON-LD', route);
+  html = replaceOnce(html, /<div id="root">[\s\S]*?<\/div>(?=\s*<\/body>)/, `<div id="root">${body}</div>`, '<div id="root">', route);
+  writeFileSync(path.join(distDir, '404.html'), html);
+}
+
 // /admin gets a tiny shell of its own. Without a file, CloudFront served the
 // homepage for it, so the whole homepage painted first and only turned into
 // the admin page once the JavaScript loaded. The shell carries no data-
@@ -133,4 +155,4 @@ for (const entry of routes) {
   writeFileSync(path.join(outDir, 'admin.html'), html);
 }
 
-console.log(`prerendered ${routes.length} routes + admin shell (homepage into dist/index.html, the rest into dist/prerendered/)`);
+console.log(`prerendered ${routes.length} routes + 404 page + admin shell (homepage into dist/index.html, the rest into dist/prerendered/)`);
