@@ -9,9 +9,13 @@
 // Run from the repo root:  node scripts/sitemap-lastmod.mjs
 // Add --check to fail instead of writing (useful before a deploy).
 //
-// Each URL maps to the source files that decide what is on that page; the date
-// is the newest commit touching any of them. Uncommitted edits are ignored by
-// git log, so run this after committing the change it should describe.
+// Each URL maps to the source files holding that page's own words; the date is
+// the newest commit touching any of them. Shared templates (TuitionLandingPage,
+// PracticeWorksheetPage) are deliberately left out — a layout or styling change
+// there is not a change to what the page says, and counting them would stamp
+// most of the sitemap with one date every time either file is touched.
+// Uncommitted edits are invisible to git log, so run this after committing the
+// change it is meant to describe.
 
 import { execFileSync } from 'child_process';
 import { readFileSync, writeFileSync } from 'fs';
@@ -23,7 +27,7 @@ const sitemapPath = path.join(root, 'sitemap.xml');
 const check = process.argv.includes('--check');
 
 const FE = 'app/frontend/src';
-const TEMPLATE = `${FE}/pages/TuitionLandingPage.jsx`;
+
 const LANDING_DATA = `${FE}/data/tuitionLandingPages.js`;
 
 // Pages whose content lives in one or two obvious files.
@@ -58,14 +62,14 @@ function sourcesFor(urlPath) {
   if (EXACT[urlPath]) return EXACT[urlPath];
   if (BLOG[urlPath]) return [`${FE}/pages/blog/${BLOG[urlPath]}`, urlPath.replace(/^\//, '')];
   if (/-worksheet$/.test(urlPath)) {
-    return [`${FE}/data/practiceWorksheets.js`, `${FE}/data/practiceWorksheetNotes.js`, `${FE}/pages/resources/PracticeWorksheetPage.jsx`];
+    return [`${FE}/data/practiceWorksheets.js`, `${FE}/data/practiceWorksheetNotes.js`];
   }
   if (/^\/online-tuition-/.test(urlPath) && !/^\/online-tuition-class-\d+$/.test(urlPath)) {
     // City and country pages carry their own local detail and questions.
-    return [LANDING_DATA, `${FE}/data/cityPageDetails.js`, `${FE}/data/cityPageFaqs.js`, TEMPLATE];
+    return [LANDING_DATA, `${FE}/data/cityPageDetails.js`, `${FE}/data/cityPageFaqs.js`];
   }
   // Board, class and subject landing pages.
-  return [LANDING_DATA, `${FE}/data/tuitionPageFaqs.js`, TEMPLATE];
+  return [LANDING_DATA, `${FE}/data/tuitionPageFaqs.js`];
 }
 
 // Newest commit date (YYYY-MM-DD) across the given paths. Paths git has never
