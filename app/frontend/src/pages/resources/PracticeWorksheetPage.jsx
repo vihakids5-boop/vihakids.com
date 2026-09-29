@@ -5,6 +5,7 @@ import MinimalPageLayout from '../../components/MinimalPageLayout';
 import { useWorksheetPage, MoreWorksheets } from '../../components/WorksheetTraceCard';
 import { useDocumentHead } from '../../lib/useDocumentHead';
 import { PRACTICE_WORKSHEETS, questionCount } from '../../data/practiceWorksheets';
+import { PRACTICE_WORKSHEET_NOTES } from '../../data/practiceWorksheetNotes';
 import { PRACTICE_WORKSHEET_ROUTES } from '../../data/practiceWorksheetRoutes';
 
 // Fredoka: round, friendly display face for titles and part stickers.
@@ -258,6 +259,7 @@ export default function PracticeWorksheetPage({ slug }) {
   const [showAnswers, setShowAnswers] = useState(false);
 
   const total = questionCount(ws);
+  const notes = PRACTICE_WORKSHEET_NOTES[slug];
   let part = 0;
   const sections = ws.sections.map((s, i) => ({
     ...s,
@@ -337,6 +339,25 @@ export default function PracticeWorksheetPage({ slug }) {
                 <AnswerBody s={s} />
               </div>
             ))}
+          </section>
+        )}
+
+        {/* For the parent, not the child: what the sheet covers and where it
+            usually goes wrong. Left out of the printed sheet. */}
+        {notes && (
+          <section className="pw-notes no-print" aria-label="About this worksheet">
+            <div className="pw-note-col">
+              <h2>What this sheet practises</h2>
+              <ul>
+                {notes.goals.map((g) => <li key={g.slice(0, 28)}>{g}</li>)}
+              </ul>
+            </div>
+            <div className="pw-note-col">
+              <h2>Tips for parents</h2>
+              <ul>
+                {notes.tips.map((t) => <li key={t.slice(0, 28)}>{t}</li>)}
+              </ul>
+            </div>
           </section>
         )}
 

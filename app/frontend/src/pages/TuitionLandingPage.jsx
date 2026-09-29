@@ -3,6 +3,8 @@ import { useDocumentHead } from '../lib/useDocumentHead';
 import RegisterFormWizard from '../components/RegisterFormWizard';
 import { BOARD_PAGES, CLASS_PAGES, SUBJECT_PAGES, COUNTRY_PAGES, CITY_PAGES } from '../data/tuitionLandingPages';
 import { TUITION_PAGE_FAQS, buildTuitionFaqJsonLd } from '../data/tuitionPageFaqs';
+import { CITY_PAGE_DETAILS } from '../data/cityPageDetails';
+import { CITY_PAGE_FAQS } from '../data/cityPageFaqs';
 
 const CATEGORY_LABEL = {
   board: 'Explore by board',
@@ -56,7 +58,10 @@ export default function TuitionLandingPage({ data }) {
 
   useDocumentHead({ title: metaTitle, description: metaDescription });
   const relatedBlogPosts = RELATED_BLOG_POSTS[slug];
-  const faqs = TUITION_PAGE_FAQS[slug];
+  // City pages keep their questions in their own file; the board and subject
+  // pages use tuitionPageFaqs.js. A slug never appears in both.
+  const faqs = TUITION_PAGE_FAQS[slug] || CITY_PAGE_FAQS[slug];
+  const local = CITY_PAGE_DETAILS[slug];
 
   return (
     <main id="top">
@@ -81,6 +86,23 @@ export default function TuitionLandingPage({ data }) {
           <ul>
             {highlights.map((h) => <li key={h.slice(0, 24)}>{h}</li>)}
           </ul>
+
+          {/* City pages: the board, the Class 10 exam name and the language
+              subjects that actually differ from one city to the next. */}
+          {local && (
+            <>
+              <h2>{local.heading}</h2>
+              {local.paragraphs.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
+              <dl className="local-facts">
+                {local.facts.map(([label, value]) => (
+                  <div key={label}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </>
+          )}
 
           {faqs?.length > 0 && (
             <>
