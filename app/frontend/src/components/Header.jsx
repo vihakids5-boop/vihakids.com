@@ -64,7 +64,7 @@ export default function Header() {
             <BrandMark size={38} />
             <span className="brand-text">
               <span className="brand-word"><span className="v-accent">V</span>ihakids</span>
-              <span className="brand-tagline">Online Tuitions · Bengaluru</span>
+              <span className="brand-tagline">Online Tuitions · Bengaluru, India</span>
             </span>
           </Link>
 

@@ -85,7 +85,10 @@ nav.wrap{
 .brand .v-accent{ color: var(--oxide); }
 header .brand-word{ color: var(--ink); }
 header .brand .v-accent{ color: var(--marigold); }
-.brand-tagline{ font-family:'Montserrat', sans-serif; font-weight:600; font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+/* 0.56rem was 9px — too small to read once the line carries the city and
+   country. Slightly larger, with the tracking eased so the longer line still
+   fits beside the mark on a 375px phone. */
+.brand-tagline{ font-family:'Montserrat', sans-serif; font-weight:600; font-size: 0.64rem; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-soft); }
 header .brand-tagline{ color: var(--ink-soft); }
 .nav-dropdown{ position: relative; flex-shrink: 0; }
 .nav-dropdown-trigger{
