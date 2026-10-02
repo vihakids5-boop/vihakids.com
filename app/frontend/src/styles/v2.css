@@ -454,5 +454,6 @@
 /* Comfortable tap targets in the header on phones (were 35-37px tall). */
 @media (max-width: 900px){
   header .nav-cta{ min-height: 42px; display: inline-flex; align-items: center; }
-  header .brand{ min-height: 42px; justify-content: center; }
+  /* The brand is a row now (mark + text), so vertical centring is align-items. */
+  header .brand{ min-height: 42px; align-items: center; gap: 8px; }
 }

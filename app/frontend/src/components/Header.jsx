@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import BrandMark from './BrandMark';
 import { BOARD_PAGES, SUBJECT_PAGES, CLASS_PAGES, COUNTRY_PAGES, CITY_PAGES } from '../data/tuitionLandingPages';
 
 const WHATSAPP_URL =
@@ -60,8 +61,11 @@ export default function Header() {
       <nav className="wrap" aria-label="Primary">
         <div className="nav-left">
           <Link to="/" className="brand">
-            <span className="brand-word"><span className="v-accent">V</span>ihakids</span>
-            <span className="brand-tagline">Online Tuitions</span>
+            <BrandMark size={38} />
+            <span className="brand-text">
+              <span className="brand-word"><span className="v-accent">V</span>ihakids</span>
+              <span className="brand-tagline">Online Tuitions · Bengaluru</span>
+            </span>
           </Link>
 
           <div className="nav-dropdown navlinks-mobile-hide" ref={menuRef}>

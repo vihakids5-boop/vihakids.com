@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import BrandMark from './BrandMark';
 import { openCookieSettings } from '../lib/consent';
 
 const linkStyle = { color: 'var(--ink-soft)', fontSize: '0.88rem', textDecoration: 'underline' };
@@ -40,7 +41,11 @@ export default function Footer() {
     <footer>
       <div className="wrap footer-grid">
         <Link to="/" className="brand">
-          <span className="brand-word"><span className="v-accent">V</span>ihakids</span>
+          <BrandMark size={32} />
+          <span className="brand-text">
+            <span className="brand-word"><span className="v-accent">V</span>ihakids</span>
+            <span className="brand-tagline">Online Tuitions · Bengaluru, India</span>
+          </span>
         </Link>
         <p className="footer-tagline">Inspire young minds.</p>
         <address style={{ fontStyle: 'normal', margin: 0, color: 'var(--ink-soft)', fontSize: '0.88rem' }}>
