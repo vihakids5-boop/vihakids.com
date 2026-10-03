@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import './styles/global.css';
 import './styles/v2.css';
+import './styles/v3.css';
 import { reloadOnceForStaleChunk } from './lib/lazyWithReload';
 
 // Vite fires this when a preloaded chunk or its CSS 404s after a deploy.

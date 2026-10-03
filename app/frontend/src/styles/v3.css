@@ -1,0 +1,293 @@
+/* =====================================================================
+   v3 — homepage hero with the demo planner and pass (2026-10).
+   Scoped to .v3-* so nothing else on the site moves. Colours build on the
+   brand green of the logo (--marigold) rather than the coral of v2.
+   ===================================================================== */
+.v3-hero, .v3-section{
+  --v3-green: #3E9767;
+  --v3-green-deep: #1F4D38;
+  --v3-green-ink: #143526;
+  --v3-sun: #F2C14E;
+  --v3-wash: #EEF5EC;
+  /* Hero display face: Montserrat, the same family as the logo wordmark and
+     the body text, set semi-bold (heavier weights read as shouting). Already loaded, so it costs no extra request. */
+  --v3-display: 'Montserrat', sans-serif;
+}
+
+.v3-hero{
+  background:
+    radial-gradient(80% 90% at 0% 0%, #E3F0E1 0%, transparent 60%),
+    linear-gradient(180deg, #F6FAF3 0%, var(--paper-raised) 100%);
+  border-bottom: 1px solid var(--line);
+  padding: 44px 0 56px;
+}
+.v3-hero-inner{
+  max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: start;
+}
+.v3-eyebrow{
+  margin: 0 0 10px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--v3-green-deep);
+}
+.v3-subjects{ list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.v3-subjects li{
+  padding: 4px 11px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+  color: var(--v3-green-ink); background: #fff; border: 1px solid rgba(31,77,56,0.22);
+}
+.v3-h1{
+  margin: 0; font-family: var(--v3-display); font-weight: 600; color: var(--ink);
+  font-size: clamp(1.95rem, 3.1vw, 2.7rem); line-height: 1.18; letter-spacing: -0.015em; text-wrap: balance;
+}
+.v3-h1 em{ font-style: normal; color: var(--v3-green); }
+.v3-lead{ margin: 16px 0 0; max-width: 50ch; font-size: 1.05rem; line-height: 1.65; color: var(--ink-soft); }
+
+/* ---------- the pass ---------- */
+.v3-pass{
+  position: relative; margin-top: 26px; max-width: 500px;
+  display: grid; grid-template-columns: 1fr 118px;
+  color: #F4F8F1; border-radius: 18px;
+  background: var(--v3-green-deep);
+  box-shadow: 0 18px 40px rgba(20,53,38,0.22);
+}
+.v3-pass-main{ position: relative; padding: 18px 20px 18px; }
+.v3-pass-kicker{ margin: 0; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--v3-sun); }
+.v3-pass-title{ margin: 4px 0 14px; font-family: var(--v3-display); font-size: 1.05rem; font-weight: 600; letter-spacing: -0.005em; }
+.v3-pass-rows{ margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; }
+.v3-pass-rows dt{ font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,248,241,0.6); }
+.v3-pass-rows dd{ margin: 2px 0 0; font-size: 0.95rem; font-weight: 600; color: rgba(244,248,241,0.45); min-height: 1.4em; }
+.v3-pass-rows .is-set dd{ color: #fff; animation: v3-pop 0.35s ease; }
+.v3-pass-stub{
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  padding: 14px 10px; text-align: center; color: var(--v3-green-ink);
+  background: var(--v3-sun); border-radius: 0 18px 18px 0;
+  border-left: 2px dashed rgba(20,53,38,0.45);
+}
+/* the two punched notches where the stub tears off */
+.v3-pass-stub::before, .v3-pass-stub::after{
+  content: ''; position: absolute; right: 108px; width: 20px; height: 20px; border-radius: 50%;
+  background: #F4F8F1;
+}
+.v3-pass-stub::before{ top: -10px; }
+.v3-pass-stub::after{ bottom: -10px; }
+.v3-pass-price{ font-family: var(--v3-display); font-size: 2rem; font-weight: 700; line-height: 1; }
+.v3-pass-stub-note{ font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; }
+.v3-pass-meter{ display: flex; gap: 4px; margin-top: 4px; }
+.v3-pass-meter i{ width: 14px; height: 5px; border-radius: 3px; background: rgba(20,53,38,0.22); transition: background 0.25s; }
+.v3-pass-meter i.on{ background: var(--v3-green-ink); }
+.v3-pass-stamp{
+  display: inline-block; margin-left: 10px; transform: rotate(-4deg);
+  padding: 2px 8px; border: 2px solid var(--v3-sun); border-radius: 6px;
+  font-size: 0.64rem; font-weight: 800; letter-spacing: 0.16em; color: var(--v3-sun);
+  animation: v3-stamp 0.4s cubic-bezier(.2,1.6,.4,1);
+}
+@keyframes v3-pop{ from{ transform: translateY(4px); opacity: 0.2; } to{ transform: none; opacity: 1; } }
+@keyframes v3-stamp{ from{ transform: rotate(-4deg) scale(1.8); opacity: 0; } to{ transform: rotate(-4deg) scale(1); opacity: 1; } }
+
+.v3-trust{ list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.v3-trust li{ font-size: 0.86rem; font-weight: 600; color: var(--ink-soft); }
+
+/* ---------- the planner ---------- */
+.v3-book-flag{ margin: 0 0 10px; font-size: 0.86rem; font-weight: 700; color: var(--v3-green-deep); }
+.v3-planner{
+  margin: 0; padding: 20px 22px 22px; background: #fff; border-radius: 20px;
+  border: 1px solid var(--line); box-shadow: 0 20px 46px rgba(52,32,26,0.10);
+}
+.v3-progress{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 18px; }
+.v3-progress-step{
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0;
+  background: none; border: 0; font: inherit; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: rgba(52,32,26,0.4); cursor: default;
+}
+.v3-progress-step span{
+  display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  font-size: 0.78rem; background: var(--v3-wash); color: rgba(52,32,26,0.5);
+}
+.v3-progress-step.is-now{ color: var(--ink); }
+.v3-progress-step.is-now span{ background: var(--ink); color: #fff; }
+.v3-progress-step.is-done{ color: var(--v3-green-deep); cursor: pointer; }
+.v3-progress-step.is-done span{ background: var(--v3-green); color: #fff; }
+
+.v3-step{ margin: 0; padding: 0; border: 0; min-width: 0; animation: v3-pop 0.28s ease; }
+.v3-step legend{
+  padding: 0; margin-bottom: 14px; font-family: var(--v3-display); font-size: 1.18rem;
+  font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: var(--ink);
+}
+.v3-chip{
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 8px 12px; font: inherit; font-size: 0.95rem; font-weight: 600;
+  color: var(--ink); background: #fff; border: 1.5px solid rgba(52,32,26,0.18); border-radius: 12px;
+  cursor: pointer; transition: border-color 0.15s, background 0.15s, transform 0.1s;
+}
+.v3-chip:hover{ border-color: var(--v3-green); background: var(--v3-wash); }
+.v3-chip:active{ transform: scale(0.97); }
+.v3-chip.is-on{ background: var(--v3-green); border-color: var(--v3-green); color: #fff; }
+.v3-grade-grid{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.v3-grade{ font-family: var(--v3-display); font-size: 1.1rem; font-weight: 600; }
+.v3-subject-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; }
+.v3-stack{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.v3-row{ justify-content: flex-start; text-align: left; }
+.v3-slot-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.v3-sublegend{ margin: 16px 0 8px; font-size: 0.84rem; font-weight: 700; color: var(--ink); }
+.v3-sublegend span{ font-weight: 500; color: var(--ink-soft); }
+.v3-lang-row{ display: flex; flex-wrap: wrap; gap: 8px; }
+.v3-lang{ min-height: 40px; font-size: 0.86rem; border-radius: 999px; padding: 6px 14px; }
+.v3-hint{ margin: 12px 0 0; font-size: 0.84rem; color: var(--ink-soft); }
+.v3-error{ display: none; margin: 8px 0 0; font-size: 0.84rem; font-weight: 600; color: #B3261E; }
+.v3-error.show{ display: block; }
+.v3-actions{ display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; }
+.v3-back, .v3-skip{ background: none; border: 0; padding: 10px 4px; font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); cursor: pointer; }
+.v3-back:hover, .v3-skip:hover{ color: var(--ink); }
+.v3-hero .btn.v3-btn, .v3-section .btn.v3-btn{ background: var(--v3-green); border-color: var(--v3-green); color: #fff; box-shadow: 0 4px 0 var(--v3-green-deep); }
+.v3-hero .btn.v3-btn:hover, .v3-section .btn.v3-btn:hover{ background: var(--v3-green-deep); border-color: var(--v3-green-deep); }
+.v3-field{ margin-bottom: 12px; }
+.v3-field label{ display: block; margin-bottom: 6px; font-size: 0.86rem; font-weight: 700; color: var(--ink); }
+.v3-field input{
+  width: 100%; min-height: 48px; padding: 10px 14px; font: inherit; font-size: 1rem; color: var(--ink);
+  background: #fff; border: 1.5px solid rgba(52,32,26,0.22); border-radius: 12px;
+}
+.v3-field input[aria-invalid="true"]{ border-color: #B3261E; }
+.v3-phone{ display: flex; align-items: stretch; }
+.v3-phone span{
+  display: grid; place-items: center; padding: 0 12px; font-weight: 700; color: var(--ink-soft);
+  background: var(--v3-wash); border: 1.5px solid rgba(52,32,26,0.22); border-right: 0; border-radius: 12px 0 0 12px;
+}
+.v3-phone input{ border-radius: 0 12px 12px 0; }
+.v3-fine{ margin: 12px 0 0; font-size: 0.8rem; color: var(--ink-soft); }
+.v3-fine a{ color: inherit; }
+.v3-status{ margin-top: 12px; padding: 10px 12px; border-radius: 10px; background: #FDECEA; color: #8C1D18; font-size: 0.88rem; }
+.v3-hero :is(button, input, a):focus-visible{ outline: 3px solid var(--v3-sun); outline-offset: 2px; }
+
+.v3-planner-done{ text-align: left; }
+.v3-planner-done h2{ margin: 10px 0 12px; font-family: var(--v3-display); font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+.v3-done-tick{ display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--v3-green); color: #fff; font-size: 1.3rem; font-weight: 700; }
+.v3-done-steps{ margin: 0 0 18px; padding-left: 20px; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; }
+.v3-done-steps li{ margin-bottom: 6px; }
+.v3-done-steps strong{ color: var(--ink); }
+
+/* ---------- inside-the-demo + facts ---------- */
+.v3-section{ padding: 72px 0; background: var(--paper-raised); }
+.v3-head{ max-width: 640px; margin-bottom: 30px; }
+.v3-head-facts{ margin-top: 64px; }
+.v3-h2{ margin: 0; font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(1.6rem, 2.6vw, 2.2rem); line-height: 1.18; color: var(--ink); text-wrap: balance; }
+.v3-beats{ list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.v3-beats li{ position: relative; padding: 26px 22px 6px 0; border-top: 2px solid var(--v3-green); }
+.v3-beats li::before{
+  content: ''; position: absolute; top: -8px; left: 0; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--paper-raised); border: 3px solid var(--v3-green);
+}
+.v3-beat-when{ font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v3-green-deep); }
+.v3-beats h3{ margin: 6px 0 8px; font-size: 1.08rem; font-weight: 700; color: var(--ink); }
+.v3-beats p{ margin: 0; font-size: 0.94rem; line-height: 1.6; color: var(--ink-soft); }
+.v3-facts{ margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.v3-facts > div{ padding: 18px 18px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
+.v3-facts dt{ font-size: 0.68rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; color: var(--v3-green-deep); }
+.v3-facts dd{ margin: 8px 0 0; font-size: 0.9rem; line-height: 1.55; color: var(--ink-soft); }
+.v3-facts dd strong{ display: block; margin-bottom: 4px; font-family: 'Fraunces', serif; font-size: 1.12rem; font-weight: 600; color: var(--ink); }
+.v3-center{ margin: 36px 0 0; text-align: center; }
+
+@media (max-width: 1000px){
+  .v3-beats{ grid-template-columns: 1fr 1fr; row-gap: 26px; }
+  .v3-facts{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px){
+  .v3-hero{ padding: 28px 0 40px; }
+  /* Phone order: headline, then the planner, then the pass — the booking must
+     not sit below a decorative ticket. display:contents lets the copy column's
+     children take their own places in the single-column grid. */
+  .v3-hero-inner{ grid-template-columns: 1fr; gap: 0; padding: 0 16px; }
+  .v3-hero-copy{ display: contents; }
+  .v3-eyebrow{ order: 1; }
+  /* Five subjects on one row at 375px — two rows pushed the class buttons
+     below the first screen. Still allowed to wrap on narrower phones rather
+     than run off the edge. */
+  .v3-subjects{ order: 1; margin-bottom: 14px; gap: 5px; }
+  .v3-subjects li{ padding: 3px 8px; font-size: 0.72rem; white-space: nowrap; }
+  .v3-h1{ order: 2; }
+  .v3-lead{ order: 3; margin-bottom: 22px; }
+  .v3-hero-book{ order: 4; }
+  .v3-pass{ order: 5; max-width: none; }
+  .v3-trust{ order: 6; }
+  .v3-planner{ padding: 18px 16px 20px; }
+  .v3-section{ padding: 52px 0; }
+}
+@media (max-width: 560px){
+  .v3-stack{ grid-template-columns: 1fr; }
+  .v3-beats{ grid-template-columns: 1fr; }
+  .v3-facts{ grid-template-columns: 1fr; }
+  .v3-pass{ grid-template-columns: 1fr 96px; }
+  .v3-pass-stub::before, .v3-pass-stub::after{ right: 86px; }
+  .v3-progress-step{ font-size: 0.64rem; }
+}
+@media (prefers-reduced-motion: reduce){
+  .v3-step, .v3-pass-rows .is-set dd, .v3-pass-stamp{ animation: none; }
+  .v3-chip{ transition: none; }
+}
+
+/* =====================================================================
+   Header (2026-10): quiet and flat, in the homepage's green and ink.
+   Before: three blue pills, a blue menu button and a heavy shadow, and on a
+   phone the row wrapped into two (122px tall). Now: text links, one outlined
+   action, one filled action; on a phone just the brand and the menu button.
+   ===================================================================== */
+header{
+  background: rgba(255,255,255,0.94);
+  -webkit-backdrop-filter: saturate(1.2) blur(10px); backdrop-filter: saturate(1.2) blur(10px);
+  box-shadow: none; border-bottom: 1px solid var(--line);
+}
+header nav.wrap{ padding-top: 10px; padding-bottom: 10px; }
+header .nav-ctas{ gap: 8px; }
+
+/* The Explore button and its dropdown panel keep their original look
+   (soft blue pill, blue column headings) — deliberately not restyled. */
+
+header .nav-quiet{
+  padding: 8px 8px; font-size: 0.9rem; font-weight: 600; color: var(--ink-soft);
+  text-decoration: none; white-space: nowrap; border-radius: 8px;
+}
+header .nav-quiet:hover{ color: var(--ink); }
+
+header .nav-cta{ min-height: 40px; padding: 7px 16px; border: 1.5px solid transparent; }
+header .nav-cta-wa{ background: #fff; color: #1F4D38; border-color: rgba(31,77,56,0.3); }
+header .nav-cta-wa:hover{ background: #EEF5EC; border-color: #3E9767; }
+header .nav-cta-book{ background: #3E9767; color: #fff; border-color: #3E9767; }
+header .nav-cta-book:hover{ background: #1F4D38; border-color: #1F4D38; }
+
+header .nav-toggle{ background: #fff; color: var(--ink); border-color: rgba(52,32,26,0.18); }
+header .nav-toggle:hover{ background: #EEF5EC; }
+header :focus-visible{ outline-color: #3E9767; }
+
+.mobile-menu-ctas{ display: none; }
+/* Only where the header row has no room for the two actions (phones). On
+   tablets and small laptops the row still shows them, so the menu stays the
+   plain list of links it always was. */
+@media (max-width: 640px){
+  header .mobile-menu-ctas{ display: flex; gap: 8px; padding: 8px 0 12px; }
+  /* beat the generic ".mobile-menu a" row styling for these two buttons */
+  header .mobile-menu .mobile-menu-ctas a{
+    flex: 1; justify-content: center; min-height: 44px; padding: 8px 12px;
+    border: 1.5px solid; border-radius: 999px; font-weight: 600;
+  }
+  header .mobile-menu .mobile-menu-ctas a.nav-cta-book{ color: #fff; border-color: #3E9767; }
+  header .mobile-menu .mobile-menu-ctas a.nav-cta-wa{ color: #1F4D38; border-color: rgba(31,77,56,0.3); }
+}
+@media (max-width: 900px){
+  header .nav-quiet{ display: none; }
+}
+@media (max-width: 760px){
+  header .nav-ctas .nav-cta-wa{ display: none; }
+}
+@media (max-width: 640px){
+  /* brand + menu button only; the actions are the first thing in the menu */
+  header .nav-ctas{ display: none; }
+  header nav.wrap{ flex-wrap: wrap; }
+}
+@media (max-width: 640px){
+  /* The brand was 292px; with the 40px menu button that is 3px too wide for a
+     375px phone, so the button dropped to its own row and doubled the header's
+     height. Trim the brand so the two share one row down to 320px. */
+  header .brand{ gap: 7px; }
+  header .brand-mark{ width: 32px; height: 32px; }
+  header .brand-word{ font-size: 1.3rem; }
+  header .brand-tagline{ font-size: 0.55rem; letter-spacing: 0.07em; }
+  header nav.wrap{ column-gap: 8px; }
+}

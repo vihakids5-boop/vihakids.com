@@ -1,0 +1,50 @@
+import { useState } from 'react';
+import DemoPlanner, { DemoPass, initialPlannerValues } from './DemoPlanner';
+
+// Hero for the 2026-10 homepage: the booking is the hero. The parent plans the
+// demo on the right and the pass on the left fills in as they answer, so the
+// page shows what they are getting before it asks for a phone number.
+const TRUST = [
+  '★ 5.0 on Google · 21 parent reviews',
+  'Your child’s own school textbook',
+  'The demo tutor stays your tutor',
+];
+
+// Kannada leads: it is the subject parents are least likely to assume we
+// teach, and the one most other online tuitions do not offer.
+const SUBJECTS_TAUGHT = ['Kannada', 'English', 'Hindi', 'Mathematics', 'Science'];
+
+export default function HeroV3() {
+  // State lives here so the pass (left) and the planner (right) share it.
+  const [values, setValues] = useState(initialPlannerValues());
+  const [reserved, setReserved] = useState(false);
+
+  return (
+    <section className="v3-hero">
+      <div className="v3-hero-inner">
+        <div className="v3-hero-copy">
+          <p className="v3-eyebrow">Live 1-on-1 · Classes 1–10 · CBSE, ICSE &amp; State Board</p>
+          <ul className="v3-subjects" aria-label="Subjects we teach">
+            {SUBJECTS_TAUGHT.map((sub) => <li key={sub}>{sub}</li>)}
+          </ul>
+          <h1 className="v3-h1">
+            Fix the gap now, <em>not the night before exams.</em>
+          </h1>
+          <p className="v3-lead">
+            One tutor, one child, on the textbook your child carries to school. Start with a real
+            30-minute class — free, and you decide only after you have watched it.
+          </p>
+          <DemoPass values={values} reserved={reserved} />
+          <ul className="v3-trust">
+            {TRUST.map((t) => <li key={t}>{t}</li>)}
+          </ul>
+        </div>
+
+        <div className="v3-hero-book" id="book">
+          <p className="v3-book-flag">Plan your child’s free demo — about 30 seconds</p>
+          <DemoPlanner values={values} setValues={setValues} reserved={reserved} setReserved={setReserved} />
+        </div>
+      </div>
+    </section>
+  );
+}

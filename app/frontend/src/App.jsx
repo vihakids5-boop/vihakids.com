@@ -108,7 +108,9 @@ export default function App() {
       {pathname !== '/admin' && <ChatWidget />}
       {/* Right-edge booking tab: every page except the admin and the booking
           page itself, which already is the form. */}
-      {pathname !== '/admin' && pathname !== '/register' && <SideBookTab />}
+      {/* Not on the homepage: its hero is the booking, and the header already
+          carries a "Book a free demo" button. */}
+      {pathname !== '/admin' && pathname !== '/register' && pathname !== '/' && <SideBookTab />}
       {pathname !== '/admin' && <ConsentBanner />}
     </>
   );

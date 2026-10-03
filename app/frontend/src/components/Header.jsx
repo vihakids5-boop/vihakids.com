@@ -14,7 +14,7 @@ const GENERAL_LINKS = [
   { href: '/fees', label: 'Fees' },
   { href: '/faq', label: 'FAQ' },
   { href: '/worksheets', label: 'Free worksheets' },
-  { href: '/#how', label: 'How it works' },
+  { href: '/#demo', label: 'How it works' },
   { href: '/#reviews', label: 'Reviews' },
   { href: '/blog.html', label: 'Blog' },
   { href: '/#contact', label: 'Contact' },
@@ -139,20 +139,20 @@ export default function Header() {
           </div>
         </div>
 
+        {/* One quiet link, one secondary action, one primary. The primary is the
+            only filled button in the header, so it is the thing the eye lands on. */}
         <div className="nav-ctas">
+          <Link className="nav-quiet" to="/teach">Teach with us</Link>
           <a
-            className="nav-cta"
+            className="nav-cta nav-cta-wa"
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener"
             aria-label="Message Vihakids on WhatsApp (opens in a new tab)"
           >
-            WhatsApp Us
+            WhatsApp
           </a>
-          <Link className="teach-chip teach-chip-nav" to="/teach">
-            <span className="teach-chip-icon" aria-hidden="true">🎓</span>
-            <strong>Teach with us</strong>
-          </Link>
+          <Link className="nav-cta nav-cta-book" to="/register">Book a free demo</Link>
         </div>
 
         <button
@@ -171,6 +171,12 @@ export default function Header() {
         </button>
 
         <div className={`mobile-menu${open ? ' open' : ''}`} id="mobileMenu">
+          {/* On phones the header row is just the brand and the menu button;
+              the two actions live at the top of the menu instead. */}
+          <div className="mobile-menu-ctas">
+            <Link className="nav-cta nav-cta-book" to="/register" onClick={closeMobile}>Book a free demo</Link>
+            <a className="nav-cta nav-cta-wa" href={WHATSAPP_URL} target="_blank" rel="noopener" onClick={closeMobile}>WhatsApp</a>
+          </div>
           {GENERAL_LINKS.map((l) => (
             <NavLink key={l.label} {...l} onClick={closeMobile} />
           ))}

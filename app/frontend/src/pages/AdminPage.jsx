@@ -5,6 +5,7 @@ import { auth, firebaseConfigured } from '../lib/firebaseClient';
 import { api } from '../lib/api';
 import { useAdminCollection } from '../lib/useAdminCollection';
 import { downloadCsv } from '../lib/csv';
+import { parseDemoPlan } from '../lib/demoPlan';
 import { STATUSES, TEACH_STATUSES, GRADE_LABELS, EXPERIENCE_LABELS, ordinal } from '../constants/options';
 import AdminLoginForm from '../components/AdminLoginForm';
 import AdminStatsBar from '../components/AdminStatsBar';
@@ -17,6 +18,18 @@ const REG_COLUMNS = [
   { key: 'grade', label: 'Grade', render: (r) => `${ordinal(r.grade)} Std` },
   { key: 'subjects', label: 'Subjects', render: (r) => (r.subjects || []).map((s) => <span className="chip" key={s}>{s}</span>) },
   { key: 'source', label: 'Source', render: (r) => r.source || '—' },
+  // What the parent chose in the homepage demo planner: their goal, when the
+  // family is free, and the language to explain in. Blank for older records.
+  {
+    key: 'plan',
+    label: 'Demo plan',
+    render: (r) => {
+      const { focus, time, lang } = parseDemoPlan(r.page);
+      const parts = [focus && `Goal: ${focus}`, time && `Time: ${time}`, lang && `Explain in: ${lang}`].filter(Boolean);
+      if (!parts.length) return '—';
+      return parts.map((t) => <span className="chip" key={t}>{t}</span>);
+    },
+  },
 ];
 
 const TEACH_COLUMNS = [
@@ -66,7 +79,7 @@ export default function AdminPage() {
     : activeError;
 
   const visibleReg = useMemo(
-    () => filterRows(reg.rows, regQuery, regStatus, ['parentName', 'phone', 'subjects', 'grade', 'source', 'notes']),
+    () => filterRows(reg.rows, regQuery, regStatus, ['parentName', 'phone', 'subjects', 'grade', 'source', 'notes', 'page']),
     [reg.rows, regQuery, regStatus]
   );
   const visibleTeach = useMemo(
@@ -75,12 +88,12 @@ export default function AdminPage() {
   );
 
   function exportRegCsv() {
-    const headers = ['Date', 'Parent name', 'Phone', 'Grade', 'Subjects', 'Source', 'Status', 'Notes'];
-    const rows = visibleReg.map((r) => [
+    const headers = ['Date', 'Parent name', 'Phone', 'Grade', 'Subjects', 'Source', 'Goal', 'Preferred time', 'Explain in', 'Status', 'Notes'];
+    const rows = visibleReg.map((r) => { const plan = parseDemoPlan(r.page); return [
       r.createdAt ? new Date(r.createdAt).toLocaleString() : '',
       r.parentName, r.phone, ordinal(r.grade) + ' Std', (r.subjects || []).join('; '),
-      r.source || '', STATUSES[r.status || 'new'], r.notes || '',
-    ]);
+      r.source || '', plan.focus, plan.time, plan.lang, STATUSES[r.status || 'new'], r.notes || '',
+    ]; });
     downloadCsv(`vihakids-registrations-${new Date().toISOString().slice(0, 10)}.csv`, headers, rows);
   }
 
