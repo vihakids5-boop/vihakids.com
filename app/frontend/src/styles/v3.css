@@ -397,3 +397,34 @@ body{ overflow-x: clip; }
 .v3-chip.is-on{ box-shadow: 0 2px 0 var(--v3-green-deep); }
 .v3-phone span{ background: #fff; }
 .v3-planner .v3-back, .v3-planner .v3-skip, .v3-planner .v3-hint, .v3-planner .v3-fine{ color: #4A3A2C; }
+
+/* ---------- tap response (2026-10-04) ----------
+   "Lag" on the subject buttons was a styling bug, not slowness. On a phone a
+   tapped button stays in its :hover state until you touch something else, and
+   the hover rule (white background) was beating the selected rule (green
+   background, white text) — so a just-tapped subject showed white text on
+   white and only turned green after the next tap elsewhere.
+   A selected chip now wins over hover everywhere, hover styling is limited to
+   devices that really hover, and taps skip the browser's double-tap wait. */
+.v3-hero button, .v3-hero a, .v3-hero input{ touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.v3-chip{ transition: transform 0.08s ease; }
+.v3-chip.is-on,
+.v3-chip.is-on:hover,
+.v3-chip.is-on:active{ background: var(--v3-green); border-color: var(--v3-green); color: #fff; }
+@media (hover: none){
+  .v3-chip:not(.is-on):hover{ background: #fff; border-color: rgba(52,32,26,0.18); }
+}
+
+/* The corner glows were pseudo-elements hanging outside the card behind
+   overflow:hidden. That makes the card a scroll container, and the browser
+   scrolled its contents sideways whenever a button inside took focus — the
+   content slid left and was cut off. The glows are now plain background
+   layers, so nothing overflows and the card cannot scroll. */
+.v3-planner{
+  overflow: visible;
+  background:
+    radial-gradient(240px 220px at 100% 0%, rgba(242,193,78,0.6) 0%, rgba(242,193,78,0) 70%),
+    radial-gradient(220px 200px at 0% 100%, rgba(62,151,103,0.34) 0%, rgba(62,151,103,0) 70%),
+    linear-gradient(150deg, #DDF1E1 0%, #F1F8E2 46%, #FFF1C9 100%);
+}
+.v3-planner::before, .v3-planner::after{ content: none; }
