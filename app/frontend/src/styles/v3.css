@@ -367,3 +367,33 @@ body{ overflow-x: clip; }
   .v3-note ul{ grid-template-columns: 1fr; gap: 8px; }
   .v3-note li{ font-size: 1rem; }
 }
+
+/* ---------- colourful booking card (2026-10-04) ----------
+   The card was plain white. It now carries the brand's two colours — the
+   logo green and the pass's sun yellow — as a soft wash with two glows, and
+   the buttons stay white so they read as the things to tap. */
+.v3-planner{
+  position: relative; overflow: hidden;
+  background: linear-gradient(150deg, #DDF1E1 0%, #F1F8E2 46%, #FFF1C9 100%);
+  border: 1px solid rgba(62,151,103,0.32);
+  box-shadow: 0 22px 48px rgba(31,77,56,0.16);
+}
+.v3-planner::before, .v3-planner::after{
+  content: ''; position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+}
+.v3-planner::before{
+  width: 220px; height: 220px; right: -80px; top: -90px;
+  background: radial-gradient(circle, rgba(242,193,78,0.6) 0%, rgba(242,193,78,0) 68%);
+}
+.v3-planner::after{
+  width: 200px; height: 200px; left: -80px; bottom: -100px;
+  background: radial-gradient(circle, rgba(62,151,103,0.34) 0%, rgba(62,151,103,0) 68%);
+}
+/* content above the glows; the honeypot keeps its own off-screen positioning */
+.v3-planner > *:not(.hf-honeypot){ position: relative; z-index: 1; }
+.v3-progress-step span{ background: #fff; box-shadow: 0 1px 0 rgba(31,77,56,0.12); }
+.v3-chip{ box-shadow: 0 2px 0 rgba(31,77,56,0.10); }
+.v3-chip:hover{ background: #fff; }
+.v3-chip.is-on{ box-shadow: 0 2px 0 var(--v3-green-deep); }
+.v3-phone span{ background: #fff; }
+.v3-planner .v3-back, .v3-planner .v3-skip, .v3-planner .v3-hint, .v3-planner .v3-fine{ color: #4A3A2C; }
