@@ -291,3 +291,58 @@ header :focus-visible{ outline-color: #3E9767; }
   header .brand-tagline{ font-size: 0.55rem; letter-spacing: 0.07em; }
   header nav.wrap{ column-gap: 8px; }
 }
+
+/* =====================================================================
+   iPhone legibility (2026-10-04). A parent reported the homepage text was too
+   small and faint to read on an iPhone. Two causes:
+   1. iOS Safari may rescale text and shrink a page to fit anything wider than
+      the screen; the site had no guard against either.
+   2. The new hero's labels were 9–12px, several at 40–60% opacity.
+   Nothing a parent has to read on a phone is under 12.5px now, and the faint
+   greys are darkened at every size.
+   ===================================================================== */
+html{ -webkit-text-size-adjust: 100%; text-size-adjust: 100%; overflow-x: clip; }
+body{ overflow-x: clip; }
+
+/* contrast — all screen sizes */
+.v3-progress-step{ color: rgba(52,32,26,0.62); }
+.v3-progress-step span{ color: rgba(52,32,26,0.7); }
+.v3-pass-rows dt{ color: rgba(244,248,241,0.82); }
+.v3-pass-rows dd{ color: rgba(244,248,241,0.62); }
+
+@media (max-width: 640px){
+  header .brand-tagline{ font-size: 0.64rem; letter-spacing: 0.06em; }
+  .v3-eyebrow{ font-size: 0.8rem; letter-spacing: 0.08em; line-height: 1.5; }
+  .v3-subjects li{ font-size: 0.82rem; padding: 4px 10px; }
+  .v3-lead{ font-size: 1.08rem; }
+  .v3-book-flag{ font-size: 0.95rem; }
+  .v3-progress-step{ font-size: 0.74rem; letter-spacing: 0.02em; }
+  .v3-step legend{ font-size: 1.22rem; }
+  .v3-chip{ font-size: 1rem; }
+  .v3-lang{ font-size: 0.92rem; }
+  .v3-hint, .v3-error{ font-size: 0.92rem; }
+  .v3-fine{ font-size: 0.86rem; }
+  .v3-field label, .v3-sublegend{ font-size: 0.95rem; }
+  .v3-back, .v3-skip{ font-size: 0.98rem; }
+  .v3-pass-kicker{ font-size: 0.78rem; letter-spacing: 0.12em; }
+  .v3-pass-title{ font-size: 1.1rem; }
+  .v3-pass-rows dt{ font-size: 0.78rem; letter-spacing: 0.08em; }
+  .v3-pass-rows dd{ font-size: 1.02rem; }
+  .v3-pass-stub-note{ font-size: 0.74rem; letter-spacing: 0.04em; }
+  .v3-trust li{ font-size: 0.95rem; }
+  .v3-done-steps{ font-size: 1rem; }
+  .v3-beat-when{ font-size: 0.8rem; }
+  .v3-beats h3{ font-size: 1.14rem; }
+  .v3-beats p{ font-size: 1rem; }
+  .v3-facts dt{ font-size: 0.8rem; letter-spacing: 0.08em; }
+  .v3-facts dd{ font-size: 1rem; }
+  .v3-facts dd strong{ font-size: 1.18rem; }
+}
+@media (max-width: 640px){
+  /* The larger text pushed the "10" class button back under the chat bubble.
+     Take the difference out of the spacing instead of the type. */
+  .v3-hero{ padding-top: 16px; }
+  .v3-lead{ margin-bottom: 14px; }
+  .v3-progress{ margin-bottom: 12px; }
+  .v3-step legend{ margin-bottom: 10px; }
+}
