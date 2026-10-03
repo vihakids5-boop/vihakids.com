@@ -2119,3 +2119,11 @@ main > .wrap > .page-head:first-child{ padding-top: 40px; }
 @media print{
   .consent-banner{ display: none; }
 }
+
+/* The Explore panel is 980px wide. Anchored to the dropdown button it started
+   wherever the brand ended, so once the brand grew (logo mark + longer tagline)
+   the panel ran past the right edge and gave the whole page a sideways scroll
+   at laptop widths — even while closed. Anchor it to the nav row instead, whose
+   left edge is the page gutter and never moves. */
+header .nav-left{ position: relative; }
+header .nav-dropdown{ position: static; }
