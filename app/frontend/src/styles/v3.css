@@ -448,3 +448,14 @@ body{ overflow-x: clip; }
   border-radius: 12px 0 0 12px; cursor: pointer;
 }
 .hf-phone-code{ font: inherit; font-weight: 600; color: inherit; cursor: pointer; max-width: 48%; }
+
+/* ---------- form fields on phones (2026-10-05) ----------
+   iPhone Safari zooms the whole page in when you tap a field whose text is
+   under 16px, and does not zoom back out. Every form field on the site is 16px
+   on phones now, and tall enough for a thumb (the country selector was 38px). */
+@media (max-width: 640px){
+  .hf-field input[type="text"], .hf-field input[type="tel"], .hf-field input[type="email"],
+  .hf-field input[type="password"], .hf-field select, .hf-field textarea{ font-size: 16px; min-height: 46px; }
+  .hf-field select.hf-phone-code{ max-width: 47%; padding: 0 4px 0 10px; }
+  .v3-phone-code, .v3-field input{ font-size: 16px; }
+}
