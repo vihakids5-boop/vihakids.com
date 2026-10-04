@@ -14,7 +14,7 @@ const TUTORS_ANSWER = (city) =>
   `Our tutors are based in India — Bengaluru mostly — and every class is live and online, one-on-one over video. So no, we do not send a tutor to your home in ${city}; what you get instead is a tutor who is free to be chosen for how well they teach your child’s board and subject rather than for living nearby.`;
 
 const FEES_ANSWER =
-  'The first class is a free 30-minute demo, with no payment details taken. Fees for regular classes depend on the class and the number of subjects, and are listed on our fees page — you only decide after the demo.';
+  'The first class is a free 30-minute demo, with no payment details taken. Regular classes are a simple monthly fee for 8 or more classes, with no other commitment. The fee depends on the class and the number of subjects, so we share it with you on WhatsApp after the demo — you decide only then.';
 
 export const CITY_PAGE_FAQS = {
   'online-tuition-bengaluru': [
@@ -108,7 +108,7 @@ export const CITY_PAGE_FAQS = {
     },
     {
       q: 'Can you teach a GSEB child and a CBSE child in the same family?',
-      a: 'Yes, and we do it often. Each child gets their own one-on-one class taught from their own textbook, so the syllabuses never get mixed up. Families taking two or more subjects or children usually ask us about fees together — those are on the fees page.',
+      a: 'Yes, and we do it often. Each child gets their own one-on-one class taught from their own textbook, so the syllabuses never get mixed up. Families taking two or more subjects or children usually ask us about fees together — we share those on WhatsApp after the demo.',
     },
     { q: 'What are the usual class timings?', a: 'Early morning, after school, evenings and weekends. The slot is fixed with you on WhatsApp after the free demo class and stays yours week to week.' },
   ],

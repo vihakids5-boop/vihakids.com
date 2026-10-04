@@ -16,7 +16,7 @@ export const STATIC_ROUTE_HEADS = {
   },
   '/fees': {
     title: 'Fees | Vihakids — Online English, Hindi, Math, Science & Kannada Tuitions',
-    description: 'Simple, affordable monthly fees for Vihakids online tuitions — one clear price per subject, per month, with no registration fee and no annual contract. Built for every Indian family.',
+    description: 'How Vihakids fees work: one monthly fee per subject for 8 or more 1-on-1 classes, with no registration fee, no annual contract and no other commitment. You decide after a free demo.',
   },
   '/faq': {
     title: 'Parent FAQ | Online Tuition for Classes 1–10 — Vihakids',

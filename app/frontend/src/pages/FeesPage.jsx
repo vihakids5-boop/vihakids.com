@@ -2,19 +2,10 @@ import { useDocumentHead } from '../lib/useDocumentHead';
 import { STATIC_ROUTE_HEADS } from '../data/staticRouteHeads';
 import RegisterFormWizard from '../components/RegisterFormWizard';
 
-const BANDS = [
-  { name: 'Foundation', grades: 'Classes 1–4', steady: 1499, steadyPerClass: 187, focus: 2199, focusPerClass: 183 },
-  { name: 'Building Blocks', grades: 'Classes 5–7', steady: 1799, steadyPerClass: 225, focus: 2599, focusPerClass: 216 },
-  { name: 'Board Ready', grades: 'Classes 8–10', steady: 2199, steadyPerClass: 275, focus: 2999, focusPerClass: 250 },
-];
-
-const EXAMPLES = [
-  { desc: <><strong>1 child</strong>, Class 6, English + Math, Steady Pace</>, amt: '₹3,598' },
-  { desc: <><strong>1 child</strong>, Class 9, Math only, Extra Support before boards</>, amt: '₹2,999' },
-  { desc: <><strong>2 children</strong>, both in Foundation grades, one subject each, Steady Pace</>, amt: '₹2,998' },
-  { desc: <><strong>1 child</strong>, Class 4, Kannada + Hindi + English, Steady Pace</>, amt: '₹4,497' },
-];
-
+// No amounts on this page, by the owner's decision (2026-10-05): the site says
+// how fees work — monthly, 8 or more classes, no other commitment — and the
+// actual figure is shared with the parent after the free demo. Do not add
+// prices, per-class costs or "from ₹…" lines back without being asked.
 export default function FeesPage() {
   useDocumentHead(STATIC_ROUTE_HEADS['/fees']);
 
@@ -23,13 +14,21 @@ export default function FeesPage() {
       <div className="wrap">
         <div className="page-head">
           <span className="eyebrow">Fees</span>
-          <h1>A monthly fee built for every Indian family</h1>
-          <p className="lead">One clear price per subject, per month — billed monthly with no lock-in. Every child gets steady, 1-on-1 attention; the pace adjusts to what they actually need, not a one-size-fits-all package.</p>
+          <h1>A simple monthly fee, and no other commitment</h1>
+          <p className="lead">You pay month by month for the subject your child is taking. There is no registration fee, no annual contract and nothing to sign — and you only decide after the free demo class.</p>
         </div>
 
         <div className="page-body prose">
-          <h2>The two paces</h2>
-          <p>Every plan starts on the Steady Pace track. Extra Support isn&rsquo;t something you pick off a menu — after the free demo class, the tutor will only recommend it if your child&rsquo;s specific gaps call for more frequent sessions.</p>
+          <h2>How the fee works</h2>
+          <ul className="checklist">
+            <li><span className="mark">✓</span><span><strong>One monthly fee per subject.</strong> The same structure for English, Hindi, Math, Science and Kannada.</span></li>
+            <li><span className="mark">✓</span><span><strong>8 or more classes a month.</strong> Every plan includes at least 8 live, 1-on-1 classes.</span></li>
+            <li><span className="mark">✓</span><span><strong>No other commitment.</strong> No registration fee, no admission fee, no annual package and no material charges.</span></li>
+            <li><span className="mark">✓</span><span><strong>Paid monthly.</strong> By UPI or bank transfer. No loans, no EMI plans, no finance agreements.</span></li>
+          </ul>
+
+          <h2>How many classes a month</h2>
+          <p>Every child starts with 8 classes a month. The tutor suggests more only after the free demo, and only if your child&rsquo;s gaps call for it.</p>
 
           <div className="pace-grid">
             <div className="pace-card pace-steady">
@@ -44,46 +43,16 @@ export default function FeesPage() {
             </div>
           </div>
 
-          <h2>Price per subject, per month</h2>
-          <p>Same structure for English, Hindi, Math, Science and Kannada. Price rises slightly by grade band, reflecting more advanced content and exam stakes — not by subject.</p>
-
-          <table className="board-table fee-table">
-            <thead>
-              <tr><th>Grade band</th><th>Steady Pace</th><th>Extra Support</th></tr>
-            </thead>
-            <tbody>
-              {BANDS.map((b) => (
-                <tr key={b.name}>
-                  <td>{b.name}<span className="fee-band-grades">{b.grades}</span></td>
-                  <td><span className="fee-price">₹{b.steady.toLocaleString('en-IN')}</span><span className="fee-per-class">≈ ₹{b.steadyPerClass} / class</span></td>
-                  <td><span className="fee-price fee-price-focus">₹{b.focus.toLocaleString('en-IN')}</span><span className="fee-per-class">≈ ₹{b.focusPerClass} / class</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p className="fee-table-note">Per-class cost is lower on Extra Support in every band — committing to more consistent support is rewarded, not penalised.</p>
-
-          <h2>What this looks like for a real family</h2>
-          <div className="fee-example-list">
-            {EXAMPLES.map((ex, i) => (
-              <div className="fee-example" key={i}>
-                <div className="fee-example-desc">{ex.desc}</div>
-                <div className="fee-example-amt">{ex.amt} <span>/ mo</span></div>
-              </div>
-            ))}
-          </div>
+          <h2>How you find out the fee</h2>
+          <p>The free demo class always comes first. Afterwards we send you one WhatsApp message with what the tutor noticed and the monthly fee for your child&rsquo;s class and subject. If it is not for you, you simply say so — nobody will call to persuade you.</p>
 
           <h2>Ground rules</h2>
           <ul className="checklist">
-            <li><span className="mark">✓</span><span>Billed monthly. No registration fee, no annual contract, cancel anytime.</span></li>
-            <li><span className="mark">✓</span><span>The free demo class always comes first — pricing is only discussed once the tutor knows your child.</span></li>
-            <li><span className="mark">✓</span><span>Moving from Steady Pace to Extra Support (or back) takes effect from the next billing month, no penalty.</span></li>
+            <li><span className="mark">✓</span><span>Billed monthly. Stop any month by telling us before the next one begins — there is no cancellation fee.</span></li>
+            <li><span className="mark">✓</span><span>Moving between 8 and 12 classes, or adding or dropping a subject, takes effect from the next billing month, with no penalty.</span></li>
             <li><span className="mark">✓</span><span>A missed class can be rescheduled within the same week, subject to tutor availability.</span></li>
+            <li><span className="mark">✓</span><span>You can pause for exams or a holiday. When you come back, the same tutor picks up where your child left off.</span></li>
           </ul>
-
-          <p style={{ background: 'var(--paper-raised)', border: '1px solid var(--line)', borderRadius: 'var(--radius)', padding: '16px 20px', marginBottom: '28px' }}>
-            <strong>Why this holds up as &ldquo;affordable&rdquo;:</strong> a single subject on Steady Pace costs less per month than most families already spend on one week of local group tuition — while staying 1-on-1, online, and adjustable the moment your child needs more help.
-          </p>
         </div>
       </div>
 

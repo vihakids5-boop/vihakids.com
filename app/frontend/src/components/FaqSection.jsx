@@ -27,8 +27,8 @@ const FAQS = [
   },
   {
     q: 'What does it cost after the demo?',
-    a: 'One clear monthly fee per subject, starting at ₹1,499 a month for 8 classes, with no registration fee and no annual contract. You can see every price on our fees page before you book anything.',
-    link: { to: '/fees', label: 'See the full fee structure' },
+    a: 'One monthly fee per subject, for 8 or more classes a month, with no registration fee and no annual contract. We share the fee on WhatsApp after the free demo, and you decide only then.',
+    link: { to: '/fees', label: 'How the fees work' },
   },
   {
     q: 'How are classes scheduled?',

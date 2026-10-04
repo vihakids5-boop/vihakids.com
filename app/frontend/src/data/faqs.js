@@ -52,7 +52,7 @@ export const FAQ_GROUPS = [
       {
         q: 'How long is each class, and how many classes a month?',
         a: 'A regular class is about an hour for Classes 5 to 10, and 45 minutes to an hour for younger children depending on attention span. Steady Pace is 8 classes a month (about two a week); Extra Support is up to 12 a month (about three a week) for a child who is behind or preparing for board exams. The tutor recommends the pace only after the free demo.',
-        link: { to: '/fees', label: 'See the two paces and fees' },
+        link: { to: '/fees', label: 'See the two paces' },
       },
       {
         q: 'Which time slots are available? Can we choose the timing?',
@@ -91,8 +91,8 @@ export const FAQ_GROUPS = [
     faqs: [
       {
         q: 'How much does it cost?',
-        a: 'One clear monthly fee per subject, starting at ₹1,499 a month for 8 classes in Classes 1 to 4, and rising slightly by grade band. Every price is published on our fees page — there is nothing you have to call to find out.',
-        link: { to: '/fees', label: 'See the full fee structure' },
+        a: 'One monthly fee per subject, for 8 or more classes a month, with no other commitment — no registration fee, no annual package. The fee depends on your child’s class, so we share it on WhatsApp after the free demo, once the tutor has met your child. You decide only then.',
+        link: { to: '/fees', label: 'How the fees work' },
       },
       {
         q: 'Are there any hidden charges, registration fees or annual packages?',
