@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../lib/api';
 import { trackEvent } from '../lib/gtag';
 import { GRADE_OPTIONS, SUBJECTS, ordinal } from '../constants/options';
+import { PHONE_COUNTRIES, DEFAULT_PHONE_CODE, phoneCountry, toApiPhone, phoneErrorText } from '../constants/phone';
 
 const WHATSAPP_NUMBER = '919972577828';
 
@@ -20,16 +21,18 @@ const STEPS = [
   { id: 3, label: 'Contact', icon: '💬' },
 ];
 
-function initialState() {
-  return { parentName: '', phone: '', grade: '', subjects: [], website: '' };
+function initialState(phoneCode = DEFAULT_PHONE_CODE) {
+  return { parentName: '', phoneCode, phone: '', grade: '', subjects: [], website: '' };
 }
 
 // A 3-step guided version of the registration form, used only on the
 // standalone /register page. The plain single-screen RegisterForm stays
 // unchanged for the homepage hero and the 40+ landing pages.
-export default function RegisterFormWizard() {
+// `defaultPhoneCode` lets the USA/UAE/UK/Singapore pages start the phone field
+// on that country's code instead of +91.
+export default function RegisterFormWizard({ defaultPhoneCode } = {}) {
   const [step, setStep] = useState(1);
-  const [values, setValues] = useState(initialState());
+  const [values, setValues] = useState(initialState(defaultPhoneCode));
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [statusMsg, setStatusMsg] = useState('');
@@ -63,9 +66,8 @@ export default function RegisterFormWizard() {
   }
 
   function validateStep3() {
-    const digits = values.phone.replace(/\D/g, '');
     const next = {};
-    if (!/^[6-9]\d{9}$/.test(digits)) next.phone = true;
+    if (!toApiPhone(values.phoneCode, values.phone)) next.phone = true;
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -102,7 +104,7 @@ export default function RegisterFormWizard() {
     if (!validateStep3()) return;
 
     const parentName = values.parentName.trim().replace(/\s+/g, ' ');
-    const digits = values.phone.replace(/\D/g, '');
+    const digits = toApiPhone(values.phoneCode, values.phone);
     const grade = parseInt(values.grade, 10);
 
     setSubmitting(true);
@@ -227,22 +229,31 @@ export default function RegisterFormWizard() {
           <div className="wizard-panel" key="step3">
             <h2 className="wizard-question">Almost done! Where should we reach you?</h2>
             <div className="hf-field">
-              <label htmlFor="phone">WhatsApp number <span className="hf-hint">(10 digits)</span></label>
+              <label htmlFor="phone">WhatsApp number</label>
               <div className="hf-phone-row">
-                <span className="hf-phone-prefix" aria-hidden="true">+91</span>
+                <select
+                  className="hf-phone-prefix hf-phone-code"
+                  aria-label="Country code"
+                  value={values.phoneCode}
+                  onChange={(e) => setValues((v) => ({ ...v, phoneCode: e.target.value }))}
+                >
+                  {PHONE_COUNTRIES.map((c) => (
+                    <option key={c.code} value={c.code}>{c.flag} {c.code} {c.name}</option>
+                  ))}
+                </select>
                 <input
                   type="tel"
                   id="phone"
                   inputMode="numeric"
-                  maxLength={10}
-                  placeholder="99725 77828"
+                  maxLength={14}
+                  placeholder={phoneCountry(values.phoneCode).placeholder}
                   value={values.phone}
                   aria-invalid={errors.phone ? 'true' : 'false'}
                   onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
                   autoFocus
                 />
               </div>
-              <p className={`hf-error${errors.phone ? ' show' : ''}`}>Please enter a valid 10-digit Indian mobile number.</p>
+              <p className={`hf-error${errors.phone ? ' show' : ''}`}>{phoneErrorText(values.phoneCode)}</p>
             </div>
 
             <div className="wizard-actions">

@@ -428,3 +428,23 @@ body{ overflow-x: clip; }
     linear-gradient(150deg, #DDF1E1 0%, #F1F8E2 46%, #FFF1C9 100%);
 }
 .v3-planner::before, .v3-planner::after{ content: none; }
+
+/* ---------- quieter note under the booking card (2026-10-05) ----------
+   Three items on one line, no box and no heading. */
+.v3-note{ margin-top: 14px; padding: 0; background: none; border: 0; border-radius: 0; }
+.v3-note ul{ display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; }
+.v3-note li{ font-size: 0.88rem; font-weight: 600; color: var(--ink-soft); gap: 6px; }
+@media (max-width: 640px){
+  .v3-note{ margin-bottom: 20px; }
+  .v3-note ul{ justify-content: flex-start; gap: 6px 16px; }
+  .v3-note li{ font-size: 0.92rem; }
+}
+
+/* ---------- country code selector in the phone field ---------- */
+.v3-phone-code{
+  flex: 0 0 auto; max-width: 46%; min-height: 48px; padding: 0 8px 0 10px;
+  font: inherit; font-size: 0.95rem; font-weight: 600; color: var(--ink);
+  background: #fff; border: 1.5px solid rgba(52,32,26,0.22); border-right: 0;
+  border-radius: 12px 0 0 12px; cursor: pointer;
+}
+.hf-phone-code{ font: inherit; font-weight: 600; color: inherit; cursor: pointer; max-width: 48%; }

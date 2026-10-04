@@ -53,6 +53,14 @@ function RelatedLinks({ label, items, currentSlug }) {
   );
 }
 
+// A parent on a country page almost certainly has that country's number.
+const PAGE_PHONE_CODE = {
+  'online-tuition-usa': '+1',
+  'online-tuition-uae': '+971',
+  'online-tuition-uk': '+44',
+  'online-tuition-singapore': '+65',
+};
+
 export default function TuitionLandingPage({ data }) {
   const { slug, metaTitle, metaDescription, eyebrow, h1, lead, paragraphs, highlights, showBoardBadges } = data;
 
@@ -135,7 +143,7 @@ export default function TuitionLandingPage({ data }) {
       </div>
 
       <div className="page-form-wrap">
-        <RegisterFormWizard />
+        <RegisterFormWizard defaultPhoneCode={PAGE_PHONE_CODE[slug]} />
       </div>
 
       <div className="wrap">

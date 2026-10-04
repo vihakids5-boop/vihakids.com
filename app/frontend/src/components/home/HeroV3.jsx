@@ -14,16 +14,13 @@ const TRUST = [
 // teach, and the one most other online tuitions do not offer.
 const SUBJECTS_TAUGHT = ['Kannada', 'English', 'Hindi', 'Mathematics', 'Science'];
 
-// Shown under the booking card, filling the space beside the pass. Kept to a
-// few words each on purpose — the detail lives in the sections below. Every
-// line is a promise already made in src/data/faqs.js.
+// Three short reassurances under the booking card. It was six lines in a
+// yellow box, which read as clutter; the detail lives in the sections below.
+// Every line is a promise already made in src/data/faqs.js.
 const PARENT_NOTES = [
   ['🎁', 'Free 30-minute class'],
-  ['📚', 'Keep the school textbook ready'],
-  ['👀', 'You can watch the class'],
-  ['💬', 'We WhatsApp you today'],
-  ['📱', 'Any phone or laptop, no app'],
-  ['🚫', 'No card, no commitment'],
+  ['👀', 'You can watch'],
+  ['💬', 'WhatsApp reply today'],
 ];
 
 export default function HeroV3() {
@@ -56,7 +53,6 @@ export default function HeroV3() {
           <p className="v3-book-flag">Plan your child’s free demo — about 30 seconds</p>
           <DemoPlanner values={values} setValues={setValues} reserved={reserved} setReserved={setReserved} />
           <aside className="v3-note" aria-label="A note for parents">
-            <p className="v3-note-title">Good to know, parents</p>
             <ul>
               {PARENT_NOTES.map(([icon, text]) => (
                 <li key={text}><span aria-hidden="true">{icon}</span>{text}</li>

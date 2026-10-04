@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../../lib/api';
 import { trackEvent } from '../../lib/gtag';
 import { GRADE_OPTIONS, SUBJECTS, ordinal } from '../../constants/options';
+import { PHONE_COUNTRIES, DEFAULT_PHONE_CODE, phoneCountry, toApiPhone, phoneErrorText } from '../../constants/phone';
 
 // The homepage booking: instead of a form, the parent plans the demo class in
 // five taps and watches a "demo pass" fill in as they go. Single-choice steps
@@ -44,7 +45,7 @@ const LANGS = ['English', 'English + Kannada', 'English + Hindi'];
 const STEP_TITLES = ['Class', 'Subject', 'Goal', 'Time', 'You'];
 
 function initial() {
-  return { grade: null, subjects: [], focus: null, slot: null, lang: null, parentName: '', phone: '', website: '' };
+  return { grade: null, subjects: [], focus: null, slot: null, lang: null, parentName: '', phoneCode: DEFAULT_PHONE_CODE, phone: '', website: '' };
 }
 
 export function DemoPass({ values, reserved }) {
@@ -109,10 +110,11 @@ export default function DemoPlanner({ values, setValues, reserved, setReserved }
     if (values.website.trim()) { setReserved(true); return; } // honeypot
 
     const parentName = values.parentName.trim().replace(/\s+/g, ' ');
-    const digits = values.phone.replace(/\D/g, '');
+    // null if the number does not fit the chosen country (see constants/phone.js)
+    const digits = toApiPhone(values.phoneCode, values.phone);
     const errs = {};
     if (!(parentName.length >= 2 && parentName.length <= 80)) errs.parentName = true;
-    if (!/^[6-9]\d{9}$/.test(digits)) errs.phone = true;
+    if (!digits) errs.phone = true;
     setErrors(errs);
     if (Object.keys(errs).length) return;
 
@@ -321,20 +323,30 @@ export default function DemoPlanner({ values, setValues, reserved, setReserved }
           <div className="v3-field">
             <label htmlFor="planner-phone">WhatsApp number</label>
             <div className="v3-phone">
-              <span aria-hidden="true">+91</span>
+              {/* India first; the other four are the countries we have tuition pages for. */}
+              <select
+                className="v3-phone-code"
+                aria-label="Country code"
+                value={values.phoneCode}
+                onChange={(e) => set({ phoneCode: e.target.value })}
+              >
+                {PHONE_COUNTRIES.map((c) => (
+                  <option key={c.code} value={c.code}>{c.flag} {c.code} {c.name}</option>
+                ))}
+              </select>
               <input
                 id="planner-phone"
                 type="tel"
                 inputMode="numeric"
-                maxLength={10}
+                maxLength={14}
                 autoComplete="tel-national"
-                placeholder="10-digit mobile"
+                placeholder={phoneCountry(values.phoneCode).placeholder}
                 value={values.phone}
                 aria-invalid={errors.phone ? 'true' : 'false'}
                 onChange={(e) => set({ phone: e.target.value })}
               />
             </div>
-            <p className={`v3-error${errors.phone ? ' show' : ''}`}>Please enter a valid 10-digit Indian mobile number.</p>
+            <p className={`v3-error${errors.phone ? ' show' : ''}`}>{phoneErrorText(values.phoneCode)}</p>
           </div>
           <div className="v3-actions">
             <button type="button" className="v3-back" onClick={back}>← Back</button>
