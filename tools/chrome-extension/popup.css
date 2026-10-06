@@ -1,0 +1,54 @@
+/* The popup is a narrow fixed-width panel, so this is kept to the site's
+   colours (brand green #3E9767, ink #34201A, cream #FFFCF4) and the system
+   font — the extension does not load the site's webfonts. */
+:root{
+  --green: #3E9767; --green-deep: #1F4D38; --ink: #34201A; --ink-soft: #5C463D;
+  --cream: #FFFCF4; --line: rgba(52,32,26,0.12); --sun: #F2C14E;
+}
+*{ box-sizing: border-box; }
+body{ width: 380px; margin: 0; font: 14px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: #fff; }
+
+.top{ display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--cream); border-bottom: 1px solid var(--line); }
+.top img{ border-radius: 7px; }
+.top-text{ display: flex; flex-direction: column; line-height: 1.2; flex: 1; min-width: 0; }
+.top-text strong{ font-size: 15px; }
+.top-text span{ font-size: 11px; color: var(--ink-soft); }
+
+.btn{ display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 6px 12px; border-radius: 999px; border: 1.5px solid transparent; font: inherit; font-weight: 600; font-size: 13px; text-decoration: none; cursor: pointer; }
+.btn-primary{ background: var(--green); border-color: var(--green); color: #fff; }
+.btn-primary:hover{ background: var(--green-deep); border-color: var(--green-deep); }
+.btn-primary:disabled{ opacity: 0.6; cursor: default; }
+.btn-quiet{ background: #fff; border-color: rgba(31,77,56,0.3); color: var(--green-deep); }
+.btn-quiet:hover{ background: #EEF5EC; }
+.link{ background: none; border: 0; padding: 0; font: inherit; font-size: 12px; color: var(--ink-soft); text-decoration: underline; cursor: pointer; }
+
+.signin{ padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+.signin p{ margin: 0 0 8px; color: var(--ink-soft); }
+.signin label{ font-size: 12px; font-weight: 600; }
+.signin input{ min-height: 36px; padding: 6px 10px; font: inherit; border: 1.5px solid rgba(52,32,26,0.22); border-radius: 8px; margin-bottom: 6px; }
+.signin input:focus{ outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(62,151,103,0.18); }
+.signin .btn{ margin-top: 6px; }
+
+.toolbar{ display: flex; align-items: center; justify-content: space-between; padding: 10px 14px 6px; }
+.summary{ font-weight: 600; }
+.summary b{ color: var(--green-deep); }
+.error{ margin: 6px 14px; padding: 8px 10px; border-radius: 8px; background: #FDECEA; color: #8C1D18; font-size: 13px; }
+.empty{ margin: 20px 14px; color: var(--ink-soft); text-align: center; }
+
+.leads{ list-style: none; margin: 0; padding: 0 8px 6px; max-height: 420px; overflow-y: auto; }
+.lead{ padding: 10px 8px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; }
+.lead-name{ font-weight: 700; }
+.lead-name small{ font-weight: 500; color: var(--ink-soft); margin-left: 6px; }
+.lead-when{ grid-column: 2; grid-row: 1; font-size: 11px; color: var(--ink-soft); white-space: nowrap; }
+.lead-meta{ grid-column: 1 / -1; color: var(--ink-soft); font-size: 13px; }
+.lead-plan{ grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+.lead-plan span{ font-size: 11px; padding: 2px 8px; border-radius: 999px; background: #EEF5EC; color: var(--green-deep); }
+.lead-actions{ grid-column: 1 / -1; display: flex; gap: 8px; margin-top: 4px; }
+.lead-actions a{ font-size: 12px; color: var(--green-deep); font-weight: 600; text-decoration: none; }
+.lead-actions a:hover{ text-decoration: underline; }
+.status{ font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: #EEE; color: var(--ink-soft); }
+.status-new{ background: var(--sun); color: #5A3E00; }
+.status-demo{ background: #E3EEF8; color: #164F73; }
+.status-enrolled{ background: #DDF1E1; color: var(--green-deep); }
+
+.foot{ display: flex; justify-content: space-between; align-items: center; padding: 8px 14px 10px; border-top: 1px solid var(--line); font-size: 12px; color: var(--ink-soft); }

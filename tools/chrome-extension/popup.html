@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vihakids leads</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <img src="icons/icon-32.png" width="26" height="26" alt="">
+    <div class="top-text">
+      <strong>Vihakids</strong>
+      <span id="subtitle">Demo bookings</span>
+    </div>
+    <a id="open-admin" class="btn btn-primary" href="https://www.vihakids.com/admin" target="_blank" rel="noopener">Open admin</a>
+  </header>
+
+  <!-- Sign-in: shown only when there is no session. -->
+  <form id="signin" class="signin" hidden>
+    <p>Sign in with your Vihakids admin account to see bookings here.</p>
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="username" required>
+    <label for="password">Password</label>
+    <input id="password" type="password" autocomplete="current-password" required>
+    <p id="signin-error" class="error" hidden></p>
+    <button type="submit" class="btn btn-primary" id="signin-btn">Sign in</button>
+  </form>
+
+  <!-- Leads: shown when signed in. -->
+  <section id="leads-view" hidden>
+    <div class="toolbar">
+      <span id="summary" class="summary"></span>
+      <button type="button" id="refresh" class="btn btn-quiet">Refresh</button>
+    </div>
+    <p id="error" class="error" hidden></p>
+    <ul id="leads" class="leads"></ul>
+    <p id="empty" class="empty" hidden>No bookings yet.</p>
+    <footer class="foot">
+      <span id="signed-in-as"></span>
+      <button type="button" id="signout" class="link">Sign out</button>
+    </footer>
+  </section>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

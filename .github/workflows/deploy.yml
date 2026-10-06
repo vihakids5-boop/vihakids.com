@@ -41,6 +41,10 @@ jobs:
             --exclude "firestore.rules" \
             --exclude "social-media/*" \
             --exclude "app/*" \
+            --exclude "tools/*" \
+            --exclude "scripts/*" \
+            --exclude "infra/*" \
+            --exclude "scratch/*" \
             --exclude ".DS_Store" \
             --exclude "index.html" \
             --exclude "assets/*"
