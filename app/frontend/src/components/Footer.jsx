@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import BrandMark from './BrandMark';
+import FooterLinks from './FooterLinks';
 import { openCookieSettings } from '../lib/consent';
 
 const linkStyle = { color: 'var(--ink-soft)', fontSize: '0.88rem', textDecoration: 'underline' };
@@ -39,6 +40,7 @@ function XIcon() {
 export default function Footer() {
   return (
     <footer>
+      <FooterLinks />
       <div className="wrap footer-grid">
         <Link to="/" className="brand">
           <BrandMark size={32} />

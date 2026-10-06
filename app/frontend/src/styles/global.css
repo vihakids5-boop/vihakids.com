@@ -2127,3 +2127,25 @@ main > .wrap > .page-head:first-child{ padding-top: 40px; }
    left edge is the page gutter and never moves. */
 header .nav-left{ position: relative; }
 header .nav-dropdown{ position: static; }
+
+/* ---------- footer link directory: every tuition landing page ----------
+   Five columns on a laptop, two on a tablet, one on a phone. Links are
+   deliberately plain text at a readable size — this block exists for crawlers
+   and for parents who scroll to the bottom looking for their city or board. */
+.footer-links{ padding: 36px 0 28px; margin-bottom: 28px; border-bottom: 1px solid var(--line); }
+.footer-links-title{ margin: 0 0 18px; font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+.footer-links-grid{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px 28px; }
+.footer-links-group h2{ margin: 0 0 8px; font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.footer-links-group ul{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+.footer-links-group a{ font-size: 0.88rem; color: var(--ink-soft); text-decoration: none; }
+.footer-links-group a:hover{ color: var(--marigold); text-decoration: underline; }
+@media (max-width: 900px){
+  .footer-links-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px){
+  .footer-links{ padding: 28px 0 22px; }
+  .footer-links-grid{ grid-template-columns: 1fr; gap: 18px; }
+  /* On a phone the long city list reads better as a wrapped row than a 20-line column. */
+  .footer-links-group ul{ flex-direction: row; flex-wrap: wrap; gap: 6px 14px; }
+  .footer-links-group a{ font-size: 0.95rem; line-height: 1.9; }
+}
