@@ -371,7 +371,7 @@ export const SUBJECT_PAGES = [
     category: 'subject',
     subject: 'Science',
     metaTitle: 'Science Online Tuition for Classes 1–10 | Vihakids',
-    metaDescription: 'Live online Science tuition for Classes 1–10 — EVS basics through Physics, Chemistry and Biology fundamentals. CBSE, ICSE and State Board. Free demo class.',
+    metaDescription: 'Live online Science tuition for Classes 1–10: EVS basics through Physics, Chemistry and Biology fundamentals. CBSE, ICSE and State Board. Free demo.',
     eyebrow: 'Science · Classes 1–10',
     h1: 'Science Online Tuition for Classes 1–10',
     lead: 'Everyday examples first, textbook definitions second — so the concept actually sticks.',
