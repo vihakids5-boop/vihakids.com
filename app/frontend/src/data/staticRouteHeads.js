@@ -4,38 +4,38 @@
 export const STATIC_ROUTE_HEADS = {
   '/': {
     title: 'Vihakids — Confidence First. Online Tuitions in India',
-    description: 'Live 1-on-1 online tuitions in English, Hindi, Math, Science and Kannada for Classes 1 to 10 (CBSE, ICSE and State Board), anywhere in India. Patient tutors who teach from your child’s own textbook. Book a free 30-minute demo — no payment, no commitment.',
+    description: 'Live 1-on-1 online tuition in English, Hindi, Math, Science and Kannada for Classes 1–10, CBSE, ICSE and State Board. Free 30-minute demo, no commitment.',
   },
   '/register': {
     title: 'Book a Free Demo Class | Vihakids Online Tuitions',
-    description: 'Book a free online demo class for your child in English, Hindi, Math, Science or Kannada — Classes 1 to 10, CBSE, ICSE and State Board. Takes 30 seconds, no payment, no commitment.',
+    description: 'Book a free 30-minute online demo class for your child — Classes 1 to 10, CBSE, ICSE and State Board. Takes 30 seconds, no payment, no commitment.',
   },
   '/teach': {
-    title: 'Teach with Vihakids | Online Tutor Jobs in English, Hindi, Math, Science & Kannada',
-    description: 'Join Vihakids as an online tutor. Flexible work-from-home hours teaching live 1-on-1 and small-batch classes in English, Hindi, Math, Science and Kannada for Classes 1 to 10.',
+    title: 'Teach with Vihakids | Online Tutor Jobs, Classes 1–10',
+    description: 'Join Vihakids as an online tutor: flexible work-from-home hours teaching live 1-on-1 classes in English, Hindi, Math, Science or Kannada, Classes 1–10.',
   },
   '/fees': {
-    title: 'Fees | Vihakids — Online English, Hindi, Math, Science & Kannada Tuitions',
-    description: 'How Vihakids fees work: one monthly fee per subject for 8 or more 1-on-1 classes, with no registration fee, no annual contract and no other commitment. You decide after a free demo.',
+    title: 'Fees | Simple Monthly Fee, No Commitment | Vihakids',
+    description: 'How Vihakids fees work: one monthly fee per subject for 8 or more 1-on-1 classes, no registration fee, no annual contract. You decide after a free demo.',
   },
   '/faq': {
     title: 'Parent FAQ | Online Tuition for Classes 1–10 — Vihakids',
-    description: 'Straight answers to the questions parents ask before choosing online tuition for Classes 1 to 10: 1-on-1 vs batch, who the tutor is, timings, missed classes, screen time, fees, refunds, no EMI, no sales calls, progress updates and safety.',
+    description: 'Straight answers to what parents ask before choosing online tuition for Classes 1–10: 1-on-1 vs batch, tutors, timings, missed classes, fees and safety.',
   },
   '/worksheets': {
-    title: 'Free Printable Worksheets for Class 1 to 10 with Answers — Math, Science, English | Vihakids',
-    description: 'Free colourful printable worksheets for Classes 1 to 10: alphabet tracing, plurals, nouns, adjectives, tenses, fractions, integers, linear and quadratic equations, trigonometry, motion and chemical equations. Answer keys included.',
+    title: 'Free Printable Worksheets for Class 1–10 | Vihakids',
+    description: 'Free colourful printable worksheets for Classes 1 to 10: tracing, grammar, fractions, equations, trigonometry, motion and chemistry. Answer keys included.',
   },
   '/hindi-varnamala-tracing-worksheet': {
-    title: 'Free Hindi Varnamala Tracing Worksheet — Printable Swar & Vyanjan | Vihakids',
-    description: 'A free, printable Hindi alphabet (Varnamala) tracing worksheet — all 13 vowels (swar), 33 consonants (vyanjan) and the joined letters क्ष, त्र, ज्ञ, श्र. For children starting Hindi. Print at home, no sign-up required.',
+    title: 'Free Hindi Varnamala Tracing Worksheet | Vihakids',
+    description: 'Free printable Hindi Varnamala tracing worksheet: all 13 vowels, 33 consonants and the joined letters, for children starting Hindi. No sign-up needed.',
   },
   '/english-alphabet-tracing-worksheet': {
-    title: 'Free English Alphabet Tracing Worksheet A to Z — Capital & Small Letters | Vihakids',
-    description: 'A free, printable A to Z tracing worksheet with capital and small letters side by side and a picture word for each (A for apple). For nursery, LKG, UKG and Class 1. Print at home, no sign-up required.',
+    title: 'Free A to Z Alphabet Tracing Worksheet | Vihakids',
+    description: 'Free printable A to Z tracing worksheet with capital and small letters and a picture word for each, for nursery, LKG, UKG and Class 1. No sign-up needed.',
   },
   '/kannada-alphabet-tracing-worksheet': {
-    title: 'Free Kannada Alphabet (Varnamale) Tracing Worksheet — Printable | Vihakids',
-    description: 'A free, printable Kannada Varnamale tracing worksheet — all 15 vowels (swaragalu) and 34 consonants (vyanjanagalu), for children just starting to read and write Kannada. Print at home, no sign-up required.',
+    title: 'Free Kannada Alphabet Tracing Worksheet | Vihakids',
+    description: 'Free printable Kannada Varnamale tracing worksheet: all 15 vowels and 34 consonants, for children starting to read and write Kannada. No sign-up needed.',
   },
 };

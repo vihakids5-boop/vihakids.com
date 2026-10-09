@@ -56,8 +56,8 @@ const POSTS = [
 
 export default function BlogIndexPage() {
   useDocumentHead({
-    title: 'Blog | Vihakids — Online English, Hindi, Math, Science & Kannada Tuitions',
-    description: 'Tips and guides for parents on helping kids with English, Hindi, Math, Science and Kannada — reading confidence, board differences, and choosing the right tutor. From Vihakids, serving students across India.',
+    title: 'Vihakids Blog | Guides for Parents, Classes 1–10',
+    description: 'Tips and guides for parents on helping children with English, Hindi, Math, Science and Kannada: reading confidence, board differences and choosing a tutor.',
   });
 
   return (

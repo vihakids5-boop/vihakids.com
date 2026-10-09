@@ -6,6 +6,7 @@ export default function BlogChoosingMathTutorPage() {
       slug="/blog-choosing-online-math-tutor.html"
       category="Math"
       title="How to Choose the Right Online Math Tutor for Your Child"
+      metaTitle="Choosing an Online Math Tutor for Your Child | Vihakids"
       description="A short, practical checklist for parents choosing an online Math tutor — what actually matters, and what to skip, for 1st to 10th Std students."
       meta="19 Aug 2026 · 5 min read"
       ctaHeading="Tell us the topic your child is stuck on"

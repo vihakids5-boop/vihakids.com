@@ -5,8 +5,8 @@ const WHATSAPP_URL =
 
 export default function AboutPage() {
   useDocumentHead({
-    title: 'About Us | Vihakids — Online English, Hindi, Math, Science & Kannada Tuitions',
-    description: 'Vihakids offers live online tuitions in English, Hindi, Mathematics, Science and Kannada for 1st to 10th Std, CBSE, ICSE and State Board — for students anywhere in India. Learn about our mission and teaching approach.',
+    title: 'About Vihakids | Online Tuition, Classes 1–10',
+    description: 'Vihakids teaches live online classes in English, Hindi, Math, Science and Kannada for Classes 1 to 10, CBSE, ICSE and State Board. Our story and approach.',
   });
 
   return (

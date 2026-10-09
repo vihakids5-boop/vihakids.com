@@ -6,6 +6,7 @@ export default function BlogScienceLearningTipsPage() {
       slug="/blog-science-learning-tips.html"
       category="Science"
       title="How to Help Your Child Understand Science — Not Just Memorise It"
+      metaTitle="Helping Your Child Understand Science | Vihakids"
       description="Five practical, no-extra-class ways to help your child build real Science understanding at home instead of memorising definitions and diagrams."
       meta="20 Aug 2026 · 5 min read"
       ctaHeading="Tell us the Science topic your child is stuck on"

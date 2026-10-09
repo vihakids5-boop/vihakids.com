@@ -13,8 +13,10 @@ const ALL_POSTS = [
   { slug: '/blog-english-grammar-basics.html', title: 'English Grammar Basics for Kids: Parts of Speech & Present Tense' },
 ];
 
-export default function BlogPostLayout({ slug, category, title, description, meta, ctaHeading, ctaBody, ctaWhatsAppText, relatedLinks, children }) {
-  useDocumentHead({ title: `${title} | Vihakids`, description });
+// `metaTitle` is the short <title> for search results; `title` stays the full
+// editorial headline shown as the H1.
+export default function BlogPostLayout({ slug, category, title, metaTitle, description, meta, ctaHeading, ctaBody, ctaWhatsAppText, relatedLinks, children }) {
+  useDocumentHead({ title: metaTitle || `${title} | Vihakids`, description });
   const morePosts = ALL_POSTS.filter((p) => p.slug !== slug);
 
   return (

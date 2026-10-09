@@ -7,6 +7,7 @@ export default function BlogKannadaReadingTipsPage() {
       slug="/blog-kannada-reading-tips.html"
       category="Kannada"
       title="5 Simple Ways to Help Your Child Read Kannada Confidently at Home"
+      metaTitle="5 Ways to Help Your Child Read Kannada at Home | Vihakids"
       description="Practical, no-extra-class tips to help your child build real Kannada reading confidence at home — for parents of 1st to 10th Std students in Bengaluru."
       meta="19 Aug 2026 · 5 min read"
       ctaHeading="Want a second opinion on your child's reading level?"
