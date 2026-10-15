@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import DemoPlanner, { DemoPass, initialPlannerValues } from './DemoPlanner';
 
-// Hero for the 2026-10 homepage: the booking is the hero. The parent plans the
-// demo on the right and the pass on the left fills in as they answer, so the
-// page shows what they are getting before it asks for a phone number.
+// Hero for the 2026-10 homepage: the booking is the hero. The parent books the
+// demo on the right (one short form) and the pass on the left fills in as they
+// tap, so the page shows what they are getting before it asks for a phone number.
 const TRUST = [
   '★ 5.0 on Google · 21 parent reviews',
   'Your child’s own school textbook',
@@ -50,7 +50,7 @@ export default function HeroV3() {
         </div>
 
         <div className="v3-hero-book" id="book">
-          <p className="v3-book-flag">Plan your child’s free demo — about 30 seconds</p>
+          <p className="v3-book-flag">Takes about 20 seconds</p>
           <DemoPlanner values={values} setValues={setValues} reserved={reserved} setReserved={setReserved} />
           <aside className="v3-note" aria-label="A note for parents">
             <ul>
