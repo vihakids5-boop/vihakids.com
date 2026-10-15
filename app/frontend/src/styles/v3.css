@@ -109,7 +109,25 @@
 .v3-chip:hover{ border-color: var(--v3-green); background: var(--v3-wash); }
 .v3-chip:active{ transform: scale(0.97); }
 .v3-chip.is-on{ background: var(--v3-green); border-color: var(--v3-green); color: #fff; }
-.v3-grade-grid{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+/* Classes grouped into the three stages the class pages use. Each stage is a
+   soft tinted strip so the ten numbers read as a journey, not a keypad. */
+.v3-stages{ display: grid; grid-template-columns: 4fr 3fr 3fr; gap: 6px; }
+.v3-stage{ padding: 8px 8px 9px; border-radius: 14px; border: 1.5px solid transparent; transition: border-color 0.15s; }
+.v3-stage-0{ background: #E6F2FB; }
+.v3-stage-1{ background: #FFF3D6; }
+.v3-stage-2{ background: #FCE7E6; }
+.v3-stage.is-on{ border-color: var(--v3-green); }
+.v3-stage-name{ margin: 0 0 7px; display: flex; flex-direction: column; gap: 1px; line-height: 1.2; }
+.v3-stage-name strong{ font-size: 0.74rem; font-weight: 700; letter-spacing: 0.02em; color: var(--ink); }
+.v3-stage-name span{ font-size: 0.68rem; font-weight: 600; color: var(--ink-soft); }
+.v3-stage-grades{ display: flex; gap: 6px; }
+.v3-stage-grades .v3-grade{ flex: 1 1 0; min-width: 0; padding: 6px 2px; border-radius: 10px; }
+.v3-class-insight{
+  margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; font-size: 0.88rem; line-height: 1.45;
+  color: var(--v3-green-deep); background: var(--v3-wash); border-left: 3px solid var(--v3-green);
+  animation: v3-pop 0.3s ease;
+}
+.v3-class-insight strong{ color: var(--ink); }
 .v3-grade{ min-height: 44px; font-family: var(--v3-display); font-size: 1.1rem; font-weight: 600; }
 .v3-subject-row{ display: flex; flex-wrap: wrap; gap: 8px; }
 .v3-subject{ min-height: 42px; padding: 6px 14px; border-radius: 999px; font-size: 0.92rem; }
@@ -190,13 +208,17 @@
   .v3-section{ padding: 52px 0; }
 }
 @media (max-width: 560px){
+  .v3-stages{ grid-template-columns: 1fr; gap: 6px; }
+  .v3-stage{ display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 8px; padding: 7px 8px; }
+  .v3-stage-name{ margin: 0; }
+  .v3-stage-grades .v3-grade{ min-height: 42px; }
   .v3-beats{ grid-template-columns: 1fr; }
   .v3-facts{ grid-template-columns: 1fr; }
   .v3-pass{ grid-template-columns: 1fr 96px; }
   .v3-pass-stub::before, .v3-pass-stub::after{ right: 86px; }
 }
 @media (prefers-reduced-motion: reduce){
-  .v3-pass-rows .is-set dd, .v3-pass-stamp{ animation: none; }
+  .v3-pass-rows .is-set dd, .v3-pass-stamp, .v3-class-insight{ animation: none; }
   .v3-chip{ transition: none; }
 }
 

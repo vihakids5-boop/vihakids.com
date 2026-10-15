@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../../lib/api';
 import { trackEvent } from '../../lib/gtag';
-import { GRADE_OPTIONS, SUBJECTS, ordinal } from '../../constants/options';
+import { SUBJECTS, ordinal } from '../../constants/options';
 import { PHONE_COUNTRIES, DEFAULT_PHONE_CODE, phoneCountry, toApiPhone, phoneErrorText } from '../../constants/phone';
+import { CLASS_PAGES } from '../../data/tuitionLandingPages';
 
 // The homepage booking, kept to one screen: class, subject, name, WhatsApp
 // number, one button. It replaced a five-step planner (class, subject, goal,
@@ -21,6 +22,21 @@ import { PHONE_COUNTRIES, DEFAULT_PHONE_CODE, phoneCountry, toApiPhone, phoneErr
 const WHATSAPP_NUMBER = '919972577828';
 
 const SUBJECT_ICONS = { English: '🔤', Hindi: '📖', Math: '➗', Science: '🔬', Kannada: '📝' };
+
+// The class picker is the one place the form can show a parent that we know
+// their child's year. Classes sit in the same three stages the class pages
+// use (Foundation, Building blocks, Board ready), and tapping a class reveals
+// that year's one-line focus from the class page, so the pick itself answers
+// "do they understand what my child needs?". Built from CLASS_PAGES so the two
+// never drift apart.
+const STAGES = CLASS_PAGES.reduce((acc, p) => {
+  const [range, band] = p.eyebrow.split(' · ');
+  const last = acc[acc.length - 1];
+  if (last && last.band === band) last.grades.push(p.grade);
+  else acc.push({ band, range, grades: [p.grade] });
+  return acc;
+}, []);
+const CLASS_LEAD = Object.fromEntries(CLASS_PAGES.map((p) => [p.grade, p.lead]));
 
 function initial() {
   return { grade: null, subjects: [], parentName: '', phoneCode: DEFAULT_PHONE_CODE, phone: '', website: '' };
@@ -139,19 +155,32 @@ export default function DemoPlanner({ values, setValues, reserved, setReserved }
 
       <fieldset className="v3-group">
         <legend>Which class is your child in?</legend>
-        <div className="v3-grade-grid">
-          {GRADE_OPTIONS.map((g) => (
-            <button
-              type="button"
-              key={g}
-              className={`v3-chip v3-grade${values.grade === g ? ' is-on' : ''}`}
-              aria-pressed={values.grade === g}
-              onClick={() => set({ grade: g })}
-            >
-              {g}
-            </button>
+        <div className="v3-stages">
+          {STAGES.map((stage, i) => (
+            <div className={`v3-stage v3-stage-${i}${stage.grades.includes(values.grade) ? ' is-on' : ''}`} key={stage.band}>
+              <p className="v3-stage-name"><strong>{stage.band}</strong><span>{stage.range}</span></p>
+              <div className="v3-stage-grades">
+                {stage.grades.map((g) => (
+                  <button
+                    type="button"
+                    key={g}
+                    className={`v3-chip v3-grade${values.grade === g ? ' is-on' : ''}`}
+                    aria-pressed={values.grade === g}
+                    aria-label={`Class ${g}`}
+                    onClick={() => set({ grade: g })}
+                  >
+                    {g}
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
+        {values.grade && (
+          <p className="v3-class-insight" key={values.grade}>
+            <strong>Class {values.grade}:</strong> {CLASS_LEAD[values.grade]} Your tutor starts right there.
+          </p>
+        )}
         <p className={`v3-error${errors.grade ? ' show' : ''}`}>Tap your child’s class.</p>
       </fieldset>
 
