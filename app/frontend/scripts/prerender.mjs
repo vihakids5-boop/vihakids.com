@@ -42,6 +42,7 @@ const HTML_ROUTES = [
   '/blog-science-learning-tips.html',
   '/blog-exam-stress-confidence.html',
   '/blog-english-grammar-basics.html',
+  '/blog-learning-gap-signs.html',
   '/terms.html',
   '/privacy.html',
   '/cookies.html',

@@ -52,6 +52,7 @@ const EXACT = {
 const BLOG = {
   '/blog-exam-stress-confidence.html': 'BlogExamStressConfidencePage.jsx',
   '/blog-english-grammar-basics.html': 'BlogEnglishGrammarBasicsPage.jsx',
+  '/blog-learning-gap-signs.html': 'BlogLearningGapSignsPage.jsx',
   '/blog-kannada-reading-tips.html': 'BlogKannadaReadingTipsPage.jsx',
   '/blog-cbse-icse-state-board-kannada-hindi.html': 'BlogCbseIcseStateBoardPage.jsx',
   '/blog-choosing-online-math-tutor.html': 'BlogChoosingMathTutorPage.jsx',

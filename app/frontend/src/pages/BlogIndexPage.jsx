@@ -5,6 +5,14 @@ const WHATSAPP_BASE = 'https://wa.me/919972577828?text=';
 
 const POSTS = [
   {
+    slug: '/blog-learning-gap-signs.html',
+    cat: 'Parent Guide',
+    title: '7 Signs Your Child Is Quietly Falling Behind in School — and What to Do Before the Final Exams',
+    excerpt: 'Seven everyday signs of a learning gap, a 10-minute check you can do at home, and what actually helps in the weeks before the exams.',
+    date: '10 Nov 2026',
+    read: '6 min read',
+  },
+  {
     slug: '/blog-english-grammar-basics.html',
     cat: 'English',
     title: 'English Grammar Basics for Kids: Parts of Speech & Present Tense',

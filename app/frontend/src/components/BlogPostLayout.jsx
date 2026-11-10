@@ -11,6 +11,7 @@ const ALL_POSTS = [
   { slug: '/blog-science-learning-tips.html', title: 'How to Help Your Child Understand Science — Not Just Memorise It' },
   { slug: '/blog-exam-stress-confidence.html', title: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks' },
   { slug: '/blog-english-grammar-basics.html', title: 'English Grammar Basics for Kids: Parts of Speech & Present Tense' },
+  { slug: '/blog-learning-gap-signs.html', title: '7 Signs Your Child Is Quietly Falling Behind in School — and What to Do Before the Final Exams' },
 ];
 
 // `metaTitle` is the short <title> for search results; `title` stays the full
