@@ -5,6 +5,14 @@ const WHATSAPP_BASE = 'https://wa.me/919972577828?text=';
 
 const POSTS = [
   {
+    slug: '/blog-questions-after-school.html',
+    cat: 'Parent Guide',
+    title: 'Stop Asking “How Was School?” — 7 Questions That Actually Get Children Talking',
+    excerpt: 'Seven small, specific questions that get more than “fine”, why each one works, and what the answers quietly tell you.',
+    date: '11 Nov 2026',
+    read: '5 min read',
+  },
+  {
     slug: '/blog-learning-gap-signs.html',
     cat: 'Parent Guide',
     title: '7 Signs Your Child Is Quietly Falling Behind in School — and What to Do Before the Final Exams',

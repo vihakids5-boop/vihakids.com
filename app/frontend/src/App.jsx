@@ -33,6 +33,7 @@ const BlogChoosingMathTutorPage = lazyWithReload(() => import('./pages/blog/Blog
 const BlogScienceLearningTipsPage = lazyWithReload(() => import('./pages/blog/BlogScienceLearningTipsPage'));
 const BlogExamStressConfidencePage = lazyWithReload(() => import('./pages/blog/BlogExamStressConfidencePage'));
 const BlogEnglishGrammarBasicsPage = lazyWithReload(() => import('./pages/blog/BlogEnglishGrammarBasicsPage'));
+const BlogQuestionsAfterSchoolPage = lazyWithReload(() => import('./pages/blog/BlogQuestionsAfterSchoolPage'));
 const BlogLearningGapSignsPage = lazyWithReload(() => import('./pages/blog/BlogLearningGapSignsPage'));
 const KannadaAlphabetWorksheetPage = lazyWithReload(() => import('./pages/resources/KannadaAlphabetWorksheetPage'));
 const HindiVarnamalaWorksheetPage = lazyWithReload(() => import('./pages/resources/HindiVarnamalaWorksheetPage'));
@@ -97,6 +98,7 @@ export default function App() {
           <Route path="/blog-science-learning-tips.html" element={<BlogScienceLearningTipsPage />} />
           <Route path="/blog-exam-stress-confidence.html" element={<BlogExamStressConfidencePage />} />
           <Route path="/blog-english-grammar-basics.html" element={<BlogEnglishGrammarBasicsPage />} />
+          <Route path="/blog-questions-after-school.html" element={<BlogQuestionsAfterSchoolPage />} />
           <Route path="/blog-learning-gap-signs.html" element={<BlogLearningGapSignsPage />} />
           <Route path="/kannada-alphabet-tracing-worksheet" element={<KannadaAlphabetWorksheetPage />} />
           <Route path="/hindi-varnamala-tracing-worksheet" element={<HindiVarnamalaWorksheetPage />} />

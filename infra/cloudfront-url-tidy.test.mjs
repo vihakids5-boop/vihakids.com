@@ -44,6 +44,7 @@ const CASES = [
   ['/blog-science-learning-tips.html', null],
   ['/blog-exam-stress-confidence.html', null],
   ['/blog-english-grammar-basics.html', null],
+  ['/blog-questions-after-school.html', null],
   ['/blog-learning-gap-signs.html', null],
   ['/blog-kannada-reading-tips.html', null],
   ['/blog-choosing-online-math-tutor.html', null],
