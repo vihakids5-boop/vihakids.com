@@ -1,5 +1,6 @@
 import BookingLayoutV2 from '../components/BookingLayoutV2';
 import RegisterFormWizard from '../components/RegisterFormWizard';
+import { RegisterExtra } from '../components/BookingExtra';
 import { useDocumentHead } from '../lib/useDocumentHead';
 import { STATIC_ROUTE_HEADS } from '../data/staticRouteHeads';
 
@@ -16,6 +17,7 @@ export default function RegisterPage() {
       headline={<>Book your child&rsquo;s <span className="v2-gradient-text v2-inline">free demo class</span></>}
       sub="It takes 30 seconds. Tell us your child’s class and the subject they find hardest, and we will do the rest."
       quote={QUOTE}
+      below={<RegisterExtra />}
     >
       <RegisterFormWizard />
     </BookingLayoutV2>

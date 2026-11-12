@@ -13,9 +13,10 @@ const NEXT_STEPS = [
 const WHATSAPP_URL =
   'https://wa.me/919972577828?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20demo%20class%20for%20my%20child';
 
-export default function BookingLayoutV2({ eyebrow, headline, sub, quote, children, showSteps = true }) {
+export default function BookingLayoutV2({ eyebrow, headline, sub, quote, children, below, showSteps = true }) {
   return (
-    <main id="top" className="v2-booking">
+    <main id="top">
+    <div className="v2-booking">
       <div className="v2-booking-bg" aria-hidden="true">
         <span className="v2-blob v2-blob-1" />
         <span className="v2-blob v2-blob-2" />
@@ -65,6 +66,8 @@ export default function BookingLayoutV2({ eyebrow, headline, sub, quote, childre
           </p>
         </section>
       </div>
+    </div>
+    {below}
     </main>
   );
 }

@@ -1017,6 +1017,9 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
 
 /* ---------- printable worksheets (e.g. Kannada alphabet tracing) ---------- */
 .worksheet-intro{ max-width: var(--content-w); margin-top: 24px; }
+.worksheet-tips{ margin-top: 48px; }
+.worksheet-tips h2:first-child{ margin-top: 0; }
+.worksheet-tips [lang="kn"]{ font-family: 'Noto Sans Kannada', 'Montserrat', sans-serif; }
 .worksheet-print-btn{ margin-top: 8px; }
 .worksheet-section{ max-width: none; margin-top: 40px; }
 .worksheet-section h2{
@@ -1728,6 +1731,12 @@ table.admin-table td textarea{ width: 160px; min-height: 44px; }
   font-size: 0.75rem; font-weight: 700; margin-top: 1px;
 }
 .fees-teaser-points strong{ color: var(--ink); }
+
+/* reading content under the /register and /teach forms */
+.booking-extra{ padding: 56px 0 72px; background: var(--paper); color: var(--ink); }
+.booking-extra h2{ font-size: 1.35rem; font-weight: 600; margin: 0 0 18px; }
+.booking-extra .prose > *{ max-width: 820px; }
+.booking-extra .prose h2:not(:first-child){ margin-top: 34px; }
 
 /* faq */
 .faq-list{ display: flex; flex-direction: column; gap: 10px; max-width: 820px; }

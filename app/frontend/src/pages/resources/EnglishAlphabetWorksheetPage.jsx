@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import MinimalPageLayout from '../../components/MinimalPageLayout';
-import { TraceCard, useWorksheetPage, MoreWorksheets } from '../../components/WorksheetTraceCard';
+import { TraceCard, useWorksheetPage, MoreWorksheets, TracingTips } from '../../components/WorksheetTraceCard';
 import { useDocumentHead } from '../../lib/useDocumentHead';
 import { STATIC_ROUTE_HEADS } from '../../data/staticRouteHeads';
 
@@ -53,6 +53,16 @@ export default function EnglishAlphabetWorksheetPage() {
           </section>
         ))}
       </div>
+
+      <TracingTips>
+        <h2>English letters: what to watch for</h2>
+        <ul>
+          <li><strong>Name and sound together.</strong> Say both as your child writes: &ldquo;B says /b/, as in ball.&rdquo; Knowing the sounds is what turns letters into reading.</li>
+          <li><strong>Tall, small and tail letters.</strong> Some small letters stand tall (b, d, h, k, l, t), some stay small (a, c, e, m, n, o) and some hang below the line (g, j, p, q, y). Pointing this out keeps the writing even.</li>
+          <li><strong>Mixing up b and d is normal.</strong> Most children reverse b and d, or p and q, for a while. Practise the pair side by side rather than correcting every slip.</li>
+          <li><strong>What comes next.</strong> Once the letters are familiar, build three-letter words such as cat, sun and pin, sounding out each letter and then blending them.</li>
+        </ul>
+      </TracingTips>
 
       <MoreWorksheets current={ROUTE} />
 

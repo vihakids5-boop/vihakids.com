@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BrandMark from './BrandMark';
 import FooterLinks from './FooterLinks';
 import { openCookieSettings } from '../lib/consent';
 
 const linkStyle = { color: 'var(--ink-soft)', fontSize: '0.88rem', textDecoration: 'underline' };
+// `font` must come before the spread: it is a shorthand and would otherwise reset fontSize.
+const linkButtonStyle = { font: 'inherit', ...linkStyle, background: 'none', border: 0, padding: 0, cursor: 'pointer' };
 const iconLinkStyle = { color: 'var(--ink-soft)', display: 'inline-flex' };
 
 function FacebookIcon() {
@@ -38,6 +40,7 @@ function XIcon() {
 }
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <footer>
       <FooterLinks />
@@ -70,9 +73,11 @@ export default function Footer() {
         <Link to="/terms.html" style={linkStyle}>Terms &amp; Conditions</Link>
         <Link to="/privacy.html" style={linkStyle}>Privacy Policy</Link>
         <Link to="/cookies.html" style={linkStyle}>Cookies Policy</Link>
-        <button type="button" onClick={openCookieSettings} style={{ ...linkStyle, background: 'none', border: 0, padding: 0, font: 'inherit', fontSize: linkStyle.fontSize, cursor: 'pointer' }}>Cookie settings</button>
+        <button type="button" onClick={openCookieSettings} style={linkButtonStyle}>Cookie settings</button>
         <Link to="/teach" style={linkStyle}>Teach with us</Link>
-        <Link to="/admin" rel="nofollow" style={linkStyle}>Admin login</Link>
+        {/* A button, not a link: /admin is noindex and disallowed in robots.txt, so
+            a sitewide <a rel="nofollow"> to it only wasted internal link equity. */}
+        <button type="button" onClick={() => navigate('/admin')} style={linkButtonStyle}>Admin login</button>
         <p>© 2026 Vihakids, Bengaluru · Online English, Hindi, Math, Science &amp; Kannada tuitions across India</p>
       </div>
     </footer>

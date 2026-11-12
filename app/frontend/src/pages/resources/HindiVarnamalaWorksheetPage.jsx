@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import MinimalPageLayout from '../../components/MinimalPageLayout';
-import { TraceCard, useWorksheetPage, MoreWorksheets } from '../../components/WorksheetTraceCard';
+import { TraceCard, useWorksheetPage, MoreWorksheets, TracingTips } from '../../components/WorksheetTraceCard';
 import { useDocumentHead } from '../../lib/useDocumentHead';
 import { STATIC_ROUTE_HEADS } from '../../data/staticRouteHeads';
 
@@ -58,6 +58,17 @@ export default function HindiVarnamalaWorksheetPage() {
           </div>
         </section>
       ))}
+
+      <TracingTips>
+        <h2>Hindi letters: what to watch for</h2>
+        <ul>
+          <li><strong>The line on top comes last.</strong> Write the body of the letter first, then draw the top line (<span lang="hi">शिरोरेखा</span>, shirorekha) from left to right to finish it.</li>
+          <li><strong>Teach look-alikes as pairs.</strong> <span lang="hi">ब</span> and <span lang="hi">व</span>, <span lang="hi">घ</span> and <span lang="hi">ध</span>, <span lang="hi">भ</span> and <span lang="hi">म</span> are the ones children mix up most. Write each pair side by side and say both sounds aloud.</li>
+          <li><strong>Feel the puff of air.</strong> In each of the first five rows, the second and fourth letters (<span lang="hi">ख, घ</span>) are said with an extra breath. Ask your child to hold a hand in front of the mouth and feel the difference between <span lang="hi">क</span> and <span lang="hi">ख</span>.</li>
+          <li><strong>If you do not read Hindi yourself.</strong> The small English letters under each letter show how it sounds. A line over a vowel (ā, ī, ū) means it is held for longer, and a dot under a consonant (ṭ, ḍ, ṇ) means the tip of the tongue curls back to touch the roof of the mouth.</li>
+          <li><strong>What comes next.</strong> Once the letters are familiar, try short words that need no vowel signs, such as <span lang="hi">घर</span> (house), <span lang="hi">जल</span> (water) and <span lang="hi">फल</span> (fruit), before moving on to the <span lang="hi">मात्रा</span>.</li>
+        </ul>
+      </TracingTips>
 
       <MoreWorksheets current={ROUTE} />
 

@@ -1,6 +1,6 @@
 // Shared split-screen shell for the /register and /teach flows: a gradient
 // story panel (headline, trust points, optional quote) beside the form.
-export default function BookingHeroLayout({ eyebrow, headline, sub, trustItems, quote, children }) {
+export default function BookingHeroLayout({ eyebrow, headline, sub, trustItems, quote, children, below }) {
   return (
     <main id="top" className="booking-page">
       <div className="booking-shell">
@@ -31,6 +31,7 @@ export default function BookingHeroLayout({ eyebrow, headline, sub, trustItems, 
           <div className="booking-panel-inner">{children}</div>
         </section>
       </div>
+      {below}
     </main>
   );
 }

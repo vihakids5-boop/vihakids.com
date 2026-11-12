@@ -57,3 +57,22 @@ export function MoreWorksheets({ current }) {
     </p>
   );
 }
+
+// Parent guidance shown under the tracing grid (hidden when printing). The
+// first list applies to any script; `children` adds the script-specific part.
+export function TracingTips({ children }) {
+  return (
+    <div className="worksheet-intro worksheet-tips prose no-print">
+      <h2>Tips for parents</h2>
+      <ul>
+        <li><strong>Start with the grip.</strong> A short pencil or a thick crayon is easier for small hands than a long, thin pencil. It rests on the middle finger and is held by the thumb and first finger.</li>
+        <li><strong>Finger first, pencil second.</strong> Let your child trace the big letter with a finger once or twice before picking up the pencil, so the hand learns the shape and the direction.</li>
+        <li><strong>Same strokes, same order.</strong> Show where the letter starts and write it the same way every time. A fixed order is what makes handwriting quick and neat later on.</li>
+        <li><strong>Stop while it is going well.</strong> Three or four letters written carefully are worth more than a full page done in a hurry. When the letters start getting untidy, put the sheet away and come back tomorrow.</li>
+        <li><strong>Revise before adding.</strong> Begin each sitting by writing yesterday&rsquo;s letters once from memory, then move on to new ones.</li>
+        <li><strong>Print it again.</strong> The worksheet is free, so print a fresh copy whenever your child wants another go.</li>
+      </ul>
+      {children}
+    </div>
+  );
+}

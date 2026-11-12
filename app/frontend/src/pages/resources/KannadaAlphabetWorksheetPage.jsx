@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MinimalPageLayout from '../../components/MinimalPageLayout';
-import { MoreWorksheets } from '../../components/WorksheetTraceCard';
+import { MoreWorksheets, TracingTips } from '../../components/WorksheetTraceCard';
 import { useDocumentHead } from '../../lib/useDocumentHead';
 import { STATIC_ROUTE_HEADS } from '../../data/staticRouteHeads';
 
@@ -130,6 +130,17 @@ export default function KannadaAlphabetWorksheetPage() {
           </div>
         </section>
       ))}
+
+      <TracingTips>
+        <h2>Kannada letters: what to watch for</h2>
+        <ul>
+          <li><strong>Warm up with curves.</strong> Kannada letters are built from loops and curves rather than straight lines. Drawing a few circles and loops on rough paper first loosens the hand.</li>
+          <li><strong>Short and long vowels.</strong> <span lang="kn">ಇ</span> and <span lang="kn">ಈ</span>, <span lang="kn">ಉ</span> and <span lang="kn">ಊ</span>, <span lang="kn">ಎ</span> and <span lang="kn">ಏ</span>, <span lang="kn">ಒ</span> and <span lang="kn">ಓ</span> come in pairs. Say the long one for twice as long, so your child hears the difference as well as sees it.</li>
+          <li><strong>Teach look-alikes as pairs.</strong> Several consonants are the plain letter with one small extra stroke: <span lang="kn">ಪ</span> and <span lang="kn">ಫ</span>, <span lang="kn">ದ</span> and <span lang="kn">ಧ</span>, <span lang="kn">ಡ</span> and <span lang="kn">ಢ</span>. Write each pair side by side and point out the stroke that changes.</li>
+          <li><strong>If you do not read Kannada yourself.</strong> The small English letters under each letter show how it sounds. A line over a vowel (ā, ī, ū) means it is held for longer, and a dot under a consonant (ṭ, ḍ, ṇ) means the tip of the tongue curls back to touch the roof of the mouth.</li>
+          <li><strong>What comes next.</strong> Once the letters are familiar, try short words that need no vowel signs, such as <span lang="kn">ಮರ</span> (tree) and <span lang="kn">ಜನ</span> (people), before moving on to the <span lang="kn">ಕಾಗುಣಿತ</span> (kaagunita), where each consonant is joined with the vowel signs.</li>
+        </ul>
+      </TracingTips>
 
       <MoreWorksheets current="/kannada-alphabet-tracing-worksheet" />
 
