@@ -4,7 +4,7 @@ import { openCookieSettings } from '../lib/consent';
 
 export default function CookiesPage() {
   useDocumentHead({
-    title: 'Cookies Policy | Vihakids',
+    title: 'Cookies Policy | Vihakids Online Tuitions',
     description: 'Cookies Policy for Vihakids online English, Hindi, Math, Science and Kannada tuitions, serving students across India.',
   });
 

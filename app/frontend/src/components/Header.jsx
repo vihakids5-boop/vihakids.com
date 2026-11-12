@@ -84,14 +84,14 @@ export default function Header() {
             </button>
             <div className={`nav-dropdown-panel${menuOpen ? ' open' : ''}`} id="navMenuPanel">
               <div className="mega-col">
-                <h3 className="mega-heading">Explore</h3>
+                <p className="mega-heading">Explore</p>
                 {GENERAL_LINKS.map((l) => (
                   <NavLink key={l.label} {...l} className="nav-dropdown-link" onClick={closeMega} />
                 ))}
               </div>
 
               <div className="mega-col">
-                <h3 className="mega-heading">By city</h3>
+                <p className="mega-heading">By city</p>
                 <NavLink href="/fees" label="Fees →" className="nav-dropdown-link nav-dropdown-link-fees" onClick={closeMega} />
                 {CITY_PAGES.map((p) => (
                   <NavLink key={p.slug} href={`/${p.slug}`} label={p.city} className="nav-dropdown-link" onClick={closeMega} />
@@ -99,21 +99,21 @@ export default function Header() {
               </div>
 
               <div className="mega-col">
-                <h3 className="mega-heading">By board</h3>
+                <p className="mega-heading">By board</p>
                 {BOARD_PAGES.map((p) => (
                   <NavLink key={p.slug} href={`/${p.slug}`} label={p.board} className="nav-dropdown-link" onClick={closeMega} />
                 ))}
               </div>
 
               <div className="mega-col">
-                <h3 className="mega-heading">By subject</h3>
+                <p className="mega-heading">By subject</p>
                 {SUBJECT_PAGES.map((p) => (
                   <NavLink key={p.slug} href={`/${p.slug}`} label={p.subject} className="nav-dropdown-link" onClick={closeMega} />
                 ))}
               </div>
 
               <div className="mega-col mega-col-class">
-                <h3 className="mega-heading">By class</h3>
+                <p className="mega-heading">By class</p>
                 <div className="mega-class-grid">
                   {CLASS_PAGES.map((p) => (
                     <Link
@@ -130,7 +130,7 @@ export default function Header() {
               </div>
 
               <div className="mega-col">
-                <h3 className="mega-heading">Tuition abroad</h3>
+                <p className="mega-heading">Tuition abroad</p>
                 {COUNTRY_PAGES.map((p) => (
                   <NavLink key={p.slug} href={`/${p.slug}`} label={p.country} className="nav-dropdown-link" onClick={closeMega} />
                 ))}

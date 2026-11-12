@@ -4,7 +4,7 @@ import { useDocumentHead } from '../lib/useDocumentHead';
 
 export default function PrivacyPage() {
   useDocumentHead({
-    title: 'Privacy Policy | Vihakids',
+    title: 'Privacy Policy | Vihakids Online Tuitions',
     description: 'Privacy Policy for Vihakids online English, Hindi, Math, Science and Kannada tuitions, serving students across India.',
   });
 
