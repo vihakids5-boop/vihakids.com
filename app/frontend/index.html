@@ -7,6 +7,12 @@
 <script>
 window.vkLoadTracking = function () {
 if (window.vkTrackingLoaded) return;
+// Staff visits are not visitors: never track the admin page, nor a browser that
+// has signed in to it (flag set by markInternalBrowser() in src/lib/consent.js).
+// Without this, daily admin visits were credited to whichever source that
+// browser last arrived from and swamped the real numbers.
+if (/^\/admin(\.html)?\/?$/.test(location.pathname)) return;
+try { if (localStorage.getItem('vk-internal') === '1') return; } catch (e) {}
 window.vkTrackingLoaded = true;
 
 // Google tag (gtag.js)

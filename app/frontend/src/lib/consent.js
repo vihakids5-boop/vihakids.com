@@ -37,6 +37,22 @@ function clearTrackingCookies() {
   }
 }
 
+// Same key as the check inside vkLoadTracking in index.html.
+export const INTERNAL_KEY = 'vk-internal';
+
+// Called once someone signs in to /admin: from the next page load on, this
+// browser is never tracked, whatever the cookie choice. To count a browser as a
+// visitor again, remove the 'vk-internal' entry from its local storage.
+export function markInternalBrowser() {
+  try {
+    if (window.localStorage.getItem(INTERNAL_KEY) === '1') return;
+    window.localStorage.setItem(INTERNAL_KEY, '1');
+  } catch {
+    return;
+  }
+  clearTrackingCookies();
+}
+
 export function acceptTracking() {
   storeConsent('accepted');
   if (typeof window.vkLoadTracking === 'function') window.vkLoadTracking();

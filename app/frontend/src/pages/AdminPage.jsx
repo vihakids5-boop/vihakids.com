@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth, firebaseConfigured } from '../lib/firebaseClient';
 import { api } from '../lib/api';
+import { markInternalBrowser } from '../lib/consent';
 import { useAdminCollection } from '../lib/useAdminCollection';
 import { downloadCsv } from '../lib/csv';
 import { parseDemoPlan } from '../lib/demoPlan';
@@ -63,6 +64,11 @@ export default function AdminPage() {
     if (!firebaseConfigured) { setUser(null); return; }
     return onAuthStateChanged(auth, setUser);
   }, []);
+
+  // A signed-in browser belongs to staff: keep it out of Analytics from now on.
+  useEffect(() => {
+    if (user) markInternalBrowser();
+  }, [user]);
 
   const reg = useAdminCollection(
     { list: api.listRegistrations, update: api.updateRegistration, remove: api.deleteRegistration },
