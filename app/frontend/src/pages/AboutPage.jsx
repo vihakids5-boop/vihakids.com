@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className="page-head">
           <span className="eyebrow">About Vihakids</span>
           <h1>Helping kids across India feel confident in English, Hindi, Math, Science and Kannada</h1>
-          <p className="lead">Vihakids started with a simple observation: some school subjects need more one-on-one attention than a crowded classroom can give.</p>
+          <p className="lead">Vihakids (also written Viha Kids) started with a simple observation: some school subjects need more one-on-one attention than a crowded classroom can give.</p>
         </div>
 
         <div className="page-body prose">

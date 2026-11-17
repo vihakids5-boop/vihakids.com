@@ -91,9 +91,18 @@ try { if (localStorage.getItem('vk-cookie-consent') === 'accepted') window.vkLoa
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.vihakids.com/#website",
+      "name": "Vihakids",
+      "alternateName": ["Viha Kids", "VihaKids"],
+      "url": "https://www.vihakids.com/",
+      "publisher": { "@id": "https://www.vihakids.com/#organization" }
+    },
+    {
       "@type": "EducationalOrganization",
       "@id": "https://www.vihakids.com/#organization",
       "name": "Vihakids",
+      "alternateName": ["Viha Kids", "VihaKids"],
       "description": "Online tuitions in English, Hindi, Mathematics, Science and Kannada for 1st to 10th Std, covering CBSE, ICSE and State Board syllabus — for students across India.",
       "url": "https://www.vihakids.com/",
       "image": "https://www.vihakids.com/og-image.jpg",

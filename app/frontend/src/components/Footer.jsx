@@ -78,7 +78,7 @@ export default function Footer() {
         {/* A button, not a link: /admin is noindex and disallowed in robots.txt, so
             a sitewide <a rel="nofollow"> to it only wasted internal link equity. */}
         <button type="button" onClick={() => navigate('/admin')} style={linkButtonStyle}>Admin login</button>
-        <p>© 2026 Vihakids, Bengaluru · Online English, Hindi, Math, Science &amp; Kannada tuitions across India</p>
+        <p>© 2026 Vihakids (Viha Kids), Bengaluru · Online English, Hindi, Math, Science &amp; Kannada tuitions across India</p>
       </div>
     </footer>
   );
