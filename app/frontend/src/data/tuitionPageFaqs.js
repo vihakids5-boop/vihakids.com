@@ -93,14 +93,28 @@ export const TUITION_PAGE_FAQS = {
       a: 'Yes. The first class is a free 30-minute demo with a native Kannada-speaking tutor. There is no payment and no commitment.',
     },
   ],
+  // Each answer states the fact in its first sentence or two, so it still
+  // makes sense when a search engine or AI assistant quotes it on its own.
   'math-online-tuition': [
+    {
+      q: 'How does Vihakids teach online Math for Classes 1 to 10?',
+      a: 'Vihakids teaches live, one-on-one online Math classes from the same textbook and syllabus your child follows at school. The tutor works through the school’s chapters, practice problems and exam-style questions step by step, at your child’s pace, instead of following a separate curriculum of our own.',
+    },
+    {
+      q: 'Is Vihakids Math tuition 1-on-1 or in a group batch?',
+      a: 'The standard Vihakids Math class is live and 1-on-1: one tutor with one child. A shy or struggling child can ask “why?” as many times as needed, and the tutor sees every step of the working and slows down straight away when a basic such as fractions or word problems needs more time.',
+    },
+    {
+      q: 'Which boards and countries does Vihakids teach Math for?',
+      a: 'CBSE, ICSE and State Board for Classes 1 to 10, as well as Cambridge (including IGCSE) and IB students. Classes are open to families anywhere in India and to Indian families in the USA, UAE, UK and Singapore, with class times arranged around your time zone.',
+    },
+    {
+      q: 'How are Math classes scheduled and billed?',
+      a: 'You choose days and times that suit your week, usually 8 or more classes a month, and pay one monthly fee per subject with no registration fee and no long-term commitment. The fee depends on your child’s class, so we share it on WhatsApp after the free demo.',
+    },
     {
       q: 'My child is scared of Math. How do you handle that?',
       a: 'Fear of Math usually comes from a gap a year or two back — tables, fractions, or place value. In the first few classes the tutor finds that gap and fixes it with simple, step-by-step practice, so the child starts getting questions right again. Confidence follows.',
-    },
-    {
-      q: 'Is it one tutor, one child?',
-      a: 'Yes. Our standard class is 1-on-1, so your child can ask “why?” as many times as they need and the tutor can see every step of their working on paper.',
     },
     {
       q: 'Do you follow my child’s school Math textbook?',

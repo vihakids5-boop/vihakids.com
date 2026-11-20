@@ -62,7 +62,7 @@ const PAGE_PHONE_CODE = {
 };
 
 export default function TuitionLandingPage({ data }) {
-  const { slug, metaTitle, metaDescription, eyebrow, h1, lead, paragraphs, highlights, showBoardBadges } = data;
+  const { slug, metaTitle, metaDescription, eyebrow, h1, lead, paragraphs, highlights, showBoardBadges, snapshot } = data;
 
   useDocumentHead({ title: metaTitle, description: metaDescription });
   const relatedBlogPosts = RELATED_BLOG_POSTS[slug];
@@ -89,6 +89,21 @@ export default function TuitionLandingPage({ data }) {
 
         <div className="page-body prose">
           {paragraphs.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
+
+          {/* Optional quick-facts list (format, topics by class, boards, billing). */}
+          {snapshot && (
+            <>
+              <h2>{snapshot.heading}</h2>
+              <dl className="local-facts">
+                {snapshot.facts.map(([label, value]) => (
+                  <div key={label}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </>
+          )}
 
           <h2>Why parents choose Vihakids for this</h2>
           <ul>

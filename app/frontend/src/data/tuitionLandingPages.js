@@ -324,6 +324,20 @@ export const SUBJECT_PAGES = [
       'Essay and letter-writing in the CBSE / ICSE / State Board exam format',
       'Spoken-English practice, not just reading and writing on paper',
     ],
+    snapshot: {
+      heading: 'English tuition at a glance',
+      facts: [
+        ['Format', 'Live 1-on-1 online classes (one tutor, one child) on a simple video link. No app to install.'],
+        ['Classes', 'Classes 1 to 10'],
+        ['Topics, Classes 1–5', 'Phonics, reading aloud, spelling, vocabulary, nouns, verbs and adjectives, simple sentences and short paragraph writing'],
+        ['Topics, Classes 6–8', 'Tenses, parts of speech, comprehension passages, vocabulary building, paragraph, letter and story writing'],
+        ['Topics, Classes 9–10', 'Grammar for the board exam, comprehension, essay and letter writing in the exam format, and the prescribed literature texts'],
+        ['Spoken English', 'Dedicated speaking practice alongside reading and writing, for children who read and write well but hesitate to speak'],
+        ['Boards', 'CBSE, ICSE and State Board; also Cambridge (including IGCSE) and IB (PYP and MYP)'],
+        ['Schedule and fees', '8 or more classes a month, billed monthly per subject. No registration fee and no long-term commitment.'],
+        ['Free demo', '30 minutes, using your child\'s own school English textbook'],
+      ],
+    },
   },
   {
     slug: 'hindi-online-tuition',
@@ -344,6 +358,20 @@ export const SUBJECT_PAGES = [
       'Essay and letter-writing practice for CBSE / ICSE / State Board exams',
       'Extra patience for children who don\'t speak Hindi at home',
     ],
+    snapshot: {
+      heading: 'Hindi tuition at a glance',
+      facts: [
+        ['Format', 'Live 1-on-1 online classes (one tutor, one child) on a simple video link. No app to install.'],
+        ['Classes', 'Classes 1 to 10'],
+        ['Topics, Classes 1–5', 'Varnamala (swar and vyanjan), matras, simple words and sentences, reading aloud and handwriting'],
+        ['Topics, Classes 6–8', 'Grammar (vyakaran), comprehension passages, vocabulary, and paragraph and letter writing'],
+        ['Topics, Classes 9–10', 'Grammar for the board exam, unseen passages, essay and letter writing in the exam format, and the prescribed prose and poetry'],
+        ['Second language', 'Taught with extra patience for children who do not speak Hindi at home, with explanations in English where needed'],
+        ['Boards', 'CBSE, ICSE and State Board; also Cambridge and IB students'],
+        ['Schedule and fees', '8 or more classes a month, billed monthly per subject. No registration fee and no long-term commitment.'],
+        ['Free demo', '30 minutes, using your child\'s own school Hindi textbook'],
+      ],
+    },
   },
   {
     slug: 'math-online-tuition',
@@ -354,7 +382,11 @@ export const SUBJECT_PAGES = [
     eyebrow: 'Mathematics · Classes 1–10',
     h1: 'Online Math Tutor & Tuition for Classes 1–10',
     lead: 'A dedicated online math tutor for real step-by-step understanding — not shortcuts that fall apart under exam pressure.',
+    // Plain facts first: the opening paragraph and the "at a glance" list are
+    // what search engines and AI assistants quote, so keep every line true and
+    // free of fee amounts.
     paragraphs: [
+      'Vihakids teaches live, one-on-one online Math classes for students in Classes 1 to 10, from the child\'s own school textbook. We are based in Bengaluru and teach families across India, as well as Indian families in the USA, UAE, UK and Singapore. Each class pairs one patient tutor with one child, so doubts are cleared at the child\'s pace, and it all starts with a free 30-minute demo class.',
       'Math is cumulative — a shaky concept in Class 4 fractions tends to resurface as real trouble in Class 8 algebra. As your child\'s online math tutor, we build from number sense and basic arithmetic in the early years through fractions, geometry and problem-solving, making sure each step is genuinely understood before moving to the next.',
       'In the board years, we shift toward exam-focused practice: algebra, geometry, and the kind of applied word problems that show up in CBSE, ICSE and State Board papers, with real emphasis on showing clear working, since that\'s where marks are often lost even when the final answer is right.',
     ],
@@ -365,6 +397,19 @@ export const SUBJECT_PAGES = [
       'Practice on showing clear working — where exam marks are often lost',
       'Patient, specific support for children showing early signs of Math phobia',
     ],
+    snapshot: {
+      heading: 'Math tuition at a glance',
+      facts: [
+        ['Format', 'Live 1-on-1 online classes (one tutor, one child) on a simple video link. No app to install.'],
+        ['Classes', 'Classes 1 to 10'],
+        ['Topics, Classes 1–5', 'Number sense, place value, addition and subtraction, multiplication tables, division, fractions, decimals, measurement and word problems'],
+        ['Topics, Classes 6–8', 'Integers, BODMAS, fractions and decimals, ratio and percentage, algebra and linear equations, geometry and mensuration'],
+        ['Topics, Classes 9–10', 'Polynomials, linear and quadratic equations, geometry, trigonometry, statistics and board-style word problems'],
+        ['Boards', 'CBSE, ICSE and State Board; also Cambridge (including IGCSE) and IB (PYP and MYP)'],
+        ['Schedule and fees', '8 or more classes a month, billed monthly per subject. No registration fee and no long-term commitment.'],
+        ['Free demo', '30 minutes, using your child\'s own school Math textbook'],
+      ],
+    },
   },
   {
     slug: 'science-online-tuition',
@@ -385,6 +430,19 @@ export const SUBJECT_PAGES = [
       'Diagrams, definitions and terminology in the exact exam format',
       'Concepts understood first, then connected to textbook answers',
     ],
+    snapshot: {
+      heading: 'Science tuition at a glance',
+      facts: [
+        ['Format', 'Live 1-on-1 online classes (one tutor, one child) on a simple video link. No app to install.'],
+        ['Classes', 'Classes 1 to 10'],
+        ['Topics, Classes 1–5', 'EVS: plants, animals, the human body, food, water, air and our surroundings'],
+        ['Topics, Classes 6–8', 'General Science: food and nutrition, living things, materials, motion, light, electricity, and simple chemistry'],
+        ['Topics, Classes 9–10', 'Physics, Chemistry and Biology: motion and force, light and electricity, atoms and chemical reactions, cells and life processes, with numericals and diagrams'],
+        ['Boards', 'CBSE, ICSE and State Board; also Cambridge (including IGCSE) and IB (PYP and MYP)'],
+        ['Schedule and fees', '8 or more classes a month, billed monthly per subject. No registration fee and no long-term commitment.'],
+        ['Free demo', '30 minutes, using your child\'s own school Science textbook'],
+      ],
+    },
   },
   {
     slug: 'kannada-online-tuition',
@@ -405,6 +463,21 @@ export const SUBJECT_PAGES = [
       'Poetry, prose and exam-focused writing practice',
       'Support for both first-language and second-language Kannada learners',
     ],
+    snapshot: {
+      heading: 'Kannada tuition at a glance',
+      facts: [
+        ['Format', 'Live 1-on-1 online classes (one tutor, one child) on a simple video link. No app to install.'],
+        ['Classes', 'Classes 1 to 10'],
+        ['Tutors', 'Native Kannada speakers, who explain in English where a child needs it'],
+        ['Topics, Classes 1–5', 'Varnamale (swaragalu and vyanjanagalu), kagunita, simple words and sentences, reading aloud and handwriting'],
+        ['Topics, Classes 6–8', 'Grammar (vyakarana), comprehension, prose and poems from the school textbook, and paragraph and letter writing'],
+        ['Topics, Classes 9–10', 'Prose, poetry and grammar for the exam, with essay and letter writing in the exam format, including SSLC'],
+        ['Boards', 'Karnataka State Board (first and second language), and CBSE and ICSE schools that teach Kannada'],
+        ['Outside school', 'Also for children learning Kannada at home, including Indian families abroad'],
+        ['Schedule and fees', '8 or more classes a month, billed monthly per subject. No registration fee and no long-term commitment.'],
+        ['Free demo', '30 minutes, with a native Kannada-speaking tutor'],
+      ],
+    },
   },
 ];
 
