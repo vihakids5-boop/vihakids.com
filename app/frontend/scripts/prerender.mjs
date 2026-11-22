@@ -66,6 +66,68 @@ function replaceOnce(html, pattern, replacement, label, route) {
   return html.replace(pattern, replacement);
 }
 
+// Publication dates of the blog posts (same dates the posts show on the page).
+// A new post must be added here, or the build stops.
+const BLOG_POST_DATES = {
+  '/blog-kannada-reading-tips.html': { published: '2026-08-19' },
+  '/blog-cbse-icse-state-board-kannada-hindi.html': { published: '2026-08-19', modified: '2026-09-21' },
+  '/blog-choosing-online-math-tutor.html': { published: '2026-08-19' },
+  '/blog-science-learning-tips.html': { published: '2026-08-20' },
+  '/blog-exam-stress-confidence.html': { published: '2026-09-12' },
+  '/blog-english-grammar-basics.html': { published: '2026-09-12' },
+  '/blog-learning-gap-signs.html': { published: '2026-11-10' },
+  '/blog-questions-after-school.html': { published: '2026-11-11' },
+};
+const isBlogPost = (route) => /^\/blog-.+\.html$/.test(route);
+const WORKSHEET_ROUTES = new Set(PRACTICE_WORKSHEET_ROUTES.map((w) => `/${w.slug}`));
+const HAS_WORKSHEETS_INDEX = '/worksheets' in STATIC_ROUTE_HEADS;
+const OG_IMAGE = (template.match(/<meta property="og:image" content="([^"]*)"/) || [])[1];
+
+const decodeEntities = (s) =>
+  s.replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+
+// The page's visible <h1>, as plain text.
+function h1Text(body) {
+  const m = body.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+  return decodeEntities(m[1].replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+}
+
+const jsonLdTag = (data) =>
+  `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
+
+// Home › (Blog | Worksheets) › this page. Search engines use it to show the
+// page's place in the site instead of a bare URL.
+function breadcrumbJsonLd(route, name) {
+  const trail = [{ name: 'Home', item: `${SITE_ORIGIN}/` }];
+  if (isBlogPost(route)) trail.push({ name: 'Blog', item: `${SITE_ORIGIN}/blog.html` });
+  else if (WORKSHEET_ROUTES.has(route) && HAS_WORKSHEETS_INDEX) trail.push({ name: 'Worksheets', item: `${SITE_ORIGIN}/worksheets` });
+  trail.push({ name, item: SITE_ORIGIN + route });
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: trail.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.name, item: t.item })),
+  };
+}
+
+function blogPostingJsonLd(route, headline, description) {
+  const dates = BLOG_POST_DATES[route];
+  if (!dates) throw new Error(`prerender: add ${route} to BLOG_POST_DATES`);
+  const org = { '@id': `${SITE_ORIGIN}/#organization` };
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline,
+    description,
+    datePublished: `${dates.published}T09:00:00+05:30`,
+    dateModified: `${dates.modified || dates.published}T09:00:00+05:30`,
+    author: { '@type': 'Organization', name: 'Vihakids', url: `${SITE_ORIGIN}/`, ...org },
+    publisher: org,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': SITE_ORIGIN + route },
+    ...(OG_IMAGE ? { image: OG_IMAGE } : {}),
+    inLanguage: 'en-IN',
+  };
+}
+
 mkdirSync(outDir, { recursive: true });
 
 for (const entry of routes) {
@@ -104,6 +166,21 @@ for (const entry of routes) {
     html = replaceOnce(html, FAQ_JSONLD, `<script type="application/ld+json" id="faq-page-jsonld">${jsonLd}</script>`, 'homepage FAQPage JSON-LD', route);
   } else if (route !== '/') {
     html = replaceOnce(html, FAQ_JSONLD, '', 'homepage FAQPage JSON-LD', route);
+  }
+
+  // Structured data for this page: where it sits in the site, and for blog
+  // posts the article details (headline, dates, publisher).
+  if (route !== '/') {
+    const name = h1Text(body);
+    let extra = jsonLdTag(breadcrumbJsonLd(route, name));
+    if (isBlogPost(route)) {
+      const { published, modified } = BLOG_POST_DATES[route] || {};
+      extra += jsonLdTag(blogPostingJsonLd(route, name, description));
+      extra += `<meta property="article:published_time" content="${published}T09:00:00+05:30">`;
+      if (modified) extra += `<meta property="article:modified_time" content="${modified}T09:00:00+05:30">`;
+      html = replaceOnce(html, /(<meta property="og:type" content=")[^"]*(")/, '$1article$2', 'og:type', route);
+    }
+    html = replaceOnce(html, /<\/head>/, `${extra}</head>`, '</head>', route);
   }
 
   // data-prerendered names the route this markup belongs to. CloudFront serves

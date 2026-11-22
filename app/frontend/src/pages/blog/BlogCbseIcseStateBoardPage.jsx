@@ -5,7 +5,7 @@ export default function BlogCbseIcseStateBoardPage() {
     <BlogPostLayout
       slug="/blog-cbse-icse-state-board-kannada-hindi.html"
       category="Boards & Syllabus"
-      title="CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child"
+      title="CBSE, ICSE and State Board: Meaning in Kannada, Explained for Parents"
       metaTitle="CBSE, ICSE and State Board: Meaning in Kannada | Vihakids"
       description="What CBSE, ICSE and Karnataka State Board stand for, their meaning in Kannada, who runs each, and how each handles Kannada and Hindi — for parents."
       meta="19 Aug 2026 · Updated 21 Sep 2026 · 7 min read"

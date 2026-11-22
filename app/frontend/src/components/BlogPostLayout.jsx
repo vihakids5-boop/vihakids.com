@@ -6,13 +6,13 @@ const WHATSAPP_BASE = 'https://wa.me/919972577828?text=';
 
 const ALL_POSTS = [
   { slug: '/blog-kannada-reading-tips.html', title: '5 Simple Ways to Help Your Child Read Kannada Confidently at Home' },
-  { slug: '/blog-cbse-icse-state-board-kannada-hindi.html', title: 'CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child' },
+  { slug: '/blog-cbse-icse-state-board-kannada-hindi.html', title: 'CBSE, ICSE and State Board: Meaning in Kannada, Explained for Parents' },
   { slug: '/blog-choosing-online-math-tutor.html', title: 'How to Choose the Right Online Math Tutor for Your Child' },
   { slug: '/blog-science-learning-tips.html', title: 'How to Help Your Child Understand Science — Not Just Memorise It' },
   { slug: '/blog-exam-stress-confidence.html', title: 'How to Help Your Child Build Real Confidence, Not Just Chase Marks' },
   { slug: '/blog-english-grammar-basics.html', title: 'English Grammar Basics for Kids: Parts of Speech & Present Tense' },
-  { slug: '/blog-questions-after-school.html', title: 'Stop Asking “How Was School?” — 7 Questions That Actually Get Children Talking' },
-  { slug: '/blog-learning-gap-signs.html', title: '7 Signs Your Child Is Quietly Falling Behind in School — and What to Do Before the Final Exams' },
+  { slug: '/blog-questions-after-school.html', title: 'Stop Asking “How Was School?” 7 Questions That Get Children Talking' },
+  { slug: '/blog-learning-gap-signs.html', title: '7 Signs Your Child Is Quietly Falling Behind — and What to Do' },
 ];
 
 // `metaTitle` is the short <title> for search results; `title` stays the full

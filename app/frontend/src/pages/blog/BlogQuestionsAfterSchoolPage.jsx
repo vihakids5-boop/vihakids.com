@@ -5,7 +5,7 @@ export default function BlogQuestionsAfterSchoolPage() {
     <BlogPostLayout
       slug="/blog-questions-after-school.html"
       category="Parent Guide"
-      title="Stop Asking “How Was School?” — 7 Questions That Actually Get Children Talking"
+      title="Stop Asking “How Was School?” 7 Questions That Get Children Talking"
       metaTitle="7 Better Questions Than “How Was School?” | Vihakids"
       description="Seven after-school questions that get more than “fine” from children in Classes 1–10, why each one works, and what the answers tell you."
       meta="11 Nov 2026 · 5 min read"

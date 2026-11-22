@@ -7,7 +7,7 @@ const POSTS = [
   {
     slug: '/blog-questions-after-school.html',
     cat: 'Parent Guide',
-    title: 'Stop Asking “How Was School?” — 7 Questions That Actually Get Children Talking',
+    title: 'Stop Asking “How Was School?” 7 Questions That Get Children Talking',
     excerpt: 'Seven small, specific questions that get more than “fine”, why each one works, and what the answers quietly tell you.',
     date: '11 Nov 2026',
     read: '5 min read',
@@ -15,7 +15,7 @@ const POSTS = [
   {
     slug: '/blog-learning-gap-signs.html',
     cat: 'Parent Guide',
-    title: '7 Signs Your Child Is Quietly Falling Behind in School — and What to Do Before the Final Exams',
+    title: '7 Signs Your Child Is Quietly Falling Behind — and What to Do',
     excerpt: 'Seven everyday signs of a learning gap, a 10-minute check you can do at home, and what actually helps in the weeks before the exams.',
     date: '10 Nov 2026',
     read: '6 min read',
@@ -55,7 +55,7 @@ const POSTS = [
   {
     slug: '/blog-cbse-icse-state-board-kannada-hindi.html',
     cat: 'Boards & Syllabus',
-    title: 'CBSE, ICSE and State Board: Meaning in Kannada, and What Each Means for Your Child',
+    title: 'CBSE, ICSE and State Board: Meaning in Kannada, Explained for Parents',
     excerpt: "What CBSE, ICSE and State Board stand for, their meaning in Kannada, and how each board handles Kannada and Hindi.",
     date: '19 Aug 2026',
     read: '7 min read',

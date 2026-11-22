@@ -5,7 +5,7 @@ export default function BlogLearningGapSignsPage() {
     <BlogPostLayout
       slug="/blog-learning-gap-signs.html"
       category="Parent Guide"
-      title="7 Signs Your Child Is Quietly Falling Behind in School — and What to Do Before the Final Exams"
+      title="7 Signs Your Child Is Quietly Falling Behind — and What to Do"
       metaTitle="7 Signs Your Child Is Falling Behind in School | Vihakids"
       description="Seven everyday signs of a learning gap in Classes 1–10, a 10-minute check you can do at home, and what to do in the weeks before the final exams."
       meta="10 Nov 2026 · 6 min read"
